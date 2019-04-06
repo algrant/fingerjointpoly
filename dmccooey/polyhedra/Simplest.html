@@ -1,0 +1,480 @@
+<!-- File:   Simplest.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2005,2006,2007,2008,2009,2010,2011 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Simplest Canonical Polyhedra of Each Symmetry Type</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='Other.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Simplest Canonical Polyhedra of Each Symmetry Type</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='SymmetricCanonicals.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+There are 17 possible types of symmetry that a polyhedron can have.
+The following table shows the characteristics of these symmetry types.
+</P>
+
+<CENTER>
+<H3>Symmetry Types in 3 Dimensions</H3>
+<TABLE width=90% bgcolor="#202020" bordercolor="#404040">
+<TR align=center bgcolor="#008080">
+<TD>Sch&ouml;nflies</TD>
+<TD>Orbifold</TD>
+<TD>Symmetry Name</TD>
+<TD>Rotation Axes</TD>
+<TD>Highest Rotation Axis Order</TD>
+<TD>Mirror Planes</TD>
+<TD>Rotations</TD>
+<TD>Improper Rotations</TD>
+<TD>Invertible?</TD>
+</TR>
+<TR align=center bgcolor="#ffff80">
+<TD>C1</TD>
+<TD>1</TD>
+<TD>No Symmetry</TD>
+<TD>0</TD>
+<TD>1</TD>
+<TD>0</TD>
+<TD>1</TD>
+<TD>0</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#c0c000">
+<TD>Ci=S2</TD>
+<TD>x</TD>
+<TD>Inversion</TD>
+<TD>0</TD>
+<TD>1</TD>
+<TD>0</TD>
+<TD>1</TD>
+<TD>1</TD>
+<TD>yes</TD>
+</TR>
+<TR align=center bgcolor="#ffff00">
+<TD>Cs=C1h=C1v</TD>
+<TD>*</TD>
+<TD>Reflection</TD>
+<TD>0</TD>
+<TD>1</TD>
+<TD>1</TD>
+<TD>1</TD>
+<TD>1</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#8080ff">
+<TD>Cn</TD>
+<TD>nn</TD>
+<TD>Cyclic</TD>
+<TD>1</TD>
+<TD>n</TD>
+<TD>0</TD>
+<TD>n</TD>
+<TD>0</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#0080ff">
+<TD>Cnh <NOBR>(n odd)</NOBR></TD>
+<TD>n*</TD>
+<TD>Cyclic + Orthogonal Reflection</TD>
+<TD>1</TD>
+<TD>n</TD>
+<TD>1</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#0080ff">
+<TD>Cnh <NOBR>(n even)</NOBR></TD>
+<TD>n*</TD>
+<TD>Cyclic + Orthogonal Reflection</TD>
+<TD>1</TD>
+<TD>n</TD>
+<TD>1</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>yes</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>Cnv</TD>
+<TD>*nn</TD>
+<TD>Pyramidal</TD>
+<TD>1</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#ff8000">
+<TD>S2n <NOBR>(n even)</NOBR></TD>
+<TD>nx</TD>
+<TD>Rotoreflection</TD>
+<TD>1</TD>
+<TD>n</TD>
+<TD>0</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#ff8000">
+<TD>S2n <NOBR>(n odd)</NOBR></TD>
+<TD>nx</TD>
+<TD>Rotoreflection</TD>
+<TD>1</TD>
+<TD>n</TD>
+<TD>0</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>yes</TD>
+</TR>
+<TR align=center bgcolor="#00ff80">
+<TD>Dn</TD>
+<TD>22n</TD>
+<TD>Dihedral</TD>
+<TD>n+1</TD>
+<TD>n</TD>
+<TD>0</TD>
+<TD>2*n</TD>
+<TD>0</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>Dnh <NOBR>(n odd)</NOBR></TD>
+<TD>*22n</TD>
+<TD>Prismatic</TD>
+<TD>n+1</TD>
+<TD>n</TD>
+<TD>n+1</TD>
+<TD>2*n</TD>
+<TD>2*n</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>Dnh <NOBR>(n even)</NOBR></TD>
+<TD>*22n</TD>
+<TD>Prismatic</TD>
+<TD>n+1</TD>
+<TD>n</TD>
+<TD>n+1</TD>
+<TD>2*n</TD>
+<TD>2*n</TD>
+<TD>yes</TD>
+</TR>
+<TR align=center bgcolor="#80ff80">
+<TD>Dnv <NOBR>(n even)</NOBR></TD>
+<TD>2*n</TD>
+<TD>Antiprismatic</TD>
+<TD>n+1</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>2*n</TD>
+<TD>2*n</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#80ff80">
+<TD>Dnv <NOBR>(n odd)</NOBR></TD>
+<TD>2*n</TD>
+<TD>Antiprismatic</TD>
+<TD>n+1</TD>
+<TD>n</TD>
+<TD>n</TD>
+<TD>2*n</TD>
+<TD>2*n</TD>
+<TD>yes</TD>
+</TR>
+<TR align=center bgcolor="#ff8080">
+<TD>T</TD>
+<TD>332</TD>
+<TD>Chiral Tetrahedral</TD>
+<TD>7</TD>
+<TD>3</TD>
+<TD>0</TD>
+<TD>12</TD>
+<TD>0</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#c04040">
+<TD>Td</TD>
+<TD>*332</TD>
+<TD>Full Tetrahedral</TD>
+<TD>7</TD>
+<TD>3</TD>
+<TD>6</TD>
+<TD>12</TD>
+<TD>12</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#c02020">
+<TD>Th</TD>
+<TD>3*2</TD>
+<TD>Pyritohedral</TD>
+<TD>7</TD>
+<TD>3</TD>
+<TD>3</TD>
+<TD>12</TD>
+<TD>12</TD>
+<TD>yes</TD>
+</TR>
+<TR align=center bgcolor="#c06020">
+<TD>O</TD>
+<TD>432</TD>
+<TD>Chiral Octahedral</TD>
+<TD>13</TD>
+<TD>4</TD>
+<TD>0</TD>
+<TD>24</TD>
+<TD>0</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#a04000">
+<TD>Oh</TD>
+<TD>*432</TD>
+<TD>Full Octahedral</TD>
+<TD>13</TD>
+<TD>4</TD>
+<TD>9</TD>
+<TD>24</TD>
+<TD>24</TD>
+<TD>yes</TD>
+</TR>
+<TR align=center bgcolor="#ff80ff">
+<TD>I</TD>
+<TD>532</TD>
+<TD>Chiral Icosahedral</TD>
+<TD>31</TD>
+<TD>5</TD>
+<TD>0</TD>
+<TD>60</TD>
+<TD>0</TD>
+<TD>no</TD>
+</TR>
+<TR align=center bgcolor="#c040c0">
+<TD>Ih</TD>
+<TD>*532</TD>
+<TD>Full Icosahedral</TD>
+<TD>31</TD>
+<TD>5</TD>
+<TD>15</TD>
+<TD>60</TD>
+<TD>60</TD>
+<TD>yes</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<BR>
+<P>
+The simplest canonical polyhedra of each symmetry type can be accessed
+using the links below.  Simplicity is based on the number of edges in the
+polyhedron.
+</P>
+
+<CENTER>
+<TABLE width=90% cellspacing=0 cellpadding=0>
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<COL width="10%">
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#ffff80"><TD><A href=SimplestC1_1.html>C1</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#c0c000"><TD><A href=SimplestCi.html>Ci=S2</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#ffff00"><TD><A href=SimplestCs_1.html>Cs=C1h=C1v</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#8080ff"><TD><A href=SimplestC2.html>C2</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#8080ff"><TD><A href=SimplestC3_1.html>C3</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#8080ff"><TD><A href=SimplestC4_1.html>C4</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#0080ff"><TD><A href=SimplestC2h_1.html>C2h</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC2v_1.html>C2v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC3v_1.html>C3v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC4v.html>C4v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC5v.html>C5v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC6v.html>C6v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC7v.html>C7v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC8v.html>C8v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC9v.html>C9v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC10v.html>C10v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ffff"><TD><A href=SimplestC11v.html>C11v</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#ff8000"><TD><A href=SimplestS4_1.html>S4</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#ff8000"><TD><A href=SimplestS6_1.html>S6</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ff80"><TD><A href=SimplestD2.html>D2</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00ff80"><TD><A href=SimplestD3_1.html>D3</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD2h.html>D2h</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD3h_1.html>D3h</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD4h_1.html>D4h</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD5h_1.html>D5h</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD6h_1.html>D6h</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD7h_1.html>D7h</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD8h_1.html>D8h</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD9h_1.html>D9h</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#00a000"><TD><A href=SimplestD10h_1.html>D10h</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#80ff80"><TD><A href=SimplestD2v_1.html>D2v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#80ff80"><TD><A href=SimplestD3v_1.html>D3v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#80ff80"><TD><A href=SimplestD4v_1.html>D4v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#80ff80"><TD><A href=SimplestD5v_1.html>D5v</A></TD></TR>
+</TABLE></TD>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#80ff80"><TD><A href=SimplestD6v_1.html>D6v</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#ff8080"><TD><A href=SimplestT.html>T</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#c04040"><TD><A href=SimplestTd.html>Td</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#c02020"><TD><A href=SimplestTh_1.html>Th</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#c06020"><TD><A href=SimplestO_1.html>O</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#a04000"><TD><A href=SimplestOh_1.html>Oh</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#ff80ff"><TD><A href=SimplestI_1.html>I</A></TD></TR>
+</TABLE></TD>
+</TR>
+<TR>
+<TD><TABLE width=100% bgcolor="#202020" bordercolor="#404040" border=1 cellspacing=1 cellpadding=0>
+<TR align=center bgcolor="#c040c0"><TD><A href=SimplestIh_1.html>Ih</A></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

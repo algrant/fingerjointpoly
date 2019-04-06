@@ -1,0 +1,1213 @@
+<!-- File:   GreaterSelfDual.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Greater Self-Dual Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='HighOrderGeodesics.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Greater Self-Dual Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='ToroidalRegularHexagonal.html'">
+</TD>
+</TR>
+</TABLE><BR>
+
+<P>
+Each self-dual polyhedron on this page has more than 16 faces and has
+full tetrahedral or chiral tetrahedral symmetry.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Self-Dual Icosioctahedron #1 (canonical)
+
+	(24) EDGE 1 = 0.580281722227694312773612362512
+		= square-root of a root of the polynomial:  5000*(x^6) + 70207*(x^5)
+		+ 171064*(x^4) - 2442112*(x^3) - 8048128*(x^2) - 4902912*x + 2654208
+	(12) EDGE 2 = 0.756753888609186862264819268951
+		= square-root of a root of the polynomial:
+		5880625*(x^6) - 9742464*(x^5) + 7553152*(x^4) - 5011968*(x^3)
+		+ 5316608*(x^2) - 3964928*x + 1048576
+	(6) EDGE 3 = 0.76843025043627703801681373993503
+		= square-root of a root of the polynomial:  2*(x^6) - 41*(x^5)
+		+ 456*(x^4) - 6528*(x^3) + 27648*(x^2) - 69632*x + 32768
+	(12) EDGE 4 = 0.944902416817769587508020646374
+		= square-root of a root of the polynomial:  75272*(x^6) - 791649*(x^5)
+		+ 2670560*(x^4) - 4362304*(x^3) + 3714560*(x^2) - 1609728*x + 294912
+	RADIUS = 1.14645987237291899912806394504
+		= square-root of a root of the polynomial:  9409*(x^6) - 37834*(x^5)
+		+ 57247*(x^4) - 40332*(x^3) + 13167*(x^2) - 1674*x + 81
+	INRADIUS = 0.872250328247617270812574349864
+		= square-root of a root of the polynomial:  81*(x^6) - 1674*(x^5)
+		+ 13167*(x^4) - 40332*(x^3) + 57247*(x^2) - 37834*x + 9409
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 3.89433172735770777576451970822
+		= root of the polynomial:
+		196425*(x^6) - 41118192*(x^5) + 3776246208*(x^4) - 95259617280*(x^3)
+		+ 967377317888*(x^2) - 4324131799040*x + 6962236620800
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Tetrahedral (T)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 28 28">
+<INPUT type=hidden class=Constants value="0.0830416743186270747724725622094,
+0.162729744807577638189374631423,
+0.348052140635926157560613508237,
+0.635368081519064647543856640606,
+0.661908915929608782239574388151,
+0.792372129605812073433658936844">
+<!--
+	C0 = root of the polynomial:
+		25*(x^6) + 186*(x^5) + 195*(x^4) - 556*(x^3) + 263*(x^2) + 18*x - 3
+	C1 = root of the polynomial:
+		4*(x^6) + 19*(x^5) + 81*(x^4) + 30*(x^3) + 14*(x^2) + 15*x - 3
+	C2 = root of the polynomial:
+		4*(x^6) + 29*(x^5) + 59*(x^4) - 110*(x^3) - 126*(x^2) + 241*x - 65
+	C3 = root of the polynomial:
+		25*(x^6) + 8*(x^5) + 345*(x^4) - 112*(x^3) - 157*(x^2) + 136*x - 53
+	C4 = root of the polynomial:
+		291*(x^6) - 174*(x^5) - 143*(x^4) + 84*(x^3) + 13*(x^2) - 6*x - 1
+	C5 = root of the polynomial:
+		25*(x^6) - 44*(x^5) + 193*(x^4) - 392*(x^3) + 371*(x^2) + 84*x - 173
+-->
+<INPUT type=hidden class=Vertices value="C2 C1 1.0,C2 -C1 -1.0,-C2 -C1 1.0,
+-C2 C1 -1.0,1.0 C2 C1,1.0 -C2 -C1,-1.0 -C2 C1,-1.0 C2 -C1,C1 1.0 C2,
+C1 -1.0 -C2,-C1 -1.0 C2,-C1 1.0 -C2,C0 C3 C5,C0 -C3 -C5,-C0 -C3 C5,-C0 C3 -C5,
+C5 C0 C3,C5 -C0 -C3,-C5 -C0 C3,-C5 C0 -C3,C3 C5 C0,C3 -C5 -C0,-C3 -C5 C0,
+-C3 C5 -C0,C4 -C4 C4,C4 C4 -C4,-C4 C4 C4,-C4 -C4 -C4">
+<INPUT type=hidden class=Faces value="0 16 4 20 8 12 #,1 17 5 21 9 13 #,
+2 18 6 22 10 14 #,3 19 7 23 11 15 #,12 26 2 0 #,13 27 3 1 #,14 24 0 2 #,
+15 25 1 3 #,16 24 5 4 #,17 25 4 5 #,18 26 7 6 #,19 27 6 7 #,20 25 11 8 #,
+21 24 10 9 #,22 27 9 10 #,23 26 8 11 #,12 8 26 #,13 9 27 #,14 10 24 #,
+15 11 25 #,16 0 24 #,17 1 25 #,18 2 26 #,19 3 27 #,20 4 25 #,21 5 24 #,
+22 6 27 #,23 7 26 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualIcosioctahedron1.html>Self-Dual Icosioctahedron #1 (canonical)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Self-Dual Icosioctahedron #2 (canonical)
+
+	(12) SHORT EDGE = 12 * sqrt(2) / 35
+	(24) MEDIUM EDGE = 10 * sqrt(2) / 21
+	(18) LONG EDGE = 2 * sqrt(2) / 3
+	RADIUS = sqrt(11) / 3
+	INRADIUS = 3 * sqrt(11) / 11
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 11048 / 2835
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Full Tetrahedral (Td)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 28 28">
+<INPUT type=hidden class=Constants value="0.142857142857142857142857142857,
+0.333333333333333333333333333333,
+0.714285714285714285714285714286">
+<!--
+	C0 = 1 / 7
+	C1 = 1 / 3
+	C2 = 5 / 7
+-->
+<INPUT type=hidden class=Vertices value="C1 C1 1.0,C1 -C1 -1.0,-C1 -C1 1.0,
+-C1 C1 -1.0,1.0 C1 C1,1.0 -C1 -C1,-1.0 -C1 C1,-1.0 C1 -C1,C1 1.0 C1,
+C1 -1.0 -C1,-C1 -1.0 C1,-C1 1.0 -C1,C2 -C0 C2,C2 C0 -C2,-C2 C0 C2,-C2 -C0 -C2,
+C2 -C2 C0,C2 C2 -C0,-C2 C2 C0,-C2 -C2 -C0,C0 -C2 C2,C0 C2 -C2,-C0 C2 C2,
+-C0 -C2 -C2,0.6 -0.6 0.6,0.6 0.6 -0.6,-0.6 0.6 0.6,-0.6 -0.6 -0.6">
+<INPUT type=hidden class=Faces value="24 12 0 2 20 #,24 20 10 9 16 #,
+24 16 5 4 12 #,25 13 1 3 21 #,25 21 11 8 17 #,25 17 4 5 13 #,26 14 2 0 22 #,
+26 22 8 11 18 #,26 18 7 6 14 #,27 15 3 1 23 #,27 23 9 10 19 #,27 19 6 7 15 #,
+0 4 8 #,1 5 9 #,2 6 10 #,3 7 11 #,12 4 0 #,13 5 1 #,14 6 2 #,15 7 3 #,16 9 5 #,
+17 8 4 #,18 11 7 #,19 10 6 #,20 2 10 #,21 3 11 #,22 0 8 #,23 1 9 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualIcosioctahedron2.html>Self-Dual Icosioctahedron #2 (canonical)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Self-Dual Icosioctahedron #3 (canonical)
+
+	(12) EDGE 1 = 0.289659161911484786838544666576
+		= 2 * sqrt(6 * (cbrt(12 * (27099 + 5725 * sqrt(69)))
+			- cbrt(12 * (5725 * sqrt(69) - 27099)) - 33)) / 15
+	(12) EDGE 2 = 0.6124575346128355980314601537249
+		= 2 * sqrt(6 * (1175 - cbrt(4 * (958374475 + 183294741 * sqrt(69)))
+			+ cbrt(4 * (183294741 * sqrt(69) - 958374475)))) / 147
+	(12) EDGE 3 = 0.673375855176092057256885403024
+		= 2 * sqrt(3 * (86 - cbrt(4 * (17611 + 1425 * sqrt(69)))
+			- cbrt(4 * (17611 - 1425 * sqrt(69))))) / 15
+	(18) EDGE 4 = 1.05709254844069932767522613947
+		= 2*sqrt(6*(cbrt(4*(11+3*sqrt(69))) - cbrt(4*(3*sqrt(69)-11)) - 1)) / 3
+	RADIUS = 1.13108848636709809965780113940
+		= sqrt(3*(1 + 2*cbrt(4*(11+3*sqrt(69))) - 2*cbrt(4*(3*sqrt(69)-11))))/3
+	INRADIUS = 0.884104128061513177395213317314
+		= sqrt(105 * (27 + 2 * cbrt(12 * (333 + 35 * sqrt(69)))
+			+ 2 * cbrt(12 * (333 - 35 * sqrt(69))))) / 105
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 3.79468542819521484933989740990
+		= 8 * (67003 - cbrt(92 * (797959447069 + 98388110625 * sqrt(69)))
+			+ cbrt(92 * (98388110625 * sqrt(69) - 797959447069))) / 55125
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Tetrahedral (T)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 28 28">
+<INPUT type=hidden class=Constants value="0.139680581996106531822799916239,
+0.451970099801088404689512849409,
+0.509755332493385520099017792717,
+0.579379294193552041397433744121,
+0.5863044679044376705219565084653,
+0.687710482195018127133287066830">
+<!--
+	C0 = (cbrt(4 * (11 + 3*sqrt(69))) - cbrt(4 * (3*sqrt(69) - 11)) - 1) / 3
+	C1 = (17 - 2*cbrt(4*(101+15*sqrt(69))) + 2*cbrt(4*(15*sqrt(69)-101))) / 15
+	C2 = (cbrt(4 * (25 + 3*sqrt(69))) + cbrt(4 * (25 - 3*sqrt(69))) - 5) / 3
+	C3 = (67 - cbrt(4*(147*sqrt(69)-1213)) + cbrt(4*(1213+147*sqrt(69)))) / 147
+	C4 = (21 - cbrt(12*(387+55*sqrt(69))) + cbrt(12*(55*sqrt(69)-387))) / 15
+	C5 = (cbrt(4 * (623+75*sqrt(69))) + cbrt(4 * (623-75*sqrt(69))) - 7) / 15
+-->
+<INPUT type=hidden class=Vertices value="C0 C2 1.0,C0 -C2 -1.0,-C0 -C2 1.0,
+-C0 C2 -1.0,1.0 C0 C2,1.0 -C0 -C2,-1.0 -C0 C2,-1.0 C0 -C2,C2 1.0 C0,
+C2 -1.0 -C0,-C2 -1.0 C0,-C2 1.0 -C0,C1 -C4 C5,C1 C4 -C5,-C1 C4 C5,-C1 -C4 -C5,
+C5 -C1 C4,C5 C1 -C4,-C5 C1 C4,-C5 -C1 -C4,C4 -C5 C1,C4 C5 -C1,-C4 C5 C1,
+-C4 -C5 -C1,C3 C3 C3,C3 -C3 -C3,-C3 -C3 C3,-C3 C3 -C3">
+<INPUT type=hidden class=Faces value="0 8 11 22 14 #,1 9 10 23 15 #,
+2 10 9 20 12 #,3 11 8 21 13 #,4 0 2 12 16 #,5 1 3 13 17 #,6 2 0 14 18 #,
+7 3 1 15 19 #,8 4 5 17 21 #,9 5 4 16 20 #,10 6 7 19 23 #,11 7 6 18 22 #,
+24 0 4 #,24 4 8 #,24 8 0 #,25 1 5 #,25 5 9 #,25 9 1 #,26 2 6 #,26 6 10 #,
+26 10 2 #,27 3 7 #,27 7 11 #,27 11 3 #,12 20 16 #,13 21 17 #,14 22 18 #,
+15 23 19 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualIcosioctahedron3.html>Self-Dual Icosioctahedron #3 (canonical)</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Self-Dual Icosioctahedron #4 (canonical)
+
+	(12) EDGE 1 = (7 * sqrt(34) - 17 * sqrt(2)) / 28
+	(12) EDGE 2 = 2 * sqrt(34) / 17
+	(24) EDGE 3 = 3 * (7 * sqrt(34) - 17 * sqrt(2)) / 68
+	(6) EDGE 4 = (sqrt(34) - 3 * sqrt(2)) / 2
+	RADIUS = sqrt(17 - 3 * sqrt(17)) / 2
+	INRADIUS = sqrt(34 * (17 + 3 * sqrt(17))) / 34
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 8 * (6783 - 920 * sqrt(17)) / 6069
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Full Tetrahedral (Td)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 28 28">
+<INPUT type=hidden class=Constants value="0.242535625036332973518906462116,
+0.280776406404415137455352463994,
+0.589015089373951507117344265139,
+0.727606875108998920556719386348">
+<!--
+	C0 = sqrt(17) / 17
+	C1 = (sqrt(17) - 3) / 4
+	C2 = sqrt(17) / 7
+	C3 = 3 * sqrt(17) / 17
+-->
+<INPUT type=hidden class=Vertices value="C1 C1 1.0,C1 -C1 -1.0,-C1 -C1 1.0,
+-C1 C1 -1.0,1.0 C1 C1,1.0 -C1 -C1,-1.0 -C1 C1,-1.0 C1 -C1,C1 1.0 C1,
+C1 -1.0 -C1,-C1 -1.0 C1,-C1 1.0 -C1,C3 -C0 C3,C3 C0 -C3,-C3 C0 C3,-C3 -C0 -C3,
+C3 -C3 C0,C3 C3 -C0,-C3 C3 C0,-C3 -C3 -C0,C0 -C3 C3,C0 C3 -C3,-C0 C3 C3,
+-C0 -C3 -C3,C2 C2 C2,C2 -C2 -C2,-C2 -C2 C2,-C2 C2 -C2">
+<INPUT type=hidden class=Faces value="0 2 20 12 #,1 3 21 13 #,2 0 22 14 #,
+3 1 23 15 #,4 5 13 17 #,5 4 12 16 #,6 7 15 19 #,7 6 14 18 #,8 11 18 22 #,
+9 10 19 23 #,10 9 16 20 #,11 8 17 21 #,24 0 12 4 #,24 4 17 8 #,24 8 22 0 #,
+25 1 13 5 #,25 5 16 9 #,25 9 23 1 #,26 2 14 6 #,26 6 19 10 #,26 10 20 2 #,
+27 3 15 7 #,27 7 18 11 #,27 11 21 3 #,12 20 16 #,13 21 17 #,14 22 18 #,
+15 23 19 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualIcosioctahedron4.html>Self-Dual Icosioctahedron #4 (canonical)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Self-Dual Tetracontahedron #1 (canonical)
+
+	(12) EDGE 1 = 0.254445319059012435045522490179
+		= square-root of a root of the polynomial:
+		1433303881*(x^10) + 28600778272*(x^9) - 73362304320*(x^8)
+		- 5087655640704*(x^7) - 37507228564480*(x^6) - 96243775217664*(x^5)
+		- 59954443124736*(x^4) + 23287009640448*(x^3) + 16024762056704*(x^2)
+		- 4367713304576*x + 210453397504
+	(12) EDGE 2 = 0.453062091799133034466512096281
+		= square-root of a root of the polynomial:
+		167042*(x^10) + 1599708*(x^9) + 25708624*(x^8) + 7257543*(x^7)
+		+ 1330850728*(x^6) - 7415541952*(x^5) + 38345515008*(x^4)
+		- 215429025792*(x^3) + 219348860928*(x^2) - 74283483136*x + 7803502592
+	(12) EDGE 3 = 0.494566921966655721471939147653
+		= square-root of a root of the polynomial:
+		34322*(x^10) - 572988*(x^9) + 1587352*(x^8) + 64831791*(x^7)
+		- 189178888*(x^6) - 2478387520*(x^5) + 6836430848*(x^4)
+		+ 16898789376*(x^3) - 21258534912*(x^2) - 31021072384*x + 8589934592
+	(6) EDGE 4 = 0.6931836947067763208929287537547
+		= square-root of a root of the polynomial:
+		(x^10) - 72*(x^9) + 2400*(x^8) - 39200*(x^7) + 447232*(x^6)
+		- 4245504*(x^5) + 23904256*(x^4) - 90570752*(x^3) + 219152384*(x^2)
+		- 226492416*x + 67108864
+	(12) EDGE 5 = 0.733830961648924309254861181292
+		= square-root of a root of the polynomial:
+		8026268626489*(x^10) - 28858558949440*(x^9) + 46815189260992*(x^8)
+		- 48341448176128*(x^7) + 36151408332800*(x^6) - 37313070923776*(x^5)
+		+ 71261184065536*(x^4) - 94602593828864*(x^3) + 67256570609664*(x^2)
+		- 23927262806016*x + 3367254360064
+	(12) EDGE 6 = 0.775335791816446996260288232664
+		= square-root of a root of the polynomial:
+		1649151661249*(x^10) - 32156345519568*(x^9) + 147474387267328*(x^8)
+		- 343056988955264*(x^7) + 499700660412416*(x^6) - 498275129262080*(x^5)
+		+ 351290403651584*(x^4) - 173601007337472*(x^3) + 57250286665728*(x^2)
+		- 11276738625536*x + 998848331776
+	(12) EDGE 7 = 0.9739525645565675956812778387654
+		= square-root of a root of the polynomial:  192197618*(x^10)
+		- 4618114948*(x^9) + 45864096792*(x^8) - 236642460249*(x^7)
+		+ 682287095584*(x^6) - 1181848706432*(x^5) + 1281765726720*(x^4)
+		- 878629535744*(x^3) + 369936596992*(x^2) - 86922756096*x + 8589934592
+	RADIUS = 1.18050051651394362334792876471
+		= square-root of a root of the polynomial:
+		96098809*(x^10) - 725167158*(x^9) + 2349475893*(x^8) - 4265176392*(x^7)
+		+ 4746048066*(x^6) - 3324872772*(x^5) + 1448285346*(x^4)
+		- 372507336*(x^3) + 50631237*(x^2) - 2873718*x + 59049
+	INRADIUS = 0.8470983163590918938306319827947
+		= square-root of a root of the polynomial:
+		59049*(x^10) - 2873718*(x^9) + 50631237*(x^8) - 372507336*(x^7)
+		+ 1448285346*(x^6) - 3324872772*(x^5) + 4746048066*(x^4)
+		- 4265176392*(x^3) + 2349475893*(x^2) - 725167158*x + 96098809
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 3.89700148887051247427565018971
+		= root of the polynomial:  21914960300073*(x^10)
+		- 16601202276458256*(x^9) + 4553674699166680896*(x^8)
+		- 356430023131040612352*(x^7) + 13914876657415610474496*(x^6)
+		- 313673834856074342694912*(x^5) + 4272880941554157677445120*(x^4)
+		- 35065861057235940217454592*(x^3) + 165952843981588673083736064*(x^2)
+		- 410805747261977558073212928*x + 408268427756674334737825792
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Tetrahedral (T)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 40 40">
+<INPUT type=hidden class=Constants value="0.0490015731500279325371430423938,
+0.0681036422973354152851157420679,
+0.159514480780072250932611803373,
+0.307702842159929163125909364106,
+0.560814325330605125485968584746,
+0.668692517015890858634962154790,
+0.681562290987817606138162927494,
+0.749523232774082622886415970296,
+0.8382993553120608732874368406653">
+<!--
+	C0 = root of the polynomial:
+		289*(x^10) + 3442*(x^9) + 7813*(x^8) - 28848*(x^7) + 46410*(x^6)
+		+ 43268*(x^5) + 11866*(x^4) + 64*(x^3) - 331*(x^2) - 6*x + 1
+	C1 = root of the polynomial:
+		131*(x^10) + 1162*(x^9) + 863*(x^8) - 9420*(x^7) + 15282*(x^6)
+		- 9400*(x^5) + 1586*(x^4) - 788*(x^3) + 59*(x^2) + 14*x - 1
+	C2 = root of the polynomial:  4*(x^10) + 28*(x^9) + 152*(x^8) + 31*(x^7)
+		+ 247*(x^6) + 179*(x^5) + 107*(x^4) + 157*(x^3) + (x^2) - 11*x + 1
+	C3 = root of the polynomial:
+		4*(x^10) + 52*(x^9) + 248*(x^8) + 129*(x^7) - 1467*(x^6) - 803*(x^5)
+		+ 5737*(x^4) - 381*(x^3) - 7653*(x^2) + 5163*x - 901
+	C4 = root of the polynomial:
+		131*(x^10) + 648*(x^9) + 4489*(x^8) + 2348*(x^7) - 17590*(x^6)
+		- 5444*(x^5) + 19838*(x^4) + 3044*(x^3) - 8717*(x^2) - 596*x + 1337
+	C5 = root of the polynomial:
+		289*(x^10) + 1952*(x^9) + 14635*(x^8) + 28776*(x^7) + 14002*(x^6)
+		- 15320*(x^5) - 18882*(x^4) - 5384*(x^3) + 6685*(x^2) + 3288*x - 1369
+	C6 = root of the polynomial:
+		9803*(x^10) - 5746*(x^9) - 10645*(x^8) + 6144*(x^7) + 3934*(x^6)
+		- 2228*(x^5) - 554*(x^4) + 304*(x^3) + 23*(x^2) - 10*x - 1
+	C7 = root of the polynomial:  289*(x^10) - 2504*(x^9) + 15111*(x^8)
+		- 48984*(x^7) + 86626*(x^6) - 48104*(x^5) - 58554*(x^4) + 52088*(x^3)
+		+ 17933*(x^2) - 10352*x - 4573
+	C8 = root of the polynomial:
+		131*(x^10) - 500*(x^9) + 1045*(x^8) - 1648*(x^7) - 1394*(x^6)
+		+ 6152*(x^5) - 3526*(x^4) - 8304*(x^3) + 6271*(x^2) + 1740*x - 991
+-->
+<INPUT type=hidden class=Vertices value="C3 C2 1.0,C3 -C2 -1.0,-C3 -C2 1.0,
+-C3 C2 -1.0,1.0 C3 C2,1.0 -C3 -C2,-1.0 -C3 C2,-1.0 C3 -C2,C2 1.0 C3,
+C2 -1.0 -C3,-C2 -1.0 C3,-C2 1.0 -C3,C1 C4 C8,C1 -C4 -C8,-C1 -C4 C8,-C1 C4 -C8,
+C8 C1 C4,C8 -C1 -C4,-C8 -C1 C4,-C8 C1 -C4,C4 C8 C1,C4 -C8 -C1,-C4 -C8 C1,
+-C4 C8 -C1,C5 C0 C7,C5 -C0 -C7,-C5 -C0 C7,-C5 C0 -C7,C7 C5 C0,C7 -C5 -C0,
+-C7 -C5 C0,-C7 C5 -C0,C0 C7 C5,C0 -C7 -C5,-C0 -C7 C5,-C0 C7 -C5,C6 -C6 C6,
+C6 C6 -C6,-C6 C6 C6,-C6 -C6 -C6">
+<INPUT type=hidden class=Faces value="0 24 16 4 28 20 8 32 12 #,
+1 25 17 5 29 21 9 33 13 #,2 26 18 6 30 22 10 34 14 #,
+3 27 19 7 31 23 11 35 15 #,12 38 2 0 #,13 39 3 1 #,14 36 0 2 #,15 37 1 3 #,
+16 36 5 4 #,17 37 4 5 #,18 38 7 6 #,19 39 6 7 #,20 37 11 8 #,21 36 10 9 #,
+22 39 9 10 #,23 38 8 11 #,0 36 24 #,1 37 25 #,2 38 26 #,3 39 27 #,4 37 28 #,
+5 36 29 #,6 39 30 #,7 38 31 #,8 38 32 #,9 39 33 #,10 36 34 #,11 37 35 #,
+12 32 38 #,13 33 39 #,14 34 36 #,15 35 37 #,16 24 36 #,17 25 37 #,18 26 38 #,
+19 27 39 #,20 28 37 #,21 29 36 #,22 30 39 #,23 31 38 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualTetracontahedron1.html>Self-Dual Tetracontahedron #1 (canonical)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Self-Dual Tetracontahedron #2 (canonical)
+
+	(12) EDGE 1 = 0.2281640890419137243027732056503
+		= square-root of a root of the polynomial:
+		101787921*(x^11) + 1050749536*(x^10) + 5734267264*(x^9)
+		- 577906358272*(x^8) + 5085829210112*(x^7) - 15385424265216*(x^6)
+		+ 4023893098496*(x^5) - 6715709849600*(x^4) + 832653230080*(x^3)
+		- 795508473856*(x^2) + 205084688384*x - 8589934592
+	(12) EDGE 2 = 0.507783442174927077844580533531
+		= square-root of a root of the polynomial:
+		282744225*(x^11) - 901993952*(x^10) + 6017066176*(x^9)
+		- 74085103616*(x^8) + 186394050560*(x^7) - 1220465754112*(x^6)
+		+ 5599569641472*(x^5) - 7865901252608*(x^4) + 2929402576896*(x^3)
+		- 1551020064768*(x^2) + 3015067041792*x - 695784701952
+	(24) EDGE 3 = 0.555848166011120801280965490516
+		= square-root of a root of the polynomial:  2025*(x^11) - 10088*(x^10)
+		+ 677824*(x^9) - 34618880*(x^8) + 333557760*(x^7) - 575963136*(x^6)
+		+ 3006529536*(x^5) - 75455528960*(x^4) + 279340646400*(x^3)
+		- 82543902720*(x^2) + 251255586816*x - 77309411328
+	(12) EDGE 4 = 0.593003430560017541433779815240
+		= square-root of a root of the polynomial:
+		2068542927049*(x^11) + 22809198888288*(x^10) + 62669490008704*(x^9)
+		- 57235821548544*(x^8) - 326900462211072*(x^7) - 335761963188224*(x^6)
+		+ 390207518015488*(x^5) - 151184572678144*(x^4) + 40617807708160*(x^3)
+		- 7417408520192*(x^2) + 857919717376*x - 77309411328
+	(6) EDGE 5 = 0.835467519144134154822772818397
+		= square-root of a root of the polynomial:
+		225*(x^11) - 5048*(x^10) + 75968*(x^9) - 1427968*(x^8) + 10133504*(x^7)
+		- 113442816*(x^6) + 697827328*(x^5) - 6127878144*(x^4)
+		+ 26927431680*(x^3) - 58384711680*(x^2) + 41875931136*x - 8589934592
+	(12) EDGE 6 = 0.920687507529224618411972100106
+		= square-root of a root of the polynomial:
+		370370025*(x^11) - 7563780008*(x^10) + 62500700480*(x^9)
+		- 281397893632*(x^8) + 796039581696*(x^7) - 1503496601600*(x^6)
+		+ 1942996910080*(x^5) - 1715227066368*(x^4) + 1014920904704*(x^3)
+		- 386144403456*(x^2) + 85899345920*x - 8589934592
+	RADIUS = 1.11935806272352009772891180166
+		= square-root of a root of the polynomial:
+		1646089*(x^11) - 19608145*(x^10) + 50258055*(x^9) - 38219191*(x^8)
+		- 11483462*(x^7) + 21615126*(x^6) - 696114*(x^5) - 3751758*(x^4)
+		+ 121581*(x^3) + 111051*(x^2) - 9477*x - 2187
+	INRADIUS = 0.893369184804807739975903470880
+		= square-root of a root of the polynomial:
+		2187*(x^11) + 9477*(x^10) - 111051*(x^9) - 121581*(x^8)
+		+ 3751758*(x^7) + 696114*(x^6) - 21615126*(x^5) + 11483462*(x^4)
+		+ 38219191*(x^3) - 50258055*(x^2) + 19608145*x - 1646089
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 3.89995650980664923948479524557
+		= root of the polynomial:  141544684845*(x^11) - 35616627431208*(x^10)
+		+ 4520022486492096*(x^9) - 403187650542521856*(x^8)
+		+ 23883341159665115136*(x^7) - 865238133700452483072*(x^6)
+		+ 20164706700712421621760*(x^5) - 220713589403248607887360*(x^4)
+		+ 619719408528709231050752*(x^3) + 3294021567425669819793408*(x^2)
+		- 21623245559573701388664832*x + 33072220847559215937486848
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Tetrahedral (T)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 40 40">
+<INPUT type=hidden class=Constants value="0.0602019620302386943637537032552,
+0.144782136924873788019821467036,
+0.162550841947180110554896762646,
+0.384809976051136716922793073287,
+0.616141692910319940871147871680,
+0.646261678833002329454120729648,
+0.693872576565114743823029475481,
+0.723205030814550199212921235662,
+0.786436988163123098586720497218">
+<!--
+	C0 = root of the polynomial:  1121*(x^11) + 16749*(x^10) + 67579*(x^9)
+		- 124553*(x^8) + 2010*(x^7) + 224786*(x^6) + 204998*(x^5)
+		- 115394*(x^4) - 113643*(x^3) - 22191*(x^2) - 273*x + 123
+	C1 = root of the polynomial:  27*(x^11) + 129*(x^10) + 321*(x^9)
+		+ 2043*(x^8) + 6702*(x^7) + 27050*(x^6) + 100514*(x^5) + 39126*(x^4)
+		- 211801*(x^3) + 79589*(x^2) + 24365*x - 4577
+	C2 = root of the polynomial:  15*(x^11) + 71*(x^10) + 361*(x^9)
+		+ 1193*(x^8) + 4294*(x^7) + 11702*(x^6) + 17890*(x^5) + 9058*(x^4)
+		+ 2043*(x^3) + 531*(x^2) - 27*x - 27
+	C3 = root of the polynomial:
+		15*(x^11) + 169*(x^10) + 717*(x^9) + 1115*(x^8) - 10*(x^7) + 762*(x^6)
+		+ 5434*(x^5) - 5802*(x^4) - 12757*(x^3) + 14765*(x^2) - 1591*x - 769
+	C4 = root of the polynomial:  27*(x^11) - 147*(x^10) + 513*(x^9)
+		- 2553*(x^8) + 7998*(x^7) - 17678*(x^6) + 40818*(x^5) - 53378*(x^4)
+		+ 6871*(x^3) + 35569*(x^2) - 25507*x + 5419
+	C5 = root of the polynomial:
+		11547*(x^11) - 25785*(x^10) + 5865*(x^9) + 9237*(x^8) - 2530*(x^7)
+		+ 278*(x^6) - 606*(x^5) - 134*(x^4) + 55*(x^3) + 19*(x^2) + 5*x + 1
+	C6 = root of the polynomial:  1121*(x^11) + 8035*(x^10) + 57947*(x^9)
+		+ 51425*(x^8) - 12502*(x^7) - 57986*(x^6) + 4374*(x^5) - 17310*(x^4)
+		+ 26885*(x^3) + 5711*(x^2) - 20481*x + 8077
+	C7 = root of the polynomial:  1121*(x^11) - 11425*(x^10) + 83935*(x^9)
+		- 293031*(x^8) + 559562*(x^7) - 563690*(x^6) + 223070*(x^5)
+		+ 67506*(x^4) - 107131*(x^3) + 60187*(x^2) - 47853*x + 21605
+	C8 = root of the polynomial:
+		9*(x^11) + 51*(x^10) + 183*(x^9) + 237*(x^8) - 822*(x^7) - 2066*(x^6)
+		- 1602*(x^5) - 790*(x^4) + 7709*(x^3) - 5969*(x^2) - 1381*x + 2393
+-->
+<INPUT type=hidden class=Vertices value="C3 C2 1.0,C3 -C2 -1.0,-C3 -C2 1.0,
+-C3 C2 -1.0,1.0 C3 C2,1.0 -C3 -C2,-1.0 -C3 C2,-1.0 C3 -C2,C2 1.0 C3,
+C2 -1.0 -C3,-C2 -1.0 C3,-C2 1.0 -C3,C1 C4 C8,C1 -C4 -C8,-C1 -C4 C8,-C1 C4 -C8,
+C8 C1 C4,C8 -C1 -C4,-C8 -C1 C4,-C8 C1 -C4,C4 C8 C1,C4 -C8 -C1,-C4 -C8 C1,
+-C4 C8 -C1,C0 -C6 C7,C0 C6 -C7,-C0 C6 C7,-C0 -C6 -C7,C7 -C0 C6,C7 C0 -C6,
+-C7 C0 C6,-C7 -C0 -C6,C6 -C7 C0,C6 C7 -C0,-C6 C7 C0,-C6 -C7 -C0,C5 -C5 C5,
+C5 C5 -C5,-C5 C5 C5,-C5 -C5 -C5">
+<INPUT type=hidden class=Faces value="0 16 4 20 8 12 #,1 17 5 21 9 13 #,
+2 18 6 22 10 14 #,3 19 7 23 11 15 #,12 26 38 2 0 #,13 27 39 3 1 #,
+14 24 36 0 2 #,15 25 37 1 3 #,16 28 36 5 4 #,17 29 37 4 5 #,18 30 38 7 6 #,
+19 31 39 6 7 #,20 33 37 11 8 #,21 32 36 10 9 #,22 35 39 9 10 #,23 34 38 8 11 #,
+0 36 28 #,1 37 29 #,2 38 30 #,3 39 31 #,4 37 33 #,5 36 32 #,6 39 35 #,
+7 38 34 #,8 38 26 #,9 39 27 #,10 36 24 #,11 37 25 #,12 8 26 #,13 9 27 #,
+14 10 24 #,15 11 25 #,16 0 28 #,17 1 29 #,18 2 30 #,19 3 31 #,20 4 33 #,
+21 5 32 #,22 6 35 #,23 7 34 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualTetracontahedron2.html>Self-Dual Tetracontahedron #2 (canonical)</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Self-Dual Tetracontahedron #3 (canonical)
+
+	(12) EDGE 1 = 0.2443878754457213852297994137154
+		= square-root of a root of the polynomial:  11881*(x^9) - 2311552*(x^8)
+		+ 10637312*(x^7) - 227829248*(x^6) + 211083264*(x^5) + 39157760*(x^4)
+		+ 3291480064*(x^3) - 5549064192*(x^2) + 2566914048*x - 134217728
+	(12) EDGE 2 = 0.431822569449034800068578821458
+		= square-root of a root of the polynomial:  27413756041*(x^9)
+		+ 115041813096*(x^8) + 326639924864*(x^7) - 4072922838016*(x^6)
+		- 7366052564992*(x^5) + 21636250664960*(x^4) + 34746641678336*(x^3)
+		- 7517631414272*(x^2) + 322994962432*x - 48452599808
+	(24) EDGE 3 = 0.572763380274838876447404248814
+		= square-root of a root of the polynomial:  361*(x^9) - 65416*(x^8)
+		- 1503360*(x^7) - 26678784*(x^6) + 172478464*(x^5) + 104202240*(x^4)
+		- 276824064*(x^3) + 144703488*(x^2) + 385875968*x - 134217728
+	(12) EDGE 4 = 0.621652813515972780857351336527
+		= square-root of a root of the polynomial:
+		4289041*(x^9) + 73702032*(x^8) - 279612096*(x^7) - 5192353280*(x^6)
+		+ 19517009920*(x^5) - 3732242432*(x^4) + 11272192*(x^3)
+		- 2552233984*(x^2) + 1157627904*x - 134217728
+	(18) EDGE 5 = 0.9500283183450902720749561716249
+		= square-root of a root of the polynomial:  361*(x^9) + 536*(x^8)
+		- 19968*(x^7) - 159744*(x^6) - 778240*(x^5) - 7143424*(x^4)
+		+ 33554432*(x^3) - 100663296*(x^2) + 218103808*x - 134217728
+	RADIUS = 1.10708556643757218048991748017
+		= square-root of a root of the polynomial:
+		361*(x^9) - 3115*(x^8) + 10676*(x^7) - 20332*(x^6) + 23710*(x^5)
+		- 21642*(x^4) + 34756*(x^3) - 62652*(x^2) + 61313*x - 23587
+	INRADIUS = 0.903272547593446866213458238342
+		= square-root of a root of the polynomial:
+		23587*(x^9) - 61313*(x^8) + 62652*(x^7) - 34756*(x^6) + 21642*(x^5)
+		- 23710*(x^4) + 20332*(x^3) - 10676*(x^2) + 3115*x - 361
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 3.90246456018508688620088879034
+		= root of the polynomial:
+		22353028257987*(x^9) - 1870550371532808*(x^8) - 9567829921701888*(x^7)
+		+ 3854089907099762688*(x^6) - 24799415438125965312*(x^5)
+		- 200304639879062814720*(x^4) - 17711312771941952126976*(x^3)
+		+ 299950892911281957765120*(x^2) - 1552711036493905608572928*x
+		+ 2599506316574474104733696
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Tetrahedral (T)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 40 40">
+<INPUT type=hidden class=Constants value="0.0203038405278431820178134049034,
+0.195250010364200268729680974214,
+0.287548455466638564946045662161,
+0.378093027141668700191886330212,
+0.600369293417243913866791964369,
+0.662075500212514386072347147612,
+0.666092601326083716735708809493,
+0.734643433822886513229039960239,
+0.755512207912138163423171882888">
+<!--
+	C0 = root of the polynomial:  (x^9) + 31*(x^8) + 84*(x^7) - 5404*(x^6)
+		+ 1758*(x^5) - 4806*(x^4) + 1156*(x^3) - 3164*(x^2) - 1463*x + 31
+	C1 = root of the polynomial:
+		109*(x^9) + 207*(x^8) - 1008*(x^7) + 928*(x^6) + 10674*(x^5)
+		+ 3542*(x^4) - 7816*(x^3) - 8*(x^2) + 1881*x - 317
+	C2 = root of the polynomial:  19*(x^9) + 107*(x^8) + 304*(x^7)
+		+ 368*(x^6) + 78*(x^5) - 354*(x^4) + 72*(x^3) - 120*(x^2) + 39*x - 1
+	C3 = root of the polynomial:  19*(x^9) + 103*(x^8) + 280*(x^7) + 296*(x^6)
+		- 26*(x^5) - 482*(x^4) - 160*(x^3) + 624*(x^2) - 113*x - 29
+	C4 = root of the polynomial:
+		1519*(x^9) + 1827*(x^8) - 2804*(x^7) - 2108*(x^6) + 1666*(x^5)
+		+ 994*(x^4) - 420*(x^3) - 220*(x^2) + 39*x + 19
+	C5 = root of the polynomial:  (x^9) + 9*(x^8) + 216*(x^7) - 2184*(x^6)
+		+ 2498*(x^5) - 174*(x^4) - 2128*(x^3) + 1680*(x^2) - 587*x + 157
+	C6 = root of the polynomial:  109*(x^9) + 223*(x^8) + 96*(x^7) + 368*(x^6)
+		- 1422*(x^5) - 3306*(x^4) + 5128*(x^3) - 1720*(x^2) - 71*x + 83
+	C7 = root of the polynomial:
+		109*(x^9) - 399*(x^8) + 2300*(x^7) - 2508*(x^6) + 5886*(x^5)
+		- 6114*(x^4) - 2084*(x^3) + 4580*(x^2) - 1091*x - 167
+	C8 = root of the polynomial:  (x^9) - 23*(x^8) + 372*(x^7) - 2876*(x^6)
+		+ 6142*(x^5) - 3778*(x^4) - 2076*(x^3) + 1364*(x^2) + 169*x + 193
+-->
+<INPUT type=hidden class=Vertices value="C3 C2 1.0,C3 -C2 -1.0,-C3 -C2 1.0,
+-C3 C2 -1.0,1.0 C3 C2,1.0 -C3 -C2,-1.0 -C3 C2,-1.0 C3 -C2,C2 1.0 C3,
+C2 -1.0 -C3,-C2 -1.0 C3,-C2 1.0 -C3,C0 C5 C8,C0 -C5 -C8,-C0 -C5 C8,-C0 C5 -C8,
+C8 C0 C5,C8 -C0 -C5,-C8 -C0 C5,-C8 C0 -C5,C5 C8 C0,C5 -C8 -C0,-C5 -C8 C0,
+-C5 C8 -C0,C6 -C1 C7,C6 C1 -C7,-C6 C1 C7,-C6 -C1 -C7,C7 -C6 C1,C7 C6 -C1,
+-C7 C6 C1,-C7 -C6 -C1,C1 -C7 C6,C1 C7 -C6,-C1 C7 C6,-C1 -C7 -C6,C4 -C4 C4,
+C4 C4 -C4,-C4 C4 C4,-C4 -C4 -C4">
+<INPUT type=hidden class=Faces value="36 24 0 2 14 32 #,36 32 10 9 21 28 #,
+36 28 5 4 16 24 #,37 25 1 3 15 33 #,37 33 11 8 20 29 #,37 29 4 5 17 25 #,
+38 26 2 0 12 34 #,38 34 8 11 23 30 #,38 30 7 6 18 26 #,39 27 3 1 13 35 #,
+39 35 9 10 22 31 #,39 31 6 7 19 27 #,0 4 8 #,1 5 9 #,2 6 10 #,3 7 11 #,
+0 8 12 #,1 9 13 #,2 10 14 #,3 11 15 #,4 0 16 #,5 1 17 #,6 2 18 #,7 3 19 #,
+8 4 20 #,9 5 21 #,10 6 22 #,11 7 23 #,12 8 34 #,13 9 35 #,14 10 32 #,
+15 11 33 #,16 0 24 #,17 1 25 #,18 2 26 #,19 3 27 #,20 4 29 #,21 5 28 #,
+22 6 31 #,23 7 30 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualTetracontahedron3.html>Self-Dual Tetracontahedron #3 (canonical)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Self-Dual Tetracontahedron #4 (canonical)
+
+	(12) EDGE 1 = 0.417016497777275385482159991471
+		= square-root of a root of the polynomial:
+		912204114182089*(x^12) + 31935825489432696*(x^11)
+		- 130130011195848880*(x^10) - 14829555589601918464*(x^9)
+		- 19991114922767471616*(x^8) - 3524722179816742912*(x^7)
+		- 65109629677246873600*(x^6) - 25375740968284717056*(x^5)
+		+ 103363356071731134464*(x^4) - 30717925870098448384*(x^3)
+		+ 3120667046484901888*(x^2) - 131805062333726720*x + 1434879854116864
+	(12) EDGE 2 = 0.495658669066855836539231578910
+		= square-root of a root of the polynomial:
+		2209*(x^12) - 2118482*(x^11) - 5762143*(x^10) + 266084808*(x^9)
+		+ 2036865344*(x^8) - 31191996928*(x^7) + 117131915264*(x^6)
+		- 215992434688*(x^5) + 225788821504*(x^4) - 145584291840*(x^3)
+		+ 56321114112*(x^2) - 12079595520*x + 1073741824
+	(12) EDGE 3 = 0.567099506659572223055486028521
+		= square-root of a root of the polynomial:  184497889*(x^12)
+		+ 9996010752*(x^11) + 109703647440*(x^10) - 4518571290240*(x^9)
+		- 68042441406464*(x^8) - 215682239102976*(x^7) + 199940383571968*(x^6)
+		+ 28785322229760*(x^5) - 21270670344192*(x^4) - 17749690548224*(x^3)
+		+ 13290776297472*(x^2) - 2516850835456*x + 17179869184
+	(6) EDGE 4 = 0.590559706782116787897772161790
+		= square-root of a root of the polynomial:
+		(x^12) - 3720*(x^11) + 54096*(x^10) + 288512*(x^9) - 5475328*(x^8)
+		- 6488064*(x^7) + 258080768*(x^6) + 232783872*(x^5) - 4303355904*(x^4)
+		- 671088640*(x^3) + 19595788288*(x^2) - 55834574848*x + 17179869184
+	(24) EDGE 5 = 0.662000544374833174414026611402
+		= square-root of a root of the polynomial:
+		83521*(x^12) - 75285562*(x^11) + 347000305*(x^10) - 1061236800*(x^9)
+		+ 10522409088*(x^8) - 19553570304*(x^7) - 5215059968*(x^6)
+		+ 38757564416*(x^5) - 23871356928*(x^4) - 13134462976*(x^3)
+		+ 20300431360*(x^2) - 8053063680*x + 1073741824
+	(12) EDGE 6 = 0.733441381967549560930281061014
+		= square-root of a root of the polynomial:
+		83521*(x^12) + 2037248*(x^11) + 30449792*(x^10) + 304803840*(x^9)
+		+ 1956442112*(x^8) + 8608808960*(x^7) + 20534263808*(x^6)
+		+ 4261412864*(x^5) + 5620367360*(x^4) - 352187318272*(x^3)
+		+ 586263035904*(x^2) - 343597383680*x + 68719476736
+	RADIUS = 1.06512161990808224958991709249
+		= square-root of a root of the polynomial:
+		83521*(x^12) - 492940*(x^11) + 1813066*(x^10) - 4631020*(x^9)
+		+ 7725767*(x^8) - 7728728*(x^7) + 1619564*(x^6) + 8408584*(x^5)
+		- 12456865*(x^4) + 4267620*(x^3) + 6828010*(x^2) - 8210076*x + 2777593
+	INRADIUS = 0.938859921072954928748149914640
+		= square-root of a root of the polynomial:
+		2777593*(x^12) - 8210076*(x^11) + 6828010*(x^10) + 4267620*(x^9)
+		- 12456865*(x^8) + 8408584*(x^7) + 1619564*(x^6) - 7728728*(x^5)
+		+ 7725767*(x^4) - 4631020*(x^3) + 1813066*(x^2) - 492940*x + 83521
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 4.008173546159142478611512061549
+		= root of the polynomial:
+		387431205813329226093*(x^12) - 34836966301783929690240*(x^11)
+		+ 2816683449540751508955264*(x^10) - 121116431813816384571985920*(x^9)
+		+ 2756898902084750790272593920*(x^8)
+		- 26948091787984074785877393408*(x^7)
+		- 57617674304861601453629767680*(x^6)
+		+ 2756832656679486675830836297728*(x^5)
+		- 3095866119329582856156563374080*(x^4)
+		- 252413537142557244252461406879744*(x^3)
+		+ 2200331132181562104354681397444608*(x^2)
+		- 7448862149510666112141815646781440*x
+		+ 9240389856630497019063887879733248
+
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Tetrahedral (T)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 40 40">
+<INPUT type=hidden class=Constants value="0.0164838277214215985852026435012,
+0.231796127581566720021997803317,
+0.294819394277743254679403353198,
+0.3006600392070255910103765098054,
+0.458884455970519855988174344039,
+0.590743002584118924987038372224,
+0.648297001582493375694252520158,
+0.812690358114919349857939619482,
+0.859755934358295118727349711708">
+<!--
+	C0 = root of the polynomial:  2*(x^12) + 56*(x^11) + 123*(x^10)
+		+ 3240*(x^9) + 2199*(x^8) + 14936*(x^7) + 870*(x^6) + 11608*(x^5)
+		- 7016*(x^4) - 3440*(x^3) - 3377*(x^2) - 1824*x + 31
+	C1 = root of the polynomial:  289*(x^12) + 858*(x^11) - 6060*(x^10)
+		- 18474*(x^9) + 31253*(x^8) + 105860*(x^7) + 6832*(x^6) - 57236*(x^5)
+		+ 55739*(x^4) - 382*(x^3) - 4164*(x^2) + 94*x + 79
+	C2 = root of the polynomial:  2*(x^12) + 60*(x^11) + 631*(x^10)
+		+ 2706*(x^9) + 3469*(x^8) - 3504*(x^7) - 8514*(x^6) + 1324*(x^5)
+		+ 6484*(x^4) - 60*(x^3) - 1269*(x^2) - 526*x + 221
+	C3 = root of the polynomial:  47*(x^12) - 554*(x^11) + 3318*(x^10)
+		+ 36402*(x^9) + 143961*(x^8) + 243980*(x^7) + 166628*(x^6)
+		- 99500*(x^5) - 49951*(x^4) + 25662*(x^3) + 70*(x^2) - 1190*x + 119
+	C4 = root of the polynomial:  47*(x^12) - 456*(x^11) + 4584*(x^10)
+		+ 9420*(x^9) - 45541*(x^8) - 83152*(x^7) + 119880*(x^6) + 530872*(x^5)
+		- 278667*(x^4) - 346952*(x^3) + 170800*(x^2) + 54108*x - 26399
+	C5 = root of the polynomial:
+		642611*(x^12) - 155386*(x^11) - 1030200*(x^10) + 214026*(x^9)
+		+ 693219*(x^8) - 117444*(x^7) - 252152*(x^6) + 32340*(x^5)
+		+ 52553*(x^4) - 4514*(x^3) - 5968*(x^2) + 258*x + 289
+	C6 = root of the polynomial:  289*(x^12) + 4*(x^11) + 3286*(x^10)
+		- 1228*(x^9) + 12731*(x^8) - 3224*(x^7) + 9156*(x^6) - 9880*(x^5)
+		- 22265*(x^4) + 15380*(x^3) + 1734*(x^2) - 3100*x + 1213
+	C7 = root of the polynomial:  289*(x^12) - 604*(x^11) + 3826*(x^10)
+		- 5644*(x^9) + 14031*(x^8) - 23640*(x^7) + 17308*(x^6) + 360*(x^5)
+		- 13969*(x^4) + 38964*(x^3) - 23662*(x^2) - 11484*x + 8321
+	C8 = root of the polynomial:  47*(x^12) + 596*(x^11) + 1746*(x^10)
+		- 11444*(x^9) + 11573*(x^8) - 62680*(x^7) + 31340*(x^6) + 86008*(x^5)
+		- 64503*(x^4) - 7228*(x^3) + 12962*(x^2) - 3204*x + 691
+-->
+<INPUT type=hidden class=Vertices value="C2 -C0 1.0,C2 C0 -1.0,-C2 C0 1.0,
+-C2 -C0 -1.0,1.0 -C2 C0,1.0 C2 -C0,-1.0 C2 C0,-1.0 -C2 -C0,C0 -1.0 C2,
+C0 1.0 -C2,-C0 1.0 C2,-C0 -1.0 -C2,C3 C4 C8,C3 -C4 -C8,-C3 -C4 C8,-C3 C4 -C8,
+C8 C3 C4,C8 -C3 -C4,-C8 -C3 C4,-C8 C3 -C4,C4 C8 C3,C4 -C8 -C3,-C4 -C8 C3,
+-C4 C8 -C3,C1 -C6 C7,C1 C6 -C7,-C1 C6 C7,-C1 -C6 -C7,C7 -C1 C6,C7 C1 -C6,
+-C7 C1 C6,-C7 -C1 -C6,C6 -C7 C1,C6 C7 -C1,-C6 C7 C1,-C6 -C7 -C1,C5 C5 C5,
+C5 -C5 -C5,-C5 -C5 C5,-C5 C5 -C5">
+<INPUT type=hidden class=Faces value="36 12 0 28 16 #,36 16 5 33 20 #,
+36 20 10 26 12 #,37 13 1 29 17 #,37 17 4 32 21 #,37 21 11 27 13 #,
+38 14 2 30 18 #,38 18 7 35 22 #,38 22 8 24 14 #,39 15 3 31 19 #,
+39 19 6 34 23 #,39 23 9 25 15 #,12 26 2 0 #,13 27 3 1 #,14 24 0 2 #,
+15 25 1 3 #,16 28 4 5 #,17 29 5 4 #,18 30 6 7 #,19 31 7 6 #,20 33 9 10 #,
+21 32 8 11 #,22 35 11 8 #,23 34 10 9 #,0 24 28 #,1 25 29 #,2 26 30 #,3 27 31 #,
+4 28 32 #,5 29 33 #,6 30 34 #,7 31 35 #,8 32 24 #,9 33 25 #,10 34 26 #,
+11 35 27 #,24 32 28 #,25 33 29 #,26 34 30 #,27 35 31 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualTetracontahedron4.html>Self-Dual Tetracontahedron #4 (canonical)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Self-Dual Tetracontahedron #5 (canonical)
+
+	(12) EDGE 1 = 2 * (2 * sqrt(34) - 7 * sqrt(2)) / 19
+	(12) EDGE 2 = 2 * (119 * sqrt(2) - 4 * sqrt(34)) / 731
+	(12) EDGE 3 = (27 * sqrt(34) - 85 * sqrt(2)) / 76
+	(12) EDGE 4 = 2 * sqrt(34) / 17
+	(24) EDGE 5 = 3 * (7 * sqrt(34) - 17 * sqrt(2)) / 68
+	(6) EDGE 6 = (sqrt(34) - 3 * sqrt(2)) / 2
+	RADIUS = sqrt(17 - 3 * sqrt(17)) / 2
+	INRADIUS = sqrt(34 * (17 + 3 * sqrt(17))) / 34
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 8 * (17468873 - 2437208 * sqrt(17)) / 15041787
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Full Tetrahedral (Td)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 40 40">
+<INPUT type=hidden class=Constants value="0.242535625036332973518906462116,
+0.280776406404415137455352463994,
+0.532795032927245292095863676630,
+0.578179985565665670901159743996,
+0.663975164636226460479318383151,
+0.727606875108998920556719386348">
+<!--
+	C0 = sqrt(17) / 17
+	C1 = (sqrt(17) - 3) / 4
+	C2 = (6 + sqrt(17)) / 19
+	C3 = (7 * sqrt(17) - 4) / 43
+	C4 = (5 * sqrt(17) - 8) / 19
+	C5 = 3 * sqrt(17) / 17
+-->
+<INPUT type=hidden class=Vertices value="C1 C1 1.0,C1 -C1 -1.0,-C1 -C1 1.0,
+-C1 C1 -1.0,1.0 C1 C1,1.0 -C1 -C1,-1.0 -C1 C1,-1.0 C1 -C1,C1 1.0 C1,
+C1 -1.0 -C1,-C1 -1.0 C1,-C1 1.0 -C1,C5 -C0 C5,C5 C0 -C5,-C5 C0 C5,-C5 -C0 -C5,
+C5 -C5 C0,C5 C5 -C0,-C5 C5 C0,-C5 -C5 -C0,C0 -C5 C5,C0 C5 -C5,-C0 C5 C5,
+-C0 -C5 -C5,C2 C2 C4,C2 -C2 -C4,-C2 -C2 C4,-C2 C2 -C4,C4 C2 C2,C4 -C2 -C2,
+-C4 -C2 C2,-C4 C2 -C2,C2 C4 C2,C2 -C4 -C2,-C2 -C4 C2,-C2 C4 -C2,C3 -C3 C3,
+C3 C3 -C3,-C3 C3 C3,-C3 -C3 -C3">
+<INPUT type=hidden class=Faces value="12 4 28 24 0 #,13 5 29 25 1 #,
+14 6 30 26 2 #,15 7 31 27 3 #,16 9 33 29 5 #,17 8 32 28 4 #,18 11 35 31 7 #,
+19 10 34 30 6 #,20 2 26 34 10 #,21 3 27 35 11 #,22 0 24 32 8 #,23 1 25 33 9 #,
+0 2 20 12 #,1 3 21 13 #,2 0 22 14 #,3 1 23 15 #,4 5 13 17 #,5 4 12 16 #,
+6 7 15 19 #,7 6 14 18 #,8 11 18 22 #,9 10 19 23 #,10 9 16 20 #,11 8 17 21 #,
+36 12 20 #,36 20 16 #,36 16 12 #,37 13 21 #,37 21 17 #,37 17 13 #,38 14 22 #,
+38 22 18 #,38 18 14 #,39 15 23 #,39 23 19 #,39 19 15 #,24 28 32 #,25 29 33 #,
+26 30 34 #,27 31 35 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualTetracontahedron5.html>Self-Dual Tetracontahedron #5 (canonical)</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Self-Dual Tetracontahedron #6 (canonical)
+
+	(12) EDGE 1 = 0.396415901584407706069244692707
+		= square-root of a root of the polynomial:
+		41203561*(x^11) - 403757176*(x^10) + 3320258880*(x^9)
+		- 16347213824*(x^8) + 65195642880*(x^7) - 199234846720*(x^6)
+		+ 446291771392*(x^5) - 792828313600*(x^4) + 947761709056*(x^3)
+		- 541568532480*(x^2) + 119185342464*x - 8589934592
+	(12) EDGE 2 = 0.517250274337829323365762284122
+		= square-root of a root of the polynomial:  17161*(x^11)
+		+ 268168*(x^10) - 4623680*(x^9) - 175147520*(x^8) + 2033426432*(x^7)
+		+ 4770299904*(x^6) - 51458342912*(x^5) - 195039330304*(x^4)
+		- 195202908160*(x^3) - 1476395008*(x^2) + 50465865728*x - 8589934592
+	(24) EDGE 3 = 0.572182413281030696549926055011
+		= square-root of a root of the polynomial:  405769*(x^11)
+		+ 7436008*(x^10) + 25510848*(x^9) - 255551488*(x^8) - 605167616*(x^7)
+		- 8830550016*(x^6) - 24734072832*(x^5) - 64007176192*(x^4)
+		+ 12801015808*(x^3) + 44426067968*(x^2) + 12884901888*x - 8589934592
+	(12) EDGE 4 = 0.5854018666109613089414817226946
+		= square-root of a root of the polynomial:
+		4321879081*(x^11) - 139669058984*(x^10) + 1358506775488*(x^9)
+		- 3043773832192*(x^8) - 5756272402432*(x^7) - 10685882007552*(x^6)
+		+ 165334299181056*(x^5) - 531356062842880*(x^4) + 982661757665280*(x^3)
+		- 562605550731264*(x^2) + 526718683054080*x - 147411867533312
+	(12) EDGE 5 = 0.693016786034452313846443646426
+		= square-root of a root of the polynomial:
+		2900209*(x^11) - 10352760*(x^10) + 342925760*(x^9) - 2757242368*(x^8)
+		+ 12047523840*(x^7) - 126222565376*(x^6) + 296792883200*(x^5)
+		- 262735396864*(x^4) + 207081177088*(x^3) - 106300440576*(x^2)
+		+ 37580963840*x - 8589934592
+	(6) EDGE 6 = 0.868783297731075304327125008730
+		= square-root of a root of the polynomial:
+		169*(x^11) + 2696*(x^10) - 76096*(x^9) - 1608192*(x^8) - 5529600*(x^7)
+		+ 45416448*(x^6) + 609746944*(x^5) - 155189248*(x^4) - 318767104*(x^3)
+		- 74490839040*(x^2) + 67645734912*x - 8589934592
+	RADIUS = 1.09027340818902877569411695351
+		= square-root of a root of the polynomial:  169*(x^11) - 1185*(x^10)
+		- 2201*(x^9) + 20121*(x^8) - 16902*(x^7) - 45066*(x^6) + 145294*(x^5)
+		- 406446*(x^4) + 833293*(x^3) - 1207493*(x^2) + 1136475*x - 458107
+	INRADIUS = 0.917201128165663372464443159930
+		= square-root of a root of the polynomial:
+		458107*(x^11) - 1136475*(x^10) + 1207493*(x^9) - 833293*(x^8)
+		+ 406446*(x^7) - 145294*(x^6) + 45066*(x^5) + 16902*(x^4)
+		- 20121*(x^3) + 2201*(x^2) + 1185*x - 169
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 3.95199766891843205068683251981
+		= root of the polynomial:
+		1282862395466417493*(x^11) - 187600108770829124136*(x^10)
+		+ 10550694162784764966336*(x^9) - 381545462331372034137600*(x^8)
+		+ 12376022522938550071271424*(x^7) - 261440580989553545775218688*(x^6)
+		+ 3323376535161976089793265664*(x^5)
+		- 28667577372236684177247830016*(x^4)
+		+ 182750890728900831825182588928*(x^3)
+		- 787400818035820908733312008192*(x^2)
+		+ 1751147775821841801476780851200*x - 1283481681313614521201563009024
+
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Tetrahedral (T)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 40 40">
+<INPUT type=hidden class=Constants value="0.0412322937548565406308399891273,
+0.234864964982384673087352408730,
+0.330164857062515124663254214569,
+0.365423798934803615898264184864,
+0.583896133989462280486474757576,
+0.6480330548547653836025950237453,
+0.657555307160286423703628909820,
+0.724913199467267428894184360682,
+0.772877320488523431886613135757">
+<!--
+	C0 = root of the polynomial:  49*(x^11) + 913*(x^10) + 4227*(x^9)
+		- 4853*(x^8) + 16714*(x^7) + 21482*(x^6) + 83814*(x^5) + 50710*(x^4)
+		+ 40789*(x^3) - 43755*(x^2) - 185*x + 79
+	C1 = root of the polynomial:
+		13*(x^11) - 9*(x^10) + 87*(x^9) - 187*(x^8) + 546*(x^7) - 762*(x^6)
+		+ 2830*(x^5) + 8234*(x^4) + 3041*(x^3) + 947*(x^2) - 373*x - 31
+	C2 = root of the polynomial:  131*(x^11) + 151*(x^10) + 897*(x^9)
+		- 2219*(x^8) - 3314*(x^7) + 20758*(x^6) + 11570*(x^5) - 40614*(x^4)
+		- 10785*(x^3) + 26563*(x^2) + 1501*x - 2591
+	C3 = root of the polynomial:  13*(x^11) + 151*(x^10) + 819*(x^9)
+		+ 2545*(x^8) + 4706*(x^7) + 4742*(x^6) + 2086*(x^5) + 2146*(x^4)
+		+ 5505*(x^3) + 2291*(x^2) - 2889*x + 413
+	C4 = root of the polynomial:  5057*(x^11) + 12957*(x^10) - 10013*(x^9)
+		- 54993*(x^8) + 36106*(x^7) + 37122*(x^6) - 28090*(x^5) - 7298*(x^4)
+		+ 7941*(x^3) - 207*(x^2) - 761*x + 131
+	C5 = root of the polynomial:  49*(x^11) + 299*(x^10) + 3491*(x^9)
+		- 1703*(x^8) - 4870*(x^7) - 738*(x^6) + 5462*(x^5) + 6498*(x^4)
+		- 1563*(x^3) - 6233*(x^2) - 521*x + 1877
+	C6 = root of the polynomial:  131*(x^11) - 1517*(x^10) + 7425*(x^9)
+		- 20287*(x^8) + 33166*(x^7) - 29362*(x^6) + 27122*(x^5) - 16494*(x^4)
+		- 6945*(x^3) + 16271*(x^2) - 9699*x + 2237
+	C7 = root of the polynomial:  131*(x^11) + 605*(x^10) + 1481*(x^9)
+		- 1281*(x^8) + 2638*(x^7) - 9326*(x^6) + 7554*(x^5) - 6418*(x^4)
+		+ 2655*(x^3) + 417*(x^2) - 2171*x + 1667
+	C8 = root of the polynomial:  49*(x^11) - 389*(x^10) + 3167*(x^9)
+		- 10771*(x^8) + 15178*(x^7) - 626*(x^6) + 2494*(x^5) + 442*(x^4)
+		- 9419*(x^3) - 2361*(x^2) + 2867*x + 1417
+-->
+<INPUT type=hidden class=Vertices value="C1 C3 1.0,C1 -C3 -1.0,-C1 -C3 1.0,
+-C1 C3 -1.0,1.0 C1 C3,1.0 -C1 -C3,-1.0 -C1 C3,-1.0 C1 -C3,C3 1.0 C1,
+C3 -1.0 -C1,-C3 -1.0 C1,-C3 1.0 -C1,C5 C0 C8,C5 -C0 -C8,-C5 -C0 C8,-C5 C0 -C8,
+C8 C5 C0,C8 -C5 -C0,-C8 -C5 C0,-C8 C5 -C0,C0 C8 C5,C0 -C8 -C5,-C0 -C8 C5,
+-C0 C8 -C5,C2 -C6 C7,C2 C6 -C7,-C2 C6 C7,-C2 -C6 -C7,C7 -C2 C6,C7 C2 -C6,
+-C7 C2 C6,-C7 -C2 -C6,C6 -C7 C2,C6 C7 -C2,-C6 C7 C2,-C6 -C7 -C2,C4 C4 C4,
+C4 -C4 -C4,-C4 -C4 C4,-C4 C4 -C4">
+<INPUT type=hidden class=Faces value="12 0 2 24 28 #,13 1 3 25 29 #,
+14 2 0 26 30 #,15 3 1 27 31 #,16 4 5 29 33 #,17 5 4 28 32 #,18 6 7 31 35 #,
+19 7 6 30 34 #,20 8 11 34 26 #,21 9 10 35 27 #,22 10 9 32 24 #,23 11 8 33 25 #,
+36 0 12 4 #,36 4 16 8 #,36 8 20 0 #,37 1 13 5 #,37 5 17 9 #,37 9 21 1 #,
+38 2 14 6 #,38 6 18 10 #,38 10 22 2 #,39 3 15 7 #,39 7 19 11 #,39 11 23 3 #,
+0 20 26 #,1 21 27 #,2 22 24 #,3 23 25 #,4 12 28 #,5 13 29 #,6 14 30 #,
+7 15 31 #,8 16 33 #,9 17 32 #,10 18 35 #,11 19 34 #,24 32 28 #,25 33 29 #,
+26 34 30 #,27 35 31 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDualTetracontahedron6.html>Self-Dual Tetracontahedron #6 (canonical)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Self-Dual 76-hedron (canonical)
+
+	(12) EDGE 1 = 0.301841695507441217396873455870
+		= square-root of a root of the polynomial:
+		641569639100625*(x^6) - 22916241628338150*(x^5)
+		+ 208236586405860036*(x^4) - 64374121093508864*(x^3)
+		+ 6423439666277120*(x^2) - 238207773893120*x + 2862972289024
+	(12) EDGE 2 = 0.349245994237205564685343673946
+		= square-root of a root of the polynomial:
+		174741961*(x^6) - 3882614704*(x^5) + 22698869184*(x^4)
+		- 12637595648*(x^3) + 2149871616*(x^2) - 133890048*x + 2359296
+	(24) EDGE 3 = 0.395952056077508884193040026408
+		= square-root of a root of the polynomial:
+		10574132502021201*(x^6) - 95689982786115870*(x^5)
+		+ 264276807714044964*(x^4) - 222922837626480512*(x^3)
+		+ 80106454095862784*(x^2) - 12854513567440896*x + 754619359952896
+	(24) EDGE 4 = 0.411067197637904070664145226130
+		= square-root of a root of the polynomial:
+		86413403566161*(x^6) - 871779685272822*(x^5) + 2732814717070644*(x^4)
+		- 3733261141482848*(x^3) + 2320044756512000*(x^2) - 577037574013440*x
+		+ 47163709997056
+	(24) EDGE 5 = 0.431889515207074817853924994517
+		= square-root of a root of the polynomial:
+		1063891325318409*(x^6) - 4288750624600614*(x^5)
+		+ 4596087953506500*(x^4) - 1914637941299456*(x^3)
+		+ 315403914528768*(x^2) - 18960865042432*x + 348496592896
+	(12) EDGE 6 = 0.433891221359263147063180871797
+		= square-root of a root of the polynomial:
+		39320712*(x^6) - 1842891084*(x^5) + 20014549974*(x^4)
+		- 50342385649*(x^3) + 35926654764*(x^2) - 9682035908*x + 860627072
+	(12) EDGE 7 = 0.442658117917812203700736378869
+		= square-root of a root of the polynomial:
+		60512841*(x^6) - 194153400*(x^5) + 238341312*(x^4) - 140284928*(x^3)
+		+ 40808448*(x^2) - 5472256*x + 262144
+	(24) EDGE 8 = 0.4547135389284338942529606401846
+		= square-root of a root of the polynomial:
+		484102728*(x^6) - 23355555372*(x^5) + 222175739286*(x^4)
+		- 757701898105*(x^3) + 986935776312*(x^2) - 403040556864*x
+		+ 47441856512
+	(6) EDGE 9 = 0.4667689599390555848051849015004
+		= square-root of a root of the polynomial:
+		x^6 - 166*(x^5) + 3852*(x^4) - 27016*(x^3) + 60416*(x^2) - 30720*x
+		+ 4096
+	KITE 1 LENGTH = 0.471543223661467644221938282009
+		= square-root of a root of the polynomial:
+		2294891420250625*(x^6) - 90667441121670400*(x^5)
+		+ 1152628416520923136*(x^4) - 5093918982287005696*(x^3)
+		+ 6716985226433921024*(x^2) - 2090185054301978624*x
+		+ 185896026555547648
+	KITE 1 WIDTH = 0.520141366656626673854650930548
+		= square-root of a root of the polynomial:
+		546121*(x^6) - 6262326*(x^5) + 20449700*(x^4) - 15526912*(x^3)
+		+ 4313856*(x^2) - 463360*x + 16384
+	KITE 2 LENGTH = 0.564686528321661211485330699908
+		= square-root of a root of the polynomial:
+		9216545781267867*(x^6) - 88479801657361344*(x^5)
+		+ 302494028959472640*(x^4) - 439009664406931456*(x^3)
+		+ 259281497227264000*(x^2) - 60889477081464832*x + 4440870757597184
+	KITE 2 WIDTH = 0.604124640465475116260921488864
+		= square-root of a root of the polynomial:
+		60512841*(x^6) - 247384278*(x^5) + 362806308*(x^4) - 234099200*(x^3)
+		+ 66410496*(x^2) - 7413760*x + 262144
+	RADIUS = 1.02687307662176386391359248789
+		= square-root of a root of the polynomial:
+		8*(x^6) - 380*(x^5) + 3706*(x^4) - 14561*(x^3) + 27015*(x^2)
+		- 23559*x + 7779
+	INRADIUS = 0.973830186774229515659790854594
+		= square-root of a root of the polynomial:
+		7779*(x^6) - 23559*(x^5) + 27015*(x^4) - 14561*(x^3) + 3706*(x^2)
+		- 380*x + 8
+	EDGE-SCRIBED RADIUS = 1
+	VOLUME = 4.09803346428336429346684521838
+		= root of the polynomial:
+		14845338850851288792823302168075*(x^6)
+		- 743097512893252664962960007730480*(x^5)
+		+ 2918393166139213754370953790913344*(x^4)
+		+ 250697999480565442948658187330525184*(x^3)
+		- 3323471434166859571009547266635116544*(x^2)
+		+ 10875742405100255509173289946953089024*x
+		- 6043227513931049480810012334626177024
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Full Tetrahedral (Td)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="11 76 76">
+<INPUT type=hidden class=Constants value="0.148888726462813449767986412267,
+0.156503278463479692987424450598,
+0.1650277484101490723477272620253,
+0.409772425702764428884248910301,
+0.440139041033508632815004268619,
+0.469509835390439078962273351794,
+0.580307037387978362832920048470,
+0.656726636530130381796051808013,
+0.714901340349743114830641099917,
+0.807934528572047736771368948519,
+0.896690465345461486165518848440">
+<!--
+	C0 = root of the polynomial:
+		4193*(x^6) + 3904*(x^5) - 3843*(x^4) - 320*(x^3) + 163*(x^2) - 1
+	C1 = root of the polynomial:
+		7779*(x^6) + 213*(x^5) - 1557*(x^4) - 20*(x^3) + 83*(x^2) - x - 1
+	C2 = root of the polynomial:
+		8*(x^6) + 44*(x^5) + 38*(x^4) - 31*(x^3) - 20*(x^2) + 10*x - 1
+	C3 = root of the polynomial:  39657*(x^6) - 2352*(x^5) - 132363*(x^4)
+		+ 7648*(x^3) + 41435*(x^2) - 2224*x - 3001
+	C4 = root of the polynomial:
+		6651*(x^6) + 315*(x^5) - 4077*(x^4) - 316*(x^3) + 519*(x^2) + 61*x - 1
+	C5 = root of the polynomial:  2593*(x^6) + 213*(x^5) - 4671*(x^4)
+		- 180*(x^3) + 2241*(x^2) - 81*x - 243
+	C6 = root of the polynomial:  34275*(x^6) + 7680*(x^5) - 139113*(x^4)
+		- 5632*(x^3) + 82217*(x^2) + 1024*x - 13219
+	C7 = root of the polynomial:  39657*(x^6) - 360*(x^5) - 48339*(x^4)
+		+ 496*(x^3) + 19467*(x^2) - 136*x - 2593
+	C8 = root of the polynomial:  4193*(x^6) - 1824*(x^5) - 8723*(x^4)
+		+ 1840*(x^3) + 5619*(x^2) - 464*x - 1153
+	C9 = root of the polynomial:  6651*(x^6) + 2700*(x^5) - 21429*(x^4)
+		- 3448*(x^3) + 14873*(x^2) + 748*x - 2143
+	C10 = root of the polynomial:  7779*(x^6) - 444*(x^5) - 10845*(x^4)
+		+ 152*(x^3) + 3697*(x^2) + 292*x - 119
+-->
+<INPUT type=hidden class=Vertices value="C2 C2 1.0,C2 -C2 -1.0,-C2 -C2 1.0,
+-C2 C2 -1.0,1.0 C2 C2,1.0 -C2 -C2,-1.0 -C2 C2,-1.0 C2 -C2,C2 1.0 C2,
+C2 -1.0 -C2,-C2 -1.0 C2,-C2 1.0 -C2,C5 -C1 C10,C5 C1 -C10,-C5 C1 C10,
+-C5 -C1 -C10,C10 -C5 C1,C10 C5 -C1,-C10 C5 C1,-C10 -C5 -C1,C1 -C10 C5,
+C1 C10 -C5,-C1 C10 C5,-C1 -C10 -C5,C1 -C5 C10,C1 C5 -C10,-C1 C5 C10,
+-C1 -C5 -C10,C10 -C1 C5,C10 C1 -C5,-C10 C1 C5,-C10 -C1 -C5,C5 -C10 C1,
+C5 C10 -C1,-C5 C10 C1,-C5 -C10 -C1,C4 C4 C9,C4 -C4 -C9,-C4 -C4 C9,-C4 C4 -C9,
+C9 C4 C4,C9 -C4 -C4,-C9 -C4 C4,-C9 C4 -C4,C4 C9 C4,C4 -C9 -C4,-C4 -C9 C4,
+-C4 C9 -C4,C8 C0 C8,C8 -C0 -C8,-C8 -C0 C8,-C8 C0 -C8,C8 C8 C0,C8 -C8 -C0,
+-C8 -C8 C0,-C8 C8 -C0,C0 C8 C8,C0 -C8 -C8,-C0 -C8 C8,-C0 C8 -C8,C7 -C3 C7,
+C7 C3 -C7,-C7 C3 C7,-C7 -C3 -C7,C7 -C7 C3,C7 C7 -C3,-C7 C7 C3,-C7 -C7 -C3,
+C3 -C7 C7,C3 C7 -C7,-C3 C7 C7,-C3 -C7 -C7,C6 C6 C6,C6 -C6 -C6,-C6 -C6 C6,
+-C6 C6 -C6">
+<INPUT type=hidden class=Faces value="72 36 48 40 #,72 40 52 44 #,
+72 44 56 36 #,73 37 49 41 #,73 41 53 45 #,73 45 57 37 #,74 38 50 42 #,
+74 42 54 46 #,74 46 58 38 #,75 39 51 43 #,75 43 55 47 #,75 47 59 39 #,
+12 60 28 48 #,13 61 29 49 #,14 62 30 50 #,15 63 31 51 #,16 64 32 53 #,
+17 65 33 52 #,18 66 34 55 #,19 67 35 54 #,20 68 24 58 #,21 69 25 59 #,
+22 70 26 56 #,23 71 27 57 #,12 0 2 24 #,13 1 3 25 #,14 2 0 26 #,15 3 1 27 #,
+16 5 4 28 #,17 4 5 29 #,18 7 6 30 #,19 6 7 31 #,20 10 9 32 #,21 11 8 33 #,
+22 8 11 34 #,23 9 10 35 #,12 24 68 60 #,13 25 69 61 #,14 26 70 62 #,
+15 27 71 63 #,16 28 60 64 #,17 29 61 65 #,18 30 62 66 #,19 31 63 67 #,
+20 32 64 68 #,21 33 65 69 #,22 34 66 70 #,23 35 67 71 #,12 48 36 0 #,
+13 49 37 1 #,14 50 38 2 #,15 51 39 3 #,16 53 41 5 #,17 52 40 4 #,18 55 43 7 #,
+19 54 42 6 #,20 58 46 10 #,21 59 47 11 #,22 56 44 8 #,23 57 45 9 #,
+24 2 38 58 #,25 3 39 59 #,26 0 36 56 #,27 1 37 57 #,28 4 40 48 #,29 5 41 49 #,
+30 6 42 50 #,31 7 43 51 #,32 9 45 53 #,33 8 44 52 #,34 11 47 55 #,
+35 10 46 54 #,60 68 64 #,61 69 65 #,62 70 66 #,63 71 67 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SelfDual76hedron.html>Self-Dual 76-hedron (canonical)</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

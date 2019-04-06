@@ -1,0 +1,732 @@
+<!-- File:   PrismAntiprism.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Prisms &amp; Antiprisms</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='SelfIntersectingSnubQuasiRegularDual.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Prisms &amp; Antiprisms</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='DipyramidTrapezohedron.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+A regular prism consists of two regular N-sided polygons joined together
+by N squares.  A regular antiprism consists of two regular N-sided polygons
+joined together by 2N equilateral triangles.  The Square Prism and the
+Triangular Antiprism are the Cube and the Octahedron, respectively.
+The remaining regular prisms and antiprisms are closely related to
+Archimedean solids in the sense that they are convex polyhedra whose faces
+are regular polygons of two or more types that meet in the same pattern
+around each vertex.  The distinguishing factor is that regular prisms and
+antiprisms do not have polyhedral group (tetrahedral, octahedral, or
+icosahedral) rotational symmetries.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Triangular Prism
+
+	(9) EDGE = 1
+	RADIUS = sqrt(21) / 6
+	MIDRADIUS = sqrt(3) / 3
+	SQUARE CENTER RADIUS = sqrt(3) / 6
+	TRIANGLE CENTER RADIUS = 1 / 2
+	VOLUME = sqrt(3) / 4
+	SQUARE-SQUARE ANGLE = acos(1/2) = 60 degrees
+	SQUARE-TRIANGLE ANGLE = acos(0) = 90 degrees
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 4
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Prismatic (D3h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 6 5">
+<INPUT type=hidden class=Constants value="0.288675134594812882254574390251,
+0.577350269189625764509148780502">
+<!--
+	C0 = sqrt(3) / 6
+	C1 = sqrt(3) / 3
+-->
+<INPUT type=hidden class=Vertices value="0.5 -C0 0.5,0.5 -C0 -0.5,-0.5 -C0 0.5,
+-0.5 -C0 -0.5,0.0 C1 0.5,0.0 C1 -0.5">
+<INPUT type=hidden class=Faces value="0 1 5 4 #,4 5 3 2 #,2 3 1 0 #,0 4 2 #,
+1 3 5 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=TriangularPrism.html>Triangular Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #76)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Square Prism (Cube)
+
+	(12) EDGE = 1
+	RADIUS = sqrt(3) / 2
+	MIDRADIUS = sqrt(2) / 2
+	INRADIUS = 1 / 2
+	VOLUME = 1
+	DIHEDRAL ANGLE = acos(0) = 90 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 8 6">
+<INPUT type=hidden class=Vertices value="0.5 0.5 0.5,0.5 0.5 -0.5,0.5 -0.5 0.5,
+0.5 -0.5 -0.5,-0.5 0.5 0.5,-0.5 0.5 -0.5,-0.5 -0.5 0.5,-0.5 -0.5 -0.5">
+<INPUT type=hidden class=Faces value="0 1 5 4 #,0 4 6 2 #,0 2 3 1 #,7 3 2 6 #,
+7 6 4 5 #,7 5 1 3 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=SquarePrism.html>Square Prism (Cube)</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #6)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Pentagonal Prism
+
+	(15) EDGE = 1
+	RADIUS = sqrt(5 * (15 + 2 * sqrt(5))) / 10
+	MIDRADIUS = sqrt(10 * (5 + sqrt(5))) / 10
+	PENTAGON CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = sqrt(5 * (5 + 2 * sqrt(5))) / 10
+	VOLUME = sqrt(5 * (5 + 2 * sqrt(5))) / 4
+	PENTAGON-SQUARE ANGLE = acos(0) = 90 degrees
+	SQUARE-SQUARE ANGLE = acos(-(sqrt(5) - 1) / 4) = 108 degrees
+
+	ROTATION SYMMETRIES:          10
+	MIRROR ROTATION SYMMETRIES:   10
+	ROTATION AXES:                 6 (1[5] + 5[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  5-fold Prismatic (D5h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 10 7">
+<INPUT type=hidden class=Constants value="0.262865556059566803012834542424,
+0.6881909602355867691036047909554,
+0.809016994374947424102293417183,
+0.850650808352039932181540497063">
+<!--
+	C0 = sqrt(10 * (5 - sqrt(5))) / 20
+	C1 = sqrt(5 * (5 + 2 * sqrt(5))) / 10
+	C2 = (1 + sqrt(5)) / 4
+	C3 = sqrt(10 * (5 + sqrt(5))) / 10
+-->
+<INPUT type=hidden class=Vertices value="C2 C0 0.5,C2 C0 -0.5,-C2 C0 0.5,
+-C2 C0 -0.5,0.5 -C1 0.5,0.5 -C1 -0.5,-0.5 -C1 0.5,-0.5 -C1 -0.5,0.0 C3 0.5,
+0.0 C3 -0.5">
+<INPUT type=hidden class=Faces value="0 8 2 6 4 #,1 5 7 3 9 #,0 1 9 8 #,
+8 9 3 2 #,2 3 7 6 #,6 7 5 4 #,4 5 1 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=PentagonalPrism.html>Pentagonal Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #76)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Hexagonal Prism
+
+	(18) EDGE = 1
+	RADIUS = sqrt(5) / 2
+	MIDRADIUS = 1
+	HEXAGON CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = sqrt(3) / 2
+	VOLUME = 3 * sqrt(3) / 2
+	HEXAGON-SQUARE ANGLE = acos(0) = 90 degrees
+	SQUARE-SQUARE ANGLE = acos(-1/2) = 120 degrees
+
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (1[6] + 6[2])
+	MIRROR PLANES:                 7
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  6-fold Prismatic (D6h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 12 8">
+<INPUT type=hidden class=Constants value="0.866025403784438646763723170753">
+<!--
+	C0 = sqrt(3) / 2
+-->
+<INPUT type=hidden class=Vertices value="1.0 0.0 0.5,1.0 0.0 -0.5,-1.0 0.0 0.5,
+-1.0 0.0 -0.5,0.5 C0 0.5,0.5 C0 -0.5,0.5 -C0 0.5,0.5 -C0 -0.5,-0.5 C0 0.5,
+-0.5 C0 -0.5,-0.5 -C0 0.5,-0.5 -C0 -0.5">
+<INPUT type=hidden class=Faces value="0 4 8 2 10 6 #,1 7 11 3 9 5 #,0 1 5 4 #,
+4 5 9 8 #,8 9 3 2 #,2 3 11 10 #,10 11 7 6 #,6 7 1 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=HexagonalPrism.html>Hexagonal Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #76)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Heptagonal Prism
+
+	(21) EDGE = 1
+	RADIUS = 1.25617883981767570920187999584
+		= square-root of a root of the polynomial:
+			448*(x^3) - 1232*(x^2) + 980*x - 239
+		= sqrt(1 + 1 / (sin(pi/7)^2)) / 2
+	MIDRADIUS = 1.15238243548124325262057511177
+		= square-root of a root of the polynomial:  7*(x^3)-14*(x^2)+7*x-1
+		= 1 / (2 * sin(pi/7))
+	HEPTAGON CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = 1.03826069828616828358176943074
+		= square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= cot(pi/7) / 2
+		= tan(5*pi/14) / 2
+	VOLUME = 3.63391244400158899253619300760
+		= square-root of a root of the polynomial:
+			4096*(x^3) - 62720*(x^2) + 115248*x - 16807
+		= 7 * cot(pi/7) / 4
+	HEPTAGON-SQUARE ANGLE = acos(0) = 90 degrees
+	SQUARE-SQUARE ANGLE = acos(-0.623489801858733530525004884004)
+		= acos(-root[8*(x^3) + 4*(x^2) - 4*x - 1]) = 900/7 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  7-fold Prismatic (D7h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 14 9">
+<INPUT type=hidden class=Constants value="0.256429215818138474873324904069,
+0.7184986963636851321448067789251,
+0.900968867902419126236102319507,
+1.03826069828616828358176943074,
+1.12348980185873353052500488400,
+1.15238243548124325262057511177">
+<!--
+	C0 = square-root of a root of the polynomial:  448*(x^3)-224*(x^2)+28*x-1
+		= 1 / (4 * cos(pi/14))
+	C1 = square-root of a root of the polynomial:  448*(x^3)-336*(x^2)+56*x-1
+		= (1 + cos(pi/7)) * sqrt(7) / 7
+	C2 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= cos(pi/7)
+	C3 = square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= cot(pi/7) / 2
+		= tan(5*pi/14) / 2
+	C4 = root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * sin(pi/14))
+	C5 = square-root of a root of the polynomial:  7*(x^3) - 14*(x^2) + 7*x - 1
+		= 1 / (2 * sin(pi/7))
+-->
+<INPUT type=hidden class=Vertices value="C4 -C0 0.5,C4 -C0 -0.5,-C4 -C0 0.5,
+-C4 -C0 -0.5,C2 C1 0.5,C2 C1 -0.5,-C2 C1 0.5,-C2 C1 -0.5,0.5 -C3 0.5,
+0.5 -C3 -0.5,-0.5 -C3 0.5,-0.5 -C3 -0.5,0.0 C5 0.5,0.0 C5 -0.5">
+<INPUT type=hidden class=Faces value="0 4 12 6 2 10 8 #,1 9 11 3 7 13 5 #,
+0 1 5 4 #,4 5 13 12 #,12 13 7 6 #,6 7 3 2 #,2 3 11 10 #,10 11 9 8 #,8 9 1 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=HeptagonalPrism.html>Heptagonal Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #76)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Octagonal Prism
+
+	(24) EDGE = 1
+	RADIUS = sqrt(5 + 2 * sqrt(2)) / 2
+	MIDRADIUS = sqrt(2 * (2 + sqrt(2))) / 2
+	OCTAGON CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = (1 + sqrt(2)) / 2
+	VOLUME = 2 + 2 * sqrt(2)
+	OCTAGON-SQUARE ANGLE = acos(0) = 90 degrees
+	SQUARE-SQUARE ANGLE = acos(-sqrt(2) / 2) = 135 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:   16
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  8-fold Prismatic (D8h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 16 10">
+<INPUT type=hidden class=Constants value="1.20710678118654752440084436210">
+<!--
+	C0 = (1 + sqrt(2)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C0 0.5 0.5,C0 0.5 -0.5,C0 -0.5 0.5,
+C0 -0.5 -0.5,-C0 0.5 0.5,-C0 0.5 -0.5,-C0 -0.5 0.5,-C0 -0.5 -0.5,0.5 C0 0.5,
+0.5 C0 -0.5,0.5 -C0 0.5,0.5 -C0 -0.5,-0.5 C0 0.5,-0.5 C0 -0.5,-0.5 -C0 0.5,
+-0.5 -C0 -0.5">
+<INPUT type=hidden class=Faces value="0 8 12 4 6 14 10 2 #,
+1 3 11 15 7 5 13 9 #,0 1 9 8 #,8 9 13 12 #,12 13 5 4 #,4 5 7 6 #,6 7 15 14 #,
+14 15 11 10 #,10 11 3 2 #,2 3 1 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=OctagonalPrism.html>Octagonal Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #76)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Triangular Antiprism (Octahedron)
+
+	(12) EDGE = 1
+	RADIUS = sqrt(2) / 2
+	MIDRADIUS = 1 / 2
+	INRADIUS = sqrt(6) / 6
+	VOLUME = sqrt(2) / 3
+	DIHEDRAL ANGLE = acos(-1/3) = 109.471220634490691369245999340 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 6 8">
+<INPUT type=hidden class=Constants value="0.7071067811865475244008443621048">
+<!--
+	C0 = sqrt(2) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C0,0.0 0.0 -C0,C0 0.0 0.0,
+-C0 0.0 0.0,0.0 C0 0.0,0.0 -C0 0.0">
+<INPUT type=hidden class=Faces value="0 2 4 #,0 4 3 #,0 3 5 #,0 5 2 #,1 2 5 #,
+1 5 3 #,1 3 4 #,1 4 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="626290041 91506884 35126202 773403791">
+</DIV>
+<BR>
+<CENTER>
+<A href=TriangularAntiprism.html>Triangular Antiprism (Octahedron)</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #5)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Square Antiprism
+
+	(16) EDGE = 1
+	RADIUS = sqrt(2 * (4 + sqrt(2))) / 4
+	MIDRADIUS = sqrt(2 * (2 + sqrt(2))) / 4
+	SQUARE CENTER RADIUS = sqrt(2 * sqrt(2)) / 4
+	TRIANGLE CENTER RADIUS = sqrt(6 * (4 + 3 * sqrt(2))) / 12
+	VOLUME = sqrt(4 + 3 * sqrt(2)) / 3
+	SQUARE-TRIANGLE ANGLE = acos(-(sqrt(6) - sqrt(3)) / 3)
+		= 103.836160479256473891261599536 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(-(2 * sqrt(2) - 1) / 3)
+		= 127.5516029057915844250435535497 degrees
+
+	ROTATION SYMMETRIES:           8
+	MIRROR ROTATION SYMMETRIES:    8
+	ROTATION AXES:                 5 (1[4] + 4[2])
+	MIRROR PLANES:                 4
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  4-fold Antiprismatic (D4v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 8 10">
+<INPUT type=hidden class=Constants value="0.420448207626857271515562738117,
+0.7071067811865475244008443621048">
+<!--
+	C0 = sqrt(2 * sqrt(2)) / 4
+	C1 = sqrt(2) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.5 C0,0.5 -0.5 C0,-0.5 0.5 C0,
+-0.5 -0.5 C0,C1 0.0 -C0,-C1 0.0 -C0,0.0 C1 -C0,0.0 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 2 3 1 #,4 7 5 6 #,0 1 4 #,0 4 6 #,
+1 3 7 #,1 7 4 #,2 0 6 #,2 6 5 #,3 2 5 #,3 5 7 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=SquareAntiprism.html>Square Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #77)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Pentagonal Antiprism
+
+	(20) EDGE = 1
+	RADIUS = sqrt(2 * (5 + sqrt(5))) / 4
+	MIDRADIUS = (1 + sqrt(5)) / 4
+	PENTAGON CENTER RADIUS = sqrt(10 * (5 + sqrt(5))) / 20
+	TRIANGLE CENTER RADIUS = (3 * sqrt(3) + sqrt(15)) / 12
+	VOLUME = (5 + 2 * sqrt(5)) / 6
+	PENTAGON-TRIANGLE ANGLE = acos(-sqrt(15 * (5 - 2 * sqrt(5))) / 15)
+		= 100.812316963571706291284944774 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(-sqrt(5) / 3)
+		= 138.189685104221401934142083269 degrees
+
+	ROTATION SYMMETRIES:          10
+	MIRROR ROTATION SYMMETRIES:   10
+	ROTATION AXES:                 6 (1[5] + 5[2])
+	MIRROR PLANES:                 5
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  5-fold Antiprismatic (D5v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 10 12">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.0 C0,0.5 0.0 -C0,-0.5 0.0 C0,
+-0.5 0.0 -C0,0.0 C0 0.5,0.0 C0 -0.5,0.0 -C0 0.5,0.0 -C0 -0.5,C0 0.5 0.0,
+-C0 -0.5 0.0">
+<INPUT type=hidden class=Faces value="0 6 7 1 8 #,2 4 5 3 9 #,0 4 2 #,0 2 6 #,
+6 2 9 #,6 9 7 #,7 9 3 #,7 3 1 #,1 3 5 #,1 5 8 #,8 5 4 #,8 4 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="2759 7926 -3948 -3740">
+</DIV>
+<BR>
+<CENTER>
+<A href=PentagonalAntiprism.html>Pentagonal Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #77)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Hexagonal Antiprism
+
+	(24) EDGE = 1
+	RADIUS = sqrt(3 + sqrt(3)) / 2
+	MIDRADIUS = (sqrt(2) + sqrt(6)) / 4
+	HEXAGON CENTER RADIUS = sqrt(sqrt(3) - 1) / 2
+	TRIANGLE CENTER RADIUS = sqrt(3 * (5 + 3 * sqrt(3))) / 6
+	VOLUME = sqrt(2 * (1 + sqrt(3)))
+	HEXAGON-TRIANGLE ANGLE = acos(-(2 * sqrt(3) - 3) / 3)
+		= 98.8994288798112395049964048919 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(-(2 * sqrt(3) - 1) / 3)
+		= 145.221891331903310626999092498 degrees
+
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (1[6] + 6[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  6-fold Antiprismatic (D6v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 12 14">
+<INPUT type=hidden class=Constants value="0.427799838583676096484617883106,
+0.866025403784438646763723170753">
+<!--
+	C0 = sqrt(sqrt(3) - 1) / 2
+	C1 = sqrt(3) / 2
+-->
+<INPUT type=hidden class=Vertices value="1.0 0.0 C0,-1.0 0.0 C0,0.5 C1 C0,
+0.5 -C1 C0,-0.5 C1 C0,-0.5 -C1 C0,C1 0.5 -C0,C1 -0.5 -C0,-C1 0.5 -C0,
+-C1 -0.5 -C0,0.0 1.0 -C0,0.0 -1.0 -C0">
+<INPUT type=hidden class=Faces value="0 2 4 1 5 3 #,6 7 11 9 8 10 #,0 3 7 #,
+0 7 6 #,1 4 8 #,1 8 9 #,2 0 6 #,2 6 10 #,3 5 11 #,3 11 7 #,4 2 10 #,4 10 8 #,
+5 1 9 #,5 9 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=HexagonalAntiprism.html>Hexagonal Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #77)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Heptagonal Antiprism
+
+	(28) EDGE = 1
+	RADIUS = 1.22972734168212114628232224673
+		= square-root of a root of the polynomial:  64*(x^3)-144*(x^2)+80*x-13
+		= sqrt(5 + cot(pi/14)^2) / 4
+	MIDRADIUS = 1.12348980185873353052500488400
+		= root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * sin(pi/14))
+	HEPTAGON CENTER RADIUS = 0.429236598247277326202477614336
+		= square-root of a root of the polynomial:  448*(x^3) - 112*(x^2) + 1
+		= sqrt(3 - tan(pi/14)^2) / 4
+	TRIANGLE CENTER RADIUS = 1.085769773730712672691653232453
+		= square-root of a root of the polynomial:
+			1728*(x^3) - 2160*(x^2) + 144*x + 1
+		= sqrt(3 * (1 - 3 * (cot(pi/14)^2))) / 12
+	VOLUME = 3.23391529285597887734836819802
+		= square-root of a root of the polynomial:
+			46656*(x^3) - 508032*(x^2) + 209916*x + 2401
+		= sqrt(7 * (48 * (cos(pi/7)^2) + 22 * cos(pi/7) - 5)) / 6
+	HEPTAGON-TRIANGLE ANGLE = acos(-0.131776431379928521024898765489)
+		= acos(-sqrt(root[189*(x^3) - 315*(x^2) + 63*x - 1]))
+		= acos(-tan(pi/14) * sqrt(3) / 3)
+		= 97.5722575669223833563652535048 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(-0.867958490536558834981469759343)
+		= acos(-root[27*(x^3) + 9*(x^2) - 27*x - 1])
+		= acos(-(4 * cos(pi/7) - 1) / 3)
+		= 150.222262672419369753787817659 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 7
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  7-fold Antiprismatic (D7v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 14 16">
+<INPUT type=hidden class=Constants value="0.222520933956314404288902564497,
+0.671181371874405914756434334940,
+0.836949481122492579754074026159,
+0.900968867902419126236102319507,
+1.12348980185873353052500488400,
+1.20942704154975214093810613957">
+<!--
+	C0 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= sin(pi/14)
+	C1 = square-root of a root of the polynomial:  64*(x^3)-16*(x^2)-8*x+1
+		= sqrt(2 * cos(pi/7)) / 2
+	C2 = square-root of a root of the polynomial:  64*(x^3)-64*(x^2)+12*x+1
+		= sqrt(1 + 2 * cos(pi/7)) / 2
+	C3 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= cos(pi/7)
+	C4 = root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * sin(pi/14))
+	C5 = square-root of a root of the polynomial:  64*(x^3)-64*(x^2)-44*x+1
+		= sqrt(cos(pi/7) + 1 / (8 * sin(pi/14)))
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.0 C4,0.5 0.0 -C4,-0.5 0.0 C4,
+-0.5 0.0 -C4,0.0 C2 C3,0.0 C2 -C3,0.0 -C2 C3,0.0 -C2 -C3,C3 C1 0.5,C3 C1 -0.5,
+-C3 -C1 0.5,-C3 -C1 -0.5,C0 C5 0.0,-C0 -C5 0.0">
+<INPUT type=hidden class=Faces value="0 6 13 7 1 9 8 #,2 4 12 5 3 11 10 #,
+0 4 2 #,0 2 6 #,6 2 10 #,6 10 13 #,13 10 11 #,13 11 7 #,7 11 3 #,7 3 1 #,
+1 3 5 #,1 5 9 #,9 5 12 #,9 12 8 #,8 12 4 #,8 4 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="8823 -415 4629 742">
+</DIV>
+<BR>
+<CENTER>
+<A href=HeptagonalAntiprism.html>Heptagonal Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #77)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Octagonal Antiprism
+
+	(32) EDGE = 1
+	RADIUS = sqrt(2 * (6 + 2 * sqrt(2) + sqrt(2 * (10 + 7 * sqrt(2))))) / 4
+	MIDRADIUS = sqrt(2 * (4 + 2 * sqrt(2) + sqrt(2 * (10 + 7 * sqrt(2))))) / 4
+	OCTAGON CENTER RADIUS
+		= sqrt(2 * (sqrt(2 * (10 + 7 * sqrt(2))) - 2 - 2 * sqrt(2))) / 4
+	TRIANGLE CENTER RADIUS
+		= sqrt(6 * (10 + 6 * sqrt(2) + 3 * sqrt(2 * (10 + 7 * sqrt(2))))) / 12
+	VOLUME = 2 * sqrt(4 + 2 * sqrt(2) + 2 * sqrt(146 + 103 * sqrt(2))) / 3
+	OCTAGON-TRIANGLE ANGLE
+		= acos(-sqrt(3 * (7 + 4*sqrt(2) - 2 * sqrt(2 * (10 + 7*sqrt(2))))) / 3)
+		= 96.5945182161541851994910861381 degrees
+	TRIANGLE-TRIANGLE ANGLE
+		= acos(-(2 * sqrt(2 + sqrt(2)) - 1) / 3)
+		= 153.962382889449270546371188549 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:   16
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  8-fold Antiprismatic (D8v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 16 18">
+<INPUT type=hidden class=Constants value="0.430147784931485783221150388002,
+0.923879532511286756128183189397,
+1.20710678118654752440084436210,
+1.30656296487637652785664317343">
+<!--
+	C0 = sqrt(2 * (sqrt(2 * (10 + 7 * sqrt(2))) - 2 - 2 * sqrt(2))) / 4
+	C1 = sqrt(2 + sqrt(2)) / 2
+	C2 = (1 + sqrt(2)) / 2
+	C3 = sqrt(2 * (2 + sqrt(2))) / 2
+-->
+<INPUT type=hidden class=Vertices value="C2 0.5 C0,C2 -0.5 C0,-C2 0.5 C0,
+-C2 -0.5 C0,0.5 C2 C0,0.5 -C2 C0,-0.5 C2 C0,-0.5 -C2 C0,C3 0.0 -C0,-C3 0.0 -C0,
+0.0 C3 -C0,0.0 -C3 -C0,C1 C1 -C0,C1 -C1 -C0,-C1 C1 -C0,-C1 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 4 6 2 3 7 5 1 #,
+8 13 11 15 9 14 10 12 #,0 1 8 #,0 8 12 #,1 5 13 #,1 13 8 #,2 6 14 #,2 14 9 #,
+3 2 9 #,3 9 15 #,4 0 12 #,4 12 10 #,5 7 11 #,5 11 13 #,6 4 10 #,6 10 14 #,
+7 3 15 #,7 15 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=OctagonalAntiprism.html>Octagonal Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #77)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE style="font-size:75%">
+<TR><TD valign=top>References:</TD><TD valign=top>[1]</TD><TD>Johannes Kepler, <I>Harmonices Mundi</I> (1619).</TD></TR>
+<TR><TD></TD><TD valign=top>[2]</TD><TD>Johannes Kepler with E. J. Aiton, A. M. Duncan, and J. V. Field, translators, <I>The Harmony of the World</I>, American Philosophical Society (1997).</TD></TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

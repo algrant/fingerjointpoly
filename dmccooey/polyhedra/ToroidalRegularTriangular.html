@@ -1,0 +1,778 @@
+<!-- File:   ToroidalRegularTriangular.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Regular Triangular Toroidal Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='ToroidalRegularHexagonal.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Regular Triangular Toroidal Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='ToroidalRegularTetragonal.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+A toroidal solid, or toroid, is an orientable polyhedron without
+self-intersections that has genus greater than zero, meaning that it contains
+one or more holes.  An orientable polyhedron's genus (G) is related to the
+number of vertices (V), faces (F), and edges (E) as follows:
+</P>
+<P align=center>
+V + F &#8722; E = 2 &#8722; 2 * G
+</P>
+<P>
+A toroid is said to be regular if every face has p vertices, and every vertex
+joins q faces.  This notion of regularity is strictly topological, in the
+sense that it does not specify any geometric criteria, such as equal edge
+lengths or equal vertex angles.  A regular toroid can be further classified
+as being either globally regular or locally regular by examining its set of
+mutually incident face-edge-vertex triples.  If all such triples are
+topologically equivalent, then the toroid is globally regular.
+Otherwise, it is locally regular.  The set of regular genus-1 toroids can
+be divided into three classes:
+</P>
+
+<UL type=circle>
+<LI>
+{6,3} toroids where 3 hexagonal faces meet at every vertex
+</LI>
+<LI>
+{3,6} toroids where 6 triangular faces meet at every vertex
+</LI>
+<LI>
+{4,4} toroids where 4 tetragonal (quadrilateral) faces meet at every vertex
+</LI>
+</UL>
+
+<P>
+The toroids on this page are regular genus-1 toroids in the class {3,6}.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Csaszar Polyhedron (version 4)
+
+	(2) EDGE 1 = sqrt(1238) / 6
+	(1) EDGE 2 = 10
+	(4) EDGE 3 = 3 * sqrt(70) / 2
+	(2) EDGE 4 = 2 * sqrt(374) / 3
+	(2) EDGE 5 = 2 * sqrt(662) / 3
+	(2) EDGE 6 = 3 * sqrt(134) / 2
+	(2) EDGE 7 = sqrt(1398) / 2
+	(6) EDGE 8 = 24
+	VOLUME = 2644 * sqrt(2) / 3
+	MIN DIHEDRAL ANGLE = 41.6598818109757158891515860886 degrees
+	MAX DIHEDRAL ANGLE = 340.13921686788356634539469083549 degrees
+
+	ROTATION SYMMETRIES:           2
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 1 (1[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  2-fold Cyclic (C2)
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 7 14">
+<INPUT type=hidden class=Constants value="0.7071067811865475244008443621048,
+3.77123616632825346347116993123,
+8.48528137423857029281013234526">
+<!--
+	C0 = sqrt(2) / 2
+	C1 = 8 * sqrt(2) / 3
+	C2 = 6 * sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="12.0 0.0 -C2,-12.0 0.0 -C2,
+0.0 12.0 C2,0.0 -12.0 C2,-4.0 -3.0 C0,4.0 3.0 C0,0.0 0.0 C1">
+<INPUT type=hidden class=Faces value="0 1 2 #,0 2 5 #,0 5 4 #,0 4 6 #,0 6 3 #,
+0 3 1 #,1 3 4 #,1 4 5 #,1 5 6 #,1 6 2 #,2 6 4 #,2 4 3 #,2 3 5 #,5 3 6 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="-15 62 32 70">
+</DIV>
+<BR>
+<CENTER>
+<A href=Csaszar4.html>Cs&aacute;sz&aacute;r Polyhedron <NOBR>(version 4)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 16 faces
+
+	(2) EDGE 1 = 3 * sqrt(17)
+	(2) EDGE 2 = 6 * sqrt(197) / 5
+	(2) EDGE 3 = 9 * sqrt(137) / 5
+	(2) EDGE 4 = 6 * sqrt(497) / 5
+	(2) EDGE 5 = 3 * sqrt(89)
+	(4) EDGE 6 = 12 * sqrt(6)
+	(2) EDGE 7 = 6 * sqrt(677) / 5
+	(2) EDGE 8 = 6 * sqrt(41)
+	(1) EDGE 9 = 144 * sqrt(2) / 5
+	(2) EDGE 10 = 6 * sqrt(53)
+	(1) EDGE 11 = 48
+	(2) EDGE 12 = 36 * sqrt(57) / 5
+	VOLUME = 245952 / 25
+
+	ROTATION SYMMETRIES:           2
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 1 (1[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  2-fold Cyclic (C2)
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 8 16">
+<INPUT type=hidden class=Vertices value="14.4 -14.4 -14.4,-14.4 14.4 -14.4,
+12.0 0.0 -6.0,-12.0 0.0 -6.0,0.0 24.0 6.0,0.0 -24.0 6.0,0.0 0.0 36.0,
+0.0 0.0 -9.0">
+<INPUT type=hidden class=Faces value="6 0 2 #,6 2 4 #,6 4 1 #,6 1 3 #,6 3 5 #,
+6 5 0 #,7 0 5 #,7 5 2 #,7 2 1 #,7 1 4 #,7 4 3 #,7 3 0 #,2 0 1 #,2 5 4 #,
+3 1 0 #,3 4 5 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="59 -69 31 28">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid16.html>Regular Triangular Toroid with 16 faces</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 18 faces (type A) (triangular form)
+
+	(12) EDGE 1 = 2 * sqrt(2)
+	(6) EDGE 2 = sqrt(10)
+	(6) EDGE 3 = sqrt(22)
+	(3) EDGE 4 = 3 * sqrt(6)
+	RADIUS = 3 * sqrt(2)
+	VOLUME = 22
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Dihedral (D3)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 9 18">
+<INPUT type=hidden class=Vertices value="0 0 2,0 0 -2,2 0 0,-2 0 0,0 2 0,
+0 -2 0,3 0 3,-3 3 0,0 -3 -3">
+<INPUT type=hidden class=Faces value="0 2 5 #,0 5 6 #,0 6 7 #,0 7 3 #,0 3 4 #,
+0 4 2 #,2 4 6 #,2 6 8 #,2 8 1 #,2 1 5 #,5 1 3 #,5 3 8 #,5 8 6 #,6 4 7 #,
+7 4 1 #,7 1 8 #,7 8 3 #,3 1 4 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="82047324 -17591990 42470820 -33985114">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid18A1.html>Regular Triangular Toroid with 18 faces <NOBR>(type A)</NOBR> <NOBR>(triangular form)</NOBR></A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 18 faces (type B)
+
+	(3) EDGE 1 = sqrt(6)
+	(6) EDGE 2 = sqrt(30)
+	(6) EDGE 3 = sqrt(46)
+	(6) EDGE 4 = 2 * sqrt(14)
+	(3) EDGE 5 = 2 * sqrt(22)
+	(3) EDGE 6 = 2 * sqrt(38)
+	RADIUS = 2 * sqrt(10)
+	VOLUME = 56
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Dihedral (D3)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 9 18">
+<INPUT type=hidden class=Vertices value="2 0 -6,6 -2 0,0 -6 -2,0 2 6,-6 0 2,
+-2 6 0,1 0 1,-1 -1 0,0 1 -1">
+<INPUT type=hidden class=Faces value="0 1 8 #,0 8 7 #,0 7 2 #,0 2 5 #,0 5 3 #,
+0 3 1 #,4 1 3 #,4 3 7 #,4 7 8 #,4 8 5 #,4 5 2 #,4 2 1 #,6 1 2 #,6 2 7 #,
+6 7 3 #,6 3 5 #,6 5 8 #,6 8 1 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="887 338 313 -31">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid18B.html>Regular Triangular Toroid with 18 faces <NOBR>(type B)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 20 faces
+
+	(10) EDGE 1 = 3 * sqrt(2)
+	(8) EDGE 2 = 3 * sqrt(5)
+	(4) EDGE 3 = sqrt(51)
+	(4) EDGE 4 = 3 * sqrt(11)
+	(2) EDGE 5 = sqrt(102)
+	(2) EDGE 6 = 2 * sqrt(41)
+	RADIUS = sqrt(66)
+	INRADIUS = 4 / 3
+	VOLUME = 166
+
+	ROTATION SYMMETRIES:           4
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 3 (3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  2-fold Dihedral (D2)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 10 20">
+<INPUT type=hidden class=Vertices value="-4 -5 5,4 -5 -5,-5 5 4,5 5 -4,0 0 3,
+0 0 -3,3 0 0,-3 0 0,0 3 0,0 -3 0">
+<INPUT type=hidden class=Faces value="0 1 6 #,0 6 9 #,0 9 4 #,0 4 2 #,0 2 7 #,
+0 7 1 #,3 1 5 #,3 5 2 #,3 2 4 #,3 4 8 #,3 8 6 #,3 6 1 #,5 1 9 #,5 9 6 #,
+5 6 8 #,5 8 2 #,7 2 8 #,7 8 4 #,7 4 9 #,7 9 1 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="92387953 0 -38268343 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid20.html>Regular Triangular Toroid with 20 faces</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 22 faces
+
+	(3) EDGE 1 = 2 * sqrt(2)
+	(2) EDGE 2 = 3
+	(2) EDGE 3 = sqrt(10)
+	(4) EDGE 4 = sqrt(13)
+	(2) EDGE 5 = sqrt(17)
+	(2) EDGE 6 = 2 * sqrt(5)
+	(2) EDGE 7 = sqrt(22)
+	(2) EDGE 8 = 5
+	(2) EDGE 9 = sqrt(34)
+	(2) EDGE 10 = 2 * sqrt(10)
+	(2) EDGE 11 = 3 * sqrt(5)
+	(3) EDGE 12 = 3 * sqrt(6)
+	(2) EDGE 13 = 2 * sqrt(14)
+	(2) EDGE 14 = 2 * sqrt(22)
+	(1) EDGE 15 = 6 * sqrt(6)
+	RADIUS = 6 * sqrt(2)
+	VOLUME = 86
+
+	ROTATION SYMMETRIES:           2
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 1 (1[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  2-fold Cyclic (C2)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 11 22">
+<INPUT type=hidden class=Vertices value="6 0 6,0 6 -6,0 0 3,0 0 -3,0 -3 3,
+-3 0 -3,4 0 0,0 4 0,-2 0 0,0 -2 0,2 2 0">
+<INPUT type=hidden class=Faces value="0 1 7 #,0 7 10 #,0 10 2 #,0 2 4 #,
+0 4 6 #,0 6 1 #,3 1 10 #,3 10 7 #,3 7 8 #,3 8 9 #,3 9 5 #,3 5 1 #,5 9 4 #,
+5 4 8 #,5 8 7 #,5 7 1 #,6 4 9 #,6 9 2 #,6 2 10 #,6 10 1 #,2 9 8 #,2 8 4 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="842 162 374 353">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid22.html>Regular Triangular Toroid with 22 faces</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 24 faces (type A) (square form)
+
+	(12) EDGE 1 = sqrt(6)
+	(4) EDGE 2 = 2 * sqrt(2)
+	(8) EDGE 3 = sqrt(10)
+	(8) EDGE 4 = sqrt(14)
+	(4) EDGE 5 = 4 * sqrt(2)
+	RADIUS = 4
+	VOLUME = 64 / 3
+
+	EULER CHARACTERISTIC:          0
+	ROTATION SYMMETRIES:           8
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 5 (1[4] + 4[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  4-fold Dihedral (D4)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 12 24">
+<INPUT type=hidden class=Vertices value="1 2 1,-1 -2 1,-1 2 -1,4 0 0,-4 0 0,
+1 -2 -1,-2 1 1,0 4 0,0 -4 0,2 -1 1,-2 -1 -1,2 1 -1">
+<INPUT type=hidden class=Faces value="0 11 9 #,0 9 3 #,0 3 7 #,0 7 6 #,
+1 10 6 #,1 6 4 #,1 4 8 #,1 8 9 #,2 7 11 #,2 11 0 #,2 0 6 #,2 6 10 #,3 9 8 #,
+3 8 5 #,3 5 11 #,3 11 7 #,4 6 7 #,4 7 2 #,4 2 10 #,4 10 8 #,5 8 10 #,5 10 1 #,
+5 1 9 #,5 9 11 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid24A1.html>Regular Triangular Toroid with 24 faces <NOBR>(type A)</NOBR> <NOBR>(square form)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 24 faces (type B)
+
+	(4) EDGE 1 = sqrt(2)
+	(8) EDGE 2 = sqrt(14)
+	(8) EDGE 3 = 3 * sqrt(2)
+	(8) EDGE 4 = 2 * sqrt(5)
+	(4) EDGE 5 = 2 * sqrt(10)
+	(4) EDGE 6 = 2 * sqrt(17)
+	RADIUS = sqrt(19)
+	INRADIUS = sqrt(3) / 3
+	VOLUME = 28
+
+	ROTATION SYMMETRIES:           8
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 5 (1[4] + 4[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  4-fold Dihedral (D4)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 12 24">
+<INPUT type=hidden class=Vertices value="3 -1 3,3 1 -3,-3 1 3,-3 -1 -3,1 3 3,
+1 -3 -3,-1 -3 3,-1 3 -3,1 0 0,-1 0 0,0 1 0,0 -1 0">
+<INPUT type=hidden class=Faces value="0 1 7 #,0 7 4 #,0 4 8 #,0 8 11 #,
+0 11 6 #,0 6 1 #,5 1 6 #,5 6 2 #,5 2 3 #,5 3 11 #,5 11 8 #,5 8 1 #,9 2 6 #,
+9 6 11 #,9 11 3 #,9 3 7 #,9 7 10 #,9 10 2 #,4 7 3 #,4 3 2 #,4 2 10 #,4 10 8 #,
+1 8 10 #,1 10 7 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid24B.html>Regular Triangular Toroid with 24 faces <NOBR>(type B)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 24 faces (type C)
+
+	(12) SHORT EDGE = 3 * sqrt(2)
+	(12) MEDIUM EDGE = sqrt(21)
+	(12) LONG EDGE = 6 * sqrt(2)
+	RADIUS = 6
+	VOLUME = 171
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  3-fold Antiprismatic (D3v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 12 24">
+<INPUT type=hidden class=Vertices value="0 0 6,0 0 -6,6 0 0,-6 0 0,0 6 0,
+0 -6 0,-2 -1 2,2 1 -2,2 -2 1,-2 2 -1,1 2 2,-1 -2 -2">
+<INPUT type=hidden class=Faces value="0 2 4 #,0 4 10 #,0 10 6 #,0 6 3 #,
+0 3 5 #,0 5 2 #,1 2 7 #,1 7 11 #,1 11 5 #,1 5 3 #,1 3 4 #,1 4 2 #,8 2 5 #,
+8 5 11 #,8 11 6 #,8 6 10 #,8 10 7 #,8 7 2 #,9 3 6 #,9 6 11 #,9 11 7 #,9 7 10 #,
+9 10 4 #,9 4 3 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="82047324 42470820 17591990 -33985114">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid24C.html>Regular Triangular Toroid with 24 faces <NOBR>(type C)</NOBR></A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Regular Triangular Toroid with 24 faces (type D)
+
+	(4) EDGE 1 = 6 * sqrt(2)
+	(4) EDGE 2 = sqrt(91)
+	(4) EDGE 3 = sqrt(115)
+	(4) EDGE 4 = sqrt(163)
+	(4) EDGE 5 = sqrt(181)
+	(4) EDGE 6 = sqrt(182)
+	(4) EDGE 7 = sqrt(194)
+	(4) EDGE 8 = 11 * sqrt(2)
+	(4) EDGE 9 = 2 * sqrt(73)
+	RADIUS = sqrt(145)
+	VOLUME = 1336
+
+	ROTATION SYMMETRIES:           4
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 3 (3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  2-fold Dihedral (D2)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 12 24">
+<INPUT type=hidden class=Vertices value="3 1 -9,-3 -1 -9,1 3 9,-1 -3 9,12 0 1,
+-12 0 1,0 12 -1,0 -12 -1,6 0 0,-6 0 0,0 6 0,0 -6 0">
+<INPUT type=hidden class=Faces value="0 4 7 #,0 7 8 #,0 8 10 #,0 10 9 #,
+0 9 6 #,0 6 4 #,1 5 6 #,1 6 9 #,1 9 11 #,1 11 8 #,1 8 7 #,1 7 5 #,2 4 6 #,
+2 6 5 #,2 5 10 #,2 10 8 #,2 8 11 #,2 11 4 #,3 4 11 #,3 11 9 #,3 9 10 #,
+3 10 5 #,3 5 7 #,3 7 4 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTriangularToroid24D.html>Regular Triangular Toroid with 24 faces <NOBR>(type D)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Anti-Hexagonal Iris Toroid
+
+	(24) SHORT EDGE = 1
+	(6) MEDIUM EDGE = sqrt(1 + sqrt(3))
+	(6) LONG EDGE = sqrt(1 + 2 * sqrt(3))
+	RADIUS = sqrt(3 + sqrt(3)) / 2
+	VOLUME = 3 * sqrt(sqrt(3) - 1) / 2
+	DIHEDRAL ANGLE 1 = acos((3 + 2 * sqrt(3)) / 9)
+		= 44.0911720877171915189453742967 degrees
+	DIHEDRAL ANGLE 2 = acos(sqrt(3 * (2 * sqrt(3) - 3)) / 3)
+		= 66.8387687739539644389986561971 degrees
+	DIHEDRAL ANGLE 3 = acos(-(2 * sqrt(3) - 1) / 3)
+		= 145.221891331903310626999092498 degrees
+	DIHEDRAL ANGLE 4 = acos(5 * sqrt(3) / 9)
+		= 344.206830951736037053868999010 degrees
+
+	EULER CHARACTERISTIC:          0
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (1[6] + 6[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  6-fold Dihedral (D6)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 12 24">
+<INPUT type=hidden class=Constants value="0.427799838583676096484617883106,
+0.866025403784438646763723170753">
+<!--
+	C0 = sqrt(sqrt(3) - 1) / 2
+	C1 = sqrt(3) / 2
+-->
+<INPUT type=hidden class=Vertices value="1.0 0.0 C0,-1.0 0.0 C0,0.5 C1 C0,
+0.5 -C1 C0,-0.5 C1 C0,-0.5 -C1 C0,C1 0.5 -C0,C1 -0.5 -C0,-C1 0.5 -C0,
+-C1 -0.5 -C0,0.0 1.0 -C0,0.0 -1.0 -C0">
+<INPUT type=hidden class=Faces value="0 11 9 #,0 9 3 #,0 3 7 #,0 7 6 #,
+1 10 6 #,1 6 4 #,1 4 8 #,1 8 9 #,2 7 11 #,2 11 0 #,2 0 6 #,2 6 10 #,3 9 8 #,
+3 8 5 #,3 5 11 #,3 11 7 #,4 6 7 #,4 7 2 #,4 2 10 #,4 10 8 #,5 8 10 #,5 10 1 #,
+5 1 9 #,5 9 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=AntiHexagonalIrisToroid.html>Anti-Hexagonal Iris Toroid</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Anti-Heptagonal Iris Toroid
+
+	(28) SHORT EDGE = 1
+	(7) MEDIUM EDGE = 1.67389896224498515950814805232
+		= square-root of a root of the polynomial:  (x^3) - 4*(x^2) + 3*x + 1
+		= sqrt(1 + 2 * cos(pi/7))
+	(7) LONG EDGE = 2.24697960371746706105000976801
+		= root of the polynomial:  (x^3) - 2*(x^2) - x + 1
+		= 1 / (2 * sin(pi/14))
+	RADIUS = 1.22972734168212114628232224673
+		= square-root of a root of the polynomial:  64*(x^3)-144*(x^2)+80*x-13
+		= sqrt(5 + cot(pi/14)^2) / 4
+	VOLUME = 1.410998215141377497761123829496
+		= square-root of a root of the polynomial:
+			2985984*(x^3) - 4064256*(x^2) - 3803184*x + 117649
+		= 7 * sqrt(cos(pi/7) + 1 / (8 * sin(pi/14))) / 6
+	DIHEDRAL ANGLE 1 = acos(0.6266494534666127911685656682153)
+		= acos(root[29*(x^3) - 5*(x^2) - 29*x + 13])
+		= acos((44 * cos(pi/7) - 20 * cos(2*pi/7) - 9) / 29)
+		= 51.1966443808553503581647825477 degrees
+	DIHEDRAL ANGLE 2 = acos(0.437978987600488017643662462698)
+		= acos(sqrt(root[783*(x^3) + 27*(x^2) - 915*x + 169]))
+		= acos(sqrt((136 * cos(pi/7) - 104 * cos(2*pi/7) - 41) / 87))
+		= 64.0249964682570654130402099320 degrees
+	DIHEDRAL ANGLE 3 = acos(-0.867958490536558834981469759343)
+		= acos(-root[27*(x^3) + 9*(x^2) - 27*x - 1])
+		= acos(-(4 * cos(pi/7) - 1) / 3)
+		= 150.222262672419369753787817659 degrees
+	DIHEDRAL ANGLE 4 = acos(0.885016048112547995330653631316)
+		= acos(root[29*(x^3) + 7*(x^2) - 21*x - 7])
+		= acos((1 + 8 * cos(pi/7) + 28 * cos(2*pi/7)) / 29)
+		= 332.253496249888442366878728161 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  7-fold Dihedral (D7)
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 14 28">
+<INPUT type=hidden class=Constants value="0.222520933956314404288902564497,
+0.671181371874405914756434334940,
+0.836949481122492579754074026159,
+0.900968867902419126236102319507,
+1.12348980185873353052500488400,
+1.20942704154975214093810613957">
+<!--
+	C0 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= sin(pi/14)
+	C1 = square-root of a root of the polynomial:  64*(x^3)-16*(x^2)-8*x+1
+		= sqrt(2 * cos(pi/7)) / 2
+	C2 = square-root of a root of the polynomial:  64*(x^3)-64*(x^2)+12*x+1
+		= sqrt(1 + 2 * cos(pi/7)) / 2
+	C3 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= cos(pi/7)
+	C4 = root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * sin(pi/14))
+	C5 = square-root of a root of the polynomial:  64*(x^3)-64*(x^2)-44*x+1
+		= sqrt(cos(pi/7) + 1 / (8 * sin(pi/14)))
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.0 C4,0.5 0.0 -C4,-0.5 0.0 C4,
+-0.5 0.0 -C4,0.0 C2 C3,0.0 C2 -C3,0.0 -C2 C3,0.0 -C2 -C3,C3 C1 0.5,C3 C1 -0.5,
+-C3 -C1 0.5,-C3 -C1 -0.5,C0 C5 0.0,-C0 -C5 0.0">
+<INPUT type=hidden class=Faces value="0 4 2 #,0 2 6 #,0 6 12 #,0 12 5 #,
+1 3 5 #,1 5 9 #,1 9 11 #,1 11 10 #,6 2 10 #,6 10 13 #,6 13 4 #,6 4 12 #,
+7 11 3 #,7 3 1 #,7 1 10 #,7 10 2 #,8 12 4 #,8 4 0 #,8 0 5 #,8 5 3 #,9 5 12 #,
+9 12 8 #,9 8 3 #,9 3 11 #,13 10 11 #,13 11 7 #,13 7 2 #,13 2 4 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="8823 -415 4629 742">
+</DIV>
+<BR>
+<CENTER>
+<A href=AntiHeptagonalIrisToroid.html>Anti-Heptagonal Iris Toroid</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Anti-Octagonal Iris Toroid #1
+
+	(32) SHORT EDGE = 1
+	(8) MEDIUM EDGE = sqrt(1 + sqrt(2 + sqrt(2)))
+	(8) LONG EDGE = sqrt(1 + sqrt(10 + 7 * sqrt(2)))
+	RADIUS = sqrt(2 * (6 + 2 * sqrt(2) + sqrt(2 * (10 + 7 * sqrt(2))))) / 4
+	VOLUME = 2 * sqrt(2 * (sqrt(58 + 41 * sqrt(2)) - 4 - 3 * sqrt(2))) / 3
+	DIHEDRAL ANGLE 1 = acos((97 + 22*sqrt(2) + 6*sqrt(1114 - 697*sqrt(2)))/367)
+		= 57.7064042175320206403882741028 degrees
+	DIHEDRAL ANGLE 2
+		= acos(sqrt((8*sqrt(12706 + 8977*sqrt(2)) - 147 - 616*sqrt(2)) / 1101))
+		= 61.1173430506672412898852849110 degrees
+	DIHEDRAL ANGLE 3 = acos(-(2 * sqrt(2 + sqrt(2)) - 1) / 3)
+		= 153.962382889449270546371188549 degrees
+	DIHEDRAL ANGLE 4 = acos((5 - 14*sqrt(2) + 2*sqrt(24418 - 769*sqrt(2)))/367)
+		= 322.378770348567289727658718462 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  8-fold Dihedral (D8)
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 16 32">
+<INPUT type=hidden class=Constants value="0.430147784931485783221150388002,
+0.923879532511286756128183189397,
+1.20710678118654752440084436210,
+1.30656296487637652785664317343">
+<!--
+	C0 = sqrt(2 * (sqrt(2 * (10 + 7 * sqrt(2))) - 2 - 2 * sqrt(2))) / 4
+	C1 = sqrt(2 + sqrt(2)) / 2
+	C2 = (1 + sqrt(2)) / 2
+	C3 = sqrt(2 * (2 + sqrt(2))) / 2
+-->
+<INPUT type=hidden class=Vertices value="C2 0.5 C0,C2 -0.5 C0,-C2 0.5 C0,
+-C2 -0.5 C0,0.5 C2 C0,0.5 -C2 C0,-0.5 C2 C0,-0.5 -C2 C0,C3 0.0 -C0,-C3 0.0 -C0,
+0.0 C3 -C0,0.0 -C3 -C0,C1 C1 -C0,C1 -C1 -C0,-C1 C1 -C0,-C1 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 13 11 #,0 11 1 #,0 1 8 #,0 8 12 #,
+1 11 15 #,1 15 5 #,1 5 13 #,1 13 8 #,2 10 12 #,2 12 6 #,2 6 14 #,2 14 9 #,
+3 14 10 #,3 10 2 #,3 2 9 #,3 9 15 #,4 8 13 #,4 13 0 #,4 0 12 #,4 12 10 #,
+5 15 9 #,5 9 7 #,5 7 11 #,5 11 13 #,6 12 8 #,6 8 4 #,6 4 10 #,6 10 14 #,
+7 9 14 #,7 14 3 #,7 3 15 #,7 15 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=AntiOctagonalIrisToroid1.html>Anti-Octagonal Iris Toroid #1</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Anti-Octagonal Iris Toroid #2
+
+	(32) SHORT EDGE = 1
+	(8) MEDIUM EDGE = sqrt(1 + sqrt(10 + 7 * sqrt(2)))
+	(8) LONG EDGE = sqrt(1 + sqrt(2 * (10 + 7 * sqrt(2))))
+	RADIUS = sqrt(2 * (6 + 2 * sqrt(2) + sqrt(2 * (10 + 7 * sqrt(2))))) / 4
+	VOLUME = 2 * sqrt(sqrt(1970 + 1393 * sqrt(2)) - 24 - 17 * sqrt(2)) / 3
+	DIHEDRAL ANGLE 1
+		= acos((433 + 176*sqrt(2) + 2 * sqrt(1115402 - 242351*sqrt(2))) / 2671)
+		= 24.0079081088915503664764906546 degrees
+	DIHEDRAL ANGLE 2 = acos(sqrt((4 * sqrt(16878082 + 11934319 * sqrt(2))
+			- 7419 - 10788 * sqrt(2)) / 8013))
+		= 74.61020940104840768725893777952 degrees
+	DIHEDRAL ANGLE 3 = acos(-(2 * sqrt(2 + sqrt(2)) - 1) / 3)
+		= 153.962382889449270546371188549 degrees
+	DIHEDRAL ANGLE 4
+		= acos((641 - 418*sqrt(2) + 2 * sqrt(842474 + 592543*sqrt(2))) / 2671)
+		= 351.623625182851087918750760456 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  8-fold Dihedral (D8)
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 16 32">
+<INPUT type=hidden class=Constants value="0.430147784931485783221150388002,
+0.923879532511286756128183189397,
+1.20710678118654752440084436210,
+1.30656296487637652785664317343">
+<!--
+	C0 = sqrt(2 * (sqrt(2 * (10 + 7 * sqrt(2))) - 2 - 2 * sqrt(2))) / 4
+	C1 = sqrt(2 + sqrt(2)) / 2
+	C2 = (1 + sqrt(2)) / 2
+	C3 = sqrt(2 * (2 + sqrt(2))) / 2
+-->
+<INPUT type=hidden class=Vertices value="C2 0.5 C0,C2 -0.5 C0,-C2 0.5 C0,
+-C2 -0.5 C0,0.5 C2 C0,0.5 -C2 C0,-0.5 C2 C0,-0.5 -C2 C0,C3 0.0 -C0,-C3 0.0 -C0,
+0.0 C3 -C0,0.0 -C3 -C0,C1 C1 -C0,C1 -C1 -C0,-C1 C1 -C0,-C1 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 11 15 #,0 15 1 #,0 1 8 #,0 8 12 #,
+1 15 9 #,1 9 5 #,1 5 13 #,1 13 8 #,2 12 8 #,2 8 6 #,2 6 14 #,2 14 9 #,
+3 10 12 #,3 12 2 #,3 2 9 #,3 9 15 #,4 13 11 #,4 11 0 #,4 0 12 #,4 12 10 #,
+5 9 14 #,5 14 7 #,5 7 11 #,5 11 13 #,6 8 13 #,6 13 4 #,6 4 10 #,6 10 14 #,
+7 14 10 #,7 10 3 #,7 3 15 #,7 15 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=AntiOctagonalIrisToroid2.html>Anti-Octagonal Iris Toroid #2</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

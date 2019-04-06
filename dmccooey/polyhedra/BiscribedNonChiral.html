@@ -1,0 +1,618 @@
+<!-- File:   BiscribedNonChiral.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Biscribed Non-Chiral Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='Propellor.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Biscribed Non-Chiral Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='BiscribedChiral.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+For these pages, a biscribed solid is defined to be any convex polyhedron
+that has concentric circumscribed and inscribed spheres, where the sphere
+center is also the centroid of the vertices and the centroid of the face
+tangency points.  The five Platonic solids are biscribed solids, but none
+of the Archimedean or Catalan solids are.  The convexity criterion rules
+out the rest of the uniform polyhedra.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Biscribed Truncated Octahedron with inradius = 1
+
+	(12) SHORT EDGE = 2 * sqrt(2) - sqrt(6)
+	(24) LONG EDGE = sqrt(6) - sqrt(2)
+	RADIUS = sqrt(5 - 2 * sqrt(3))
+	INRADIUS = 1
+	VOLUME = 20 * (2 - sqrt(3))
+	SHORT EDGE ANGLE = acos(-1/3) = 109.471220634490691369245999340 degrees
+	LONG EDGE ANGLE = acos(-sqrt(3) / 3)
+		= 125.264389682754654315377000330 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 24 14">
+<INPUT type=hidden class=Constants value="0.732050807568877293527446341506">
+<!--
+	C0 = sqrt(3) - 1
+-->
+<INPUT type=hidden class=Vertices value="C0 0.0 1.0,C0 0.0 -1.0,-C0 0.0 1.0,
+-C0 0.0 -1.0,1.0 C0 0.0,1.0 -C0 0.0,-1.0 C0 0.0,-1.0 -C0 0.0,0.0 1.0 C0,
+0.0 1.0 -C0,0.0 -1.0 C0,0.0 -1.0 -C0,0.0 C0 1.0,0.0 C0 -1.0,0.0 -C0 1.0,
+0.0 -C0 -1.0,1.0 0.0 C0,1.0 0.0 -C0,-1.0 0.0 C0,-1.0 0.0 -C0,C0 1.0 0.0,
+C0 -1.0 0.0,-C0 1.0 0.0,-C0 -1.0 0.0">
+<INPUT type=hidden class=Faces value="0 14 10 21 5 16 #,1 13 9 20 4 17 #,
+2 12 8 22 6 18 #,3 15 11 23 7 19 #,4 20 8 12 0 16 #,5 21 11 15 1 17 #,
+7 23 10 14 2 18 #,6 22 9 13 3 19 #,0 12 2 14 #,1 15 3 13 #,4 16 5 17 #,
+6 19 7 18 #,8 20 9 22 #,10 23 11 21 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=BiscribedTruncatedOctahedron.html>Biscribed Truncated Octahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Biscribed Truncated Cuboctahedron with inradius = 1
+
+	(24) SHORT EDGE = 4 - sqrt(2) - sqrt(6)
+	(24) MEDIUM EDGE = 2 * (sqrt(3) - sqrt(2))
+	(24) LONG EDGE = 2 * sqrt(2) - 2
+	RADIUS = sqrt(9 - 2 * sqrt(2) - 2 * sqrt(6))
+	INRADIUS = 1
+	VOLUME = 16 * (sqrt(2) - 5 - 2 * sqrt(3) + 3 * sqrt(6))
+	SHORT EDGE ANGLE = acos(-sqrt(3) / 3)
+		= 125.264389682754654315377000330 degrees
+	MEDIUM EDGE ANGLE = acos(-sqrt(2) / 2) = 135 degrees
+	LONG EDGE ANGLE = acos(-sqrt(6) / 3)
+		= 144.735610317245345684622999670 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 48 26">
+<INPUT type=hidden class=Constants value="0.317837245195782244725757617296,
+0.414213562373095048801688724210">
+<!--
+	C0 = sqrt(3) - sqrt(2)
+	C1 = sqrt(2) - 1
+-->
+<INPUT type=hidden class=Vertices value="C1 C0 1.0,C1 C0 -1.0,C1 -C0 1.0,
+C1 -C0 -1.0,-C1 C0 1.0,-C1 C0 -1.0,-C1 -C0 1.0,-C1 -C0 -1.0,1.0 C1 C0,
+1.0 C1 -C0,1.0 -C1 C0,1.0 -C1 -C0,-1.0 C1 C0,-1.0 C1 -C0,-1.0 -C1 C0,
+-1.0 -C1 -C0,C0 1.0 C1,C0 1.0 -C1,C0 -1.0 C1,C0 -1.0 -C1,-C0 1.0 C1,
+-C0 1.0 -C1,-C0 -1.0 C1,-C0 -1.0 -C1,C0 C1 1.0,C0 C1 -1.0,C0 -C1 1.0,
+C0 -C1 -1.0,-C0 C1 1.0,-C0 C1 -1.0,-C0 -C1 1.0,-C0 -C1 -1.0,1.0 C0 C1,
+1.0 C0 -C1,1.0 -C0 C1,1.0 -C0 -C1,-1.0 C0 C1,-1.0 C0 -C1,-1.0 -C0 C1,
+-1.0 -C0 -C1,C1 1.0 C0,C1 1.0 -C0,C1 -1.0 C0,C1 -1.0 -C0,-C1 1.0 C0,
+-C1 1.0 -C0,-C1 -1.0 C0,-C1 -1.0 -C0">
+<INPUT type=hidden class=Faces value="0 24 28 4 6 30 26 2 #,
+1 3 27 31 7 5 29 25 #,8 32 34 10 11 35 33 9 #,12 13 37 39 15 14 38 36 #,
+16 40 41 17 21 45 44 20 #,18 22 46 47 23 19 43 42 #,0 32 8 40 16 24 #,
+1 25 17 41 9 33 #,2 26 18 42 10 34 #,3 35 11 43 19 27 #,4 28 20 44 12 36 #,
+5 37 13 45 21 29 #,6 38 14 46 22 30 #,7 31 23 47 15 39 #,0 2 34 32 #,
+1 33 35 3 #,4 36 38 6 #,5 7 39 37 #,8 9 41 40 #,10 42 43 11 #,12 44 45 13 #,
+14 15 47 46 #,16 20 28 24 #,17 25 29 21 #,18 26 30 22 #,19 23 31 27 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=BiscribedTruncatedCuboctahedron.html>Biscribed Truncated Cuboctahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Biscribed Truncated Icosahedron with inradius = 1
+
+	(30) SHORT EDGE = sqrt(2 * (5 + sqrt(5))) - 2 * sqrt(3)
+	(60) LONG EDGE = (5 * sqrt(3) - sqrt(15) - sqrt(2 * (5 + sqrt(5)))) / 2
+	RADIUS = sqrt(10 - sqrt(5) - sqrt(6 * (5 + sqrt(5))))
+	INRADIUS = 1
+	VOLUME = 10 * (sqrt(2 * (145 - 19 * sqrt(5))) - 8 * sqrt(3))
+	SHORT EDGE ANGLE = acos(-sqrt(5) / 3)
+		= 138.189685104221401934142083269 degrees
+	LONG EDGE ANGLE = acos(-sqrt(15 * (5 + 2 * sqrt(5))) / 15)
+		= 142.6226318593503043571428615051 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 60 32">
+<INPUT type=hidden class=Constants value="0.170062225021429850705432325253,
+0.245761156614088823498052243557,
+0.397649904516081741304487411873,
+0.415823381635518674203484568810,
+0.672816364803188054521422117266,
+0.813473286151600415507971980683,
+0.918577521417276878019474360823,
+1.07046626931926979582590952914">
+<!--
+	C0 = (sqrt(2 * (5 + sqrt(5))) / 2) - sqrt(3)
+	C1 = (5 * sqrt(3) - sqrt(15) - sqrt(2 * (5 + sqrt(5)))) / 4
+	C2 = (sqrt(15) - sqrt(5 + 2 * sqrt(5))) / 2
+	C3 = (sqrt(3) - sqrt(15) + sqrt(2 * (5 + sqrt(5)))) / 4
+	C4 = (sqrt(5 + 2 * sqrt(5)) - sqrt(3)) / 2
+	C5 = (sqrt(3) + sqrt(15) - sqrt(2 * (5 - sqrt(5)))) / 4
+	C6 = (3 * sqrt(3) - sqrt(15) + sqrt(2 * (5 - sqrt(5)))) / 4
+	C7 = (sqrt(15) - sqrt(3)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C0 0.0 C7,C0 0.0 -C7,-C0 0.0 C7,
+-C0 0.0 -C7,C7 C0 0.0,C7 -C0 0.0,-C7 C0 0.0,-C7 -C0 0.0,0.0 C7 C0,0.0 C7 -C0,
+0.0 -C7 C0,0.0 -C7 -C0,C3 C2 C6,C3 C2 -C6,C3 -C2 C6,C3 -C2 -C6,-C3 C2 C6,
+-C3 C2 -C6,-C3 -C2 C6,-C3 -C2 -C6,C6 C3 C2,C6 C3 -C2,C6 -C3 C2,C6 -C3 -C2,
+-C6 C3 C2,-C6 C3 -C2,-C6 -C3 C2,-C6 -C3 -C2,C2 C6 C3,C2 C6 -C3,C2 -C6 C3,
+C2 -C6 -C3,-C2 C6 C3,-C2 C6 -C3,-C2 -C6 C3,-C2 -C6 -C3,C1 C4 C5,C1 C4 -C5,
+C1 -C4 C5,C1 -C4 -C5,-C1 C4 C5,-C1 C4 -C5,-C1 -C4 C5,-C1 -C4 -C5,C5 C1 C4,
+C5 C1 -C4,C5 -C1 C4,C5 -C1 -C4,-C5 C1 C4,-C5 C1 -C4,-C5 -C1 C4,-C5 -C1 -C4,
+C4 C5 C1,C4 C5 -C1,C4 -C5 C1,C4 -C5 -C1,-C4 C5 C1,-C4 C5 -C1,-C4 -C5 C1,
+-C4 -C5 -C1">
+<INPUT type=hidden class=Faces value="0 2 18 42 38 14 #,1 3 17 41 37 13 #,
+2 0 12 36 40 16 #,3 1 15 39 43 19 #,4 5 23 47 45 21 #,5 4 20 44 46 22 #,
+6 7 26 50 48 24 #,7 6 25 49 51 27 #,8 9 33 57 56 32 #,9 8 28 52 53 29 #,
+10 11 31 55 54 30 #,11 10 34 58 59 35 #,12 44 20 52 28 36 #,
+13 37 29 53 21 45 #,14 38 30 54 22 46 #,15 47 23 55 31 39 #,
+16 40 32 56 24 48 #,17 49 25 57 33 41 #,18 50 26 58 34 42 #,
+19 43 35 59 27 51 #,0 14 46 44 12 #,1 13 45 47 15 #,2 16 48 50 18 #,
+3 19 51 49 17 #,4 21 53 52 20 #,5 22 54 55 23 #,6 24 56 57 25 #,
+7 27 59 58 26 #,8 32 40 36 28 #,9 29 37 41 33 #,10 30 38 42 34 #,
+11 35 43 39 31 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=BiscribedTruncatedIcosahedron.html>Biscribed Truncated Icosahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Biscribed Truncated Icosidodecahedron with inradius = 1
+
+	(60) SHORT EDGE = (4-3*sqrt(3)+4*sqrt(5)-sqrt(15)-sqrt(2*(5+sqrt(5)))) / 2
+	(60) MEDIUM EDGE = sqrt(3) - 3 - sqrt(5) + sqrt(15)
+	(60) LONG EDGE = sqrt(2 * (5 + sqrt(5))) - sqrt(5) - 1
+	RADIUS = sqrt(13-4*sqrt(3)+4*sqrt(5)-2*sqrt(15)-2*sqrt(5+2*sqrt(5)))
+	INRADIUS = 1
+	VOLUME = 10 * (8 - 11 * sqrt(3) + 4 * sqrt(5) - 3 * sqrt(15)
+		+ sqrt(2 * (1705 - 900 * sqrt(3) + 707 * sqrt(5) - 420 * sqrt(15))))
+	SHORT EDGE ANGLE = acos(-sqrt(15 * (5 + 2 * sqrt(5))) / 15)
+		= 142.6226318593503043571428615051 degrees
+	MEDIUM EDGE ANGLE = acos(-sqrt(10 * (5 + sqrt(5))) / 10)
+		= 148.282525588538994675786096860 degrees
+	LONG EDGE ANGLE = acos(-(sqrt(3) + sqrt(15)) / 6)
+		= 159.0948425521107009670710416347 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="14 120 62">
+<INPUT type=hidden class=Constants value="0.0177275189761239328523332292769,
+0.184483088138252241148769036278,
+0.213166816377829500155718375594,
+0.284079043840412296028291832393,
+0.301806562816536228880625061670,
+0.316227425933358619323961772696,
+0.327183635196811945478577882734,
+0.600306469773770915352253605089,
+0.628990198013348174359202944404,
+0.672816364803188054521422117266,
+0.786833183622170499844281624406,
+0.804560702598294432696614853683,
+0.813473286151600415507971980683,
+0.989043790736546673845383889961">
+<!--
+	C0 = (4 - 3 * sqrt(3) + 4 * sqrt(5) - sqrt(15) - sqrt(2*(5 + sqrt(5)))) / 4
+	C1 = (sqrt(3) - 3 - sqrt(5) + sqrt(15)) / 2
+	C2 = (3 - sqrt(3) + sqrt(5) - sqrt(5 + 2 * sqrt(5))) / 2
+	C3 = (sqrt(2 * (5 + sqrt(5))) - 1 - sqrt(5)) / 2
+	C4 = (2 - 3 * sqrt(3) + 2 * sqrt(5) - sqrt(15) + sqrt(2*(5 + sqrt(5)))) / 4
+	C5 = (3 * sqrt(3) - 4 + sqrt(15) - sqrt(2 * (5 + sqrt(5)))) / 4
+	C6 = (2 + sqrt(3) - sqrt(5 + 2 * sqrt(5))) / 2
+	C7 = (3 * sqrt(3) - 6 - 2 * sqrt(5) + sqrt(15) + sqrt(2*(5 + sqrt(5)))) / 4
+	C8 = (6 - sqrt(3) + 2 * sqrt(5) - sqrt(15) - sqrt(2 * (5 - sqrt(5)))) / 4
+	C9 = (sqrt(5 + 2 * sqrt(5)) - sqrt(3)) / 2
+	C10 = (sqrt(3) - 1 - sqrt(5) + sqrt(5 + 2 * sqrt(5))) / 2
+	C11 = (2 - sqrt(3) + 2 * sqrt(5) - sqrt(15) + sqrt(2 * (5 - sqrt(5)))) / 4
+	C12 = (sqrt(3) + sqrt(15) - sqrt(2 * (5 - sqrt(5)))) / 4
+	C13 = (sqrt(3) - 4 + sqrt(15) + sqrt(2 * (5 - sqrt(5)))) / 4
+-->
+<INPUT type=hidden class=Vertices value="C3 C1 1.0,C3 C1 -1.0,C3 -C1 1.0,
+C3 -C1 -1.0,-C3 C1 1.0,-C3 C1 -1.0,-C3 -C1 1.0,-C3 -C1 -1.0,1.0 C3 C1,
+1.0 C3 -C1,1.0 -C3 C1,1.0 -C3 -C1,-1.0 C3 C1,-1.0 C3 -C1,-1.0 -C3 C1,
+-1.0 -C3 -C1,C1 1.0 C3,C1 1.0 -C3,C1 -1.0 C3,C1 -1.0 -C3,-C1 1.0 C3,
+-C1 1.0 -C3,-C1 -1.0 C3,-C1 -1.0 -C3,C4 C2 C13,C4 C2 -C13,C4 -C2 C13,
+C4 -C2 -C13,-C4 C2 C13,-C4 C2 -C13,-C4 -C2 C13,-C4 -C2 -C13,C13 C4 C2,
+C13 C4 -C2,C13 -C4 C2,C13 -C4 -C2,-C13 C4 C2,-C13 C4 -C2,-C13 -C4 C2,
+-C13 -C4 -C2,C2 C13 C4,C2 C13 -C4,C2 -C13 C4,C2 -C13 -C4,-C2 C13 C4,
+-C2 C13 -C4,-C2 -C13 C4,-C2 -C13 -C4,C0 C9 C12,C0 C9 -C12,C0 -C9 C12,
+C0 -C9 -C12,-C0 C9 C12,-C0 C9 -C12,-C0 -C9 C12,-C0 -C9 -C12,C12 C0 C9,
+C12 C0 -C9,C12 -C0 C9,C12 -C0 -C9,-C12 C0 C9,-C12 C0 -C9,-C12 -C0 C9,
+-C12 -C0 -C9,C9 C12 C0,C9 C12 -C0,C9 -C12 C0,C9 -C12 -C0,-C9 C12 C0,
+-C9 C12 -C0,-C9 -C12 C0,-C9 -C12 -C0,C7 C6 C11,C7 C6 -C11,C7 -C6 C11,
+C7 -C6 -C11,-C7 C6 C11,-C7 C6 -C11,-C7 -C6 C11,-C7 -C6 -C11,C11 C7 C6,
+C11 C7 -C6,C11 -C7 C6,C11 -C7 -C6,-C11 C7 C6,-C11 C7 -C6,-C11 -C7 C6,
+-C11 -C7 -C6,C6 C11 C7,C6 C11 -C7,C6 -C11 C7,C6 -C11 -C7,-C6 C11 C7,
+-C6 C11 -C7,-C6 -C11 C7,-C6 -C11 -C7,C5 C10 C8,C5 C10 -C8,C5 -C10 C8,
+C5 -C10 -C8,-C5 C10 C8,-C5 C10 -C8,-C5 -C10 C8,-C5 -C10 -C8,C8 C5 C10,
+C8 C5 -C10,C8 -C5 C10,C8 -C5 -C10,-C8 C5 C10,-C8 C5 -C10,-C8 -C5 C10,
+-C8 -C5 -C10,C10 C8 C5,C10 C8 -C5,C10 -C8 C5,C10 -C8 -C5,-C10 C8 C5,
+-C10 C8 -C5,-C10 -C8 C5,-C10 -C8 -C5">
+<INPUT type=hidden class=Faces value="0 2 26 74 106 58 56 104 72 24 #,
+1 25 73 105 57 59 107 75 27 3 #,4 28 76 108 60 62 110 78 30 6 #,
+5 7 31 79 111 63 61 109 77 29 #,8 9 33 81 113 65 64 112 80 32 #,
+10 34 82 114 66 67 115 83 35 11 #,12 36 84 116 68 69 117 85 37 13 #,
+14 15 39 87 119 71 70 118 86 38 #,16 20 44 92 100 52 48 96 88 40 #,
+17 41 89 97 49 53 101 93 45 21 #,18 42 90 98 50 54 102 94 46 22 #,
+19 23 47 95 103 55 51 99 91 43 #,0 24 48 52 28 4 #,1 5 29 53 49 25 #,
+2 6 30 54 50 26 #,3 27 51 55 31 7 #,8 32 56 58 34 10 #,9 11 35 59 57 33 #,
+12 14 38 62 60 36 #,13 37 61 63 39 15 #,16 40 64 65 41 17 #,
+18 19 43 67 66 42 #,20 21 45 69 68 44 #,22 46 70 71 47 23 #,
+72 104 80 112 88 96 #,73 97 89 113 81 105 #,74 98 90 114 82 106 #,
+75 107 83 115 91 99 #,76 100 92 116 84 108 #,77 109 85 117 93 101 #,
+78 110 86 118 94 102 #,79 103 95 119 87 111 #,0 4 6 2 #,1 3 7 5 #,8 10 11 9 #,
+12 13 15 14 #,16 17 21 20 #,18 22 23 19 #,24 72 96 48 #,25 49 97 73 #,
+26 50 98 74 #,27 75 99 51 #,28 52 100 76 #,29 77 101 53 #,30 78 102 54 #,
+31 55 103 79 #,32 80 104 56 #,33 57 105 81 #,34 58 106 82 #,35 83 107 59 #,
+36 60 108 84 #,37 85 109 61 #,38 86 110 62 #,39 63 111 87 #,40 88 112 64 #,
+41 65 113 89 #,42 66 114 90 #,43 91 115 67 #,44 68 116 92 #,45 93 117 69 #,
+46 94 118 70 #,47 71 119 95 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=BiscribedTruncatedIcosidodecahedron.html>Biscribed Truncated Icosidodecahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Biscribed Tetrakis Hexahedron with radius = 1
+
+	(24) SHORT EDGE = sqrt(6 * (3 - sqrt(3))) / 3
+	(12) LONG EDGE = 2 * sqrt(3) / 3
+	RADIUS = 1
+	INRADIUS = sqrt(13 * (5 + 2 * sqrt(3))) / 13 = 1 / sqrt(5 - 2 * sqrt(3))
+	VOLUME = 8 / 3
+	SHORT EDGE ANGLE = acos(-(5 + 2 * sqrt(3)) / 13)
+		= 130.623436603458284708792482218 degrees
+	LONG EDGE ANGLE = acos(-2 * (1 + 3 * sqrt(3)) / 13)
+		= 162.412046226006228370081356233 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 14 24">
+<INPUT type=hidden class=Constants value="0.577350269189625764509148780502">
+<!--
+	C0 = sqrt(3) / 3
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 1.0,0.0 0.0 -1.0,1.0 0.0 0.0,
+-1.0 0.0 0.0,0.0 1.0 0.0,0.0 -1.0 0.0,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,
+-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 6 10 #,0 10 12 #,0 12 8 #,0 8 6 #,
+1 7 9 #,1 9 13 #,1 13 11 #,1 11 7 #,2 6 8 #,2 8 9 #,2 9 7 #,2 7 6 #,3 10 11 #,
+3 11 13 #,3 13 12 #,3 12 10 #,4 6 7 #,4 7 11 #,4 11 10 #,4 10 6 #,5 8 12 #,
+5 12 13 #,5 13 9 #,5 9 8 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=BiscribedTetrakisHexahedron.html>Biscribed Tetrakis Hexahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Biscribed Disdyakis Dodecahedron with radius = 1
+
+	(24) SHORT EDGE = sqrt(6 * (3 - sqrt(6))) / 3
+	(24) MEDIUM EDGE = sqrt(2 - sqrt(2))
+	(24) LONG EDGE = sqrt(6 * (3 - sqrt(3))) / 3
+	RADIUS = 1
+	INRADIUS = sqrt(1633*(441 + 194*sqrt(2) + 144*sqrt(3) + 130*sqrt(6)))/1633
+		= 1 / sqrt(9 - 2 * sqrt(2) - 2 * sqrt(6))
+	VOLUME = 4 * sqrt(6) / 3
+	SHORT EDGE ANGLE = acos(-(539+600*sqrt(2)+176*sqrt(3)-204*sqrt(6))/1633)
+		= 136.916340787932126275849683362 degrees
+	MEDIUM EDGE ANGLE = acos(-(343-212*sqrt(2)+112*sqrt(3)+464*sqrt(6))/1633)
+		= 147.270951511286007556257225508 degrees
+	LONG EDGE ANGLE = acos(-(149+384*sqrt(2)-18*sqrt(3)+392*sqrt(6))/1633)
+		= 173.0732800130535776353432050648 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 26 48">
+<INPUT type=hidden class=Constants value="0.577350269189625764509148780502,
+0.7071067811865475244008443621048">
+<!--
+	C0 = sqrt(3) / 3
+	C1 = sqrt(2) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 1.0,0.0 0.0 -1.0,1.0 0.0 0.0,
+-1.0 0.0 0.0,0.0 1.0 0.0,0.0 -1.0 0.0,C1 0.0 C1,C1 0.0 -C1,-C1 0.0 C1,
+-C1 0.0 -C1,C1 C1 0.0,C1 -C1 0.0,-C1 C1 0.0,-C1 -C1 0.0,0.0 C1 C1,0.0 C1 -C1,
+0.0 -C1 C1,0.0 -C1 -C1,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,-C0 C0 C0,
+-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 6 18 #,0 18 14 #,0 14 22 #,0 22 8 #,
+0 8 24 #,0 24 16 #,0 16 20 #,0 20 6 #,1 7 21 #,1 21 17 #,1 17 25 #,1 25 9 #,
+1 9 23 #,1 23 15 #,1 15 19 #,1 19 7 #,2 6 20 #,2 20 11 #,2 11 21 #,2 21 7 #,
+2 7 19 #,2 19 10 #,2 10 18 #,2 18 6 #,3 8 22 #,3 22 12 #,3 12 23 #,3 23 9 #,
+3 9 25 #,3 25 13 #,3 13 24 #,3 24 8 #,4 10 19 #,4 19 15 #,4 15 23 #,4 23 12 #,
+4 12 22 #,4 22 14 #,4 14 18 #,4 18 10 #,5 11 20 #,5 20 16 #,5 16 24 #,
+5 24 13 #,5 13 25 #,5 25 17 #,5 17 21 #,5 21 11 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=BiscribedDisdyakisDodecahedron.html>Biscribed Disdyakis Dodecahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Biscribed Pentakis Dodecahedron with radius = 1
+
+	(60) SHORT EDGE = sqrt(30 * (15 - sqrt(15 * (5 + 2 * sqrt(5))))) / 15
+	(30) LONG EDGE = (sqrt(15) - sqrt(3)) / 3
+	RADIUS = 1
+	INRADIUS = sqrt(2245*(620+185*sqrt(5)+sqrt(30*(12905+5701*sqrt(5)))))/2245
+		= 1 / sqrt(10 - sqrt(5) - sqrt(6 * (5 + sqrt(5))))
+	VOLUME = 2 * sqrt(10 * (5 - sqrt(5))) / 3
+	SHORT EDGE ANGLE = acos(-(255*sqrt(5)-7+sqrt(6*(5105+2099*sqrt(5))))/898)
+		= 153.789590508969227918569857192 degrees
+	LONG EDGE ANGLE
+		= acos(-(560-195*sqrt(5)+12*sqrt(15*(1205+298*sqrt(5))))/2245)
+		= 161.946011928326904782039103206 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 32 60">
+<INPUT type=hidden class=Constants value="0.356822089773089931941969843046,
+0.525731112119133606025669084848,
+0.577350269189625764509148780502,
+0.850650808352039932181540497063,
+0.934172358962715696451118623548">
+<!--
+	C0 = (sqrt(15) - sqrt(3)) / 6
+	C1 = sqrt(10 * (5 - sqrt(5))) / 10
+	C2 = sqrt(3) / 3
+	C3 = sqrt(10 * (5 + sqrt(5))) / 10
+	C4 = (sqrt(3) + sqrt(15)) / 6
+-->
+<INPUT type=hidden class=Vertices value="0.0 C0 C4,0.0 C0 -C4,0.0 -C0 C4,
+0.0 -C0 -C4,C4 0.0 C0,C4 0.0 -C0,-C4 0.0 C0,-C4 0.0 -C0,C0 C4 0.0,C0 -C4 0.0,
+-C0 C4 0.0,-C0 -C4 0.0,C1 0.0 C3,C1 0.0 -C3,-C1 0.0 C3,-C1 0.0 -C3,C3 C1 0.0,
+C3 -C1 0.0,-C3 C1 0.0,-C3 -C1 0.0,0.0 C3 C1,0.0 C3 -C1,0.0 -C3 C1,0.0 -C3 -C1,
+C2 C2 C2,C2 C2 -C2,C2 -C2 C2,C2 -C2 -C2,-C2 C2 C2,-C2 C2 -C2,-C2 -C2 C2,
+-C2 -C2 -C2">
+<INPUT type=hidden class=Faces value="12 0 2 #,12 2 26 #,12 26 4 #,12 4 24 #,
+12 24 0 #,13 3 1 #,13 1 25 #,13 25 5 #,13 5 27 #,13 27 3 #,14 2 0 #,14 0 28 #,
+14 28 6 #,14 6 30 #,14 30 2 #,15 1 3 #,15 3 31 #,15 31 7 #,15 7 29 #,15 29 1 #,
+16 4 5 #,16 5 25 #,16 25 8 #,16 8 24 #,16 24 4 #,17 5 4 #,17 4 26 #,17 26 9 #,
+17 9 27 #,17 27 5 #,18 7 6 #,18 6 28 #,18 28 10 #,18 10 29 #,18 29 7 #,
+19 6 7 #,19 7 31 #,19 31 11 #,19 11 30 #,19 30 6 #,20 8 10 #,20 10 28 #,
+20 28 0 #,20 0 24 #,20 24 8 #,21 10 8 #,21 8 25 #,21 25 1 #,21 1 29 #,
+21 29 10 #,22 11 9 #,22 9 26 #,22 26 2 #,22 2 30 #,22 30 11 #,23 9 11 #,
+23 11 31 #,23 31 3 #,23 3 27 #,23 27 9 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=BiscribedPentakisDodecahedron.html>Biscribed Pentakis Dodecahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Biscribed Disdyakis Triacontahedron with radius = 1
+
+	(60) SHORT EDGE = sqrt(3 * (6 - sqrt(3) - sqrt(15))) / 3
+	(60) MEDIUM EDGE = sqrt(5 * (10 - sqrt(10 * (5 + sqrt(5))))) / 5
+	(60) LONG EDGE = sqrt(30 * (15 - sqrt(15 * (5 + 2 * sqrt(5))))) / 15
+	RADIUS = 1
+	INRADIUS = 1 / sqrt(13-4*sqrt(3)+4*sqrt(5)-2*sqrt(15)-2*sqrt(5+2*sqrt(5)))
+	VOLUME = 4 * sqrt(15 * (5 - 2 * sqrt(5))) / 3
+	SHORT EDGE ANGLE = acos(-0.855210593637698156080456082754)
+		= acos(-root[3533281*(x^8)-8854216*(x^7)+4299724*(x^6)+5578088*(x^5)
+			-5918666*(x^4)+821576*(x^3)+743596*(x^2)-199528*x-3599])
+		= 148.7830080517177564114417700146 degrees
+	MEDIUM EDGE ANGLE = acos(-0.9389379314967252433974427076751)
+		= acos(-root[3533281*(x^8)-7057032*(x^7)+164108*(x^6)+7179176*(x^5)
+			-3574410*(x^4)-955384*(x^3)+729708*(x^2)+14168*x-33359])
+		= 159.87395402650025106124885003496 degrees
+	LONG EDGE ANGLE = acos(-0.999436162041045560028000209356)
+		= acos(-root[3533281*(x^8)-3711412*(x^7)-4113572*(x^6)+4658756*(x^5)
+			+847150*(x^4)-1308844*(x^3)-2612*(x^2)+102428*x-4919])
+		= 178.0758665329761428694826649752 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 62 120">
+<INPUT type=hidden class=Constants value="0.309016994374947424102293417183,
+0.356822089773089931941969843046,
+0.525731112119133606025669084848,
+0.577350269189625764509148780502,
+0.809016994374947424102293417183,
+0.850650808352039932181540497063,
+0.934172358962715696451118623548">
+<!--
+	C0 = (sqrt(5) - 1) / 4
+	C1 = (sqrt(15) - sqrt(3)) / 6
+	C2 = sqrt(10 * (5 - sqrt(5))) / 10
+	C3 = sqrt(3) / 3
+	C4 = (1 + sqrt(5)) / 4
+	C5 = sqrt(10 * (5 + sqrt(5))) / 10
+	C6 = (sqrt(3) + sqrt(15)) / 6
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 1.0,0.0 0.0 -1.0,1.0 0.0 0.0,
+-1.0 0.0 0.0,0.0 1.0 0.0,0.0 -1.0 0.0,0.0 C1 C6,0.0 C1 -C6,0.0 -C1 C6,
+0.0 -C1 -C6,C6 0.0 C1,C6 0.0 -C1,-C6 0.0 C1,-C6 0.0 -C1,C1 C6 0.0,C1 -C6 0.0,
+-C1 C6 0.0,-C1 -C6 0.0,C2 0.0 C5,C2 0.0 -C5,-C2 0.0 C5,-C2 0.0 -C5,C5 C2 0.0,
+C5 -C2 0.0,-C5 C2 0.0,-C5 -C2 0.0,0.0 C5 C2,0.0 C5 -C2,0.0 -C5 C2,0.0 -C5 -C2,
+C0 0.5 C4,C0 0.5 -C4,C0 -0.5 C4,C0 -0.5 -C4,-C0 0.5 C4,-C0 0.5 -C4,-C0 -0.5 C4,
+-C0 -0.5 -C4,C4 C0 0.5,C4 C0 -0.5,C4 -C0 0.5,C4 -C0 -0.5,-C4 C0 0.5,
+-C4 C0 -0.5,-C4 -C0 0.5,-C4 -C0 -0.5,0.5 C4 C0,0.5 C4 -C0,0.5 -C4 C0,
+0.5 -C4 -C0,-0.5 C4 C0,-0.5 C4 -C0,-0.5 -C4 C0,-0.5 -C4 -C0,C3 C3 C3,C3 C3 -C3,
+C3 -C3 C3,C3 -C3 -C3,-C3 C3 C3,-C3 C3 -C3,-C3 -C3 C3,-C3 -C3 -C3">
+<INPUT type=hidden class=Faces value="18 0 8 #,18 8 32 #,18 32 56 #,18 56 40 #,
+18 40 10 #,18 10 38 #,18 38 54 #,18 54 30 #,18 30 6 #,18 6 0 #,19 1 7 #,
+19 7 31 #,19 31 55 #,19 55 39 #,19 39 11 #,19 11 41 #,19 41 57 #,19 57 33 #,
+19 33 9 #,19 9 1 #,20 0 6 #,20 6 34 #,20 34 58 #,20 58 42 #,20 42 12 #,
+20 12 44 #,20 44 60 #,20 60 36 #,20 36 8 #,20 8 0 #,21 1 9 #,21 9 37 #,
+21 37 61 #,21 61 45 #,21 45 13 #,21 13 43 #,21 43 59 #,21 59 35 #,21 35 7 #,
+21 7 1 #,22 2 11 #,22 11 39 #,22 39 55 #,22 55 47 #,22 47 14 #,22 14 46 #,
+22 46 54 #,22 54 38 #,22 38 10 #,22 10 2 #,23 2 10 #,23 10 40 #,23 40 56 #,
+23 56 48 #,23 48 15 #,23 15 49 #,23 49 57 #,23 57 41 #,23 41 11 #,23 11 2 #,
+24 3 12 #,24 12 42 #,24 42 58 #,24 58 50 #,24 50 16 #,24 16 51 #,24 51 59 #,
+24 59 43 #,24 43 13 #,24 13 3 #,25 3 13 #,25 13 45 #,25 45 61 #,25 61 53 #,
+25 53 17 #,25 17 52 #,25 52 60 #,25 60 44 #,25 44 12 #,25 12 3 #,26 4 16 #,
+26 16 50 #,26 50 58 #,26 58 34 #,26 34 6 #,26 6 30 #,26 30 54 #,26 54 46 #,
+26 46 14 #,26 14 4 #,27 4 14 #,27 14 47 #,27 47 55 #,27 55 31 #,27 31 7 #,
+27 7 35 #,27 35 59 #,27 59 51 #,27 51 16 #,27 16 4 #,28 5 15 #,28 15 48 #,
+28 48 56 #,28 56 32 #,28 32 8 #,28 8 36 #,28 36 60 #,28 60 52 #,28 52 17 #,
+28 17 5 #,29 5 17 #,29 17 53 #,29 53 61 #,29 61 37 #,29 37 9 #,29 9 33 #,
+29 33 57 #,29 57 49 #,29 49 15 #,29 15 5 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=BiscribedDisdyakisTriacontahedron.html>Biscribed Disdyakis Triacontahedron</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

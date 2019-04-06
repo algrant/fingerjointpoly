@@ -1,0 +1,290 @@
+<!-- File:   Platonic.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Platonic Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='ImproperSelfDuals.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Platonic Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='KeplerPoinsot.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+The five Platonic solids, also known as the five regular solids, were
+discovered in ancient times.  Although each one was probably known prior to
+500 BC, they are collectively named after the ancient Greek philosopher Plato
+(428-348 BC) who mentions them in his dialogue Timaeus, written circa 360 BC.
+Each Platonic solid uses the same regular polygon for each face, with the same
+number of faces meeting at each vertex.  The five Platonic solids are the only
+convex polyhedra that meet these criteria.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Tetrahedron
+
+	(6) EDGE = 1
+	RADIUS = sqrt(6) / 4
+	MIDRADIUS = sqrt(2) / 4
+	INRADIUS = sqrt(6) / 12
+	VOLUME = sqrt(2) / 12
+	DIHEDRAL ANGLE = acos(1/3) = 70.5287793655093086307540006600 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Full Tetrahedral (Td)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 4 4">
+<INPUT type=hidden class=Constants value="0.353553390593273762200422181052">
+<!--
+	C0 = sqrt(2) / 4
+-->
+<INPUT type=hidden class=Vertices value="C0 -C0 C0,C0 C0 -C0,-C0 C0 C0,
+-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 1 2 #,1 0 3 #,2 3 0 #,3 2 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Tetrahedron.html>Tetrahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #1)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Octahedron
+
+	(12) EDGE = 1
+	RADIUS = sqrt(2) / 2
+	MIDRADIUS = 1 / 2
+	INRADIUS = sqrt(6) / 6
+	VOLUME = sqrt(2) / 3
+	DIHEDRAL ANGLE = acos(-1/3) = 109.471220634490691369245999340 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 6 8">
+<INPUT type=hidden class=Constants value="0.7071067811865475244008443621048">
+<!--
+	C0 = sqrt(2) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C0,0.0 0.0 -C0,C0 0.0 0.0,
+-C0 0.0 0.0,0.0 C0 0.0,0.0 -C0 0.0">
+<INPUT type=hidden class=Faces value="0 2 4 #,0 4 3 #,0 3 5 #,0 5 2 #,1 2 5 #,
+1 5 3 #,1 3 4 #,1 4 2 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Octahedron.html>Octahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #5)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Cube
+
+	(12) EDGE = 1
+	RADIUS = sqrt(3) / 2
+	MIDRADIUS = sqrt(2) / 2
+	INRADIUS = 1 / 2
+	VOLUME = 1
+	DIHEDRAL ANGLE = acos(0) = 90 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 8 6">
+<INPUT type=hidden class=Vertices value="0.5 0.5 0.5,0.5 0.5 -0.5,0.5 -0.5 0.5,
+0.5 -0.5 -0.5,-0.5 0.5 0.5,-0.5 0.5 -0.5,-0.5 -0.5 0.5,-0.5 -0.5 -0.5">
+<INPUT type=hidden class=Faces value="0 1 5 4 #,0 4 6 2 #,0 2 3 1 #,7 3 2 6 #,
+7 6 4 5 #,7 5 1 3 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Cube.html>Cube</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #6)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Icosahedron
+
+	(30) EDGE = 1
+	RADIUS = sqrt(2 * (5 + sqrt(5))) / 4
+	MIDRADIUS = (1 + sqrt(5)) / 4
+	INRADIUS = (3 * sqrt(3) + sqrt(15)) / 12
+	VOLUME = 5 * (3 + sqrt(5)) / 12
+	DIHEDRAL ANGLE = acos(-sqrt(5) / 3)
+		= 138.189685104221401934142083269 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 12 20">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.0 C0,0.5 0.0 -C0,-0.5 0.0 C0,
+-0.5 0.0 -C0,C0 0.5 0.0,C0 -0.5 0.0,-C0 0.5 0.0,-C0 -0.5 0.0,0.0 C0 0.5,
+0.0 C0 -0.5,0.0 -C0 0.5,0.0 -C0 -0.5">
+<INPUT type=hidden class=Faces value="0 2 10 #,0 10 5 #,0 5 4 #,0 4 8 #,
+0 8 2 #,3 1 11 #,3 11 7 #,3 7 6 #,3 6 9 #,3 9 1 #,2 6 7 #,2 7 10 #,10 7 11 #,
+10 11 5 #,5 11 1 #,5 1 4 #,4 1 9 #,4 9 8 #,8 9 6 #,8 6 2 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Icosahedron.html>Icosahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #22)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Dodecahedron
+
+	(30) EDGE = 1
+	RADIUS = (sqrt(3) + sqrt(15)) / 4
+	MIDRADIUS = (3 + sqrt(5)) / 4
+	INRADIUS = sqrt(10 * (25 + 11 * sqrt(5))) / 20
+	VOLUME = (15 + 7 * sqrt(5)) / 4
+	DIHEDRAL ANGLE = acos(-sqrt(5) / 5)
+		= 116.565051177077989351572193720 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 20 12">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183,
+1.30901699437494742410229341718">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+	C1 = (3 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.5 C1,0.0 0.5 -C1,0.0 -0.5 C1,
+0.0 -0.5 -C1,C1 0.0 0.5,C1 0.0 -0.5,-C1 0.0 0.5,-C1 0.0 -0.5,0.5 C1 0.0,
+0.5 -C1 0.0,-0.5 C1 0.0,-0.5 -C1 0.0,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,
+-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 2 14 4 12 #,0 12 8 10 16 #,
+0 16 6 18 2 #,7 6 16 10 17 #,7 17 1 3 19 #,7 19 11 18 6 #,9 11 19 3 15 #,
+9 15 5 4 14 #,9 14 2 18 11 #,13 1 17 10 8 #,13 8 12 4 5 #,13 5 15 3 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Dodecahedron.html>Dodecahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #23)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

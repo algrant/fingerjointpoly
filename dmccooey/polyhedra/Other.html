@@ -1,0 +1,1186 @@
+<!-- File:   Other.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Other Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='HigherGenus.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Other Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='Simplest.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+This page contains a variety of other interesting polyhedra.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Hugel's Polyhedron
+
+	(30) EDGE = 1
+	(30) EDGE = (3 + sqrt(5)) / 2
+	RADIUS = (sqrt(3) + sqrt(15)) / 4
+	INRADIUS = (sqrt(3) + sqrt(15)) / 12
+	CONVEX DIHEDRAL ANGLE = acos(sqrt(5) / 3)
+		= 41.8103148957785980658579167306 degrees
+	CONCAVE DIHEDRAL ANGLE = acos(-sqrt(5) / 3)
+		= 221.8103148957785980658579167306 degrees
+
+	EULER CHARACTERISTIC:        -20
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 20 20">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183,
+1.30901699437494742410229341718">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+	C1 = (3 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.5 C1,0.0 0.5 -C1,0.0 -0.5 C1,
+0.0 -0.5 -C1,C1 0.0 0.5,C1 0.0 -0.5,-C1 0.0 0.5,-C1 0.0 -0.5,0.5 C1 0.0,
+0.5 -C1 0.0,-0.5 C1 0.0,-0.5 -C1 0.0,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,
+-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 2 13 8 9 15 #,1 0 12 7 6 13 #,
+2 3 15 6 7 14 #,3 1 14 9 8 12 #,4 14 1 13 11 19 #,5 13 2 14 10 16 #,
+6 18 8 10 14 4 #,7 17 9 11 13 5 #,8 19 7 5 15 10 #,9 16 6 4 12 11 #,
+10 15 3 12 4 17 #,11 12 0 15 5 18 #,12 8 18 2 17 7 #,13 6 16 3 19 8 #,
+14 7 19 0 16 9 #,15 9 17 1 18 6 #,16 10 11 18 1 3 #,17 4 5 16 0 1 #,
+18 5 4 19 3 2 #,19 11 10 17 2 0 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Hugel.html>Hugel's Polyhedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rhombic Enneacontahedron
+
+	(180) EDGE = 1
+	WIDE RHOMBUS LENGTH = 2 * sqrt(6) / 3
+	WIDE RHOMBUS WIDTH = 2 * sqrt(3) / 3
+	THIN RHOMBUS LENGTH = (sqrt(3) + sqrt(15)) / 3
+	THIN RHOMBUS WIDTH = (sqrt(15) - sqrt(3)) / 3
+	(12) INNER VERTEX RADIUS = sqrt(30 * (5 + sqrt(5))) / 6
+	(30) MIDDLE VERTEX RADIUS = (sqrt(21) + sqrt(105)) / 6
+	(20) OUTER VERTEX RADIUS = (3 + sqrt(5)) / 2
+	WIDE RHOMBUS CENTER RADIUS = (5 * sqrt(6) + 3 * sqrt(30)) / 12
+	THIN RHOMBUS CENTER RADIUS = (2 * sqrt(3) + sqrt(15)) / 3
+	VOLUME = 20 * (7 * sqrt(3) + 4 * sqrt(15)) / 9
+	THIN-WIDE DIHEDRAL ANGLE = acos(-(3 * sqrt(2) + sqrt(10)) / 8)
+		= 157.761243907035038060614482600 degrees
+	WIDE-WIDE DIHEDRAL ANGLE = acos(-(1 + 3 * sqrt(5)) / 8)
+		= 164.477512185929923878771034799 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 92 90">
+<INPUT type=hidden class=Constants value="0.356822089773089931941969843046,
+0.577350269189625764509148780502,
+0.934172358962715696451118623548,
+1.29099444873580562839308846659,
+1.511522628152341460960267404050003,
+1.86834471792543139290223724710,
+2.088872897341967225469416184552,
+2.44569498711505715741138602760">
+<!--
+	C0 = (sqrt(15) - sqrt(3)) / 6
+	C1 = sqrt(3) / 3
+	C2 = (sqrt(3) + sqrt(15)) / 6
+	C3 = sqrt(15) / 3
+	C4 = (3 * sqrt(3) + sqrt(15)) / 6
+	C5 = (sqrt(3) + sqrt(15)) / 3
+	C6 = (5 * sqrt(3) + sqrt(15)) / 6
+	C7 = (2 * sqrt(3) + sqrt(15)) / 3
+-->
+<INPUT type=hidden class=Vertices value="0.0 C2 C7,0.0 C2 -C7,0.0 -C2 C7,
+0.0 -C2 -C7,C7 0.0 C2,C7 0.0 -C2,-C7 0.0 C2,-C7 0.0 -C2,C2 C7 0.0,C2 -C7 0.0,
+-C2 C7 0.0,-C2 -C7 0.0,C0 0.0 C7,C0 0.0 -C7,-C0 0.0 C7,-C0 0.0 -C7,C7 C0 0.0,
+C7 -C0 0.0,-C7 C0 0.0,-C7 -C0 0.0,0.0 C7 C0,0.0 C7 -C0,0.0 -C7 C0,0.0 -C7 -C0,
+C3 0.0 C6,C3 0.0 -C6,-C3 0.0 C6,-C3 0.0 -C6,C6 C3 0.0,C6 -C3 0.0,-C6 C3 0.0,
+-C6 -C3 0.0,0.0 C6 C3,0.0 C6 -C3,0.0 -C6 C3,0.0 -C6 -C3,C2 C2 C6,C2 C2 -C6,
+C2 -C2 C6,C2 -C2 -C6,-C2 C2 C6,-C2 C2 -C6,-C2 -C2 C6,-C2 -C2 -C6,C6 C2 C2,
+C6 C2 -C2,C6 -C2 C2,C6 -C2 -C2,-C6 C2 C2,-C6 C2 -C2,-C6 -C2 C2,-C6 -C2 -C2,
+C2 C6 C2,C2 C6 -C2,C2 -C6 C2,C2 -C6 -C2,-C2 C6 C2,-C2 C6 -C2,-C2 -C6 C2,
+-C2 -C6 -C2,C1 C4 C5,C1 C4 -C5,C1 -C4 C5,C1 -C4 -C5,-C1 C4 C5,-C1 C4 -C5,
+-C1 -C4 C5,-C1 -C4 -C5,C5 C1 C4,C5 C1 -C4,C5 -C1 C4,C5 -C1 -C4,-C5 C1 C4,
+-C5 C1 -C4,-C5 -C1 C4,-C5 -C1 -C4,C4 C5 C1,C4 C5 -C1,C4 -C5 C1,C4 -C5 -C1,
+-C4 C5 C1,-C4 C5 -C1,-C4 -C5 C1,-C4 -C5 -C1,C4 C4 C4,C4 C4 -C4,C4 -C4 C4,
+C4 -C4 -C4,-C4 C4 C4,-C4 C4 -C4,-C4 -C4 C4,-C4 -C4 -C4">
+<INPUT type=hidden class=Faces value="24 12 2 38 #,24 38 86 70 #,24 70 4 68 #,
+24 68 84 36 #,24 36 0 12 #,25 13 1 37 #,25 37 85 69 #,25 69 5 71 #,
+25 71 87 39 #,25 39 3 13 #,26 14 0 40 #,26 40 88 72 #,26 72 6 74 #,
+26 74 90 42 #,26 42 2 14 #,27 15 3 43 #,27 43 91 75 #,27 75 7 73 #,
+27 73 89 41 #,27 41 1 15 #,28 16 5 45 #,28 45 85 77 #,28 77 8 76 #,
+28 76 84 44 #,28 44 4 16 #,29 17 4 46 #,29 46 86 78 #,29 78 9 79 #,
+29 79 87 47 #,29 47 5 17 #,30 18 6 48 #,30 48 88 80 #,30 80 10 81 #,
+30 81 89 49 #,30 49 7 18 #,31 19 7 51 #,31 51 91 83 #,31 83 11 82 #,
+31 82 90 50 #,31 50 6 19 #,32 20 10 56 #,32 56 88 64 #,32 64 0 60 #,
+32 60 84 52 #,32 52 8 20 #,33 21 8 53 #,33 53 85 61 #,33 61 1 65 #,
+33 65 89 57 #,33 57 10 21 #,34 22 9 54 #,34 54 86 62 #,34 62 2 66 #,
+34 66 90 58 #,34 58 11 22 #,35 23 11 59 #,35 59 91 67 #,35 67 3 63 #,
+35 63 87 55 #,35 55 9 23 #,2 12 0 14 #,3 15 1 13 #,4 17 5 16 #,7 19 6 18 #,
+8 21 10 20 #,9 22 11 23 #,36 84 60 0 #,37 1 61 85 #,38 2 62 86 #,39 87 63 3 #,
+40 0 64 88 #,41 89 65 1 #,42 90 66 2 #,43 3 67 91 #,44 84 68 4 #,45 5 69 85 #,
+46 4 70 86 #,47 87 71 5 #,48 6 72 88 #,49 89 73 7 #,50 90 74 6 #,51 7 75 91 #,
+52 84 76 8 #,53 8 77 85 #,54 9 78 86 #,55 87 79 9 #,56 10 80 88 #,
+57 89 81 10 #,58 90 82 11 #,59 11 83 91 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RhombicEnneacontahedron.html>Rhombic Enneacontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Canonical Joined Truncated Icosahedron with radius = sqrt(3)
+
+	(60) SHORT EDGE = 0.572419548029365494579242226914
+		= square-root of a root of the polynomial:  26224641*(x^8)
+		- 554259726*(x^7) + 1283739939*(x^6) - 1154496882*(x^5)
+		+ 959652025*(x^4) - 109584452*(x^3) + 40602836*(x^2) - 31385424*x
+		+ 1710864
+	(120) LONG EDGE = 0.708486378227489818647764968964
+		= square-root of a root of the polynomial:  81*(x^8) - 1026*(x^7)
+		+ 4959*(x^6) - 11694*(x^5) + 13813*(x^4) - 7048*(x^3) + 1064*(x^2)
+		- 192*x + 144
+	KITE LENGTH = 1.09857175981799750366480110358
+		= square-root of a root of the polynomial:  323761*(x^8)
+		- 10475588*(x^7) + 124197872*(x^6) - 748022336*(x^5) + 2583016960*(x^4)
+		- 5327674368*(x^3) + 6475468800*(x^2) - 4277403648*x + 1184956416
+	KITE WIDTH = 0.653608693983523010898935953524
+		= root of the polynomial:  9*(x^8) - 72*(x^7) + 249*(x^6) - 504*(x^5)
+		+ 665*(x^4) - 586*(x^3) + 336*(x^2) - 112*x + 16
+	RHOMBUS LENGTH = sqrt(5) - 1
+	RHOMBUS WIDTH = 0.692782612032953978202128092952
+		= root of the polynomial:  9*(x^8) - 12*(x^6) + 144*(x^5) - 160*(x^4)
+		+ 64*(x^3) + 192*(x^2) - 512*x + 256
+	(60) INNER VERTEX RADIUS = 1.65469662646471103988829691886
+		= square-root of a root of the polynomial:  81*(x^8) - 1026*(x^7)
+		+ 5229*(x^6) - 13674*(x^5) + 19768*(x^4) - 17758*(x^3) + 14949*(x^2)
+		- 12502*x + 4469
+	(12) MIDDLE VERTEX RADIUS = 1.69463826757131838172867968679
+		= square-root of a root of the polynomial:  323761*(x^8)
+		- 12357840*(x^7) + 121811460*(x^6) - 549621600*(x^5) + 1338100750*(x^4)
+		- 2015418000*(x^3) + 2284996500*(x^2) - 1841400000*x + 601475625
+	(20) OUTER VERTEX RADIUS = sqrt(3)
+	EDGE-SCRIBED RADIUS = 1.64600705446304704301952762426
+		= square-root of a root of the polynomial:  144*(x^8) - 2064*(x^7)
+		+ 12260*(x^6) - 39604*(x^5) + 78853*(x^4) - 108564*(x^3) + 111312*(x^2)
+		- 74304*x + 20736
+	KITE CENTER RADIUS = (1 + sqrt(5)) / 2
+	RHOMBUS CENTER RADIUS = 1.62196789256172436576744125776
+		= square-root of a root of the polynomial:  2009*(x^8) - 26313*(x^7)
+		+ 145001*(x^6) - 446865*(x^5) + 873044*(x^4) - 1153599*(x^3)
+		+ 1011777*(x^2) - 510687*x + 106929
+	VOLUME = 18.5741403599561183784632126051
+		= root of the polynomial:  5121*(x^8) - 673200*(x^7) + 3698400*(x^6)
+		+ 3551040000*(x^5) - 253973600000*(x^4) + 8372160000000*(x^3)
+		- 149653248000000*(x^2) + 1403750400000000*x - 5425049600000000
+	RHOMBUS-KITE ANGLE = acos(-0.9373895617273794879732176158949)
+		= acos(-sqrt(root[4628736*(x^8) - 20385792*(x^7) + 37433472*(x^6)
+			- 37178484*(x^5) + 21656425*(x^4) - 7474712*(x^3) + 1452350*(x^2)
+			- 135332*x + 3481]))
+		= 159.617689297335638499144166072 degrees
+	KITE-KITE ANGLE = acos(-0.942008458620336481118018011297)
+		= acos(-root[289296*(x^8)-1810872*(x^7)+4945596*(x^6)-7602906*(x^5)
+			+7095295*(x^4)-4044864*(x^3)+1342454*(x^2)-228262*x+14279])
+		= 160.391633416615644765615862002 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="11 92 90">
+<INPUT type=hidden class=Constants value="0.326804346991761505449467976762,
+0.346391306016476989101064046476,
+0.528780541103884567987272521108,
+0.618033988749894848204586834366,
+0.673195653008238494550532023238,
+0.890924061049911119857123088492,
+1.08925344764601028021731431326,
+1.201976194112123062537804544346,
+1.41605779463777178566678229002,
+1.44154541217384251983080401403,
+1.61803398874989484820458683437">
+<!--
+	C0 = root of the polynomial:  144*(x^8) - 576*(x^7) + 996*(x^6)
+		- 1008*(x^5) + 665*(x^4) - 293*(x^3) + 84*(x^2) - 14*x + 1
+	C1 = root of the polynomial:  9*(x^8) - 3*(x^6) + 18*(x^5) - 10*(x^4)
+		+ 2*(x^3) + 3*(x^2) - 4*x + 1
+	C2 = root of the polynomial:  144*(x^8) - 288*(x^7) + 84*(x^6)
+		+ 144*(x^5) - 115*(x^4) - 9*(x^3) + (x^2) + 7*x + 1
+	C3 = (sqrt(5) - 1) / 2
+	C4 = root of the polynomial:  144*(x^8) - 576*(x^7) + 996*(x^6)
+		- 936*(x^5) + 485*(x^4) - 111*(x^3) - 9*(x^2) + 9*x - 1
+	C5 = root of the polynomial:  569*(x^8) - 3708*(x^7) + 8776*(x^6)
+		- 8390*(x^5) - 1445*(x^4) + 11490*(x^3) - 11694*(x^2) + 5382*x - 981
+	C6 = root of the polynomial:  144*(x^8) - 288*(x^7) + 84*(x^6)
+		+ 168*(x^5) - 55*(x^4) - 73*(x^3) + 4*(x^2) + 8*x - 1
+	C7 = root of the polynomial:  144*(x^8) - 864*(x^7) + 2040*(x^6)
+		- 2184*(x^5) + 365*(x^4) + 1800*(x^3) - 2232*(x^2) + 1173*x - 241
+	C8 = root of the polynomial:  144*(x^8) - 864*(x^7) + 2040*(x^6)
+		- 2448*(x^5) + 1805*(x^4) - 1206*(x^3) + 694*(x^2) - 77*x - 89
+	C9 = root of the polynomial:  569*(x^8) - 4774*(x^7) + 12474*(x^6)
+		- 10210*(x^5) - 3275*(x^4) + 3870*(x^3) + 3804*(x^2) - 1116*x - 981
+	C10 = (1 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 C3 C10,0.0 C3 -C10,0.0 -C3 C10,
+0.0 -C3 -C10,C10 0.0 C3,C10 0.0 -C3,-C10 0.0 C3,-C10 0.0 -C3,C3 C10 0.0,
+C3 -C10 0.0,-C3 C10 0.0,-C3 -C10 0.0,C1 0.0 C10,C1 0.0 -C10,-C1 0.0 C10,
+-C1 0.0 -C10,C10 C1 0.0,C10 -C1 0.0,-C10 C1 0.0,-C10 -C1 0.0,0.0 C10 C1,
+0.0 C10 -C1,0.0 -C10 C1,0.0 -C10 -C1,C5 0.0 C9,C5 0.0 -C9,-C5 0.0 C9,
+-C5 0.0 -C9,C9 C5 0.0,C9 -C5 0.0,-C9 C5 0.0,-C9 -C5 0.0,0.0 C9 C5,0.0 C9 -C5,
+0.0 -C9 C5,0.0 -C9 -C5,C4 C2 C8,C4 C2 -C8,C4 -C2 C8,C4 -C2 -C8,-C4 C2 C8,
+-C4 C2 -C8,-C4 -C2 C8,-C4 -C2 -C8,C8 C4 C2,C8 C4 -C2,C8 -C4 C2,C8 -C4 -C2,
+-C8 C4 C2,-C8 C4 -C2,-C8 -C4 C2,-C8 -C4 -C2,C2 C8 C4,C2 C8 -C4,C2 -C8 C4,
+C2 -C8 -C4,-C2 C8 C4,-C2 C8 -C4,-C2 -C8 C4,-C2 -C8 -C4,C0 C6 C7,C0 C6 -C7,
+C0 -C6 C7,C0 -C6 -C7,-C0 C6 C7,-C0 C6 -C7,-C0 -C6 C7,-C0 -C6 -C7,C7 C0 C6,
+C7 C0 -C6,C7 -C0 C6,C7 -C0 -C6,-C7 C0 C6,-C7 C0 -C6,-C7 -C0 C6,-C7 -C0 -C6,
+C6 C7 C0,C6 C7 -C0,C6 -C7 C0,C6 -C7 -C0,-C6 C7 C0,-C6 C7 -C0,-C6 -C7 C0,
+-C6 -C7 -C0,1.0 1.0 1.0,1.0 1.0 -1.0,1.0 -1.0 1.0,1.0 -1.0 -1.0,-1.0 1.0 1.0,
+-1.0 1.0 -1.0,-1.0 -1.0 1.0,-1.0 -1.0 -1.0">
+<INPUT type=hidden class=Faces value="24 12 2 38 #,24 38 86 70 #,24 70 4 68 #,
+24 68 84 36 #,24 36 0 12 #,25 13 1 37 #,25 37 85 69 #,25 69 5 71 #,
+25 71 87 39 #,25 39 3 13 #,26 14 0 40 #,26 40 88 72 #,26 72 6 74 #,
+26 74 90 42 #,26 42 2 14 #,27 15 3 43 #,27 43 91 75 #,27 75 7 73 #,
+27 73 89 41 #,27 41 1 15 #,28 16 5 45 #,28 45 85 77 #,28 77 8 76 #,
+28 76 84 44 #,28 44 4 16 #,29 17 4 46 #,29 46 86 78 #,29 78 9 79 #,
+29 79 87 47 #,29 47 5 17 #,30 18 6 48 #,30 48 88 80 #,30 80 10 81 #,
+30 81 89 49 #,30 49 7 18 #,31 19 7 51 #,31 51 91 83 #,31 83 11 82 #,
+31 82 90 50 #,31 50 6 19 #,32 20 10 56 #,32 56 88 64 #,32 64 0 60 #,
+32 60 84 52 #,32 52 8 20 #,33 21 8 53 #,33 53 85 61 #,33 61 1 65 #,
+33 65 89 57 #,33 57 10 21 #,34 22 9 54 #,34 54 86 62 #,34 62 2 66 #,
+34 66 90 58 #,34 58 11 22 #,35 23 11 59 #,35 59 91 67 #,35 67 3 63 #,
+35 63 87 55 #,35 55 9 23 #,2 12 0 14 #,3 15 1 13 #,4 17 5 16 #,7 19 6 18 #,
+8 21 10 20 #,9 22 11 23 #,36 84 60 0 #,37 1 61 85 #,38 2 62 86 #,39 87 63 3 #,
+40 0 64 88 #,41 89 65 1 #,42 90 66 2 #,43 3 67 91 #,44 84 68 4 #,45 5 69 85 #,
+46 4 70 86 #,47 87 71 5 #,48 6 72 88 #,49 89 73 7 #,50 90 74 6 #,51 7 75 91 #,
+52 84 76 8 #,53 8 77 85 #,54 9 78 86 #,55 87 79 9 #,56 10 80 88 #,
+57 89 81 10 #,58 90 82 11 #,59 11 83 91 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=CanonicalJoinedTruncatedIcosahedron.html>Canonical Joined Truncated Icosahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Associahedron (canonical)
+
+	(15) SHORT EDGE = 3 * (2 - sqrt(2))
+	(6) LONG EDGE = 2
+	RADIUS = 3 * sqrt(2) - 2
+	INRADIUS = (3 * sqrt(42) - 2 * sqrt(21)) / 7
+	VOLUME = 3 * (68 * sqrt(3) - 45 * sqrt(6))
+	PENTAGON-PENTAGON ANGLE = acos(-1/7)
+		= 98.2132107017381887890349494803 degrees
+	PENTAGON-SQUARE ANGLE = acos(-sqrt(7) / 7)
+		= 112.207654298596487487055620026 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 4
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Prismatic (D3h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 14 9">
+<INPUT type=hidden class=Constants value="0.210132999037012560241033429047,
+0.866025403784438646763723170753,
+0.878679656440357426797466913685453,
+1.24264068711928514640506617263,
+1.73205080756887729352744634151,
+1.942183806605889853768479770553,
+2.12132034355964257320253308631,
+2.24264068711928514640506617263">
+<!--
+	C0 = (3 * sqrt(6) - 4 * sqrt(3)) / 2
+	C1 = sqrt(3) / 2
+	C2 = 3 * (2 - sqrt(2)) / 2
+	C3 = 3 * (sqrt(2) - 1)
+	C4 = sqrt(3)
+	C5 = (3 * sqrt(6) - 2 * sqrt(3)) / 2
+	C6 = 3 * sqrt(2) / 2
+	C7 = 3 * sqrt(2) - 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C7,0.0 0.0 -C7,0.0 C4 C3,
+0.0 C4 -C3,1.5 -C1 C3,1.5 -C1 -C3,-1.5 -C1 C3,-1.5 -C1 -C3,C6 C0 0.0,
+-C6 C0 0.0,C3 C4 0.0,-C3 C4 0.0,C2 -C5 0.0,-C2 -C5 0.0">
+<INPUT type=hidden class=Faces value="0 2 11 9 6 #,0 4 8 10 2 #,0 6 13 12 4 #,
+1 3 10 8 5 #,1 5 12 13 7 #,1 7 9 11 3 #,2 10 3 11 #,4 12 5 8 #,6 9 7 13 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="1 -1 0 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=Associahedron.html>Associahedron (canonical)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Schonhardt Polyhedron
+
+	(9) SHORT EDGE = sqrt(3)
+	(3) LONG EDGE = sqrt(3 + 2 * sqrt(3))
+	RADIUS = sqrt(5 + sqrt(3)) / 2
+	VOLUME = sqrt(3 * (1 + sqrt(3))) / 2
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Dihedral (D3)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 6 8">
+<INPUT type=hidden class=Constants value="0.826445825140534740049120323293,
+0.866025403784438646763723170753">
+<!--
+	C0 = sqrt(1 + sqrt(3)) / 2
+	C1 = sqrt(3) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 1.0 C0,-1.0 0.0 -C0,C1 -0.5 C0,
+0.5 C1 -C0,0.5 -C1 -C0,-C1 -0.5 C0">
+<INPUT type=hidden class=Faces value="0 2 4 #,0 4 3 #,0 3 5 #,0 5 2 #,1 2 5 #,
+1 5 3 #,1 3 4 #,1 4 2 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Schonhardt.html>Sch&ouml;nhardt Polyhedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Stewart's G3
+
+	(24) EDGE = 1
+	VOLUME = (12 + 7 * sqrt(5)) / 12
+	PENTAGON-SQUARE ANGLE = acos(sqrt(10 * (5 - sqrt(5))) / 10)
+		= 58.2825255885389946757860968602 degrees
+	PENTAGON-TRIANGLE ANGLE = acos(sqrt(15 * (5 - 2 * sqrt(5))) / 15)
+		= 79.18768303642829370871505522552 degrees
+	SQUARE-TRIANGLE ANGLE 1 = acos(-(sqrt(15) - sqrt(3)) / 6)
+		= 110.9051574478892990329289583653 degrees
+	PENTAGON-PENTAGON ANGLE = acos(-sqrt(5) / 5)
+		= 116.565051177077989351572193720 degrees
+	SQUARE-TRIANGLE ANGLE 2 = acos(-(sqrt(3) + sqrt(15)) / 6)
+		= 159.0948425521107009670710416347 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(-sqrt(5) / 3)
+		= 221.8103148957785980658579167306 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:           3
+	MIRROR ROTATION SYMMETRIES:    3
+	ROTATION AXES:                 1 (1[3])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Pyramidal (C3v)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 13 13">
+<INPUT type=hidden class=Constants value="0.140695411754339751746677742908,
+0.359304588245660248253322257092,
+0.449712406129287175848971160090,
+0.6683215826206076723556156742752,
+0.859304588245660248253322257092,
+0.949712406129287175848971160090,
+1.16832158262060767235561567428">
+<!--
+	C0 = (183 - 31 * sqrt(5)) / 808
+	C1 = (221 + 31 * sqrt(5)) / 808
+	C2 = 19 * (9 * sqrt(5) - 1) / 808
+	C3 = (19 + 233 * sqrt(5)) / 808
+	C4 = (625 + 31 * sqrt(5)) / 808
+	C5 = (385 + 171 * sqrt(5)) / 808
+	C6 = (423 + 233 * sqrt(5)) / 808
+-->
+<INPUT type=hidden class=Vertices value="-C2 C6 C2,-C2 -C2 -C6,C6 -C2 C2,
+C1 -C5 -C4,C4 C1 C5,-C5 C4 -C1,-C0 C1 C5,-C5 -C0 -C1,C1 -C5 C0,C3 -C0 -C1,
+C1 C3 C0,-C0 C1 -C3,-C2 -C2 C2">
+<INPUT type=hidden class=Faces value="12 6 0 5 7 #,12 7 1 3 8 #,12 8 2 4 6 #,
+0 10 11 5 #,1 11 9 3 #,2 9 10 4 #,0 6 10 #,1 7 11 #,2 8 9 #,3 9 8 #,4 10 6 #,
+5 11 7 #,9 11 10 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="458783940 666352604 -587068430 29020022">
+</DIV>
+<BR>
+<CENTER>
+<A href=StewartsG3.html>Stewart's G3</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Durer's Solid with 3*pi/7 apex angle and 4/7 truncation
+
+	(6) SHORT EDGE = 3 / 7
+	(6) MEDIUM EDGE = 0.712559773552838320600005581719
+		= root of the polynomial: 343*(x^3) + 196*(x^2) - 224*x - 64
+	(6) LONG EDGE = 1
+	VOLUME = 2.14302460913137971292558905670
+		= square-root of a root of the polynomial:  1550515608655304256*(x^3)
+		- 7159114742220680400*(x^2) + 807539696082015625
+	PENTAGON APEX ANGLE = 540/7 degrees
+		= 77.1428571428571428571428571429 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  3-fold Antiprismatic (D3v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 12 8">
+<INPUT type=hidden class=Constants value="0.205698288537214990965172182329,
+0.347016074064856157129977942028,
+0.356279886776419160300002790860,
+0.359972004940126234189051319076,
+0.411396577074429981930344364658,
+0.623489801858733530525004884004,
+0.644458423263304291812816178052,
+0.719944009880252468378102638152">
+<!--
+	C0 = square-root of a root of the polynomial:  3176523*(x^3)
+		- 432180*(x^2) + 14112*x - 64
+	C1 = square-root of a root of the polynomial:  1728*(x^3) - 576*(x^2)
+		+ 36*x + 1
+	C2 = root of the polynomial:  343*(x^3) + 98*(x^2) - 56*x - 8
+	C3 = square-root of a root of the polynomial:  1728*(x^3) - 720*(x^2)
+		+ 72*x - 1
+	C4 = square-root of a root of the polynomial:  3176523*(x^3)
+		- 1728720*(x^2) + 225792*x - 4096
+	C5 = root of the polynomial:  8*(x^3) + 4*(x^2) - 4*x - 1
+	C6 = square-root of a root of the polynomial:  203297472*(x^3)
+		- 233722944*(x^2) + 50381604*x + 4826809
+	C7 = square-root of a root of the polynomial:  27*(x^3) - 45*(x^2)
+		+ 18*x - 1
+-->
+<INPUT type=hidden class=Vertices value="0.0 C7 -C1,0.0 -C7 C1,C5 C3 C1,
+C5 -C3 -C1,-C5 C3 C1,-C5 -C3 -C1,-C2 C0 C6,C2 -C0 -C6,C2 C0 C6,-C2 -C0 -C6,
+0.0 -C4 C6,0.0 C4 -C6">
+<INPUT type=hidden class=Faces value="0 11 9 5 4 #,1 10 6 4 5 #,2 8 10 1 3 #,
+3 7 11 0 2 #,4 6 8 2 0 #,5 9 7 3 1 #,6 10 8 #,7 9 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="78 -58 -14 -17">
+</DIV>
+<BR>
+<CENTER>
+<A href=Durer.html>D&uuml;rer's Solid</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Jessen's Orthogonal Icosahedron
+
+	(24) SHORT EDGE = sqrt(6)
+	(6) LONG EDGE = 4
+	RADIUS = sqrt(5)
+	VOLUME = 20
+	ISOSCELES APEX ANGLE = acos(-1/3) = 109.471220634490691369245999340 degrees
+	CONVEX DIHEDRAL ANGLE = acos(0) = 90 degrees
+	CONCAVE DIHEDRAL ANGLE = acos(0) = 270 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Pyritohedral (Th)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 12 20">
+<INPUT type=hidden class=Vertices value="2.0 0.0 1.0,2.0 0.0 -1.0,-2.0 0.0 1.0,
+-2.0 0.0 -1.0,1.0 2.0 0.0,1.0 -2.0 0.0,-1.0 2.0 0.0,-1.0 -2.0 0.0,0.0 1.0 2.0,
+0.0 1.0 -2.0,0.0 -1.0 2.0,0.0 -1.0 -2.0">
+<INPUT type=hidden class=Faces value="0 2 10 #,0 10 5 #,0 5 4 #,0 4 8 #,
+0 8 2 #,3 1 11 #,3 11 7 #,3 7 6 #,3 6 9 #,3 9 1 #,2 6 7 #,2 7 10 #,10 7 11 #,
+10 11 5 #,5 11 1 #,5 1 4 #,4 1 9 #,4 9 8 #,8 9 6 #,8 6 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="339851143 424708200 175919897 820473239">
+</DIV>
+<BR>
+<CENTER>
+<A href=Jessen.html>Jessen's Orthogonal Icosahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Concave Dodecahedron
+
+	(30) EDGE = 1
+	RADIUS = (sqrt(3) + sqrt(15)) / 4
+	INRADIUS = sqrt(10 * (5 - sqrt(5))) / 20
+	VOLUME = (1 + sqrt(5)) / 4
+	CONVEX DIHEDRAL ANGLE = acos(sqrt(5) / 5)
+		= 63.434948822922010648427806279547 degrees
+	CONCAVE DIHEDRAL ANGLE = acos(-sqrt(5) / 5)
+		= 243.434948822922010648427806280 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Pyritohedral (Th)
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 20 12">
+<INPUT type=hidden class=Constants value="0.309016994374947424102293417183,
+0.809016994374947424102293417183">
+<!--
+	C0 = (sqrt(5) - 1) / 4
+	C1 = (1 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.5 C0,0.0 0.5 -C0,0.0 -0.5 C0,
+0.0 -0.5 -C0,C0 0.0 0.5,C0 0.0 -0.5,-C0 0.0 0.5,-C0 0.0 -0.5,0.5 C0 0.0,
+0.5 -C0 0.0,-0.5 C0 0.0,-0.5 -C0 0.0,C1 C1 C1,C1 C1 -C1,C1 -C1 C1,C1 -C1 -C1,
+-C1 C1 C1,-C1 C1 -C1,-C1 -C1 C1,-C1 -C1 -C1">
+<INPUT type=hidden class=Faces value="0 2 14 4 12 #,0 12 8 10 16 #,
+0 16 6 18 2 #,7 6 16 10 17 #,7 17 1 3 19 #,7 19 11 18 6 #,9 11 19 3 15 #,
+9 15 5 4 14 #,9 14 2 18 11 #,13 1 17 10 8 #,13 8 12 4 5 #,13 5 15 3 1 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="51 86 0 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=ConcaveDodecahedron.html>Concave Dodecahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Rhombic Hexecontahedron
+
+	(120) EDGE = 1
+	RHOMBUS LENGTH = sqrt(10 * (5 + sqrt(5))) / 5
+	RHOMBUS WIDTH = sqrt(10 * (5 - sqrt(5))) / 5
+	(12) [5]-VERTEX RADIUS = 1
+	(30) [4]-VERTEX RADIUS = sqrt(10 * (5 + sqrt(5))) / 5
+	(20) [3]-VERTEX RADIUS = sqrt(15 * (5 + 2 * sqrt(5))) / 5
+	VOLUME = 4 * sqrt(2 * (5 + sqrt(5)))
+	DIHEDRAL ANGLE 1 = acos((sqrt(5) - 1) / 4) = 72 degrees
+	DIHEDRAL ANGLE 2 = acos(-(1 + sqrt(5)) / 4) = 216 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 62 60">
+<INPUT type=hidden class=Constants value="0.525731112119133606025669084848,
+0.850650808352039932181540497063,
+1.37638192047117353820720958191,
+1.70130161670407986436308099413,
+2.22703272882321347038875007897">
+<!--
+	C0 = sqrt(10 * (5 - sqrt(5))) / 10
+	C1 = sqrt(10 * (5 + sqrt(5))) / 10
+	C2 = sqrt(5 * (5 + 2 * sqrt(5))) / 5
+	C3 = sqrt(10 * (5 + sqrt(5))) / 5
+	C4 = sqrt(10 * (25 + 11 * sqrt(5))) / 10
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C3,0.0 0.0 -C3,C3 0.0 0.0,
+-C3 0.0 0.0,0.0 C3 0.0,0.0 -C3 0.0,0.0 C1 C4,0.0 C1 -C4,0.0 -C1 C4,0.0 -C1 -C4,
+C4 0.0 C1,C4 0.0 -C1,-C4 0.0 C1,-C4 0.0 -C1,C1 C4 0.0,C1 -C4 0.0,-C1 C4 0.0,
+-C1 -C4 0.0,C0 0.0 C1,C0 0.0 -C1,-C0 0.0 C1,-C0 0.0 -C1,C1 C0 0.0,C1 -C0 0.0,
+-C1 C0 0.0,-C1 -C0 0.0,0.0 C1 C0,0.0 C1 -C0,0.0 -C1 C0,0.0 -C1 -C0,C0 C1 C2,
+C0 C1 -C2,C0 -C1 C2,C0 -C1 -C2,-C0 C1 C2,-C0 C1 -C2,-C0 -C1 C2,-C0 -C1 -C2,
+C2 C0 C1,C2 C0 -C1,C2 -C0 C1,C2 -C0 -C1,-C2 C0 C1,-C2 C0 -C1,-C2 -C0 C1,
+-C2 -C0 -C1,C1 C2 C0,C1 C2 -C0,C1 -C2 C0,C1 -C2 -C0,-C1 C2 C0,-C1 C2 -C0,
+-C1 -C2 C0,-C1 -C2 -C0,C2 C2 C2,C2 C2 -C2,C2 -C2 C2,C2 -C2 -C2,-C2 C2 C2,
+-C2 C2 -C2,-C2 -C2 C2,-C2 -C2 -C2">
+<INPUT type=hidden class=Faces value="18 0 8 32 #,18 32 56 40 #,18 40 10 38 #,
+18 38 54 30 #,18 30 6 0 #,19 1 7 31 #,19 31 55 39 #,19 39 11 41 #,
+19 41 57 33 #,19 33 9 1 #,20 0 6 34 #,20 34 58 42 #,20 42 12 44 #,
+20 44 60 36 #,20 36 8 0 #,21 1 9 37 #,21 37 61 45 #,21 45 13 43 #,
+21 43 59 35 #,21 35 7 1 #,22 2 11 39 #,22 39 55 47 #,22 47 14 46 #,
+22 46 54 38 #,22 38 10 2 #,23 2 10 40 #,23 40 56 48 #,23 48 15 49 #,
+23 49 57 41 #,23 41 11 2 #,24 3 12 42 #,24 42 58 50 #,24 50 16 51 #,
+24 51 59 43 #,24 43 13 3 #,25 3 13 45 #,25 45 61 53 #,25 53 17 52 #,
+25 52 60 44 #,25 44 12 3 #,26 4 16 50 #,26 50 58 34 #,26 34 6 30 #,
+26 30 54 46 #,26 46 14 4 #,27 4 14 47 #,27 47 55 31 #,27 31 7 35 #,
+27 35 59 51 #,27 51 16 4 #,28 5 15 48 #,28 48 56 32 #,28 32 8 36 #,
+28 36 60 52 #,28 52 17 5 #,29 5 17 53 #,29 53 61 37 #,29 37 9 33 #,
+29 33 57 49 #,29 49 15 5 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RhombicHexecontahedron.html>Rhombic Hexecontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rhombic Icosahedron
+
+	(50) EDGE = 1
+	RHOMBUS LENGTH = sqrt(10 * (5 + sqrt(5))) / 5
+	RHOMBUS WIDTH = sqrt(10 * (5 - sqrt(5))) / 5
+	(10) [3]-VERTEX RADIUS = sqrt(5) / 2
+	(10) [4]-VERTEX RADIUS = sqrt(5 * (25 + 8 * sqrt(5))) / 10
+	(2) [5]-VERTEX RADIUS = sqrt(5) / 2
+	VOLUME = 2 * sqrt(5 + 2 * sqrt(5))
+	DIHEDRAL ANGLE 1 = acos(-(sqrt(5) - 1) / 4) = 108 degrees
+	DIHEDRAL ANGLE 2 = acos(-(1 + sqrt(5)) / 4) = 144 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          10
+	MIRROR ROTATION SYMMETRIES:   10
+	ROTATION AXES:                 6 (1[5] + 5[2])
+	MIRROR PLANES:                 5
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  5-fold Antiprismatic (D5v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 22 20">
+<INPUT type=hidden class=Constants value="0.100405707943113639934898836316,
+0.262865556059566803012834542424,
+0.425325404176019966090770248532,
+0.525731112119133606025669084848,
+0.587785252292473129168705954639,
+0.850650808352039932181540497063,
+0.951056516295153572116439333379,
+1.11351636441160673519437503949,
+1.37638192047117353820720958191">
+<!--
+	C0 = sqrt(10 * (25 - 11 * sqrt(5))) / 20
+	C1 = sqrt(10 * (5 - sqrt(5))) / 20
+	C2 = sqrt(10 * (5 + sqrt(5))) / 20
+	C3 = sqrt(10 * (5 - sqrt(5))) / 10
+	C4 = sqrt(2 * (5 - sqrt(5))) / 4
+	C5 = sqrt(10 * (5 + sqrt(5))) / 10
+	C6 = sqrt(2 * (5 + sqrt(5))) / 4
+	C7 = sqrt(10 * (25 + 11 * sqrt(5))) / 20
+	C8 = sqrt(5 * (5 + 2 * sqrt(5))) / 5
+-->
+<INPUT type=hidden class=Vertices value="C2 -C1 C8,C2 -C1 -C8,-C2 C1 C8,
+-C2 C1 -C8,C2 -C7 C5,C2 -C7 -C5,-C2 C7 C5,-C2 C7 -C5,C2 C4 C5,C2 C4 -C5,
+-C2 -C4 C5,-C2 -C4 -C5,C6 -C1 C3,C6 -C1 -C3,-C6 C1 C3,-C6 C1 -C3,C6 -C7 0.0,
+-C6 C7 0.0,C6 C4 0.0,-C6 -C4 0.0,C0 C7 0.0,-C0 -C7 0.0">
+<INPUT type=hidden class=Faces value="18 8 0 12 #,18 12 16 13 #,18 13 1 9 #,
+18 9 7 20 #,18 20 6 8 #,19 10 2 14 #,19 14 17 15 #,19 15 3 11 #,19 11 5 21 #,
+19 21 4 10 #,8 6 2 0 #,9 1 3 7 #,10 4 0 2 #,11 3 1 5 #,12 0 4 16 #,13 16 5 1 #,
+14 2 6 17 #,15 17 7 3 #,20 7 17 6 #,21 5 16 4 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="57 41 57 41">
+</DIV>
+<BR>
+<CENTER>
+<A href=RhombicIcosahedron.html>Rhombic Icosahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Bilinski's Dodecahedron
+
+	(24) EDGE = 1
+	RHOMBUS LENGTH = sqrt(10 * (5 + sqrt(5))) / 5
+	RHOMBUS WIDTH = sqrt(10 * (5 - sqrt(5))) / 5
+	VOLUME = 4 * sqrt(5 + 2 * sqrt(5)) / 5
+	DIHEDRAL ANGLE 1 = acos((sqrt(5) - 1) / 4) = 72 degrees
+	DIHEDRAL ANGLE 2 = acos(-(sqrt(5) - 1) / 4) = 108 degrees
+	DIHEDRAL ANGLE 3 = acos(-(1 + sqrt(5)) / 4) = 144 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:           4
+	MIRROR ROTATION SYMMETRIES:    4
+	ROTATION AXES:                 3 (3[2])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  2-fold Prismatic (D2h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 14 12">
+<INPUT type=hidden class=Constants value="0.525731112119133606025669084848,
+0.850650808352039932181540497063,
+1.37638192047117353820720958191">
+<!--
+	C0 = sqrt(10 * (5 - sqrt(5))) / 10
+	C1 = sqrt(10 * (5 + sqrt(5))) / 10
+	C2 = sqrt(5 * (5 + 2 * sqrt(5))) / 5
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C2,0.0 0.0 -C2,C1 -C0 0.0,
+-C1 C0 0.0,C1 C0 0.0,-C1 -C0 0.0,C1 0.0 C1,C1 0.0 -C1,0.0 -C0 C0,0.0 -C0 -C0,
+0.0 C0 C0,0.0 C0 -C0,-C1 0.0 C1,-C1 0.0 -C1">
+<INPUT type=hidden class=Faces value="6 0 8 2 #,6 2 7 4 #,6 4 10 0 #,9 1 7 2 #,
+9 2 8 5 #,9 5 13 1 #,11 1 13 3 #,11 3 10 4 #,11 4 7 1 #,12 0 10 3 #,
+12 3 13 5 #,12 5 8 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="612372436 353553391 612372436 353553391">
+</DIV>
+<BR>
+<CENTER>
+<A href=BilinskiDodecahedron.html>Bilinski's Dodecahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Gyrate Deltoidal Icositetrahedron
+
+	(24) SHORT EDGE = 2 * sqrt(10 - sqrt(2)) / 7
+	(24) LONG EDGE = sqrt(2 * (2 - sqrt(2)))
+	KITE LENGTH = 2 * sqrt(31 - 8 * sqrt(2)) / 7
+	KITE WIDTH = sqrt(2)
+	(8) INNER VERTEX RADIUS = (4 * sqrt(3) + sqrt(6)) / 7
+	(18) OUTER VERTEX RADIUS = sqrt(2)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 + sqrt(2))) / 2
+	INRADIUS = sqrt(34 * (7 + 4 * sqrt(2))) / 17
+	VOLUME = 16 * (1 + 2 * sqrt(2)) / 7
+	DIHEDRAL ANGLE = acos(-(7 + 4 * sqrt(2)) / 17)
+		= 138.117959055512322254739639927 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:           8
+	MIRROR ROTATION SYMMETRIES:    8
+	ROTATION AXES:                 5 (1[4] + 4[2])
+	MIRROR PLANES:                 4
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  4-fold Antiprismatic (D4v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 26 24">
+<INPUT type=hidden class=Constants value="0.7071067811865475244008443621048,
+0.773459080339013578400241246316,
+1.09383632135605431360096498526,
+1.41421356237309504880168872421">
+<!--
+	C0 = sqrt(2) / 2
+	C1 = (4 + sqrt(2)) / 7
+	C2 = (2 + 4 * sqrt(2)) / 7
+	C3 = sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C3,0.0 0.0 -C3,C3 0.0 0.0,
+-C3 0.0 0.0,0.0 C3 0.0,0.0 -C3 0.0,0.0 C2 C1,0.0 -C2 C1,C2 0.0 C1,-C2 0.0 C1,
+1.0 0.0 -1.0,-1.0 0.0 -1.0,1.0 1.0 0.0,1.0 -1.0 0.0,-1.0 1.0 0.0,-1.0 -1.0 0.0,
+0.0 1.0 -1.0,0.0 -1.0 -1.0,C0 C0 1.0,C0 -C0 1.0,-C0 C0 1.0,-C0 -C0 1.0,
+C1 C1 -C1,C1 -C1 -C1,-C1 C1 -C1,-C1 -C1 -C1">
+<INPUT type=hidden class=Faces value="0 18 6 20 #,0 20 9 21 #,0 21 7 19 #,
+0 19 8 18 #,1 10 23 17 #,1 17 25 11 #,1 11 24 16 #,1 16 22 10 #,2 8 19 13 #,
+2 13 23 10 #,2 10 22 12 #,2 12 18 8 #,3 9 20 14 #,3 14 24 11 #,3 11 25 15 #,
+3 15 21 9 #,4 6 18 12 #,4 12 22 16 #,4 16 24 14 #,4 14 20 6 #,5 7 21 15 #,
+5 15 25 17 #,5 17 23 13 #,5 13 19 7 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GyrateDeltoidalIcositetrahedron.html>Gyrate Deltoidal Icositetrahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Tetracontahedron with equal edges
+
+	(66) EDGE = 1
+	RHOMBUS LENGTH = 1.647054741528425864777465318251
+		= square-root of a root of the polynomial:  81*(x^6) + 1017*(x^5)
+		- 4929*(x^4) - 40918*(x^3) + 270695*(x^2) - 516775*x + 311929
+	RHOMBUS WIDTH = 1.13455307430226915190214413031
+		= square-root of a root of the polynomial:  81*(x^6) - 2961*(x^5)
+		+ 34851*(x^4) - 146618*(x^3) + 268415*(x^2) - 222321*x + 68557
+	RHOMBUS SMALL ANGLE = 69.1210558492830778565399263752
+	RHOMBUS SMALL ANGLE COSINE = 0.356394660795634866488366109672
+		= root of the polynomial:  5184*(x^6) + 63648*(x^5) + 161616*(x^4)
+		- 213680*(x^3) + 30764*(x^2) + 28346*x - 7321
+	RHOMBUS LARGE ANGLE = 110.8789441507169221434600736248
+	RHOMBUS LARGE ANGLE COSINE = -0.356394660795634866488366109672
+		= root of the polynomial:  5184*(x^6) - 63648*(x^5) + 161616*(x^4)
+		+ 213680*(x^3) + 30764*(x^2) - 28346*x - 7321
+	RADIUS = 1.53086825357929910898144489184
+		= square-root of a root of the polynomial:
+		5308416*(x^6) + 19611648*(x^5) - 27949056*(x^4) - 182395904*(x^3)
+		+ 195149584*(x^2) - 65813172*x + 7325429
+	INRADIUS = 1.167711439911290587862506056249
+		= square-root of a root of the polynomial:
+		47775744*(x^6) + 250822656*(x^5) + 212502528*(x^4) - 1389007872*(x^3)
+		+ 722329488*(x^2) - 37068660*x + 5013121
+	VOLUME = 9.70809807402742251881552659183
+		= square-root of a root of the polynomial:  25389989167104*(x^6)
+		- 80648261801164800*(x^5) + 102590343534926776320*(x^4)
+		- 7935642546343404401664*(x^3) - 93893632612355953260144*(x^2)
+		- 372739867788116081284236*x + 92488946329117889914801
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Tetrahedral (T)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 28 40">
+<INPUT type=hidden class=Constants value="0.1559963901310175823344034612752,
+0.240252093865609506719701454787,
+0.475042236297038497597099027780,
+0.731618801237068486347066637576,
+0.871290720293665586651203943842,
+1.05066464740308940160976220408,
+1.44691313139971649066386712014">
+<!--
+	C0 = square-root of a root of the polynomial:  65536*(x^6) + 65536*(x^5)
+		+ 124928*(x^4) + 61952*(x^3) + 45712*(x^2) - 1192*x + 1
+	C1 = square-root of a root of the polynomial:
+		5308416*(x^6) + 13418496*(x^5) + 18057216*(x^4) + 11963392*(x^3)
+		+ 3374096*(x^2) - 249068*x + 625
+	C2 = square-root of a root of the polynomial:  4096*(x^6) - 10240*(x^5)
+		+ 16768*(x^4) - 15520*(x^3) + 9569*(x^2) - 2672*x + 256
+	C3 = square-root of a root of the polynomial:  331776*(x^6) - 1124352*(x^5)
+		+ 2199936*(x^4) - 2675360*(x^3) + 2015121*(x^2) - 870688*x + 160000
+	C4 = square-root of a root of the polynomial:
+		5308416*(x^6) - 36126720*(x^5) + 91195392*(x^4) - 28537856*(x^3)
+		- 19973104*(x^2) + 1219668*x + 874225
+	C5 = square-root of a root of the polynomial:
+		5308416*(x^6) + 21823488*(x^5) + 8251392*(x^4) - 102460928*(x^3)
+		+ 92047760*(x^2) - 31764840*x + 3094081
+	C6 = square-root of a root of the polynomial:
+		5308416*(x^6) + 27574272*(x^5) + 1542144*(x^4) - 196428800*(x^3)
+		+ 51247120*(x^2) - 3770284*x + 130321
+-->
+<INPUT type=hidden class=Vertices value="C2 C0 C6,C2 -C0 -C6,-C2 -C0 C6,
+-C2 C0 -C6,C6 C2 C0,C6 -C2 -C0,-C6 -C2 C0,-C6 C2 -C0,C0 C6 C2,C0 -C6 -C2,
+-C0 -C6 C2,-C0 C6 -C2,C1 -C3 C5,C1 C3 -C5,-C1 C3 C5,-C1 -C3 -C5,C5 -C1 C3,
+C5 C1 -C3,-C5 C1 C3,-C5 -C1 -C3,C3 -C5 C1,C3 C5 -C1,-C3 C5 C1,-C3 -C5 -C1,
+C4 C4 C4,C4 -C4 -C4,-C4 -C4 C4,-C4 C4 -C4">
+<INPUT type=hidden class=Faces value="24 0 16 4 #,24 4 21 8 #,24 8 14 0 #,
+25 1 17 5 #,25 5 20 9 #,25 9 15 1 #,26 2 18 6 #,26 6 23 10 #,26 10 12 2 #,
+27 3 19 7 #,27 7 22 11 #,27 11 13 3 #,12 20 16 #,13 21 17 #,14 22 18 #,
+15 23 19 #,0 12 16 #,1 13 17 #,2 14 18 #,3 15 19 #,4 17 21 #,5 16 20 #,
+6 19 23 #,7 18 22 #,8 22 14 #,9 23 15 #,10 20 12 #,11 21 13 #,0 2 12 #,
+1 3 13 #,2 0 14 #,3 1 15 #,4 5 17 #,5 4 16 #,6 7 19 #,7 6 18 #,8 11 22 #,
+9 10 23 #,10 9 20 #,11 8 21 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=EqualEdgeTetracontahedron.html>Tetracontahedron with equal edges</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Stella Octangula (Actual)
+
+	(6) EDGE = 1
+	(8) [3]-VERTEX RADIUS = sqrt(6) / 2
+	VOLUME = sqrt(2) / 8
+	DIHEDRAL ANGLE = acos(1/3) = 70.5287793655093086307540006600 degrees
+
+	EULER CHARACTERISTIC:          4
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 8 8">
+<INPUT type=hidden class=Constants value="0.353553390593273762200422181052">
+<!--
+	C0 = sqrt(2) / 4
+-->
+<INPUT type=hidden class=Vertices value="C0 C0 C0,C0 C0 -C0,C0 -C0 C0,
+C0 -C0 -C0,-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="2 1 4 #,2 4 7 #,2 7 1 #,1 7 4 #,0 3 5 #,
+0 5 6 #,0 6 3 #,3 6 5 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="97 22 0 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=StellaOctangula1.html>Stella Octangula (Actual)</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Cube-Octahedron Compound (Actual)
+
+	(12) SHORT EDGE = 1
+	(12) LONG EDGE = sqrt(2)
+	(8) [3]-VERTEX RADIUS = sqrt(3) / 2
+	(6) [4]-VERTEX RADIUS = 1
+	VOLUME = 3 / 2
+
+	EULER CHARACTERISTIC:          4
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 14 14">
+<INPUT type=hidden class=Vertices value="0.5 0.5 0.5,0.5 0.5 -0.5,0.5 -0.5 0.5,
+0.5 -0.5 -0.5,-0.5 0.5 0.5,-0.5 0.5 -0.5,-0.5 -0.5 0.5,-0.5 -0.5 -0.5,
+0.0 0.0 1.0,0.0 0.0 -1.0,1.0 0.0 0.0,-1.0 0.0 0.0,0.0 1.0 0.0,0.0 -1.0 0.0">
+<INPUT type=hidden class=Faces value="0 1 5 4 #,0 4 6 2 #,0 2 3 1 #,7 3 2 6 #,
+7 6 4 5 #,7 5 1 3 #,8 10 12 #,8 12 11 #,8 11 13 #,8 13 10 #,9 10 13 #,
+9 13 11 #,9 11 12 #,9 12 10 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="98 -11 -16 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=CubeOctahedronCompound1.html>Cube-Octahedron Compound (Actual)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Dodecahedron-Icosahedron Compound (Actual)
+
+	(30) SHORT EDGE = 1
+	(30) LONG EDGE = (1 + sqrt(5)) / 2
+	(20) [3]-VERTEX RADIUS = (sqrt(3) + sqrt(15)) / 4
+	(12) [5]-VERTEX RADIUS = sqrt(5 + 2 * sqrt(5)) / 2
+	VOLUME = 5 * (15 + 7 * sqrt(5)) / 16
+
+	EULER CHARACTERISTIC:          4
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 32 32">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183,
+1.30901699437494742410229341718">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+	C1 = (3 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.5 C1,0.0 0.5 -C1,0.0 -0.5 C1,
+0.0 -0.5 -C1,C1 0.0 0.5,C1 0.0 -0.5,-C1 0.0 0.5,-C1 0.0 -0.5,0.5 C1 0.0,
+0.5 -C1 0.0,-0.5 C1 0.0,-0.5 -C1 0.0,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,
+-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0,C0 0.0 C1,C0 0.0 -C1,-C0 0.0 C1,
+-C0 0.0 -C1,C1 C0 0.0,C1 -C0 0.0,-C1 C0 0.0,-C1 -C0 0.0,0.0 C1 C0,0.0 C1 -C0,
+0.0 -C1 C0,0.0 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 2 14 4 12 #,0 12 8 10 16 #,
+0 16 6 18 2 #,7 6 16 10 17 #,7 17 1 3 19 #,7 19 11 18 6 #,9 11 19 3 15 #,
+9 15 5 4 14 #,9 14 2 18 11 #,13 1 17 10 8 #,13 8 12 4 5 #,13 5 15 3 1 #,
+20 22 30 #,20 30 25 #,20 25 24 #,20 24 28 #,20 28 22 #,22 28 26 #,22 26 27 #,
+22 27 30 #,30 27 31 #,30 31 25 #,25 31 21 #,25 21 24 #,24 21 29 #,24 29 28 #,
+28 29 26 #,26 29 23 #,26 23 27 #,27 23 31 #,31 23 21 #,21 23 29 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="97 -8 21 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=DodecahedronIcosahedronCompound1.html>Dodecahedron-Icosahedron Compound (Actual)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Escher's Solid
+
+	(48) SHORT EDGE = sqrt(3) / 2
+	(24) LONG EDGE = 1
+	VOLUME = 4
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 26 48">
+<INPUT type=hidden class=Vertices value="0.0 0.0 1.0,0.0 0.0 -1.0,1.0 0.0 0.0,
+-1.0 0.0 0.0,0.0 1.0 0.0,0.0 -1.0 0.0,1.0 0.0 1.0,1.0 0.0 -1.0,-1.0 0.0 1.0,
+-1.0 0.0 -1.0,1.0 1.0 0.0,1.0 -1.0 0.0,-1.0 1.0 0.0,-1.0 -1.0 0.0,0.0 1.0 1.0,
+0.0 1.0 -1.0,0.0 -1.0 1.0,0.0 -1.0 -1.0,0.5 0.5 0.5,0.5 0.5 -0.5,0.5 -0.5 0.5,
+0.5 -0.5 -0.5,-0.5 0.5 0.5,-0.5 0.5 -0.5,-0.5 -0.5 0.5,-0.5 -0.5 -0.5">
+<INPUT type=hidden class=Faces value="0 6 18 #,0 18 14 #,0 14 22 #,0 22 8 #,
+0 8 24 #,0 24 16 #,0 16 20 #,0 20 6 #,1 7 21 #,1 21 17 #,1 17 25 #,1 25 9 #,
+1 9 23 #,1 23 15 #,1 15 19 #,1 19 7 #,2 6 20 #,2 20 11 #,2 11 21 #,2 21 7 #,
+2 7 19 #,2 19 10 #,2 10 18 #,2 18 6 #,3 8 22 #,3 22 12 #,3 12 23 #,3 23 9 #,
+3 9 25 #,3 25 13 #,3 13 24 #,3 24 8 #,4 10 19 #,4 19 15 #,4 15 23 #,4 23 12 #,
+4 12 22 #,4 22 14 #,4 14 18 #,4 18 10 #,5 11 20 #,5 20 16 #,5 16 24 #,
+5 24 13 #,5 13 25 #,5 25 17 #,5 17 21 #,5 21 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="98 -11 -16 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=Escher.html>Escher's Solid</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

@@ -1,0 +1,567 @@
+<!-- File:   Chamfer.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Chamfered Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='TruncatedCatalan.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Chamfered Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='Johnson.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+The "chamfer" operation is defined as a truncation along a polyhedron's edges.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Chamfered Tetrahedron with chamfer depth chosen to make all edges
+	of the resulting polyhedron be the same length.
+
+	(24) EDGE = 1
+	RADIUS = (2 * sqrt(3) + sqrt(6)) / 4
+	VOLUME = (30 + 19 * sqrt(2)) / 12
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Full Tetrahedral (Td)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 16 10">
+<INPUT type=hidden class=Constants value="0.146446609406726237799577818948,
+0.853553390593273762200422181052">
+<!--
+	C0 = (2 - sqrt(2)) / 4
+	C1 = (2 + sqrt(2)) / 4
+-->
+<INPUT type=hidden class=Vertices value="C1 -C1 C1,C1 C1 -C1,-C1 C1 C1,
+-C1 -C1 -C1,C1 C0 C1,C1 -C0 -C1,-C1 -C0 C1,-C1 C0 -C1,C1 C1 C0,C1 -C1 -C0,
+-C1 -C1 C0,-C1 C1 -C0,C0 C1 C1,C0 -C1 -C1,-C0 -C1 C1,-C0 C1 -C1">
+<INPUT type=hidden class=Faces value="0 9 5 1 8 4 #,0 14 10 3 13 9 #,
+1 5 13 3 7 15 #,1 15 11 2 12 8 #,2 6 14 0 4 12 #,2 11 7 3 10 6 #,4 8 12 #,
+5 9 13 #,6 10 14 #,7 11 15 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=ChamferedTetrahedron1.html>Chamfered Tetrahedron <NOBR>(all edges equal)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Chamfered Octahedron with chamfer depth chosen to make all edges
+	of the resulting polyhedron be the same length.
+
+	(48) EDGE = 1
+	RADIUS = (3 * sqrt(2) + 4 * sqrt(3)) / 6
+	VOLUME = (39 * sqrt(2) + 34 * sqrt(3)) / 9
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 30 20">
+<INPUT type=hidden class=Constants value="0.577350269189625764509148780502,
+1.28445705037617328890999314261,
+1.86180731956579905341914192311">
+<!--
+	C0 = sqrt(3) / 3
+	C1 = (3 * sqrt(2) + 2 * sqrt(3)) / 6
+	C2 = (3 * sqrt(2) + 4 * sqrt(3)) / 6
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C2,0.0 0.0 -C2,C2 0.0 0.0,
+-C2 0.0 0.0,0.0 C2 0.0,0.0 -C2 0.0,C0 C0 C1,C0 C0 -C1,C0 -C0 C1,C0 -C0 -C1,
+-C0 C0 C1,-C0 C0 -C1,-C0 -C0 C1,-C0 -C0 -C1,C1 C0 C0,C1 C0 -C0,C1 -C0 C0,
+C1 -C0 -C0,-C1 C0 C0,-C1 C0 -C0,-C1 -C0 C0,-C1 -C0 -C0,C0 C1 C0,C0 C1 -C0,
+C0 -C1 C0,C0 -C1 -C0,-C0 C1 C0,-C0 C1 -C0,-C0 -C1 C0,-C0 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 6 22 4 26 10 #,0 10 18 3 20 12 #,
+0 12 28 5 24 8 #,0 8 16 2 14 6 #,1 7 15 2 17 9 #,1 9 25 5 29 13 #,
+1 13 21 3 19 11 #,1 11 27 4 23 7 #,2 15 23 4 22 14 #,2 16 24 5 25 17 #,
+3 18 26 4 27 19 #,3 21 29 5 28 20 #,6 14 22 #,7 23 15 #,8 24 16 #,9 17 25 #,
+10 26 18 #,11 19 27 #,12 20 28 #,13 29 21 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=ChamferedOctahedron1.html>Chamfered Octahedron <NOBR>(all edges equal)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Chamfered Cube with chamfer depth chosen to make all edges of the
+	resulting polyhedron be the same length.
+
+	(48) EDGE = 1
+	RADIUS = (2 + sqrt(3)) / 2
+	VOLUME = (81 + 52 * sqrt(3)) / 9
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 32 18">
+<INPUT type=hidden class=Constants value="1.07735026918962576450914878050,
+1.65470053837925152901829756100">
+<!--
+	C0 = (3 + 2 * sqrt(3)) / 6
+	C1 = (3 + 4 * sqrt(3)) / 6
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.5 C1,0.5 0.5 -C1,0.5 -0.5 C1,
+0.5 -0.5 -C1,-0.5 0.5 C1,-0.5 0.5 -C1,-0.5 -0.5 C1,-0.5 -0.5 -C1,C1 0.5 0.5,
+C1 0.5 -0.5,C1 -0.5 0.5,C1 -0.5 -0.5,-C1 0.5 0.5,-C1 0.5 -0.5,-C1 -0.5 0.5,
+-C1 -0.5 -0.5,0.5 C1 0.5,0.5 C1 -0.5,0.5 -C1 0.5,0.5 -C1 -0.5,-0.5 C1 0.5,
+-0.5 C1 -0.5,-0.5 -C1 0.5,-0.5 -C1 -0.5,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,
+C0 -C0 -C0,-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="24 0 2 26 10 8 #,24 8 9 25 17 16 #,
+24 16 20 28 4 0 #,27 3 1 25 9 11 #,27 11 10 26 18 19 #,27 19 23 31 7 3 #,
+29 5 7 31 15 13 #,29 13 12 28 20 21 #,29 21 17 25 1 5 #,30 6 4 28 12 14 #,
+30 14 15 31 23 22 #,30 22 18 26 2 6 #,0 4 6 2 #,1 3 7 5 #,8 10 11 9 #,
+12 13 15 14 #,16 17 21 20 #,18 22 23 19 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=ChamferedCube1.html>Chamfered Cube <NOBR>(all edges equal)</NOBR></A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Chamfered Icosahedron with chamfer depth chosen to make all edges
+	of the resulting polyhedron be the same length.
+
+	(120) EDGE = 1
+	RADIUS = (2 + 2 * sqrt(5) + sqrt(2 * (5 + sqrt(5)))) / 4
+	VOLUME = (195 + 41*sqrt(5) + 6 * sqrt(2 * (745 + 229 * sqrt(5)))) / 12
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 72 50">
+<INPUT type=hidden class=Constants value="0.525731112119133606025669084848,
+0.850650808352039932181540497063,
+1.33474810649408103012796250203,
+1.35065080835203993218154049706,
+1.659667802726987356283833914246,
+1.87638192047117353820720958191,
+2.18539891484612096230950299909">
+<!--
+	C0 = sqrt(10 * (5 - sqrt(5))) / 10
+	C1 = sqrt(10 * (5 + sqrt(5))) / 10
+	C2 = (5 + 5 * sqrt(5) + 2 * sqrt(10 * (5 - sqrt(5)))) / 20
+	C3 = (5 + sqrt(10 * (5 + sqrt(5)))) / 10
+	C4 = (5 + 5 * sqrt(5) + 2 * sqrt(10 * (5 + sqrt(5)))) / 20
+	C5 = (5 + 2 * sqrt(5 * (5 + 2 * sqrt(5)))) / 10
+	C6 = (5 + 5 * sqrt(5) + 4 * sqrt(5 * (5 + 2 * sqrt(5)))) / 20
+-->
+<INPUT type=hidden class=Vertices value="C3 0.0 C6,C3 0.0 -C6,-C3 0.0 C6,
+-C3 0.0 -C6,C6 C3 0.0,C6 -C3 0.0,-C6 C3 0.0,-C6 -C3 0.0,0.0 C6 C3,0.0 C6 -C3,
+0.0 -C6 C3,0.0 -C6 -C3,0.5 C0 C6,0.5 C0 -C6,0.5 -C0 C6,0.5 -C0 -C6,-0.5 C0 C6,
+-0.5 C0 -C6,-0.5 -C0 C6,-0.5 -C0 -C6,C6 0.5 C0,C6 0.5 -C0,C6 -0.5 C0,
+C6 -0.5 -C0,-C6 0.5 C0,-C6 0.5 -C0,-C6 -0.5 C0,-C6 -0.5 -C0,C0 C6 0.5,
+C0 C6 -0.5,C0 -C6 0.5,C0 -C6 -0.5,-C0 C6 0.5,-C0 C6 -0.5,-C0 -C6 0.5,
+-C0 -C6 -0.5,0.0 C2 C5,0.0 C2 -C5,0.0 -C2 C5,0.0 -C2 -C5,C5 0.0 C2,C5 0.0 -C2,
+-C5 0.0 C2,-C5 0.0 -C2,C2 C5 0.0,C2 -C5 0.0,-C2 C5 0.0,-C2 -C5 0.0,C3 C1 C4,
+C3 C1 -C4,C3 -C1 C4,C3 -C1 -C4,-C3 C1 C4,-C3 C1 -C4,-C3 -C1 C4,-C3 -C1 -C4,
+C4 C3 C1,C4 C3 -C1,C4 -C3 C1,C4 -C3 -C1,-C4 C3 C1,-C4 C3 -C1,-C4 -C3 C1,
+-C4 -C3 -C1,C1 C4 C3,C1 C4 -C3,C1 -C4 C3,C1 -C4 -C3,-C1 C4 C3,-C1 C4 -C3,
+-C1 -C4 C3,-C1 -C4 -C3">
+<INPUT type=hidden class=Faces value="0 12 16 2 18 14 #,0 14 38 10 66 50 #,
+0 50 58 5 22 40 #,1 13 37 9 65 49 #,1 49 57 4 21 41 #,1 41 23 5 59 51 #,
+2 52 60 6 24 42 #,2 42 26 7 62 54 #,2 54 70 10 38 18 #,3 43 25 6 61 53 #,
+3 53 69 9 37 17 #,3 17 13 1 15 19 #,4 44 28 8 64 56 #,4 56 48 0 40 20 #,
+4 20 22 5 23 21 #,7 26 24 6 25 27 #,7 27 43 3 55 63 #,7 63 71 11 35 47 #,
+8 32 46 6 60 68 #,8 68 52 2 16 36 #,8 36 12 0 48 64 #,9 69 61 6 46 33 #,
+9 33 32 8 28 29 #,9 29 44 4 57 65 #,10 70 62 7 47 34 #,10 34 35 11 31 30 #,
+10 30 45 5 58 66 #,11 71 55 3 19 39 #,11 39 15 1 51 67 #,11 67 59 5 45 31 #,
+36 16 12 #,37 13 17 #,38 14 18 #,39 19 15 #,40 22 20 #,41 21 23 #,42 24 26 #,
+43 27 25 #,44 29 28 #,45 30 31 #,46 32 33 #,47 35 34 #,48 56 64 #,49 65 57 #,
+50 66 58 #,51 59 67 #,52 68 60 #,53 61 69 #,54 62 70 #,55 71 63 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=ChamferedIcosahedron1.html>Chamfered Icosahedron <NOBR>(all edges equal)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Chamfered Dodecahedron with chamfer depth chosen to make all edges
+	of the resulting polyhedron be the same length.
+
+	(120) EDGE = 1
+	RADIUS = (5*sqrt(3) + 5*sqrt(15) + 2*sqrt(30 * (5 + sqrt(5)))) / 20
+	VOLUME = (75 + 43 * sqrt(5) + 2 * sqrt(2 * (2125 + 919 * sqrt(5)))) / 4
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 80 42">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183,
+0.850650808352039932181540497063,
+1.025731112119133606025669084848,
+1.659667802726987356283833914246,
+1.87638192047117353820720958191,
+2.159667802726987356283833914246,
+2.18539891484612096230950299909,
+2.68539891484612096230950299909">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+	C1 = sqrt(10 * (5 + sqrt(5))) / 10
+	C2 = (5 + sqrt(10 * (5 - sqrt(5)))) / 10
+	C3 = (5 + 5 * sqrt(5) + 2 * sqrt(10 * (5 + sqrt(5)))) / 20
+	C4 = (5 + 2 * sqrt(5 * (5 + 2 * sqrt(5)))) / 10
+	C5 = (15 + 5 * sqrt(5) + 2 * sqrt(10 * (5 + sqrt(5)))) / 20
+	C6 = (5 + 5 * sqrt(5) + 4 * sqrt(5 * (5 + 2 * sqrt(5)))) / 20
+	C7 = (15 + 5 * sqrt(5) + 4 * sqrt(5 * (5 + 2 * sqrt(5)))) / 20
+-->
+<INPUT type=hidden class=Vertices value="0.0 C2 C7,0.0 C2 -C7,0.0 -C2 C7,
+0.0 -C2 -C7,C7 0.0 C2,C7 0.0 -C2,-C7 0.0 C2,-C7 0.0 -C2,C2 C7 0.0,C2 -C7 0.0,
+-C2 C7 0.0,-C2 -C7 0.0,C1 0.5 C7,C1 0.5 -C7,C1 -0.5 C7,C1 -0.5 -C7,-C1 0.5 C7,
+-C1 0.5 -C7,-C1 -0.5 C7,-C1 -0.5 -C7,C7 C1 0.5,C7 C1 -0.5,C7 -C1 0.5,
+C7 -C1 -0.5,-C7 C1 0.5,-C7 C1 -0.5,-C7 -C1 0.5,-C7 -C1 -0.5,0.5 C7 C1,
+0.5 C7 -C1,0.5 -C7 C1,0.5 -C7 -C1,-0.5 C7 C1,-0.5 C7 -C1,-0.5 -C7 C1,
+-0.5 -C7 -C1,C3 C0 C6,C3 C0 -C6,C3 -C0 C6,C3 -C0 -C6,-C3 C0 C6,-C3 C0 -C6,
+-C3 -C0 C6,-C3 -C0 -C6,C6 C3 C0,C6 C3 -C0,C6 -C3 C0,C6 -C3 -C0,-C6 C3 C0,
+-C6 C3 -C0,-C6 -C3 C0,-C6 -C3 -C0,C0 C6 C3,C0 C6 -C3,C0 -C6 C3,C0 -C6 -C3,
+-C0 C6 C3,-C0 C6 -C3,-C0 -C6 C3,-C0 -C6 -C3,0.0 C4 C5,0.0 C4 -C5,0.0 -C4 C5,
+0.0 -C4 -C5,C5 0.0 C4,C5 0.0 -C4,-C5 0.0 C4,-C5 0.0 -C4,C4 C5 0.0,C4 -C5 0.0,
+-C4 C5 0.0,-C4 -C5 0.0,C3 C3 C3,C3 C3 -C3,C3 -C3 C3,C3 -C3 -C3,-C3 C3 C3,
+-C3 C3 -C3,-C3 -C3 C3,-C3 -C3 -C3">
+<INPUT type=hidden class=Faces value="72 36 64 4 20 44 #,72 44 68 8 28 52 #,
+72 52 60 0 12 36 #,73 37 13 1 61 53 #,73 53 29 8 68 45 #,73 45 21 5 65 37 #,
+74 38 14 2 62 54 #,74 54 30 9 69 46 #,74 46 22 4 64 38 #,75 39 65 5 23 47 #,
+75 47 69 9 31 55 #,75 55 63 3 15 39 #,76 40 16 0 60 56 #,76 56 32 10 70 48 #,
+76 48 24 6 66 40 #,77 41 67 7 25 49 #,77 49 70 10 33 57 #,77 57 61 1 17 41 #,
+78 42 66 6 26 50 #,78 50 71 11 34 58 #,78 58 62 2 18 42 #,79 43 19 3 63 59 #,
+79 59 35 11 71 51 #,79 51 27 7 67 43 #,2 14 12 0 16 18 #,3 19 17 1 13 15 #,
+4 22 23 5 21 20 #,7 27 26 6 24 25 #,8 29 33 10 32 28 #,9 30 34 11 35 31 #,
+60 52 28 32 56 #,61 57 33 29 53 #,62 58 34 30 54 #,63 55 31 35 59 #,
+64 36 12 14 38 #,65 39 15 13 37 #,66 42 18 16 40 #,67 41 17 19 43 #,
+68 44 20 21 45 #,69 47 23 22 46 #,70 49 25 24 48 #,71 50 26 27 51 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=ChamferedDodecahedron1.html>Chamfered Dodecahedron <NOBR>(all edges equal)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Chamfered Truncated Icosahedron (canonical)
+
+	(60) EDGE 1 = 0.179675806114001711086836502608
+		= root of the polynomial:  3501*(x^6) - 17400*(x^5) - 13735*(x^4)
+			+ 1198*(x^3) + 505*(x^2) - 10*x - 4
+	(60) EDGE 2 = 0.1928435678486499969108493903652
+		= root of the polynomial:  18149184*(x^6) - 36026208*(x^5)
+			- 25939440*(x^4) - 1945296*(x^3) + 1114956*(x^2) + 124770*x - 7025
+	(120) EDGE 3 = 0.2080985155781758886628291567148
+		= root of the polynomial:  233280*(x^6) + 116640*(x^5) - 143856*(x^4)
+			- 43632*(x^3) + 24732*(x^2) + 1098*x - 701
+	(120) EDGE 4 = 0.210185701573053494590796035308
+		= root of the polynomial:  45*(x^6) - 91*(x^4) - 10*(x^3) + 49*(x^2)
+			+ 10*x - 4
+	RADIUS = 1.00550708962514987110986857596
+		= square-root of a root of the polynomial:  518400*(x^6)
+			- 3634560*(x^5) + 10599856*(x^4) - 16459336*(x^3) + 14351801*(x^2)
+			- 6662741*x + 1286581
+	EDGE-SCRIBED RADIUS = 1
+	INRADIUS = 0.983293688650894612919270673118
+		= square-root of a root of the polynomial:  57600*(x^6) - 170880*(x^5)
+			+ 193456*(x^4) - 104488*(x^3) + 27489*(x^2) - 3217*x + 121
+	VOLUME = 4.10395207709032967933810335086
+		= root of the polynomial:  22523524851764880*(x^6)
+			+ 1610414379098982000*(x^5) - 23658107975686382004*(x^4)
+			- 1301680869950126088900*(x^3) - 1878160882704257548215*(x^2)
+			+ 20205037503935395582500*x + 43413745755365542132400
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="29 240 122">
+<INPUT type=hidden class=Constants value="0.0898379030570008555434182513042,
+0.105092850786526747295398017654,
+0.145360780624245466290276984406,
+0.180817104297880861355798313076,
+0.199874128641355139126007320946,
+0.2080985155781758886628291567148,
+0.210185701573053494590796035308,
+0.323403133613481456841881533847,
+0.3508609088451022583387891508953,
+0.391681877600195612858605314327,
+0.397661071287832672324047763299,
+0.407972644219531027788836477661,
+0.46261202504852732201164058346504,
+0.481519780657196468402023565631,
+0.502753922074359419619445780953,
+0.52090471339232365532177998871504,
+0.626880561281441934692300550037,
+0.6326558295957487189946314212848,
+0.660113604827369520491539038333,
+0.672797726621580816602436618773,
+0.731375777833012484630718011508,
+0.737748680382275466290029438939,
+0.7791153713587380654914764705552,
+0.853614830919461677958234931848,
+0.859987733468724659617546359279,
+0.868953274415738921034894721859,
+0.918565784680156327645827752014,
+0.924476151982983531781753454961,
+0.983516738440850977333420572180">
+<!--
+	C0 = root of the polynomial:  56016*(x^6) - 139200*(x^5) - 54940*(x^4)
+		+ 2396*(x^3) + 505*(x^2) - 5*x - 1
+	C1 = root of the polynomial:  720*(x^6) - 364*(x^4) - 20*(x^3) + 49*(x^2)
+		+ 5*x - 1
+	C2 = root of the polynomial:  56016*(x^6) + 127680*(x^5) + 49540*(x^4)
+		- 4988*(x^3) - 855*(x^2) + 10*x + 1
+	C3 = root of the polynomial:  6480*(x^6) + 2160*(x^5) - 3636*(x^4)
+		- 396*(x^3) + 513*(x^2) - 84*x + 4
+	C4 = root of the polynomial:  186624*(x^6) - 15552*(x^5) - 63504*(x^4)
+		- 9072*(x^3) + 1980*(x^2) + 384*x + 11
+	C5 = root of the polynomial:  233280*(x^6) + 116640*(x^5) - 143856*(x^4)
+		- 43632*(x^3) + 24732*(x^2) + 1098*x - 701
+	C6 = root of the polynomial:  45*(x^6) - 91*(x^4) - 10*(x^3) + 49*(x^2)
+		+ 10*x - 4
+	C7 = root of the polynomial:  186624*(x^6) + 31104*(x^5) - 40176*(x^4)
+		- 3024*(x^3) + 2340*(x^2) - 48*x - 11
+	C8 = root of the polynomial:  6480*(x^6) - 2160*(x^5) - 3096*(x^4)
+		+ 324*(x^3) + 369*(x^2) - 6*x - 11
+	C9 = root of the polynomial:  280080*(x^6) + 707040*(x^5) + 111124*(x^4)
+		- 494644*(x^3) - 86407*(x^2) + 99559*x - 6161
+	C10 = root of the polynomial:  6480*(x^6) + 2160*(x^5) - 3096*(x^4)
+		- 648*(x^3) + 345*(x^2) + 39*x + 1
+	C11 = root of the polynomial:  933120*(x^6) + 388800*(x^5) - 1489104*(x^4)
+		- 408240*(x^3) + 663660*(x^2) + 52800*x - 71725
+	C12 = root of the polynomial:  1620*(x^6) - 540*(x^5) - 774*(x^4)
+		+ 18*(x^3) + 93*(x^2) + 18*x + 1
+	C13 = root of the polynomial:  280080*(x^6) + 11040*(x^5) - 411016*(x^4)
+		+ 1680*(x^3) + 165441*(x^2) - 11430*x - 14724
+	C14 = root of the polynomial:  1296*(x^6) + 432*(x^5) - 1764*(x^4)
+		- 612*(x^3) + 393*(x^2) + 120*x - 4
+	C15 = root of the polynomial:  720*(x^6) - 720*(x^5) - 756*(x^4)
+		+ 684*(x^3) + 233*(x^2) - 144*x - 16
+	C16 = root of the polynomial:  280080*(x^6) + 649440*(x^5) + 264604*(x^4)
+		- 352568*(x^3) - 251319*(x^2) + 37528*x + 41359
+	C17 = root of the polynomial:  6480*(x^6) - 6480*(x^5) - 6516*(x^4)
+		+ 6372*(x^3) + 1365*(x^2) - 1566*x + 116
+	C18 = root of the polynomial:  933120*(x^6) - 1399680*(x^5) - 195696*(x^4)
+		+ 1056240*(x^3) - 251640*(x^2) - 197700*x + 71725
+	C19 = root of the polynomial:  1620*(x^6) - 540*(x^5) - 2286*(x^4)
+		+ 702*(x^3) + 957*(x^2) - 228*x - 101
+	C20 = root of the polynomial:  233280*(x^6) + 136080*(x^5) - 297756*(x^4)
+		- 128844*(x^3) + 131958*(x^2) + 29994*x - 21101
+	C21 = root of the polynomial:  1296*(x^6) - 1296*(x^5) - 1368*(x^4)
+		+ 1368*(x^3) + 165*(x^2) - 177*x - 29
+	C22 = root of the polynomial:  280080*(x^6) - 469200*(x^5) + 41116*(x^4)
+		+ 259980*(x^3) - 88479*(x^2) - 34740*x + 14724
+	C23 = root of the polynomial:  720*(x^6) - 1044*(x^4) + 24*(x^3)
+		+ 377*(x^2) + 6*x - 19
+	C24 = root of the polynomial:  933120*(x^6) - 1477440*(x^5) + 37584*(x^4)
+		+ 957312*(x^3) - 522468*(x^2) + 91632*x - 4331
+	C25 = root of the polynomial:  70020*(x^6) - 291300*(x^5) + 333784*(x^4)
+		+ 3184*(x^3) - 231865*(x^2) + 141257*x - 25889
+	C26 = root of the polynomial:  6480*(x^6) - 4320*(x^5) - 4716*(x^4)
+		+ 2916*(x^3) + 189*(x^2) - 129*x - 11
+	C27 = root of the polynomial:  280080*(x^6) + 169200*(x^5) - 1147304*(x^4)
+		+ 414508*(x^3) + 821265*(x^2) - 671714*x + 140509
+	C28 = root of the polynomial:  6480*(x^6) - 8640*(x^5) - 9684*(x^4)
+		+ 17064*(x^3) + 297*(x^2) - 8424*x + 2911
+-->
+<INPUT type=hidden class=Vertices value="C5 0.0 C28,C5 0.0 -C28,-C5 0.0 C28,
+-C5 0.0 -C28,C28 C5 0.0,C28 -C5 0.0,-C28 C5 0.0,-C28 -C5 0.0,0.0 C28 C5,
+0.0 C28 -C5,0.0 -C28 C5,0.0 -C28 -C5,C1 C3 C28,C1 C3 -C28,C1 -C3 C28,
+C1 -C3 -C28,-C1 C3 C28,-C1 C3 -C28,-C1 -C3 C28,-C1 -C3 -C28,C28 C1 C3,
+C28 C1 -C3,C28 -C1 C3,C28 -C1 -C3,-C28 C1 C3,-C28 C1 -C3,-C28 -C1 C3,
+-C28 -C1 -C3,C3 C28 C1,C3 C28 -C1,C3 -C28 C1,C3 -C28 -C1,-C3 C28 C1,
+-C3 C28 -C1,-C3 -C28 C1,-C3 -C28 -C1,C9 0.0 C27,C9 0.0 -C27,-C9 0.0 C27,
+-C9 0.0 -C27,C27 C9 0.0,C27 -C9 0.0,-C27 C9 0.0,-C27 -C9 0.0,0.0 C27 C9,
+0.0 C27 -C9,0.0 -C27 C9,0.0 -C27 -C9,C6 C8 C26,C6 C8 -C26,C6 -C8 C26,
+C6 -C8 -C26,-C6 C8 C26,-C6 C8 -C26,-C6 -C8 C26,-C6 -C8 -C26,C26 C6 C8,
+C26 C6 -C8,C26 -C6 C8,C26 -C6 -C8,-C26 C6 C8,-C26 C6 -C8,-C26 -C6 C8,
+-C26 -C6 -C8,C8 C26 C6,C8 C26 -C6,C8 -C26 C6,C8 -C26 -C6,-C8 C26 C6,
+-C8 C26 -C6,-C8 -C26 C6,-C8 -C26 -C6,C13 C2 C25,C13 C2 -C25,C13 -C2 C25,
+C13 -C2 -C25,-C13 C2 C25,-C13 C2 -C25,-C13 -C2 C25,-C13 -C2 -C25,C25 C13 C2,
+C25 C13 -C2,C25 -C13 C2,C25 -C13 -C2,-C25 C13 C2,-C25 C13 -C2,-C25 -C13 C2,
+-C25 -C13 -C2,C2 C25 C13,C2 C25 -C13,C2 -C25 C13,C2 -C25 -C13,-C2 C25 C13,
+-C2 C25 -C13,-C2 -C25 C13,-C2 -C25 -C13,C11 C7 C24,C11 C7 -C24,C11 -C7 C24,
+C11 -C7 -C24,-C11 C7 C24,-C11 C7 -C24,-C11 -C7 C24,-C11 -C7 -C24,C24 C11 C7,
+C24 C11 -C7,C24 -C11 C7,C24 -C11 -C7,-C24 C11 C7,-C24 C11 -C7,-C24 -C11 C7,
+-C24 -C11 -C7,C7 C24 C11,C7 C24 -C11,C7 -C24 C11,C7 -C24 -C11,-C7 C24 C11,
+-C7 C24 -C11,-C7 -C24 C11,-C7 -C24 -C11,C1 C15 C23,C1 C15 -C23,C1 -C15 C23,
+C1 -C15 -C23,-C1 C15 C23,-C1 C15 -C23,-C1 -C15 C23,-C1 -C15 -C23,C23 C1 C15,
+C23 C1 -C15,C23 -C1 C15,C23 -C1 -C15,-C23 C1 C15,-C23 C1 -C15,-C23 -C1 C15,
+-C23 -C1 -C15,C15 C23 C1,C15 C23 -C1,C15 -C23 C1,C15 -C23 -C1,-C15 C23 C1,
+-C15 C23 -C1,-C15 -C23 C1,-C15 -C23 -C1,C16 C0 C22,C16 C0 -C22,C16 -C0 C22,
+C16 -C0 -C22,-C16 C0 C22,-C16 C0 -C22,-C16 -C0 C22,-C16 -C0 -C22,C22 C16 C0,
+C22 C16 -C0,C22 -C16 C0,C22 -C16 -C0,-C22 C16 C0,-C22 C16 -C0,-C22 -C16 C0,
+-C22 -C16 -C0,C0 C22 C16,C0 C22 -C16,C0 -C22 C16,C0 -C22 -C16,-C0 C22 C16,
+-C0 C22 -C16,-C0 -C22 C16,-C0 -C22 -C16,C14 C12 C21,C14 C12 -C21,C14 -C12 C21,
+C14 -C12 -C21,-C14 C12 C21,-C14 C12 -C21,-C14 -C12 C21,-C14 -C12 -C21,
+C21 C14 C12,C21 C14 -C12,C21 -C14 C12,C21 -C14 -C12,-C21 C14 C12,-C21 C14 -C12,
+-C21 -C14 C12,-C21 -C14 -C12,C12 C21 C14,C12 C21 -C14,C12 -C21 C14,
+C12 -C21 -C14,-C12 C21 C14,-C12 C21 -C14,-C12 -C21 C14,-C12 -C21 -C14,
+C4 C18 C20,C4 C18 -C20,C4 -C18 C20,C4 -C18 -C20,-C4 C18 C20,-C4 C18 -C20,
+-C4 -C18 C20,-C4 -C18 -C20,C20 C4 C18,C20 C4 -C18,C20 -C4 C18,C20 -C4 -C18,
+-C20 C4 C18,-C20 C4 -C18,-C20 -C4 C18,-C20 -C4 -C18,C18 C20 C4,C18 C20 -C4,
+C18 -C20 C4,C18 -C20 -C4,-C18 C20 C4,-C18 C20 -C4,-C18 -C20 C4,-C18 -C20 -C4,
+C10 C17 C19,C10 C17 -C19,C10 -C17 C19,C10 -C17 -C19,-C10 C17 C19,-C10 C17 -C19,
+-C10 -C17 C19,-C10 -C17 -C19,C19 C10 C17,C19 C10 -C17,C19 -C10 C17,
+C19 -C10 -C17,-C19 C10 C17,-C19 C10 -C17,-C19 -C10 C17,-C19 -C10 -C17,
+C17 C19 C10,C17 C19 -C10,C17 -C19 C10,C17 -C19 -C10,-C17 C19 C10,-C17 C19 -C10,
+-C17 -C19 C10,-C17 -C19 -C10">
+<INPUT type=hidden class=Faces value="12 48 120 124 52 16 #,
+13 17 53 125 121 49 #,14 18 54 126 122 50 #,15 51 123 127 55 19 #,
+20 56 128 130 58 22 #,21 23 59 131 129 57 #,24 26 62 134 132 60 #,
+25 61 133 135 63 27 #,28 64 136 137 65 29 #,30 31 67 139 138 66 #,
+32 33 69 141 140 68 #,34 70 142 143 71 35 #,168 224 176 232 184 216 #,
+169 217 185 233 177 225 #,170 218 186 234 178 226 #,171 227 179 235 187 219 #,
+172 220 188 236 180 228 #,173 229 181 237 189 221 #,174 230 182 238 190 222 #,
+175 223 191 239 183 231 #,12 16 2 18 14 0 #,13 1 15 19 3 17 #,
+20 22 5 23 21 4 #,24 6 25 27 7 26 #,28 29 9 33 32 8 #,30 10 34 35 11 31 #,
+48 96 168 216 192 120 #,49 121 193 217 169 97 #,50 122 194 218 170 98 #,
+51 99 171 219 195 123 #,52 124 196 220 172 100 #,53 101 173 221 197 125 #,
+54 102 174 222 198 126 #,55 127 199 223 175 103 #,56 104 176 224 200 128 #,
+57 129 201 225 177 105 #,58 130 202 226 178 106 #,59 107 179 227 203 131 #,
+60 132 204 228 180 108 #,61 109 181 229 205 133 #,62 110 182 230 206 134 #,
+63 135 207 231 183 111 #,64 112 184 232 208 136 #,65 137 209 233 185 113 #,
+66 138 210 234 186 114 #,67 115 187 235 211 139 #,68 140 212 236 188 116 #,
+69 117 189 237 213 141 #,70 118 190 238 214 142 #,71 143 215 239 191 119 #,
+72 96 48 12 0 36 #,73 37 1 13 49 97 #,74 36 0 14 50 98 #,75 99 51 15 1 37 #,
+76 38 2 16 52 100 #,77 101 53 17 3 39 #,78 102 54 18 2 38 #,
+79 39 3 19 55 103 #,80 104 56 20 4 40 #,81 40 4 21 57 105 #,
+82 41 5 22 58 106 #,83 107 59 23 5 41 #,84 42 6 24 60 108 #,
+85 109 61 25 6 42 #,86 110 62 26 7 43 #,87 43 7 27 63 111 #,
+88 112 64 28 8 44 #,89 45 9 29 65 113 #,90 46 10 30 66 114 #,
+91 115 67 31 11 47 #,92 44 8 32 68 116 #,93 117 69 33 9 45 #,
+94 118 70 34 10 46 #,95 47 11 35 71 119 #,96 72 144 200 224 168 #,
+97 169 225 201 145 73 #,98 170 226 202 146 74 #,99 75 147 203 227 171 #,
+100 172 228 204 148 76 #,101 77 149 205 229 173 #,102 78 150 206 230 174 #,
+103 175 231 207 151 79 #,104 80 152 208 232 176 #,105 177 233 209 153 81 #,
+106 178 234 210 154 82 #,107 83 155 211 235 179 #,108 180 236 212 156 84 #,
+109 85 157 213 237 181 #,110 86 158 214 238 182 #,111 183 239 215 159 87 #,
+112 88 160 192 216 184 #,113 185 217 193 161 89 #,114 186 218 194 162 90 #,
+115 91 163 195 219 187 #,116 188 220 196 164 92 #,117 93 165 197 221 189 #,
+118 94 166 198 222 190 #,119 191 223 199 167 95 #,120 192 160 164 196 124 #,
+121 125 197 165 161 193 #,122 126 198 166 162 194 #,123 195 163 167 199 127 #,
+128 200 144 146 202 130 #,129 131 203 147 145 201 #,132 134 206 150 148 204 #,
+133 205 149 151 207 135 #,136 208 152 153 209 137 #,138 139 211 155 154 210 #,
+140 141 213 157 156 212 #,142 214 158 159 215 143 #,36 74 146 144 72 #,
+37 73 145 147 75 #,38 76 148 150 78 #,39 79 151 149 77 #,40 81 153 152 80 #,
+41 82 154 155 83 #,42 84 156 157 85 #,43 87 159 158 86 #,44 92 164 160 88 #,
+45 89 161 165 93 #,46 90 162 166 94 #,47 95 167 163 91 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=ChamferedTruncatedIcosahedron.html>Chamfered Truncated Icosahedron
+<BR>(canonical)</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

@@ -1,0 +1,323 @@
+<!-- File:   ImproperSelfDuals.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2005,2006,2007,2008,2009 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Improper Self-Dual Polyhedra</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='SymmetricSelfDuals.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Improper Self-Dual Polyhedra</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='Platonic.html'">
+</TD>
+</TR>
+</TABLE><BR>
+
+<P>
+The canonical form of a polyhedron (when it exists) can be used to generate
+the polyhedron's dual using an algorithm like the following:
+</P>
+
+<OL>
+<LI>
+Translate the polyhedron if necessary so that its canonical center
+(the center of its edge-tangent sphere) is at the origin.
+</LI>
+<LI>
+Compute the polyhedron's edge tangency radius (the radius of
+the edge-tangent sphere).
+</LI>
+<LI>
+For each face of the polyhedron, create a vertex of the dual polyhedron
+using the following steps:
+<UL>
+<LI>
+For each edge of the face, compute its closest point to the origin.
+</LI>
+<LI>
+Compute the circumcenter of all such closest points (easy because all points
+will lie on a circle).
+</LI>
+<LI>
+Project this circumcenter away from the origin to a distance
+equal to the edge tangency radius squared divided by the face's
+origin distance.
+</UL>
+</LI>
+<LI>
+Create edges of the dual polyhedron in a one-to-one correspondence with
+the edges of the original polyhedron:  Each edge of the original polyhedron
+separates two faces.  Take the vertices of the dual polyhedron created
+from those two faces and connect them with an edge of the dual polyhedron.
+</LI>
+</OL>
+
+<P>
+When this algorithm is applied to a chiral self-dual polyhedron, there are
+two possibilities:  Either the resulting dual polyhedron is an identical
+copy of the original polyhedron (only rotated), or it is an opposite-handed
+version of the original polyhedron.  In most cases, the dual is identical
+to the original.  In a small percentage of the cases, however, the dual is
+the opposite-handed version.
+An appropriate name for these opposite-hand-pairing chiral self-dual
+polyhedra is "improper" because of the similarity to improper rotations:
+The opposite-handed dual cannot be brought into identity alignment with the
+original using rotations alone.  A reflection is necessary.
+</P>
+<P>
+The following table shows the counts of all chiral self-dual polyhedra
+with up to 16 faces, cross tabulated by number of faces and symmetry type.
+Each count is shown as a fraction, where the numerator represents the number
+of improper self duals, and the denominator represents the number of chiral
+self duals.  Many of the counts can be clicked to show representative
+polyhedra.
+</P>
+
+<CENTER>
+(Chiral symmetries: &nbsp; C1, Cn, Dn, T, O, I)
+<H3>Counts of Chiral Self-Dual Polyhedra showing Improper Counts as Fractions</H3>
+<NOBR>(numerator = improper count)</NOBR> / <NOBR>(denominator = total count)</NOBR>
+<TABLE width=90% bgcolor="#202020" bordercolor="#404040">
+<TR align=center>
+<TD bgcolor="#008080">FACES</TD>
+<TD bgcolor="#ffff80">C1</TD>
+<TD bgcolor="#8080ff">C2</TD>
+<TD bgcolor="#8080ff">C3</TD>
+<TD bgcolor="#8080ff">C4</TD>
+<TD bgcolor="#8080ff">C5</TD>
+<TD bgcolor="#00ff80">D2</TD>
+<TD bgcolor="#ff8080">T</TD>
+<TD bgcolor="#c06020">O</TD>
+<TD bgcolor="#ff80ff">I</TD>
+<TD bgcolor="#008080">TOTAL</TD>
+<TD bgcolor="#a0ffff">PERCENT</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">4</TD>
+<TD bgcolor="#ffff80">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">......</TD>
+<TD bgcolor="#a0ffff">......</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">5</TD>
+<TD bgcolor="#ffff80">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">......</TD>
+<TD bgcolor="#a0ffff">......</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">6</TD>
+<TD bgcolor="#ffff80">......</TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualHexahedron2.html>1</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">0/1</TD>
+<TD bgcolor="#a0ffff">0.00 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">7</TD>
+<TD bgcolor="#ffff80">0/2</TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualHeptahedron4.html>1</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">0/3</TD>
+<TD bgcolor="#a0ffff">0.00 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">8</TD>
+<TD bgcolor="#ffff80">0/10</TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualOctahedron3.html>3</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">0/13</TD>
+<TD bgcolor="#a0ffff">0.00 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">9</TD>
+<TD bgcolor="#ffff80">0/39</TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualEnneahedron4.html>4</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">0/43</TD>
+<TD bgcolor="#a0ffff">0.00 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">10</TD>
+<TD bgcolor="#ffff80"><A href=ImproperSelfDualDecahedron1.html>2</A>/137</TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualDecahedron12.html>10</A></TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualDecahedron8.html>3</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">0/<A href=SelfDualDecahedron2.html>1</A></TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">2/151</TD>
+<TD bgcolor="#a0ffff">1.32 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">11</TD>
+<TD bgcolor="#ffff80">13/514</TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualHendecahedron7.html>18</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">13/532</TD>
+<TD bgcolor="#a0ffff">2.44 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">12</TD>
+<TD bgcolor="#ffff80">46/1817</TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualDodecahedron14.html>37</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">0/<A href=SelfDualDodecahedron3.html>2</A></TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">46/1856</TD>
+<TD bgcolor="#a0ffff">2.48 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">13</TD>
+<TD bgcolor="#ffff80">187/6490</TD>
+<TD bgcolor="#8080ff"><A href=SelfDualTridecahedron68.html>2</A>/<A href=SelfDualTridecahedron34.html>68</A></TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualTridecahedron22.html>12</A></TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualTridecahedron4.html>3</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">189/6573</TD>
+<TD bgcolor="#a0ffff">2.88 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">14</TD>
+<TD bgcolor="#ffff80">660/23199</TD>
+<TD bgcolor="#8080ff"><A href=SelfDualTetradecahedron34.html>6</A>/<A href=SelfDualTetradecahedron23.html>155</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">0/<A href=SelfDualTetradecahedron2.html>3</A></TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">666/23357</TD>
+<TD bgcolor="#a0ffff">2.85 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">15</TD>
+<TD bgcolor="#ffff80">2387/83406</TD>
+<TD bgcolor="#8080ff"><A href=SelfDualPentadecahedron57.html>8</A>/<A href=SelfDualPentadecahedron22.html>275</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#00ff80">......</TD>
+<TD bgcolor="#ff8080">......</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">2395/83681</TD>
+<TD bgcolor="#a0ffff">2.86 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">16</TD>
+<TD bgcolor="#ffff80">8379/300928</TD>
+<TD bgcolor="#8080ff"><A href=SelfDualHexadecahedron152.html>24</A>/<A href=SelfDualHexadecahedron144.html>587</A></TD>
+<TD bgcolor="#8080ff"><A href=SelfDualHexadecahedron20.html>2</A>/<A href=SelfDualHexadecahedron11.html>52</A></TD>
+<TD bgcolor="#8080ff">......</TD>
+<TD bgcolor="#8080ff">0/<A href=SelfDualHexadecahedron3.html>3</A></TD>
+<TD bgcolor="#00ff80"><A href=SelfDualHexadecahedron68.html>1</A>/<A href=SelfDualHexadecahedron63.html>6</A></TD>
+<TD bgcolor="#ff8080">0/<A href=SelfDualHexadecahedron1.html>1</A></TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">8406/301577</TD>
+<TD bgcolor="#a0ffff">2.79 %</TD>
+</TR>
+<TR align=center>
+<TD bgcolor="#008080">TOTAL</TD>
+<TD bgcolor="#ffff80">11674/416542</TD>
+<TD bgcolor="#8080ff">40/1159</TD>
+<TD bgcolor="#8080ff">2/67</TD>
+<TD bgcolor="#8080ff">0/3</TD>
+<TD bgcolor="#8080ff">0/3</TD>
+<TD bgcolor="#00ff80">1/12</TD>
+<TD bgcolor="#ff8080">0/1</TD>
+<TD bgcolor="#c06020">......</TD>
+<TD bgcolor="#ff80ff">......</TD>
+<TD bgcolor="#008080">11717/417787</TD>
+<TD bgcolor="#a0ffff">2.80 %</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

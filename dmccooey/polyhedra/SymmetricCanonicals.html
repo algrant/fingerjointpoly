@@ -1,0 +1,664 @@
+<!-- File:   SymmetricCanonicals.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2005,2006,2007,2008,2009,2010 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Symmetries of Canonical Polyhedra</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='Simplest.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Symmetries of Canonical Polyhedra</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='SymmetricSelfDuals.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+Every polyhedron of genus zero has a unique canonical form which can be
+achieved by moving its vertices in such a way that its faces remain flat,
+the vertices themselves remain distinct, all of its edges are tangent to a
+common sphere, and the centroid of the edge tangency points is the center of
+that sphere.  Besides being unique, the canonical form also brings out the
+maximum symmetry in a polyhedron.  This is because any symmetry planes or
+axes in a non-canonical polyhedron are preserved in its canonical form
+<A href=http://mathworld.wolfram.com/CanonicalPolyhedron.html>
+<span style="font-size: 75%;">[1]</span></A>.
+</P>
+<P>
+To produce the table below, all 3-connected planar simple graphs with up to
+12 vertices were generated using the
+<A href=http://cs.anu.edu.au/~bdm/plantri>plantri</A> software developed by
+Gunnar Brinkmann and Brendan McKay.  From each graph, a canonical polyhedron
+was produced and its symmetry determined.  In canonical form, a polyhedron
+and its dual have the same symmetry, so the table shows the counts of all
+canonical polyhedra with up to 12 faces, cross tabulated by symmetry type and
+number of faces.
+</P>
+
+<CENTER>
+<H3>Symmetries of All Canonical Polyhedra with up to 12 Faces</H3>
+<TABLE width=90% bgcolor="#202020" bordercolor="#404040">
+<TR align=center bgcolor="#008080">
+<TD>Symmetry</TD>
+<TD>4 faces</TD>
+<TD>5 faces</TD>
+<TD>6 faces</TD>
+<TD>7 faces</TD>
+<TD>8 faces</TD>
+<TD>9 faces</TD>
+<TD>10 faces</TD>
+<TD>11 faces</TD>
+<TD>12 faces</TD>
+<TD>TOTAL</TD>
+</TR>
+<TR align=center bgcolor="#ffff80">
+<TD>C1</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>7</TD>
+<TD>140</TD>
+<TD>2111</TD>
+<TD>30014</TD>
+<TD>430494</TD>
+<TD>6336013</TD>
+<TD>6798779</TD>
+</TR>
+<TR align=center bgcolor="#c0c000">
+<TD>Ci = S2</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>7</TD>
+<TD>......</TD>
+<TD>201</TD>
+<TD>208</TD>
+</TR>
+<TR align=center bgcolor="#ffff00">
+<TD>Cs=C1h=C1v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestCs_2.html>1</A></TD>
+<TD>11</TD>
+<TD>67</TD>
+<TD>365</TD>
+<TD>1665</TD>
+<TD>8424</TD>
+<TD>40139</TD>
+<TD>50672</TD>
+</TR>
+<TR align=center bgcolor="#8080ff">
+<TD>C2</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC2.html>1</A></TD>
+<TD>4</TD>
+<TD>22</TD>
+<TD>80</TD>
+<TD>427</TD>
+<TD>1341</TD>
+<TD>7290</TD>
+<TD>9165</TD>
+</TR>
+<TR align=center bgcolor="#8080ff">
+<TD>C3</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC3_2.html>1</A></TD>
+<TD>8</TD>
+<TD>11</TD>
+<TD>29</TD>
+<TD>49</TD>
+</TR>
+<TR align=center bgcolor="#8080ff">
+<TD>C4</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC4_2.html>1</A></TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#0080ff">
+<TD>C2h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC2h_2.html>1</A></TD>
+<TD>......</TD>
+<TD>17</TD>
+<TD>......</TD>
+<TD>110</TD>
+<TD>128</TD>
+</TR>
+<TR align=center bgcolor="#0080ff">
+<TD>C3h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>2</TD>
+<TD>2</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C2v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>2</TD>
+<TD>6</TD>
+<TD>13</TD>
+<TD>34</TD>
+<TD>108</TD>
+<TD>248</TD>
+<TD>669</TD>
+<TD>1080</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C3v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>4</TD>
+<TD>2</TD>
+<TD>5</TD>
+<TD>31</TD>
+<TD>29</TD>
+<TD>40</TD>
+<TD>111</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C4v</TD>
+<TD>......</TD>
+<TD><A href=SimplestC4v.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>4</TD>
+<TD>3</TD>
+<TD>......</TD>
+<TD>5</TD>
+<TD>13</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C5v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC5v.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>4</TD>
+<TD>3</TD>
+<TD>8</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C6v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC6v.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C7v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC7v.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C8v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC8v.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C9v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC9v.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C10v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC10v.html>1</A></TD>
+<TD>......</TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#00ffff">
+<TD>C11v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestC11v.html>1</A></TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#ff8000">
+<TD>S4</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestS4_2.html>1</A></TD>
+<TD>......</TD>
+<TD>20</TD>
+<TD>21</TD>
+</TR>
+<TR align=center bgcolor="#00ff80">
+<TD>D2</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>5</TD>
+<TD>......</TD>
+<TD>47</TD>
+<TD>52</TD>
+</TR>
+<TR align=center bgcolor="#00ff80">
+<TD>D3</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD3_2.html>1</A></TD>
+<TD>4</TD>
+<TD>5</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D2h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD2h.html>1</A></TD>
+<TD>......</TD>
+<TD>3</TD>
+<TD>......</TD>
+<TD>12</TD>
+<TD>16</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D3h</TD>
+<TD>......</TD>
+<TD><A href=SimplestD3h_2.html>1</A></TD>
+<TD><A href=SimplestD3h_1.html>1</A></TD>
+<TD>......</TD>
+<TD><A href=TriangularBifrustum.html>1</A></TD>
+<TD>4</TD>
+<TD>......</TD>
+<TD>10</TD>
+<TD>8</TD>
+<TD>25</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D4h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD4h_2.html>1</A></TD>
+<TD>......</TD>
+<TD>3</TD>
+<TD>4</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D5h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD5h_2.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD5h_1.html>1</A></TD>
+<TD>......</TD>
+<TD><A href=PentagonalBifrustum.html>1</A></TD>
+<TD>3</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D6h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD6h_2.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD6h_1.html>1</A></TD>
+<TD>2</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D7h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD7h_2.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D8h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD8h_2.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D9h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD9h_2.html>1</A></TD>
+<TD>......</TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#00a000">
+<TD>D10h</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD10h_2.html>1</A></TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#80ff80">
+<TD>D2v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>4</TD>
+<TD>......</TD>
+<TD>3</TD>
+<TD>......</TD>
+<TD>22</TD>
+<TD>29</TD>
+</TR>
+<TR align=center bgcolor="#80ff80">
+<TD>D3v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD3v_2.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>7</TD>
+<TD>8</TD>
+</TR>
+<TR align=center bgcolor="#80ff80">
+<TD>D4v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD4v_2.html>1</A></TD>
+<TD>......</TD>
+<TD>2</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>3</TD>
+</TR>
+<TR align=center bgcolor="#80ff80">
+<TD>D5v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD5v_2.html>1</A></TD>
+<TD>......</TD>
+<TD><A href=SimplestD5v_1.html>1</A></TD>
+<TD>2</TD>
+</TR>
+<TR align=center bgcolor="#80ff80">
+<TD>D6v</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestD6v_2.html>1</A></TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#ff8080">
+<TD>T</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+</TR>
+<TR align=center bgcolor="#c04040">
+<TD>Td</TD>
+<TD><A href=SimplestTd.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=TruncatedTetrahedron.html>1</A></TD>
+<TD>......</TD>
+<TD><A href=ChamferedTetrahedron3.html>1</A></TD>
+<TD>......</TD>
+<TD><A href=TriakisTetrahedron.html>1</A></TD>
+<TD>4</TD>
+</TR>
+<TR align=center bgcolor="#c02020">
+<TD>Th</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+</TR>
+<TR align=center bgcolor="#c06020">
+<TD>O</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+</TR>
+<TR align=center bgcolor="#a04000">
+<TD>Oh</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestOh_2.html>1</A></TD>
+<TD>......</TD>
+<TD><A href=SimplestOh_1.html>1</A></TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=RhombicDodecahedron.html>1</A></TD>
+<TD>3</TD>
+</TR>
+<TR align=center bgcolor="#ff80ff">
+<TD>I</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+</TR>
+<TR align=center bgcolor="#c040c0">
+<TD>Ih</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD>......</TD>
+<TD><A href=SimplestIh_2.html>1</A></TD>
+<TD>1</TD>
+</TR>
+<TR align=center bgcolor="#008080">
+<TD>TOTAL</TD>
+<TD>1</TD>
+<TD>2</TD>
+<TD>7</TD>
+<TD>34</TD>
+<TD>257</TD>
+<TD>2606</TD>
+<TD>32300</TD>
+<TD>440564</TD>
+<TD>6384634</TD>
+<TD>6860405</TD>
+</TR>
+<TR align=center bgcolor="#80ffff">
+<TD>non-C1</TD>
+<TD>1</TD>
+<TD>2</TD>
+<TD>7</TD>
+<TD>27</TD>
+<TD>117</TD>
+<TD>495</TD>
+<TD>2286</TD>
+<TD>10070</TD>
+<TD>48621</TD>
+<TD>61626</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<BR>
+<TABLE style="font-size:75%">
+<TR><TD valign=top>References:</TD><TD valign=top>[1]</TD><TD><A href=http://mathworld.wolfram.com/CanonicalPolyhedron.html>Canonical Polyhedron (Wolfram MathWorld)</A></TD></TR>
+<TR><TD></TD><TD valign=top>[2]</TD><TD><A href=http://cs.anu.edu.au/~bdm/papers/plantri-full.pdf>Gunnar Brinkmann and Brendan D. McKay, Fast generation of planar graphs, <I>MATCH-Communications in Mathematical and in Computer Chemistry</I> <B>58</B>(2) (2007), 323-357.</A></TD></TR>
+</TABLE>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

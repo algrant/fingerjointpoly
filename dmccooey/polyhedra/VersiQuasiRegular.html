@@ -1,0 +1,560 @@
+<!-- File:   VersiQuasiRegular.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Versi-Quasi-Regular Polyhedra</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='SelfIntersectingQuasiQuasiRegularDual.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Versi-Quasi-Regular Polyhedra</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='VersiQuasiRegularDual.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+A polyhedron is versi-quasi-regular if it is vertex-transitive with crossed
+trapezoidal vertex figures.  Vertex transitivity means that for any two
+vertices of the polyhedron, there exists a translation, rotation, and/or
+reflection that leaves the outward appearance of the polyhedron unchanged
+yet moves one vertex to the other.  A vertex figure is the polygon produced
+by connecting the midpoints of the edges meeting at the vertex in the same
+order that the edges appear around the vertex.  There are seven
+versi-quasi-regular polyhedra, all of which are self-intersecting.
+All seven have non-orientable surfaces (like that of a
+<A href=http://mathworld.wolfram.com/KleinBottle.html>Klein Bottle</A>
+or the
+<A href=http://mathworld.wolfram.com/RealProjectivePlane.html>Real Projective
+Plane</A>).
+</P>
+<P>
+Albert Badoureau described six of these polyhedra (all except the Small
+Dodecicosahedron) in 1881 <span style="font-size: 75%;">[1]</span>.
+H. S. M. Coxeter and J. C. P. Miller discovered the Small Dodecicosahedron
+between 1930 and 1932 <span style="font-size: 75%;">[2]</span>.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Small Rhombihexahedron
+
+	(48) EDGE = 1
+	RADIUS = sqrt(5 + 2 * sqrt(2)) / 2
+	MIDRADIUS = sqrt(2 * (2 + sqrt(2))) / 2
+	OCTAGON CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = (1 + sqrt(2)) / 2
+	DIHEDRAL ANGLE 1 = acos(0.7071067811865475244008443621048)
+		= acos(sqrt(2) / 2) = 45 degrees
+	DIHEDRAL ANGLE 2 = acos(0) = 90 degrees
+
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 24 18">
+<INPUT type=hidden class=Constants value="1.20710678118654752440084436210">
+<!--
+	C0 = (1 + sqrt(2)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.5 C0,0.5 0.5 -C0,0.5 -0.5 C0,
+0.5 -0.5 -C0,-0.5 0.5 C0,-0.5 0.5 -C0,-0.5 -0.5 C0,-0.5 -0.5 -C0,C0 0.5 0.5,
+C0 0.5 -0.5,C0 -0.5 0.5,C0 -0.5 -0.5,-C0 0.5 0.5,-C0 0.5 -0.5,-C0 -0.5 0.5,
+-C0 -0.5 -0.5,0.5 C0 0.5,0.5 C0 -0.5,0.5 -C0 0.5,0.5 -C0 -0.5,-0.5 C0 0.5,
+-0.5 C0 -0.5,-0.5 -C0 0.5,-0.5 -C0 -0.5">
+<INPUT type=hidden class=Faces value="0 2 18 19 3 1 17 16 #,
+0 8 9 1 5 13 12 4 #,14 15 7 3 11 10 2 6 #,14 22 18 10 8 16 20 12 #,
+21 5 7 23 22 6 4 20 #,21 17 9 11 19 23 15 13 #,0 2 10 8 #,0 16 20 4 #,
+7 3 19 23 #,7 15 13 5 #,11 3 1 9 #,11 10 18 19 #,12 14 6 4 #,12 20 21 13 #,
+17 1 5 21 #,17 16 8 9 #,22 14 15 23 #,22 18 2 6 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallRhombihexahedron.html>Small Rhombihexahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #18)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Rhombihexahedron
+
+	(48) EDGE = 1
+	RADIUS = sqrt(5 - 2 * sqrt(2)) / 2
+	MIDRADIUS = sqrt(2 * (2 - sqrt(2))) / 2
+	SQUARE CENTER RADIUS = (sqrt(2) - 1) / 2
+	OCTAGRAM CENTER RADIUS = 1 / 2
+	DIHEDRAL ANGLE 1 = acos(0.7071067811865475244008443621048)
+		= acos(sqrt(2) / 2) = 45 degrees
+	DIHEDRAL ANGLE 2 = acos(0) = 90 degrees
+
+	EULER CHARACTERISTIC:         -6
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 24 18">
+<INPUT type=hidden class=Constants value="0.2071067811865475244008443621048">
+<!--
+	C0 = (sqrt(2) - 1) / 2
+-->
+<INPUT type=hidden class=Vertices value="-0.5 -0.5 C0,-0.5 -0.5 -C0,
+-0.5 0.5 C0,-0.5 0.5 -C0,0.5 -0.5 C0,0.5 -0.5 -C0,0.5 0.5 C0,0.5 0.5 -C0,
+C0 -0.5 -0.5,C0 -0.5 0.5,C0 0.5 -0.5,C0 0.5 0.5,-C0 -0.5 -0.5,-C0 -0.5 0.5,
+-C0 0.5 -0.5,-C0 0.5 0.5,-0.5 C0 -0.5,-0.5 C0 0.5,-0.5 -C0 -0.5,-0.5 -C0 0.5,
+0.5 C0 -0.5,0.5 C0 0.5,0.5 -C0 -0.5,0.5 -C0 0.5">
+<INPUT type=hidden class=Faces value="0 2 18 19 3 1 17 16 #,
+0 8 9 1 5 13 12 4 #,14 15 7 3 11 10 2 6 #,14 22 18 10 8 16 20 12 #,
+21 5 7 23 22 6 4 20 #,21 17 9 11 19 23 15 13 #,0 2 10 8 #,0 16 20 4 #,
+7 3 19 23 #,7 15 13 5 #,11 3 1 9 #,11 10 18 19 #,12 14 6 4 #,12 20 21 13 #,
+17 1 5 21 #,17 16 8 9 #,22 14 15 23 #,22 18 2 6 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatRhombihexahedron.html>Great Rhombihexahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #21)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Small Dodecicosahedron
+
+	(120) EDGE = 1
+	RADIUS = sqrt(2 * (17 + 3 * sqrt(5))) / 4
+	MIDRADIUS = sqrt(6 * (5 + sqrt(5))) / 4
+	DECAGON CENTER RADIUS = sqrt(2 * (5 - sqrt(5))) / 4
+	HEXAGON CENTER RADIUS = (sqrt(3) + sqrt(15)) / 4
+	DIHEDRAL ANGLE 1 = acos(0.794654472291766122955530928328)
+		= acos(sqrt(15 * (5 + 2 * sqrt(5))) / 15)
+		= 37.3773681406496956428571384949 degrees
+	DIHEDRAL ANGLE 2 = acos(0.187592474085079899860139346908)
+		= acos(sqrt(15 * (5 - 2 * sqrt(5))) / 15)
+		= 79.18768303642829370871505522552 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 60 32">
+<INPUT type=hidden class=Constants value="0.309016994374947424102293417183,
+1.11803398874989484820458683437,
+1.30901699437494742410229341718,
+1.61803398874989484820458683437">
+<!--
+	C0 = (sqrt(5) - 1) / 4
+	C1 = sqrt(5) / 2
+	C2 = (3 + sqrt(5)) / 4
+	C3 = (1 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.5 C0 C3,0.5 C0 -C3,0.5 -C0 C3,
+0.5 -C0 -C3,-0.5 C0 C3,-0.5 C0 -C3,-0.5 -C0 C3,-0.5 -C0 -C3,C3 0.5 C0,
+C3 0.5 -C0,C3 -0.5 C0,C3 -0.5 -C0,-C3 0.5 C0,-C3 0.5 -C0,-C3 -0.5 C0,
+-C3 -0.5 -C0,C0 C3 0.5,C0 C3 -0.5,C0 -C3 0.5,C0 -C3 -0.5,-C0 C3 0.5,
+-C0 C3 -0.5,-C0 -C3 0.5,-C0 -C3 -0.5,0.0 C1 C2,0.0 C1 -C2,0.0 -C1 C2,
+0.0 -C1 -C2,C2 0.0 C1,C2 0.0 -C1,-C2 0.0 C1,-C2 0.0 -C1,C1 C2 0.0,C1 -C2 0.0,
+-C1 C2 0.0,-C1 -C2 0.0,1.0 0.5 C2,1.0 0.5 -C2,1.0 -0.5 C2,1.0 -0.5 -C2,
+-1.0 0.5 C2,-1.0 0.5 -C2,-1.0 -0.5 C2,-1.0 -0.5 -C2,C2 1.0 0.5,C2 1.0 -0.5,
+C2 -1.0 0.5,C2 -1.0 -0.5,-C2 1.0 0.5,-C2 1.0 -0.5,-C2 -1.0 0.5,-C2 -1.0 -0.5,
+0.5 C2 1.0,0.5 C2 -1.0,0.5 -C2 1.0,0.5 -C2 -1.0,-0.5 C2 1.0,-0.5 C2 -1.0,
+-0.5 -C2 1.0,-0.5 -C2 -1.0">
+<INPUT type=hidden class=Faces value="0 4 30 14 51 59 55 47 10 28 #,
+0 38 46 47 39 1 25 21 20 24 #,2 26 22 23 27 3 37 45 44 36 #,
+2 28 8 45 53 57 49 12 30 6 #,5 1 29 11 46 54 58 50 15 31 #,
+5 43 51 50 42 4 24 16 17 25 #,7 27 19 18 26 6 40 48 49 41 #,
+7 31 13 48 56 52 44 9 29 3 #,33 11 9 32 16 56 40 42 58 18 #,
+33 19 59 43 41 57 17 32 8 10 #,34 13 15 35 22 54 38 36 52 20 #,
+34 21 53 37 39 55 23 35 14 12 #,0 4 42 58 54 38 #,0 28 8 32 16 24 #,
+3 7 41 57 53 37 #,3 29 11 33 19 27 #,17 32 9 29 1 25 #,17 57 49 48 56 16 #,
+18 33 10 28 2 26 #,18 58 50 51 59 19 #,34 12 30 4 24 20 #,34 21 25 5 31 13 #,
+35 15 31 7 27 23 #,35 22 26 6 30 14 #,40 6 2 36 52 56 #,40 48 13 15 50 42 #,
+43 5 1 39 55 59 #,43 51 14 12 49 41 #,44 36 38 46 11 9 #,44 45 53 21 20 52 #,
+47 39 37 45 8 10 #,47 46 54 22 23 55 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallDodecicosahedron.html>Small Dodecicosahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #50)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Great Dodecicosahedron
+
+	(120) EDGE = 1
+	RADIUS = sqrt(2 * (17 - 3 * sqrt(5))) / 4
+	MIDRADIUS = sqrt(6 * (5 - sqrt(5))) / 4
+	HEXAGON CENTER RADIUS = sqrt(6 * (3 - sqrt(5))) / 4
+	DECAGRAM CENTER RADIUS = sqrt(2 * (5 + sqrt(5))) / 4
+	DIHEDRAL ANGLE 1 = acos(0.794654472291766122955530928328)
+		= acos(sqrt(15 * (5 + 2 * sqrt(5))) / 15)
+		= 37.3773681406496956428571384949 degrees
+	DIHEDRAL ANGLE 2 = acos(-0.187592474085079899860139346908)
+		= acos(-sqrt(15 * (5 - 2 * sqrt(5))) / 15)
+		= 100.812316963571706291284944774 degrees
+
+	EULER CHARACTERISTIC:        -28
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 60 32">
+<INPUT type=hidden class=Constants value="0.190983005625052575897706582817,
+0.618033988749894848204586834366,
+0.809016994374947424102293417183,
+1.11803398874989484820458683437">
+<!--
+	C0 = (3 - sqrt(5)) / 4
+	C1 = (sqrt(5) - 1) / 2
+	C2 = (1 + sqrt(5)) / 4
+	C3 = sqrt(5) / 2
+-->
+<INPUT type=hidden class=Vertices value="-C2 0.5 -C1,-C2 0.5 C1,C2 0.5 -C1,
+C2 0.5 C1,-C2 -0.5 -C1,-C2 -0.5 C1,C2 -0.5 -C1,C2 -0.5 C1,0.5 -C1 -C2,
+0.5 -C1 C2,-0.5 -C1 -C2,-0.5 -C1 C2,0.5 C1 -C2,0.5 C1 C2,-0.5 C1 -C2,
+-0.5 C1 C2,-C1 -C2 0.5,-C1 -C2 -0.5,C1 -C2 0.5,C1 -C2 -0.5,-C1 C2 0.5,
+-C1 C2 -0.5,C1 C2 0.5,C1 C2 -0.5,-C3 0.0 C0,-C3 0.0 -C0,C3 0.0 C0,C3 0.0 -C0,
+0.0 C0 -C3,0.0 C0 C3,0.0 -C0 -C3,0.0 -C0 C3,C0 -C3 0.0,-C0 -C3 0.0,C0 C3 0.0,
+-C0 C3 0.0,0.5 1.0 C0,0.5 1.0 -C0,-0.5 1.0 C0,-0.5 1.0 -C0,0.5 -1.0 C0,
+0.5 -1.0 -C0,-0.5 -1.0 C0,-0.5 -1.0 -C0,1.0 C0 0.5,1.0 C0 -0.5,-1.0 C0 0.5,
+-1.0 C0 -0.5,1.0 -C0 0.5,1.0 -C0 -0.5,-1.0 -C0 0.5,-1.0 -C0 -0.5,C0 0.5 1.0,
+C0 0.5 -1.0,-C0 0.5 1.0,-C0 0.5 -1.0,C0 -0.5 1.0,C0 -0.5 -1.0,-C0 -0.5 1.0,
+-C0 -0.5 -1.0">
+<INPUT type=hidden class=Faces value="0 4 30 14 51 59 55 47 10 28 #,
+0 38 46 47 39 1 25 21 20 24 #,2 26 22 23 27 3 37 45 44 36 #,
+2 28 8 45 53 57 49 12 30 6 #,5 1 29 11 46 54 58 50 15 31 #,
+5 43 51 50 42 4 24 16 17 25 #,7 27 19 18 26 6 40 48 49 41 #,
+7 31 13 48 56 52 44 9 29 3 #,33 11 9 32 16 56 40 42 58 18 #,
+33 19 59 43 41 57 17 32 8 10 #,34 13 15 35 22 54 38 36 52 20 #,
+34 21 53 37 39 55 23 35 14 12 #,0 4 42 58 54 38 #,0 28 8 32 16 24 #,
+3 7 41 57 53 37 #,3 29 11 33 19 27 #,17 32 9 29 1 25 #,17 57 49 48 56 16 #,
+18 33 10 28 2 26 #,18 58 50 51 59 19 #,34 12 30 4 24 20 #,34 21 25 5 31 13 #,
+35 15 31 7 27 23 #,35 22 26 6 30 14 #,40 6 2 36 52 56 #,40 48 13 15 50 42 #,
+43 5 1 39 55 59 #,43 51 14 12 49 41 #,44 36 38 46 11 9 #,44 45 53 21 20 52 #,
+47 39 37 45 8 10 #,47 46 54 22 23 55 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatDodecicosahedron.html>Great Dodecicosahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #63)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Small Rhombidodecahedron
+
+	(120) EDGE = 1
+	RADIUS = sqrt(11 + 4 * sqrt(5)) / 2
+	MIDRADIUS = sqrt(2 * (5 + 2 * sqrt(5))) / 2
+	DECAGON CENTER RADIUS = sqrt(5 + 2 * sqrt(5)) / 2
+	SQUARE CENTER RADIUS = (2 + sqrt(5)) / 2
+	DIHEDRAL ANGLE 1 = acos(0.850650808352039932181540497063)
+		= acos(sqrt(10 * (5 + sqrt(5))) / 10)
+		= 31.7174744114610053242139031398 degrees
+	DIHEDRAL ANGLE 2 = acos(-0.525731112119133606025669084848)
+		= acos(-sqrt(10 * (5 - sqrt(5))) / 10)
+		= 121.717474411461005324213903140 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 60 42">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183,
+1.30901699437494742410229341718,
+1.61803398874989484820458683437,
+1.80901699437494742410229341718,
+2.11803398874989484820458683437">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+	C1 = (3 + sqrt(5)) / 4
+	C2 = (1 + sqrt(5)) / 2
+	C3 = (5 + sqrt(5)) / 4
+	C4 = (2 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.5 C4,0.5 0.5 -C4,0.5 -0.5 C4,
+0.5 -0.5 -C4,-0.5 0.5 C4,-0.5 0.5 -C4,-0.5 -0.5 C4,-0.5 -0.5 -C4,C4 0.5 0.5,
+C4 0.5 -0.5,C4 -0.5 0.5,C4 -0.5 -0.5,-C4 0.5 0.5,-C4 0.5 -0.5,-C4 -0.5 0.5,
+-C4 -0.5 -0.5,0.5 C4 0.5,0.5 C4 -0.5,0.5 -C4 0.5,0.5 -C4 -0.5,-0.5 C4 0.5,
+-0.5 C4 -0.5,-0.5 -C4 0.5,-0.5 -C4 -0.5,0.0 C1 C3,0.0 C1 -C3,0.0 -C1 C3,
+0.0 -C1 -C3,C3 0.0 C1,C3 0.0 -C1,-C3 0.0 C1,-C3 0.0 -C1,C1 C3 0.0,C1 -C3 0.0,
+-C1 C3 0.0,-C1 -C3 0.0,C1 C0 C2,C1 C0 -C2,C1 -C0 C2,C1 -C0 -C2,-C1 C0 C2,
+-C1 C0 -C2,-C1 -C0 C2,-C1 -C0 -C2,C2 C1 C0,C2 C1 -C0,C2 -C1 C0,C2 -C1 -C0,
+-C2 C1 C0,-C2 C1 -C0,-C2 -C1 C0,-C2 -C1 -C0,C0 C2 C1,C0 C2 -C1,C0 -C2 C1,
+C0 -C2 -C1,-C0 C2 C1,-C0 C2 -C1,-C0 -C2 C1,-C0 -C2 -C1">
+<INPUT type=hidden class=Faces value="0 24 56 48 12 14 50 58 26 2 #,
+0 36 44 32 17 21 34 48 40 4 #,7 3 39 47 33 18 22 35 51 43 #,
+7 5 25 53 45 9 11 47 55 27 #,10 8 44 52 24 4 6 26 54 46 #,
+10 11 29 37 53 17 16 52 36 28 #,13 31 43 59 23 22 58 42 30 12 #,
+13 49 57 25 1 3 27 59 51 15 #,19 33 46 38 2 6 42 50 35 23 #,
+19 55 39 29 9 8 28 38 54 18 #,20 16 32 45 37 1 5 41 49 34 #,
+20 21 57 41 31 15 14 30 40 56 #,24 0 36 52 #,24 56 40 4 #,25 5 41 57 #,
+25 53 37 1 #,26 6 42 58 #,26 54 38 2 #,27 3 39 55 #,27 59 43 7 #,28 8 44 36 #,
+28 38 46 10 #,29 11 47 39 #,29 37 45 9 #,30 14 50 42 #,30 40 48 12 #,
+31 13 49 41 #,31 43 51 15 #,32 16 52 44 #,32 45 53 17 #,33 19 55 47 #,
+33 46 54 18 #,34 21 57 49 #,34 48 56 20 #,35 22 58 50 #,35 51 59 23 #,
+0 4 6 2 #,1 3 7 5 #,8 10 11 9 #,12 13 15 14 #,16 17 21 20 #,18 22 23 19 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallRhombidodecahedron.html>Small Rhombidodecahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #39)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Rhombidodecahedron
+
+	(120) EDGE = 1
+	RADIUS = sqrt(11 - 4 * sqrt(5)) / 2
+	MIDRADIUS = sqrt(2 * (5 - 2 * sqrt(5))) / 2
+	SQUARE CENTER RADIUS = (sqrt(5) - 2) / 2
+	DECAGRAM CENTER RADIUS = sqrt(5 - 2 * sqrt(5)) / 2
+	DIHEDRAL ANGLE 1 = acos(0.850650808352039932181540497063)
+		= acos(sqrt(10 * (5 + sqrt(5))) / 10)
+		= 31.7174744114610053242139031398 degrees
+	DIHEDRAL ANGLE 2 = acos(0.525731112119133606025669084848)
+		= acos(sqrt(10 * (5 - sqrt(5))) / 10)
+		= 58.2825255885389946757860968602 degrees
+
+	EULER CHARACTERISTIC:        -18
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 60 42">
+<INPUT type=hidden class=Constants value="0.118033988749894848204586834366,
+0.190983005625052575897706582817,
+0.309016994374947424102293417183,
+0.618033988749894848204586834366,
+0.690983005625052575897706582817">
+<!--
+	C0 = (sqrt(5) - 2) / 2
+	C1 = (3 - sqrt(5)) / 4
+	C2 = (sqrt(5) - 1) / 4
+	C3 = (sqrt(5) - 1) / 2
+	C4 = (5 - sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="-0.5 -0.5 C0,-0.5 -0.5 -C0,
+0.5 -0.5 C0,0.5 -0.5 -C0,-0.5 0.5 C0,-0.5 0.5 -C0,0.5 0.5 C0,0.5 0.5 -C0,
+-0.5 C0 -0.5,-0.5 C0 0.5,0.5 C0 -0.5,0.5 C0 0.5,-0.5 -C0 -0.5,-0.5 -C0 0.5,
+0.5 -C0 -0.5,0.5 -C0 0.5,C0 -0.5 -0.5,C0 -0.5 0.5,-C0 -0.5 -0.5,-C0 -0.5 0.5,
+C0 0.5 -0.5,C0 0.5 0.5,-C0 0.5 -0.5,-C0 0.5 0.5,-C1 0.0 -C4,-C1 0.0 C4,
+C1 0.0 -C4,C1 0.0 C4,0.0 -C4 -C1,0.0 -C4 C1,0.0 C4 -C1,0.0 C4 C1,-C4 -C1 0.0,
+C4 -C1 0.0,-C4 C1 0.0,C4 C1 0.0,C2 -C1 C3,C2 -C1 -C3,-C2 -C1 C3,-C2 -C1 -C3,
+C2 C1 C3,C2 C1 -C3,-C2 C1 C3,-C2 C1 -C3,-C1 C3 C2,-C1 C3 -C2,C1 C3 C2,
+C1 C3 -C2,-C1 -C3 C2,-C1 -C3 -C2,C1 -C3 C2,C1 -C3 -C2,C3 C2 -C1,C3 C2 C1,
+-C3 C2 -C1,-C3 C2 C1,C3 -C2 -C1,C3 -C2 C1,-C3 -C2 -C1,-C3 -C2 C1">
+<INPUT type=hidden class=Faces value="0 24 56 48 12 14 50 58 26 2 #,
+0 36 44 32 17 21 34 48 40 4 #,7 3 39 47 33 18 22 35 51 43 #,
+7 5 25 53 45 9 11 47 55 27 #,10 8 44 52 24 4 6 26 54 46 #,
+10 11 29 37 53 17 16 52 36 28 #,13 31 43 59 23 22 58 42 30 12 #,
+13 49 57 25 1 3 27 59 51 15 #,19 33 46 38 2 6 42 50 35 23 #,
+19 55 39 29 9 8 28 38 54 18 #,20 16 32 45 37 1 5 41 49 34 #,
+20 21 57 41 31 15 14 30 40 56 #,24 0 36 52 #,24 56 40 4 #,25 5 41 57 #,
+25 53 37 1 #,26 6 42 58 #,26 54 38 2 #,27 3 39 55 #,27 59 43 7 #,28 8 44 36 #,
+28 38 46 10 #,29 11 47 39 #,29 37 45 9 #,30 14 50 42 #,30 40 48 12 #,
+31 13 49 41 #,31 43 51 15 #,32 16 52 44 #,32 45 53 17 #,33 19 55 47 #,
+33 46 54 18 #,34 21 57 49 #,34 48 56 20 #,35 22 58 50 #,35 51 59 23 #,
+0 4 6 2 #,1 3 7 5 #,8 10 11 9 #,12 13 15 14 #,16 17 21 20 #,18 22 23 19 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatRhombidodecahedron.html>Great Rhombidodecahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #73)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Rhombicosahedron
+
+	(120) EDGE = 1
+	RADIUS = sqrt(7) / 2
+	MIDRADIUS = sqrt(6) / 2
+	HEXAGON CENTER RADIUS = sqrt(3) / 2
+	SQUARE CENTER RADIUS = sqrt(5) / 2
+	DIHEDRAL ANGLE 1 = acos(0.934172358962715696451118623548)
+		= acos((sqrt(3) + sqrt(15)) / 6)
+		= 20.9051574478892990329289583653 degrees
+	DIHEDRAL ANGLE 2 = acos(-0.356822089773089931941969843046)
+		= acos(-(sqrt(15) - sqrt(3)) / 6)
+		= 110.9051574478892990329289583653 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 60 50">
+<INPUT type=hidden class=Constants value="0.190983005625052575897706582817,
+0.309016994374947424102293417183,
+0.809016994374947424102293417183,
+1.11803398874989484820458683437,
+1.30901699437494742410229341718">
+<!--
+	C0 = (3 - sqrt(5)) / 4
+	C1 = (sqrt(5) - 1) / 4
+	C2 = (1 + sqrt(5)) / 4
+	C3 = sqrt(5) / 2
+	C4 = (3 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="C0 0.0 C4,C0 0.0 -C4,-C0 0.0 C4,
+-C0 0.0 -C4,C4 C0 0.0,C4 -C0 0.0,-C4 C0 0.0,-C4 -C0 0.0,0.0 C4 C0,0.0 C4 -C0,
+0.0 -C4 C0,0.0 -C4 -C0,0.5 0.5 C3,0.5 0.5 -C3,0.5 -0.5 C3,0.5 -0.5 -C3,
+-0.5 0.5 C3,-0.5 0.5 -C3,-0.5 -0.5 C3,-0.5 -0.5 -C3,C3 0.5 0.5,C3 0.5 -0.5,
+C3 -0.5 0.5,C3 -0.5 -0.5,-C3 0.5 0.5,-C3 0.5 -0.5,-C3 -0.5 0.5,-C3 -0.5 -0.5,
+0.5 C3 0.5,0.5 C3 -0.5,0.5 -C3 0.5,0.5 -C3 -0.5,-0.5 C3 0.5,-0.5 C3 -0.5,
+-0.5 -C3 0.5,-0.5 -C3 -0.5,C1 C2 1.0,C1 C2 -1.0,C1 -C2 1.0,C1 -C2 -1.0,
+-C1 C2 1.0,-C1 C2 -1.0,-C1 -C2 1.0,-C1 -C2 -1.0,1.0 C1 C2,1.0 C1 -C2,
+1.0 -C1 C2,1.0 -C1 -C2,-1.0 C1 C2,-1.0 C1 -C2,-1.0 -C1 C2,-1.0 -C1 -C2,
+C2 1.0 C1,C2 1.0 -C1,C2 -1.0 C1,C2 -1.0 -C1,-C2 1.0 C1,-C2 1.0 -C1,-C2 -1.0 C1,
+-C2 -1.0 -C1">
+<INPUT type=hidden class=Faces value="0 42 10 55 5 44 #,0 46 4 53 8 40 #,
+2 36 8 57 6 50 #,2 48 7 59 10 38 #,15 13 53 20 22 55 #,15 19 49 33 29 45 #,
+17 13 47 31 35 51 #,17 19 59 26 24 57 #,30 46 12 16 50 34 #,
+30 42 26 27 43 31 #,32 48 18 14 44 28 #,32 36 20 21 37 33 #,
+39 23 22 38 34 35 #,39 11 58 7 49 3 #,41 25 24 40 28 29 #,41 9 52 4 47 1 #,
+54 11 43 1 45 5 #,54 23 21 52 12 14 #,56 9 37 3 51 6 #,56 25 27 58 18 16 #,
+0 42 30 46 #,0 44 28 40 #,1 41 29 45 #,1 47 31 43 #,3 39 35 51 #,3 49 33 37 #,
+5 44 14 54 #,5 55 15 45 #,6 50 16 56 #,6 57 17 51 #,7 49 19 59 #,7 58 18 48 #,
+8 36 20 53 #,8 57 24 40 #,9 41 25 56 #,9 52 21 37 #,11 39 23 54 #,
+11 58 27 43 #,12 16 18 14 #,12 46 4 52 #,13 15 19 17 #,13 53 4 47 #,
+22 23 21 20 #,22 38 10 55 #,26 24 25 27 #,26 59 10 42 #,32 28 29 33 #,
+32 48 2 36 #,34 35 31 30 #,34 38 2 50 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Rhombicosahedron.html>Rhombicosahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #56)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE style="font-size:75%">
+<TR><TD valign=top>References:</TD><TD valign=top>[1]</TD><TD>Jean Paul Albert Badoureau, M&eacute;moire sur les Figures Isoc&egrave;les, <I>Journal de l'&Eacute;cole polytechnique</I> <B>49</B> (1881), 47-172.</TD></TR>
+<TR><TD></TD><TD valign=top>[2]</TD><TD>H. S. M. Coxeter, M. S. Longuet-Higgins, and J. C. P. Miller, Uniform Polyhedra, <I>Philosophical Transactions of the Royal Society of London. Series A. Mathematical and Physical Sciences</I> <B>246</B> (1954), 401-450.</TD></TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

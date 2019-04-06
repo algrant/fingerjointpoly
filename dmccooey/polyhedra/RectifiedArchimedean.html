@@ -1,0 +1,1037 @@
+<!-- File:   RectifiedArchimedean.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2016 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Rectified Archimedean Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='TruncatedArchimedean.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Rectified Archimedean Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='TruncatedCatalan.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+Each solid on this page was created by applying the
+<A href=http://en.wikipedia.org/wiki/Rectification_(geometry)>rectify</A>
+operation to one of the Archimedean solids.  Rectification is a form of
+truncation where each vertex is truncated up to the midpoints of the edges
+meeting at that vertex.  This operation is typically applied to one of the
+Platonic solids, but it can also be applied to a non-regular polyhedron as
+long as the midpoints of the edges meeting at each vertex are coplanar.
+If the non-regular polyhedron is convex, then the resulting polyhedron
+will not intersect itself.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Rectified Truncated Tetrahedron
+
+	(12) SHORT EDGE = 1
+	(24) LONG EDGE = sqrt(3)
+	RADIUS = 3 * sqrt(2) / 2
+	INRADIUS = sqrt(6) / 2
+	VOLUME = 43 * sqrt(2) / 3
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Full Tetrahedral (Td)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 18 20">
+<INPUT type=hidden class=Constants value="0.7071067811865475244008443621048,
+1.41421356237309504880168872421,
+2.12132034355964257320253308631">
+<!--
+	C0 = sqrt(2) / 2
+	C1 = sqrt(2)
+	C2 = 3 * sqrt(2) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C2,0.0 0.0 -C2,C2 0.0 0.0,
+-C2 0.0 0.0,0.0 C2 0.0,0.0 -C2 0.0,C1 -C0 C1,C1 C0 -C1,-C1 C0 C1,-C1 -C0 -C1,
+C1 -C1 C0,C1 C1 -C0,-C1 C1 C0,-C1 -C1 -C0,C0 -C1 C1,C0 C1 -C1,-C0 C1 C1,
+-C0 -C1 -C1">
+<INPUT type=hidden class=Faces value="0 6 2 11 4 16 #,0 8 3 13 5 14 #,
+1 7 2 10 5 17 #,1 9 3 12 4 15 #,6 14 10 #,7 15 11 #,8 16 12 #,9 17 13 #,
+0 14 6 #,0 16 8 #,1 15 7 #,1 17 9 #,2 6 10 #,2 7 11 #,3 8 12 #,3 9 13 #,
+4 11 15 #,4 12 16 #,5 10 14 #,5 13 17 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedTruncatedTetrahedron.html>Rectified Truncated Tetrahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rectified Truncated Octahedron
+
+	(24) SHORT EDGE = 1
+	(48) LONG EDGE = sqrt(6) / 2
+	RADIUS = 3 * sqrt(2) / 2
+	INRADIUS = sqrt(3)
+	VOLUME = 31
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 36 38">
+<INPUT type=hidden class=Vertices value="0.5 0.5 2.0,0.5 0.5 -2.0,0.5 -0.5 2.0,
+0.5 -0.5 -2.0,-0.5 0.5 2.0,-0.5 0.5 -2.0,-0.5 -0.5 2.0,-0.5 -0.5 -2.0,
+2.0 0.5 0.5,2.0 0.5 -0.5,2.0 -0.5 0.5,2.0 -0.5 -0.5,-2.0 0.5 0.5,-2.0 0.5 -0.5,
+-2.0 -0.5 0.5,-2.0 -0.5 -0.5,0.5 2.0 0.5,0.5 2.0 -0.5,0.5 -2.0 0.5,
+0.5 -2.0 -0.5,-0.5 2.0 0.5,-0.5 2.0 -0.5,-0.5 -2.0 0.5,-0.5 -2.0 -0.5,
+1.5 0.0 1.5,1.5 0.0 -1.5,-1.5 0.0 1.5,-1.5 0.0 -1.5,1.5 1.5 0.0,1.5 -1.5 0.0,
+-1.5 1.5 0.0,-1.5 -1.5 0.0,0.0 1.5 1.5,0.0 1.5 -1.5,0.0 -1.5 1.5,
+0.0 -1.5 -1.5">
+<INPUT type=hidden class=Faces value="0 24 8 28 16 32 #,1 33 17 28 9 25 #,
+2 34 18 29 10 24 #,3 25 11 29 19 35 #,4 32 20 30 12 26 #,5 27 13 30 21 33 #,
+6 26 14 31 22 34 #,7 35 23 31 15 27 #,0 4 6 2 #,1 3 7 5 #,8 10 11 9 #,
+12 13 15 14 #,16 17 21 20 #,18 22 23 19 #,0 2 24 #,0 32 4 #,1 5 33 #,1 25 3 #,
+2 6 34 #,3 35 7 #,4 26 6 #,5 7 27 #,8 9 28 #,8 24 10 #,9 11 25 #,10 29 11 #,
+12 14 26 #,12 30 13 #,13 27 15 #,14 15 31 #,16 20 32 #,16 28 17 #,17 33 21 #,
+18 19 29 #,18 34 22 #,19 23 35 #,20 21 30 #,22 31 23 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedTruncatedOctahedron.html>Rectified Truncated Octahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rectified Truncated Cube
+
+	(24) SHORT EDGE = 1
+	(48) LONG EDGE = sqrt(2 + sqrt(2))
+	RADIUS = 2 + sqrt(2)
+	INRADIUS = 1 + sqrt(2)
+	VOLUME = 2 * (81 + 56 * sqrt(2)) / 3
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 36 38">
+<INPUT type=hidden class=Constants value="1.70710678118654752440084436210,
+2.41421356237309504880168872421">
+<!--
+	C0 = (2 + sqrt(2)) / 2
+	C1 = 1 + sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="C1 0.0 C1,C1 0.0 -C1,-C1 0.0 C1,
+-C1 0.0 -C1,C1 C1 0.0,C1 -C1 0.0,-C1 C1 0.0,-C1 -C1 0.0,0.0 C1 C1,0.0 C1 -C1,
+0.0 -C1 C1,0.0 -C1 -C1,C0 C0 C1,C0 C0 -C1,C0 -C0 C1,C0 -C0 -C1,-C0 C0 C1,
+-C0 C0 -C1,-C0 -C0 C1,-C0 -C0 -C1,C1 C0 C0,C1 C0 -C0,C1 -C0 C0,C1 -C0 -C0,
+-C1 C0 C0,-C1 C0 -C0,-C1 -C0 C0,-C1 -C0 -C0,C0 C1 C0,C0 C1 -C0,C0 -C1 C0,
+C0 -C1 -C0,-C0 C1 C0,-C0 C1 -C0,-C0 -C1 C0,-C0 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 12 8 16 2 18 10 14 #,
+0 22 5 23 1 21 4 20 #,1 15 11 19 3 17 9 13 #,2 24 6 25 3 27 7 26 #,
+4 29 9 33 6 32 8 28 #,5 30 10 34 7 35 11 31 #,12 20 28 #,13 29 21 #,14 30 22 #,
+15 23 31 #,16 32 24 #,17 25 33 #,18 26 34 #,19 35 27 #,0 14 22 #,0 20 12 #,
+1 13 21 #,1 23 15 #,2 16 24 #,2 26 18 #,3 19 27 #,3 25 17 #,4 21 29 #,
+4 28 20 #,5 22 30 #,5 31 23 #,6 24 32 #,6 33 25 #,7 27 35 #,7 34 26 #,
+8 12 28 #,8 32 16 #,9 17 33 #,9 29 13 #,10 18 34 #,10 30 14 #,11 15 31 #,
+11 35 19 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedTruncatedCube.html>Rectified Truncated Cube</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Rectified Rhombicuboctahedron
+
+	(24) SHORT EDGE = 1
+	(72) LONG EDGE = sqrt(2)
+	RADIUS = sqrt(2 * (2 + sqrt(2)))
+	INRADIUS = 1 + sqrt(2)
+	VOLUME = 2 * (45 + 37 * sqrt(2)) / 3
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 48 50">
+<INPUT type=hidden class=Constants value="1.70710678118654752440084436210,
+2.41421356237309504880168872421">
+<!--
+	C0 = (2 + sqrt(2)) / 2
+	C1 = 1 + sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="1.0 0.0 C1,1.0 0.0 -C1,-1.0 0.0 C1,
+-1.0 0.0 -C1,C1 1.0 0.0,C1 -1.0 0.0,-C1 1.0 0.0,-C1 -1.0 0.0,0.0 C1 1.0,
+0.0 C1 -1.0,0.0 -C1 1.0,0.0 -C1 -1.0,0.0 1.0 C1,0.0 1.0 -C1,0.0 -1.0 C1,
+0.0 -1.0 -C1,C1 0.0 1.0,C1 0.0 -1.0,-C1 0.0 1.0,-C1 0.0 -1.0,1.0 C1 0.0,
+1.0 -C1 0.0,-1.0 C1 0.0,-1.0 -C1 0.0,C0 1.0 C0,C0 1.0 -C0,C0 -1.0 C0,
+C0 -1.0 -C0,-C0 1.0 C0,-C0 1.0 -C0,-C0 -1.0 C0,-C0 -1.0 -C0,C0 C0 1.0,
+C0 C0 -1.0,C0 -C0 1.0,C0 -C0 -1.0,-C0 C0 1.0,-C0 C0 -1.0,-C0 -C0 1.0,
+-C0 -C0 -1.0,1.0 C0 C0,1.0 C0 -C0,1.0 -C0 C0,1.0 -C0 -C0,-1.0 C0 C0,
+-1.0 C0 -C0,-1.0 -C0 C0,-1.0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 12 2 14 #,1 15 3 13 #,4 16 5 17 #,
+6 19 7 18 #,8 20 9 22 #,10 23 11 21 #,0 26 16 24 #,1 25 17 27 #,2 28 18 30 #,
+3 31 19 29 #,4 33 20 32 #,5 34 21 35 #,6 36 22 37 #,7 39 23 38 #,8 44 12 40 #,
+9 41 13 45 #,10 42 14 46 #,11 47 15 43 #,0 14 42 26 #,0 24 40 12 #,
+1 13 41 25 #,1 27 43 15 #,2 12 44 28 #,2 30 46 14 #,3 15 47 31 #,3 29 45 13 #,
+4 17 25 33 #,4 32 24 16 #,5 16 26 34 #,5 35 27 17 #,6 18 28 36 #,6 37 29 19 #,
+7 19 31 39 #,7 38 30 18 #,8 22 36 44 #,8 40 32 20 #,9 20 33 41 #,9 45 37 22 #,
+10 21 34 42 #,10 46 38 23 #,11 23 39 47 #,11 43 35 21 #,24 32 40 #,25 41 33 #,
+26 42 34 #,27 35 43 #,28 44 36 #,29 37 45 #,30 38 46 #,31 47 39 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedRhombicuboctahedron.html>Rectified Rhombicuboctahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rectified Snub Cube (laevo)
+
+	(96) SHORT EDGE = 1
+	(24) LONG EDGE = sqrt(2)
+	RADIUS = 2.49444633598728650353983792180
+		= sqrt(3 * (7 + cbrt(199 + 3*sqrt(33)) + cbrt(199 - 3*sqrt(33)))) / 3
+		= square-root of a root of the polynomial:  (x^3) - 7*(x^2) + 5*x - 1
+	INRADIUS = 2.28522701785192418695896817344
+		= sqrt(3 * (4 + cbrt(199 + 3*sqrt(33)) + cbrt(199 - 3*sqrt(33)))) / 3
+		= square-root of a root of the polynomial:  (x^3) - 4*(x^2) - 6*x - 2
+	VOLUME = 57.1943492688442638691400488360
+		= sqrt(9808 + cbrt(946005042176 + 2755642368 * sqrt(33))
+			+ cbrt(946005042176 - 2755642368 * sqrt(33))) / 3
+		= square-root of a root of the polynomial:
+		729*(x^3) - 2383344*(x^2) - 4354560*x - 266897408
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Octahedral (O)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 60 62">
+<INPUT type=hidden class=Constants value="0.2834724367428329595549687093248,
+0.9589803843703376638300331996549,
+1.48036748273971444561701633189,
+1.76383991948254740517198504121,
+2.28522701785192418695896817344">
+<!--
+	C0 = sqrt(6 * (5 - cbrt(19 + 3 * sqrt(33)) - cbrt(19 - 3 * sqrt(33)))) / 6
+		= square-root of a root of the polynomial:
+		8*(x^3) - 20*(x^2) + 14*x - 1
+	C1 = sqrt(6 * (1 + cbrt(19 + 3 * sqrt(33)) + cbrt(19 - 3 * sqrt(33)))) / 6
+		= square-root of a root of the polynomial:  8*(x^3) - 4*(x^2) - 2*x - 1
+	C2 = sqrt(6 * (6 + cbrt(6 * (9+sqrt(33))) + cbrt(6 * (9-sqrt(33))))) / 6
+		= square-root of a root of the polynomial:  2*(x^3) - 6*(x^2) + 4*x - 1
+	C3 = sqrt(6 * (7 + cbrt(199 + 3*sqrt(33)) + cbrt(199 - 3*sqrt(33)))) / 6
+		= square-root of a root of the polynomial:
+		8*(x^3) - 28*(x^2) + 10*x - 1
+	C4 = sqrt(3 * (4 + cbrt(199 + 3*sqrt(33)) + cbrt(199 - 3*sqrt(33)))) / 3
+		= square-root of a root of the polynomial:  (x^3) - 4*(x^2) - 6*x - 2
+-->
+<INPUT type=hidden class=Vertices value="C1 -C0 C4,C1 C0 -C4,-C1 C0 C4,
+-C1 -C0 -C4,C4 -C1 C0,C4 C1 -C0,-C4 C1 C0,-C4 -C1 -C0,C0 -C4 C1,C0 C4 -C1,
+-C0 C4 C1,-C0 -C4 -C1,C0 C1 C4,C0 -C1 -C4,-C0 -C1 C4,-C0 C1 -C4,C4 C0 C1,
+C4 -C0 -C1,-C4 -C0 C1,-C4 C0 -C1,C1 C4 C0,C1 -C4 -C0,-C1 -C4 C0,-C1 C4 -C0,
+C3 0.0 C3,C3 0.0 -C3,-C3 0.0 C3,-C3 0.0 -C3,C3 C3 0.0,C3 -C3 0.0,-C3 C3 0.0,
+-C3 -C3 0.0,0.0 C3 C3,0.0 C3 -C3,0.0 -C3 C3,0.0 -C3 -C3,C2 -C1 C3,C2 C1 -C3,
+-C2 C1 C3,-C2 -C1 -C3,C3 -C2 C1,C3 C2 -C1,-C3 C2 C1,-C3 -C2 -C1,C1 -C3 C2,
+C1 C3 -C2,-C1 C3 C2,-C1 -C3 -C2,C1 C2 C3,C1 -C2 -C3,-C1 -C2 C3,-C1 C2 -C3,
+C3 C1 C2,C3 -C1 -C2,-C3 -C1 C2,-C3 C1 -C2,C2 C3 C1,C2 -C3 -C1,-C2 -C3 C1,
+-C2 C3 -C1">
+<INPUT type=hidden class=Faces value="0 14 34 44 36 #,0 24 52 48 12 #,
+1 15 33 45 37 #,1 25 53 49 13 #,2 12 32 46 38 #,2 26 54 50 14 #,
+3 13 35 47 39 #,3 27 55 51 15 #,4 16 24 36 40 #,4 29 57 53 17 #,
+5 17 25 37 41 #,5 28 56 52 16 #,6 18 26 38 42 #,6 30 59 55 19 #,
+7 19 27 39 43 #,7 31 58 54 18 #,8 21 29 40 44 #,8 34 50 58 22 #,
+9 20 28 41 45 #,9 33 51 59 23 #,10 23 30 42 46 #,10 32 48 56 20 #,
+11 22 31 43 47 #,11 35 49 57 21 #,0 12 2 14 #,1 13 3 15 #,4 17 5 16 #,
+6 19 7 18 #,8 22 11 21 #,9 23 10 20 #,36 44 40 #,37 45 41 #,38 46 42 #,
+39 47 43 #,48 52 56 #,49 53 57 #,50 54 58 #,51 55 59 #,0 36 24 #,1 37 25 #,
+2 38 26 #,3 39 27 #,4 40 29 #,5 41 28 #,6 42 30 #,7 43 31 #,8 44 34 #,
+9 45 33 #,10 46 32 #,11 47 35 #,12 48 32 #,13 49 35 #,14 50 34 #,15 51 33 #,
+16 52 24 #,17 53 25 #,18 54 26 #,19 55 27 #,20 56 28 #,21 57 29 #,22 58 31 #,
+23 59 30 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedLsnubCube.html>Rectified Snub Cube</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rectified Truncated Cuboctahedron
+
+	(48) SHORT EDGE = 1
+	(48) MEDIUM EDGE = sqrt(6) / 2
+	(48) LONG EDGE = sqrt(2 * (2 + sqrt(2))) / 2
+	RADIUS = sqrt(3 * (2 + sqrt(2)))
+	INRADIUS = (4 + sqrt(2)) / 2
+	VOLUME = 56 + 43 * sqrt(2)
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 72 74">
+<INPUT type=hidden class=Constants value="0.7071067811865475244008443621048,
+1.20710678118654752440084436210,
+1.70710678118654752440084436210,
+2.20710678118654752440084436210,
+2.70710678118654752440084436210">
+<!--
+	C0 = sqrt(2) / 2
+	C1 = (1 + sqrt(2)) / 2
+	C2 = (2 + sqrt(2)) / 2
+	C3 = (3 + sqrt(2)) / 2
+	C4 = (4 + sqrt(2)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C2 0.0 C4,C2 0.0 -C4,-C2 0.0 C4,
+-C2 0.0 -C4,C4 C2 0.0,C4 -C2 0.0,-C4 C2 0.0,-C4 -C2 0.0,0.0 C4 C2,0.0 C4 -C2,
+0.0 -C4 C2,0.0 -C4 -C2,0.0 C2 C4,0.0 C2 -C4,0.0 -C2 C4,0.0 -C2 -C4,C4 0.0 C2,
+C4 0.0 -C2,-C4 0.0 C2,-C4 0.0 -C2,C2 C4 0.0,C2 -C4 0.0,-C2 C4 0.0,-C2 -C4 0.0,
+C1 C1 C4,C1 C1 -C4,C1 -C1 C4,C1 -C1 -C4,-C1 C1 C4,-C1 C1 -C4,-C1 -C1 C4,
+-C1 -C1 -C4,C4 C1 C1,C4 C1 -C1,C4 -C1 C1,C4 -C1 -C1,-C4 C1 C1,-C4 C1 -C1,
+-C4 -C1 C1,-C4 -C1 -C1,C1 C4 C1,C1 C4 -C1,C1 -C4 C1,C1 -C4 -C1,-C1 C4 C1,
+-C1 C4 -C1,-C1 -C4 C1,-C1 -C4 -C1,C3 C0 C3,C3 C0 -C3,C3 -C0 C3,C3 -C0 -C3,
+-C3 C0 C3,-C3 C0 -C3,-C3 -C0 C3,-C3 -C0 -C3,C3 C3 C0,C3 C3 -C0,C3 -C3 C0,
+C3 -C3 -C0,-C3 C3 C0,-C3 C3 -C0,-C3 -C3 C0,-C3 -C3 -C0,C0 C3 C3,C0 C3 -C3,
+C0 -C3 C3,C0 -C3 -C3,-C0 C3 C3,-C0 C3 -C3,-C0 -C3 C3,-C0 -C3 -C3">
+<INPUT type=hidden class=Faces value="0 24 12 28 2 30 14 26 #,
+1 27 15 31 3 29 13 25 #,4 32 16 34 5 35 17 33 #,6 37 19 39 7 38 18 36 #,
+8 40 20 41 9 45 22 44 #,10 46 23 47 11 43 21 42 #,24 48 32 56 40 64 #,
+25 65 41 57 33 49 #,26 66 42 58 34 50 #,27 51 35 59 43 67 #,
+28 68 44 60 36 52 #,29 53 37 61 45 69 #,30 54 38 62 46 70 #,
+31 71 47 63 39 55 #,0 50 16 48 #,1 49 17 51 #,2 52 18 54 #,3 55 19 53 #,
+4 57 20 56 #,5 58 21 59 #,6 60 22 61 #,7 63 23 62 #,8 68 12 64 #,9 65 13 69 #,
+10 66 14 70 #,11 71 15 67 #,0 26 50 #,0 48 24 #,1 25 49 #,1 51 27 #,2 28 52 #,
+2 54 30 #,3 31 55 #,3 53 29 #,4 33 57 #,4 56 32 #,5 34 58 #,5 59 35 #,
+6 36 60 #,6 61 37 #,7 39 63 #,7 62 38 #,8 44 68 #,8 64 40 #,9 41 65 #,
+9 69 45 #,10 42 66 #,10 70 46 #,11 47 71 #,11 67 43 #,12 24 64 #,12 68 28 #,
+13 29 69 #,13 65 25 #,14 30 70 #,14 66 26 #,15 27 67 #,15 71 31 #,16 32 48 #,
+16 50 34 #,17 35 51 #,17 49 33 #,18 38 54 #,18 52 36 #,19 37 53 #,19 55 39 #,
+20 40 56 #,20 57 41 #,21 43 59 #,21 58 42 #,22 45 61 #,22 60 44 #,23 46 62 #,
+23 63 47 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedTruncatedCuboctahedron.html>Rectified Truncated Cuboctahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Rectified Truncated Icosahedron
+
+	(60) SHORT EDGE = 1
+	(120) LONG EDGE = (sqrt(15) - sqrt(3)) / 2
+	RADIUS = 3
+	INRADIUS = (sqrt(3) + sqrt(15)) / 2
+	VOLUME = 73 * sqrt(5) - 60
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 90 92">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183,
+0.927050983124842272306880251548,
+1.73606797749978969640917366873,
+2.23606797749978969640917366873,
+2.30901699437494742410229341718,
+2.427050983124842272306880251548,
+2.80901699437494742410229341718">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+	C1 = 3 * (sqrt(5) - 1) / 4
+	C2 = (2 * sqrt(5) - 1) / 2
+	C3 = sqrt(5)
+	C4 = (7 + sqrt(5)) / 4
+	C5 = 3 * (1 + sqrt(5)) / 4
+	C6 = (9 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 3.0,0.0 0.0 -3.0,3.0 0.0 0.0,
+-3.0 0.0 0.0,0.0 3.0 0.0,0.0 -3.0 0.0,C1 0.5 C6,C1 0.5 -C6,C1 -0.5 C6,
+C1 -0.5 -C6,-C1 0.5 C6,-C1 0.5 -C6,-C1 -0.5 C6,-C1 -0.5 -C6,C6 C1 0.5,
+C6 C1 -0.5,C6 -C1 0.5,C6 -C1 -0.5,-C6 C1 0.5,-C6 C1 -0.5,-C6 -C1 0.5,
+-C6 -C1 -0.5,0.5 C6 C1,0.5 C6 -C1,0.5 -C6 C1,0.5 -C6 -C1,-0.5 C6 C1,
+-0.5 C6 -C1,-0.5 -C6 C1,-0.5 -C6 -C1,C1 1.5 C5,C1 1.5 -C5,C1 -1.5 C5,
+C1 -1.5 -C5,-C1 1.5 C5,-C1 1.5 -C5,-C1 -1.5 C5,-C1 -1.5 -C5,C5 C1 1.5,
+C5 C1 -1.5,C5 -C1 1.5,C5 -C1 -1.5,-C5 C1 1.5,-C5 C1 -1.5,-C5 -C1 1.5,
+-C5 -C1 -1.5,1.5 C5 C1,1.5 C5 -C1,1.5 -C5 C1,1.5 -C5 -C1,-1.5 C5 C1,
+-1.5 C5 -C1,-1.5 -C5 C1,-1.5 -C5 -C1,C2 C0 C4,C2 C0 -C4,C2 -C0 C4,C2 -C0 -C4,
+-C2 C0 C4,-C2 C0 -C4,-C2 -C0 C4,-C2 -C0 -C4,C4 C2 C0,C4 C2 -C0,C4 -C2 C0,
+C4 -C2 -C0,-C4 C2 C0,-C4 C2 -C0,-C4 -C2 C0,-C4 -C2 -C0,C0 C4 C2,C0 C4 -C2,
+C0 -C4 C2,C0 -C4 -C2,-C0 C4 C2,-C0 C4 -C2,-C0 -C4 C2,-C0 -C4 -C2,0.0 2.0 C3,
+0.0 2.0 -C3,0.0 -2.0 C3,0.0 -2.0 -C3,C3 0.0 2.0,C3 0.0 -2.0,-C3 0.0 2.0,
+-C3 0.0 -2.0,2.0 C3 0.0,2.0 -C3 0.0,-2.0 C3 0.0,-2.0 -C3 0.0">
+<INPUT type=hidden class=Faces value="70 30 54 38 62 46 #,71 47 63 39 55 31 #,
+72 48 64 40 56 32 #,73 33 57 41 65 49 #,74 50 66 42 58 34 #,
+75 35 59 43 67 51 #,76 36 60 44 68 52 #,77 53 69 45 61 37 #,78 34 10 0 6 30 #,
+79 31 7 1 11 35 #,80 32 8 0 12 36 #,81 37 13 1 9 33 #,82 40 16 2 14 38 #,
+83 39 15 2 17 41 #,84 42 18 3 20 44 #,85 45 21 3 19 43 #,86 47 23 4 22 46 #,
+87 48 24 5 25 49 #,88 50 26 4 27 51 #,89 53 29 5 28 52 #,78 70 22 26 74 #,
+79 75 27 23 71 #,80 76 28 24 72 #,81 73 25 29 77 #,82 54 6 8 56 #,
+83 57 9 7 55 #,84 60 12 10 58 #,85 59 11 13 61 #,86 62 14 15 63 #,
+87 65 17 16 64 #,88 67 19 18 66 #,89 68 20 21 69 #,0 8 6 #,0 10 12 #,1 7 9 #,
+1 13 11 #,2 15 14 #,2 16 17 #,3 18 19 #,3 21 20 #,4 23 27 #,4 26 22 #,
+5 24 28 #,5 29 25 #,30 6 54 #,30 70 78 #,31 55 7 #,31 79 71 #,32 56 8 #,
+32 80 72 #,33 9 57 #,33 73 81 #,34 58 10 #,34 78 74 #,35 11 59 #,35 75 79 #,
+36 12 60 #,36 76 80 #,37 61 13 #,37 81 77 #,38 14 62 #,38 54 82 #,39 63 15 #,
+39 83 55 #,40 64 16 #,40 82 56 #,41 17 65 #,41 57 83 #,42 66 18 #,42 84 58 #,
+43 19 67 #,43 59 85 #,44 20 68 #,44 60 84 #,45 69 21 #,45 85 61 #,46 22 70 #,
+46 62 86 #,47 71 23 #,47 86 63 #,48 72 24 #,48 87 64 #,49 25 73 #,49 65 87 #,
+50 74 26 #,50 88 66 #,51 27 75 #,51 67 88 #,52 28 76 #,52 68 89 #,53 77 29 #,
+53 89 69 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedTruncatedIcosahedron.html>Rectified Truncated Icosahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rectified Truncated Dodecahedron
+
+	(60) SHORT EDGE = 1
+	(120) LONG EDGE = sqrt((5 + sqrt(5)) / 2)
+	RADIUS = (5 + 3 * sqrt(5)) / 2
+	INRADIUS = sqrt((25 + 11 * sqrt(5)) / 2)
+	VOLUME = 5 * (399 + 185 * sqrt(5)) / 6
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 90 92">
+<INPUT type=hidden class=Constants value="1.80901699437494742410229341718,
+2.61803398874989484820458683437,
+2.927050983124842272306880251548,
+3.427050983124842272306880251548,
+3.73606797749978969640917366873,
+4.73606797749978969640917366873,
+5.23606797749978969640917366873,
+5.54508497187473712051146708591,
+5.85410196624968454461376050310">
+<!--
+	C0 = (5 + sqrt(5)) / 4
+	C1 = (3 + sqrt(5)) / 2
+	C2 = (5 + 3 * sqrt(5)) / 4
+	C3 = (7 + 3 * sqrt(5)) / 4
+	C4 = (3 + 2 * sqrt(5)) / 2
+	C5 = (5 + 2 * sqrt(5)) / 2
+	C6 = 3 + sqrt(5)
+	C7 = (11 + 5 * sqrt(5)) / 4
+	C8 = (5 + 3 * sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C8,0.0 0.0 -C8,C8 0.0 0.0,
+-C8 0.0 0.0,0.0 C8 0.0,0.0 -C8 0.0,0.5 C0 C7,0.5 C0 -C7,0.5 -C0 C7,0.5 -C0 -C7,
+-0.5 C0 C7,-0.5 C0 -C7,-0.5 -C0 C7,-0.5 -C0 -C7,C7 0.5 C0,C7 0.5 -C0,
+C7 -0.5 C0,C7 -0.5 -C0,-C7 0.5 C0,-C7 0.5 -C0,-C7 -0.5 C0,-C7 -0.5 -C0,
+C0 C7 0.5,C0 C7 -0.5,C0 -C7 0.5,C0 -C7 -0.5,-C0 C7 0.5,-C0 C7 -0.5,-C0 -C7 0.5,
+-C0 -C7 -0.5,0.0 C1 C6,0.0 C1 -C6,0.0 -C1 C6,0.0 -C1 -C6,C6 0.0 C1,C6 0.0 -C1,
+-C6 0.0 C1,-C6 0.0 -C1,C1 C6 0.0,C1 -C6 0.0,-C1 C6 0.0,-C1 -C6 0.0,C0 C2 C5,
+C0 C2 -C5,C0 -C2 C5,C0 -C2 -C5,-C0 C2 C5,-C0 C2 -C5,-C0 -C2 C5,-C0 -C2 -C5,
+C5 C0 C2,C5 C0 -C2,C5 -C0 C2,C5 -C0 -C2,-C5 C0 C2,-C5 C0 -C2,-C5 -C0 C2,
+-C5 -C0 -C2,C2 C5 C0,C2 C5 -C0,C2 -C5 C0,C2 -C5 -C0,-C2 C5 C0,-C2 C5 -C0,
+-C2 -C5 C0,-C2 -C5 -C0,C3 C2 C4,C3 C2 -C4,C3 -C2 C4,C3 -C2 -C4,-C3 C2 C4,
+-C3 C2 -C4,-C3 -C2 C4,-C3 -C2 -C4,C4 C3 C2,C4 C3 -C2,C4 -C3 C2,C4 -C3 -C2,
+-C4 C3 C2,-C4 C3 -C2,-C4 -C3 C2,-C4 -C3 -C2,C2 C4 C3,C2 C4 -C3,C2 -C4 C3,
+C2 -C4 -C3,-C2 C4 C3,-C2 C4 -C3,-C2 -C4 C3,-C2 -C4 -C3">
+<INPUT type=hidden class=Faces value="0 8 44 68 52 34 50 66 42 6 #,
+0 10 46 70 54 36 56 72 48 12 #,1 7 43 67 51 35 53 69 45 9 #,
+1 13 49 73 57 37 55 71 47 11 #,2 15 51 75 59 38 58 74 50 14 #,
+2 16 52 76 60 39 61 77 53 17 #,3 18 54 78 62 40 63 79 55 19 #,
+3 21 57 81 65 41 64 80 56 20 #,4 23 59 83 43 31 47 87 63 27 #,
+4 26 62 86 46 30 42 82 58 22 #,5 24 60 84 44 32 48 88 64 28 #,
+5 29 65 89 49 33 45 85 61 25 #,6 30 10 #,7 11 31 #,8 12 32 #,9 33 13 #,
+14 34 16 #,15 17 35 #,18 20 36 #,19 37 21 #,22 38 23 #,24 25 39 #,26 27 40 #,
+28 41 29 #,66 74 82 #,67 83 75 #,68 84 76 #,69 77 85 #,70 86 78 #,71 79 87 #,
+72 80 88 #,73 89 81 #,0 6 10 #,0 12 8 #,1 9 13 #,1 11 7 #,2 14 16 #,2 17 15 #,
+3 19 21 #,3 20 18 #,4 22 23 #,4 27 26 #,5 25 24 #,5 28 29 #,6 42 30 #,
+7 31 43 #,8 32 44 #,9 45 33 #,10 30 46 #,11 47 31 #,12 48 32 #,13 33 49 #,
+14 50 34 #,15 35 51 #,16 34 52 #,17 53 35 #,18 36 54 #,19 55 37 #,20 56 36 #,
+21 37 57 #,22 58 38 #,23 38 59 #,24 39 60 #,25 61 39 #,26 40 62 #,27 63 40 #,
+28 64 41 #,29 41 65 #,42 66 82 #,43 83 67 #,44 84 68 #,45 69 85 #,46 86 70 #,
+47 71 87 #,48 72 88 #,49 89 73 #,50 74 66 #,51 67 75 #,52 68 76 #,53 77 69 #,
+54 70 78 #,55 79 71 #,56 80 72 #,57 73 81 #,58 82 74 #,59 75 83 #,60 76 84 #,
+61 85 77 #,62 78 86 #,63 87 79 #,64 88 80 #,65 81 89 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedTruncatedDodecahedron.html>Rectified Truncated Dodecahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rectified Rhombicosidodecahedron
+
+	(60) SHORT EDGE = 1
+	(120) MEDIUM EDGE = sqrt(2)
+	(60) LONG EDGE = (1 + sqrt(5)) / 2
+	RADIUS = sqrt(2 * (5 + 2 * sqrt(5)))
+	INRADIUS = 3 * sqrt(5 * (5 + 2 * sqrt(5))) / 5
+	VOLUME = (945 + 449 * sqrt(5)) / 6
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="10 120 122">
+<INPUT type=hidden class=Constants value="0.809016994374947424102293417183,
+1.30901699437494742410229341718,
+1.80901699437494742410229341718,
+2.11803398874989484820458683437,
+2.427050983124842272306880251548,
+2.927050983124842272306880251548,
+3.11803398874989484820458683437,
+3.73606797749978969640917366873,
+3.927050983124842272306880251548,
+4.23606797749978969640917366873">
+<!--
+	C0 = (1 + sqrt(5)) / 4
+	C1 = (3 + sqrt(5)) / 4
+	C2 = (5 + sqrt(5)) / 4
+	C3 = (2 + sqrt(5)) / 2
+	C4 = 3 * (1 + sqrt(5)) / 4
+	C5 = (5 + 3 * sqrt(5)) / 4
+	C6 = (4 + sqrt(5)) / 2
+	C7 = (3 + 2 * sqrt(5)) / 2
+	C8 = 3 * (3 + sqrt(5)) / 4
+	C9 = 2 + sqrt(5)
+-->
+<INPUT type=hidden class=Vertices value="1.0 0.0 C9,1.0 0.0 -C9,-1.0 0.0 C9,
+-1.0 0.0 -C9,C9 1.0 0.0,C9 -1.0 0.0,-C9 1.0 0.0,-C9 -1.0 0.0,0.0 C9 1.0,
+0.0 C9 -1.0,0.0 -C9 1.0,0.0 -C9 -1.0,0.0 1.0 C9,0.0 1.0 -C9,0.0 -1.0 C9,
+0.0 -1.0 -C9,C9 0.0 1.0,C9 0.0 -1.0,-C9 0.0 1.0,-C9 0.0 -1.0,1.0 C9 0.0,
+1.0 -C9 0.0,-1.0 C9 0.0,-1.0 -C9 0.0,0.5 C2 C8,0.5 C2 -C8,0.5 -C2 C8,
+0.5 -C2 -C8,-0.5 C2 C8,-0.5 C2 -C8,-0.5 -C2 C8,-0.5 -C2 -C8,C8 0.5 C2,
+C8 0.5 -C2,C8 -0.5 C2,C8 -0.5 -C2,-C8 0.5 C2,-C8 0.5 -C2,-C8 -0.5 C2,
+-C8 -0.5 -C2,C2 C8 0.5,C2 C8 -0.5,C2 -C8 0.5,C2 -C8 -0.5,-C2 C8 0.5,
+-C2 C8 -0.5,-C2 -C8 0.5,-C2 -C8 -0.5,C2 C1 C7,C2 C1 -C7,C2 -C1 C7,C2 -C1 -C7,
+-C2 C1 C7,-C2 C1 -C7,-C2 -C1 C7,-C2 -C1 -C7,C7 C2 C1,C7 C2 -C1,C7 -C2 C1,
+C7 -C2 -C1,-C7 C2 C1,-C7 C2 -C1,-C7 -C2 C1,-C7 -C2 -C1,C1 C7 C2,C1 C7 -C2,
+C1 -C7 C2,C1 -C7 -C2,-C1 C7 C2,-C1 C7 -C2,-C1 -C7 C2,-C1 -C7 -C2,C0 C5 C6,
+C0 C5 -C6,C0 -C5 C6,C0 -C5 -C6,-C0 C5 C6,-C0 C5 -C6,-C0 -C5 C6,-C0 -C5 -C6,
+C6 C0 C5,C6 C0 -C5,C6 -C0 C5,C6 -C0 -C5,-C6 C0 C5,-C6 C0 -C5,-C6 -C0 C5,
+-C6 -C0 -C5,C5 C6 C0,C5 C6 -C0,C5 -C6 C0,C5 -C6 -C0,-C5 C6 C0,-C5 C6 -C0,
+-C5 -C6 C0,-C5 -C6 -C0,C3 C4 C5,C3 C4 -C5,C3 -C4 C5,C3 -C4 -C5,-C3 C4 C5,
+-C3 C4 -C5,-C3 -C4 C5,-C3 -C4 -C5,C5 C3 C4,C5 C3 -C4,C5 -C3 C4,C5 -C3 -C4,
+-C5 C3 C4,-C5 C3 -C4,-C5 -C3 C4,-C5 -C3 -C4,C4 C5 C3,C4 C5 -C3,C4 -C5 C3,
+C4 -C5 -C3,-C4 C5 C3,-C4 C5 -C3,-C4 -C5 C3,-C4 -C5 -C3">
+<INPUT type=hidden class=Faces value="0 50 82 80 48 #,1 49 81 83 51 #,
+2 52 84 86 54 #,3 55 87 85 53 #,4 57 89 88 56 #,5 58 90 91 59 #,
+6 60 92 93 61 #,7 63 95 94 62 #,8 68 76 72 64 #,9 65 73 77 69 #,
+10 66 74 78 70 #,11 71 79 75 67 #,0 12 2 14 #,1 15 3 13 #,4 16 5 17 #,
+6 19 7 18 #,8 20 9 22 #,10 23 11 21 #,24 48 96 72 #,25 73 97 49 #,
+26 74 98 50 #,27 51 99 75 #,28 76 100 52 #,29 53 101 77 #,30 54 102 78 #,
+31 79 103 55 #,32 56 104 80 #,33 81 105 57 #,34 82 106 58 #,35 59 107 83 #,
+36 84 108 60 #,37 61 109 85 #,38 62 110 86 #,39 87 111 63 #,40 64 112 88 #,
+41 89 113 65 #,42 90 114 66 #,43 67 115 91 #,44 92 116 68 #,45 69 117 93 #,
+46 70 118 94 #,47 95 119 71 #,0 14 26 50 #,0 48 24 12 #,1 13 25 49 #,
+1 51 27 15 #,2 12 28 52 #,2 54 30 14 #,3 15 31 55 #,3 53 29 13 #,4 17 33 57 #,
+4 56 32 16 #,5 16 34 58 #,5 59 35 17 #,6 18 36 60 #,6 61 37 19 #,7 19 39 63 #,
+7 62 38 18 #,8 22 44 68 #,8 64 40 20 #,9 20 41 65 #,9 69 45 22 #,10 21 42 66 #,
+10 70 46 23 #,11 23 47 71 #,11 67 43 21 #,24 72 76 28 #,25 29 77 73 #,
+26 30 78 74 #,27 75 79 31 #,32 80 82 34 #,33 35 83 81 #,36 38 86 84 #,
+37 85 87 39 #,40 88 89 41 #,42 43 91 90 #,44 45 93 92 #,46 94 95 47 #,
+48 80 104 96 #,49 97 105 81 #,50 98 106 82 #,51 83 107 99 #,52 100 108 84 #,
+53 85 109 101 #,54 86 110 102 #,55 103 111 87 #,56 88 112 104 #,
+57 105 113 89 #,58 106 114 90 #,59 91 115 107 #,60 108 116 92 #,
+61 93 117 109 #,62 94 118 110 #,63 111 119 95 #,64 72 96 112 #,65 113 97 73 #,
+66 114 98 74 #,67 75 99 115 #,68 116 100 76 #,69 77 101 117 #,70 78 102 118 #,
+71 119 103 79 #,12 24 28 #,13 29 25 #,14 30 26 #,15 27 31 #,16 32 34 #,
+17 35 33 #,18 38 36 #,19 37 39 #,20 40 41 #,21 43 42 #,22 45 44 #,23 46 47 #,
+96 104 112 #,97 113 105 #,98 114 106 #,99 107 115 #,100 116 108 #,
+101 109 117 #,102 110 118 #,103 119 111 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedRhombicosidodecahedron.html>Rectified Rhombicosidodecahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Rectified Snub Dodecahedron (laevo)
+
+	(240) SHORT EDGE = 1
+	(60) LONG EDGE = (1 + sqrt(5)) / 2
+	RADIUS = 4.19410767050417598480791810470
+		= square-root of a root of the polynomial:
+		(x^6) - 21*(x^5) + 64*(x^4) - 73*(x^3) + 39*(x^2) - 10*x + 1
+	INRADIUS = 3.96183189456368147800041067906
+		= square-root of a root of the polynomial:  125*(x^6) - 1875*(x^5)
+		- 1800*(x^4) + 6625*(x^3) + 3315*(x^2) - 5150*x + 961
+	VOLUME = 291.165637189697926146697592452
+		= square-root of a root of the polynomial:
+		531441*(x^6) - 45733155255*(x^5) + 56964988563750*(x^4)
+		+ 50349918775905000*(x^3) + 7778053590600375000*(x^2)
+		- 2742525140761185581250*x + 29023165940678023140625
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Icosahedral (I)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="33 150 152">
+<INPUT type=hidden class=Constants value="0.192893711352359022108262546061,
+0.312108581184228342143808872253,
+0.374821658114562295266609516608,
+0.535441465604832455252409083777,
+0.567715369466921317374872062669,
+0.942537027581483612641481579277,
+0.973950630643916804071119410628,
+1.04044375814141981950448050209,
+1.17847107151890502835987322522,
+1.29605054642411279473554369251,
+1.37136478287126405046813577128,
+1.477978493186316067893890663054,
+1.58042481319287142597139636551,
+1.89253339437709976811520523776,
+1.95070688186081457002349910248,
+1.98298078572290343214596208137,
+2.097053835252087992403959052348,
+2.14360059321317359213176164854,
+2.1823594062952068966571665407452,
+2.49446798747943523880097541300,
+2.70352801780104261430423600723,
+2.75007477576212821403203860341,
+2.84934327605758011836202643433,
+2.86928964559399753406758492961,
+2.89642172915340163641249855329,
+3.16145185724180846050583530659,
+3.3931043816762007871395027448547,
+3.43186319475823409166490763706,
+3.72402540640604501810315801404,
+3.74397177594246243380871650932,
+3.84324027623791433813870434023,
+4.074892800672306664772371778504,
+4.19410767050417598480791810470">
+<!--
+	C0 = square-root of a root of the polynomial:  4096*(x^6) - 15360*(x^5)
+		+ 18944*(x^4) - 7168*(x^3) + 1024*(x^2) - 56*x + 1
+	C1 = square-root of a root of the polynomial:  4096*(x^6) - 35840*(x^5)
+		+ 90624*(x^4) - 23552*(x^3) + 2224*(x^2) - 84*x + 1
+	C2 = square-root of a root of the polynomial:  4096*(x^6) + 6144*(x^5)
+		+ 4352*(x^4) - 3456*(x^3) + 672*(x^2) - 48*x + 1
+	C3 = square-root of a root of the polynomial:  4096*(x^6) - 28672*(x^5)
+		+ 83712*(x^4) - 32384*(x^3) + 3472*(x^2) - 124*x + 1
+	C4 = square-root of a root of the polynomial:  4096*(x^6) - 3072*(x^5)
+		+ 9728*(x^4) - 8960*(x^3) + 2944*(x^2) - 328*x + 1
+	C5 = square-root of a root of the polynomial:  4096*(x^6) + 21504*(x^5)
+		+ 1536*(x^4) - 109568*(x^3) + 125952*(x^2) - 47832*x + 5041
+	C6 = square-root of a root of the polynomial:  4096*(x^6) + 1024*(x^5)
+		- 7680*(x^4) - 3840*(x^3) + 9520*(x^2) - 2996*x + 1
+	C7 = square-root of a root of the polynomial:  4096*(x^6) - 10240*(x^5)
+		+ 56832*(x^4) - 61312*(x^3) + 7296*(x^2) - 172*x + 1
+	C8 = square-root of a root of the polynomial:  4096*(x^6) + 1024*(x^5)
+		+ 28416*(x^4) - 58368*(x^3) + 8512*(x^2) - 332*x + 1
+	C9 = square-root of a root of the polynomial:  4096*(x^6) - 14336*(x^5)
+		+ 16384*(x^4) - 7168*(x^3) + 1184*(x^2) - 60*x + 1
+	C10 = square-root of a root of the polynomial:  4096*(x^6) + 12288*(x^5)
+		- 12544*(x^4) - 52032*(x^3) + 9472*(x^2) - 420*x + 1
+	C11 = square-root of a root of the polynomial:  4096*(x^6) - 21504*(x^5)
+		+ 110592*(x^4) - 312384*(x^3) + 335152*(x^2) - 113792*x + 11881
+	C12 = square-root of a root of the polynomial:  4096*(x^6) - 22528*(x^5)
+		+ 50944*(x^4) - 68160*(x^3) + 49088*(x^2) - 12932*x + 841
+	C13 = square-root of a root of the polynomial:  4096*(x^6) - 29696*(x^5)
+		+ 73984*(x^4) - 83328*(x^3) + 40784*(x^2) - 3760*x + 1
+	C14 = square-root of a root of the polynomial:  4096*(x^6) - 22528*(x^5)
+		+ 39168*(x^4) - 58880*(x^3) + 41584*(x^2) - 8452*x + 361
+	C15 = square-root of a root of the polynomial:  4096*(x^6) - 46080*(x^5)
+		+ 228864*(x^4) - 581632*(x^3) + 621024*(x^2) - 201344*x + 14641
+	C16 = square-root of a root of the polynomial:  4096*(x^6) - 21504*(x^5)
+		+ 16384*(x^4) - 4672*(x^3) + 624*(x^2) - 40*x + 1
+	C17 = square-root of a root of the polynomial:  4096*(x^6) - 17408*(x^5)
+		- 10496*(x^4) + 12800*(x^3) + 25808*(x^2) - 552*x + 1
+	C18 = square-root of a root of the polynomial:  4096*(x^6) - 33792*(x^5)
+		+ 83712*(x^4) - 80128*(x^3) + 26576*(x^2) - 3176*x + 121
+	C19 = square-root of a root of the polynomial:  4096*(x^6) - 32768*(x^5)
+		+ 51712*(x^4) - 42112*(x^3) + 14096*(x^2) - 504*x + 1
+	C20 = square-root of a root of the polynomial:  4096*(x^6) - 8192*(x^5)
+		- 133376*(x^4) - 232320*(x^3) + 342288*(x^2) - 73548*x + 1
+	C21 = square-root of a root of the polynomial:  4096*(x^6) - 30720*(x^5)
+		- 2816*(x^4) + 4352*(x^3) + 16944*(x^2) - 1956*x + 1
+	C22 = square-root of a root of the polynomial:  4096*(x^6) - 54272*(x^5)
+		+ 212224*(x^4) - 373760*(x^3) + 305088*(x^2) - 96628*x + 5041
+	C23 = square-root of a root of the polynomial:  4096*(x^6) - 34816*(x^5)
+		+ 9472*(x^4) - 4736*(x^3) + 8032*(x^2) - 3168*x + 361
+	C24 = square-root of a root of the polynomial:  4096*(x^6) - 21504*(x^5)
+		- 70656*(x^4) - 341952*(x^3) + 254864*(x^2) - 45600*x + 841
+	C25 = square-root of a root of the polynomial:  4096*(x^6) - 49152*(x^5)
+		+ 91648*(x^4) - 103040*(x^3) + 77904*(x^2) - 27768*x + 3481
+	C26 = square-root of a root of the polynomial:  4096*(x^6) - 50176*(x^5)
+		+ 35584*(x^4) - 9728*(x^3) + 1184*(x^2) - 60*x + 1
+	C27 = square-root of a root of the polynomial:  4096*(x^6) - 52224*(x^5)
+		+ 65536*(x^4) - 228352*(x^3) + 106672*(x^2) - 17468*x + 961
+	C28 = square-root of a root of the polynomial:  4096*(x^6) - 62464*(x^5)
+		+ 82176*(x^4) - 52352*(x^3) + 15952*(x^2) - 1328*x + 1
+	C29 = square-root of a root of the polynomial:  4096*(x^6) - 65536*(x^5)
+		+ 126464*(x^4) - 183808*(x^3) + 96224*(x^2) - 15380*x + 121
+	C30 = square-root of a root of the polynomial:  4096*(x^6) - 60416*(x^5)
+		- 1536*(x^4) + 4352*(x^3) + 304*(x^2) - 100*x + 1
+	C31 = square-root of a root of the polynomial:  4096*(x^6) - 71680*(x^5)
+		+ 61184*(x^4) - 4928*(x^3) + 384*(x^2) - 36*x + 1
+	C32 = square-root of a root of the polynomial:
+		(x^6) - 21*(x^5) + 64*(x^4) - 73*(x^3) + 39*(x^2) - 10*x + 1
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C32,0.0 0.0 -C32,C32 0.0 0.0,
+-C32 0.0 0.0,0.0 C32 0.0,0.0 -C32 0.0,C0 C6 C31,C0 -C6 -C31,-C0 -C6 C31,
+-C0 C6 -C31,C31 C0 C6,C31 -C0 -C6,-C31 -C0 C6,-C31 C0 -C6,C6 C31 C0,
+C6 -C31 -C0,-C6 -C31 C0,-C6 C31 -C0,C5 C1 C31,C5 -C1 -C31,-C5 -C1 C31,
+-C5 C1 -C31,C31 C5 C1,C31 -C5 -C1,-C31 -C5 C1,-C31 C5 -C1,C1 C31 C5,
+C1 -C31 -C5,-C1 -C31 C5,-C1 C31 -C5,C4 -C12 C30,C4 C12 -C30,-C4 C12 C30,
+-C4 -C12 -C30,C30 -C4 C12,C30 C4 -C12,-C30 C4 C12,-C30 -C4 -C12,C12 -C30 C4,
+C12 C30 -C4,-C12 C30 C4,-C12 -C30 -C4,C11 -C8 C29,C11 C8 -C29,-C11 C8 C29,
+-C11 -C8 -C29,C29 -C11 C8,C29 C11 -C8,-C29 C11 C8,-C29 -C11 -C8,C8 -C29 C11,
+C8 C29 -C11,-C8 C29 C11,-C8 -C29 -C11,C2 C13 C28,C2 -C13 -C28,-C2 -C13 C28,
+-C2 C13 -C28,C28 C2 C13,C28 -C2 -C13,-C28 -C2 C13,-C28 C2 -C13,C13 C28 C2,
+C13 -C28 -C2,-C13 -C28 C2,-C13 C28 -C2,C15 C10 C27,C15 -C10 -C27,-C15 -C10 C27,
+-C15 C10 -C27,C27 C15 C10,C27 -C15 -C10,-C27 -C15 C10,-C27 C15 -C10,
+C10 C27 C15,C10 -C27 -C15,-C10 -C27 C15,-C10 C27 -C15,C9 C16 C26,C9 C16 -C26,
+C9 -C16 C26,C9 -C16 -C26,-C9 C16 C26,-C9 C16 -C26,-C9 -C16 C26,-C9 -C16 -C26,
+C26 C9 C16,C26 C9 -C16,C26 -C9 C16,C26 -C9 -C16,-C26 C9 C16,-C26 C9 -C16,
+-C26 -C9 C16,-C26 -C9 -C16,C16 C26 C9,C16 C26 -C9,C16 -C26 C9,C16 -C26 -C9,
+-C16 C26 C9,-C16 C26 -C9,-C16 -C26 C9,-C16 -C26 -C9,C3 C20 C25,C3 -C20 -C25,
+-C3 -C20 C25,-C3 C20 -C25,C25 C3 C20,C25 -C3 -C20,-C25 -C3 C20,-C25 C3 -C20,
+C20 C25 C3,C20 -C25 -C3,-C20 -C25 C3,-C20 C25 -C3,C22 -C7 C24,C22 C7 -C24,
+-C22 C7 C24,-C22 -C7 -C24,C24 -C22 C7,C24 C22 -C7,-C24 C22 C7,-C24 -C22 -C7,
+C7 -C24 C22,C7 C24 -C22,-C7 C24 C22,-C7 -C24 -C22,C17 C18 C23,C17 -C18 -C23,
+-C17 -C18 C23,-C17 C18 -C23,C23 C17 C18,C23 -C17 -C18,-C23 -C17 C18,
+-C23 C17 -C18,C18 C23 C17,C18 -C23 -C17,-C18 -C23 C17,-C18 C23 -C17,
+C14 -C19 C21,C14 C19 -C21,-C14 C19 C21,-C14 -C19 -C21,C21 -C14 C19,
+C21 C14 -C19,-C21 C14 C19,-C21 -C14 -C19,C19 -C21 C14,C19 C21 -C14,
+-C19 C21 C14,-C19 -C21 -C14">
+<INPUT type=hidden class=Faces value="18 42 114 106 66 #,19 43 115 107 67 #,
+20 44 116 108 68 #,21 45 117 109 69 #,22 47 119 110 70 #,23 46 118 111 71 #,
+24 49 121 112 72 #,25 48 120 113 73 #,26 52 124 102 74 #,27 53 125 103 75 #,
+28 50 122 104 76 #,29 51 123 105 77 #,0 6 32 44 20 #,0 8 30 42 18 #,
+1 7 33 45 21 #,1 9 31 43 19 #,2 10 34 46 23 #,2 11 35 47 22 #,3 12 36 48 25 #,
+3 13 37 49 24 #,4 14 39 51 29 #,4 17 40 52 26 #,5 15 38 50 28 #,
+5 16 41 53 27 #,6 18 66 78 54 #,7 19 67 81 55 #,8 20 68 84 56 #,
+9 21 69 83 57 #,10 22 70 86 58 #,11 23 71 89 59 #,12 24 72 92 60 #,
+13 25 73 91 61 #,14 26 74 94 62 #,15 27 75 97 63 #,16 28 76 100 64 #,
+17 29 77 99 65 #,30 56 104 122 80 #,31 57 105 123 79 #,32 54 102 124 82 #,
+33 55 103 125 85 #,34 58 106 114 88 #,35 59 107 115 87 #,36 60 108 116 90 #,
+37 61 109 117 93 #,38 63 111 118 96 #,39 62 110 119 95 #,40 65 113 120 98 #,
+41 64 112 121 101 #,42 80 138 142 114 #,43 79 139 143 115 #,
+44 82 140 144 116 #,45 85 141 145 117 #,46 88 142 146 118 #,
+47 87 143 147 119 #,48 90 144 148 120 #,49 93 145 149 121 #,
+50 96 146 138 122 #,51 95 147 139 123 #,52 98 148 140 124 #,
+53 101 149 141 125 #,66 106 86 130 126 #,67 107 89 131 127 #,
+68 108 92 132 128 #,69 109 91 133 129 #,70 110 94 134 130 #,
+71 111 97 135 131 #,72 112 100 136 132 #,73 113 99 137 133 #,
+74 102 78 126 134 #,75 103 81 127 135 #,76 104 84 128 136 #,
+77 105 83 129 137 #,6 54 32 #,7 55 33 #,8 56 30 #,9 57 31 #,10 58 34 #,
+11 59 35 #,12 60 36 #,13 61 37 #,14 62 39 #,15 63 38 #,16 64 41 #,17 65 40 #,
+126 130 134 #,127 131 135 #,128 132 136 #,129 133 137 #,138 146 142 #,
+139 147 143 #,140 148 144 #,141 149 145 #,0 18 6 #,0 20 8 #,1 19 7 #,1 21 9 #,
+2 22 10 #,2 23 11 #,3 24 12 #,3 25 13 #,4 26 14 #,4 29 17 #,5 27 15 #,
+5 28 16 #,30 80 42 #,31 79 43 #,32 82 44 #,33 85 45 #,34 88 46 #,35 87 47 #,
+36 90 48 #,37 93 49 #,38 96 50 #,39 95 51 #,40 98 52 #,41 101 53 #,54 78 102 #,
+55 81 103 #,56 84 104 #,57 83 105 #,58 86 106 #,59 89 107 #,60 92 108 #,
+61 91 109 #,62 94 110 #,63 97 111 #,64 100 112 #,65 99 113 #,66 126 78 #,
+67 127 81 #,68 128 84 #,69 129 83 #,70 130 86 #,71 131 89 #,72 132 92 #,
+73 133 91 #,74 134 94 #,75 135 97 #,76 136 100 #,77 137 99 #,79 123 139 #,
+80 122 138 #,82 124 140 #,85 125 141 #,87 115 143 #,88 114 142 #,90 116 144 #,
+93 117 145 #,95 119 147 #,96 118 146 #,98 120 148 #,101 121 149 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedLsnubDodecahedron.html>Rectified Snub Dodecahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rectified Truncated Icosidodecahedron
+
+	(120) SHORT EDGE = 1
+	(120) MEDIUM EDGE = sqrt(6) / 2
+	(120) LONG EDGE = sqrt(5 + sqrt(5)) / 2
+	RADIUS = sqrt(3 * (5 + 2 * sqrt(5)))
+	INRADIUS = sqrt(10 * (5 + 2 * sqrt(5))) / 2
+	VOLUME = 5 * (153 * sqrt(2) + 79 * sqrt(10)) / 4
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="19 180 182">
+<INPUT type=hidden class=Constants value="0.7071067811865475244008443621048,
+1.06066017177982128660126654316,
+1.27916818400423182200091714569,
+1.98627496519077934640176150779,
+2.06973759904632665500064053179,
+2.20478297741518988180141211032,
+2.423290989639600417201062712846,
+2.86030701408842148800036391790,
+2.99535239245728471480113549643,
+3.130397770826147941601907074951,
+3.213860404681695250200786098954,
+3.78592180749937954780085888253,
+3.92096718586824277460163046106,
+4.05601256423710600140240203958,
+4.40956595483037976360282422064,
+4.49302858868592707220170324464,
+4.62807396705479029900247482316,
+5.06508999150361136980177602822,
+5.283598003728021905201426630747">
+<!--
+	C0 = sqrt(2) / 2
+	C1 = 3 * sqrt(2) / 4
+	C2 = (5 * sqrt(2) + sqrt(10)) / 8
+	C3 = (9 * sqrt(2) + sqrt(10)) / 8
+	C4 = (5 * sqrt(2) + 3 * sqrt(10)) / 8
+	C5 = (4 * sqrt(2) + sqrt(10)) / 4
+	C6 = (7 * sqrt(2) + 3 * sqrt(10)) / 8
+	C7 = 5 * (sqrt(2) + sqrt(10)) / 8
+	C8 = (2 * sqrt(2) + sqrt(10)) / 2
+	C9 = (11 * sqrt(2) + 3 * sqrt(10)) / 8
+	C10 = (7 * sqrt(2) + 5 * sqrt(10)) / 8
+	C11 = (4 * sqrt(2) + 3 * sqrt(10)) / 4
+	C12 = (11 * sqrt(2) + 5 * sqrt(10)) / 8
+	C13 = (7 * sqrt(2) + 2 * sqrt(10)) / 4
+	C14 = (4 * sqrt(2) + sqrt(10)) / 2
+	C15 = 3 * (2 * sqrt(2) + sqrt(10)) / 4
+	C16 = 5 * (3 * sqrt(2) + sqrt(10)) / 8
+	C17 = (13 * sqrt(2) + 7 * sqrt(10)) / 8
+	C18 = (3 * sqrt(2) + 2 * sqrt(10)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C0 0.0 C18,C0 0.0 -C18,-C0 0.0 C18,
+-C0 0.0 -C18,C18 C0 0.0,C18 -C0 0.0,-C18 C0 0.0,-C18 -C0 0.0,0.0 C18 C0,
+0.0 C18 -C0,0.0 -C18 C0,0.0 -C18 -C0,0.0 C0 C18,0.0 C0 -C18,0.0 -C0 C18,
+0.0 -C0 -C18,C18 0.0 C0,C18 0.0 -C0,-C18 0.0 C0,-C18 0.0 -C0,C0 C18 0.0,
+C0 -C18 0.0,-C0 C18 0.0,-C0 -C18 0.0,C1 C2 C17,C1 C2 -C17,C1 -C2 C17,
+C1 -C2 -C17,-C1 C2 C17,-C1 C2 -C17,-C1 -C2 C17,-C1 -C2 -C17,C17 C1 C2,
+C17 C1 -C2,C17 -C1 C2,C17 -C1 -C2,-C17 C1 C2,-C17 C1 -C2,-C17 -C1 C2,
+-C17 -C1 -C2,C2 C17 C1,C2 C17 -C1,C2 -C17 C1,C2 -C17 -C1,-C2 C17 C1,
+-C2 C17 -C1,-C2 -C17 C1,-C2 -C17 -C1,C1 C6 C16,C1 C6 -C16,C1 -C6 C16,
+C1 -C6 -C16,-C1 C6 C16,-C1 C6 -C16,-C1 -C6 C16,-C1 -C6 -C16,C16 C1 C6,
+C16 C1 -C6,C16 -C1 C6,C16 -C1 -C6,-C16 C1 C6,-C16 C1 -C6,-C16 -C1 C6,
+-C16 -C1 -C6,C6 C16 C1,C6 C16 -C1,C6 -C16 C1,C6 -C16 -C1,-C6 C16 C1,
+-C6 C16 -C1,-C6 -C16 C1,-C6 -C16 -C1,C3 C4 C15,C3 C4 -C15,C3 -C4 C15,
+C3 -C4 -C15,-C3 C4 C15,-C3 C4 -C15,-C3 -C4 C15,-C3 -C4 -C15,C15 C3 C4,
+C15 C3 -C4,C15 -C3 C4,C15 -C3 -C4,-C15 C3 C4,-C15 C3 -C4,-C15 -C3 C4,
+-C15 -C3 -C4,C4 C15 C3,C4 C15 -C3,C4 -C15 C3,C4 -C15 -C3,-C4 C15 C3,
+-C4 C15 -C3,-C4 -C15 C3,-C4 -C15 -C3,0.0 C8 C14,0.0 C8 -C14,0.0 -C8 C14,
+0.0 -C8 -C14,C14 0.0 C8,C14 0.0 -C8,-C14 0.0 C8,-C14 0.0 -C8,C8 C14 0.0,
+C8 -C14 0.0,-C8 C14 0.0,-C8 -C14 0.0,C2 C10 C13,C2 C10 -C13,C2 -C10 C13,
+C2 -C10 -C13,-C2 C10 C13,-C2 C10 -C13,-C2 -C10 C13,-C2 -C10 -C13,C13 C2 C10,
+C13 C2 -C10,C13 -C2 C10,C13 -C2 -C10,-C13 C2 C10,-C13 C2 -C10,-C13 -C2 C10,
+-C13 -C2 -C10,C10 C13 C2,C10 C13 -C2,C10 -C13 C2,C10 -C13 -C2,-C10 C13 C2,
+-C10 C13 -C2,-C10 -C13 C2,-C10 -C13 -C2,C5 C7 C12,C5 C7 -C12,C5 -C7 C12,
+C5 -C7 -C12,-C5 C7 C12,-C5 C7 -C12,-C5 -C7 C12,-C5 -C7 -C12,C12 C5 C7,
+C12 C5 -C7,C12 -C5 C7,C12 -C5 -C7,-C12 C5 C7,-C12 C5 -C7,-C12 -C5 C7,
+-C12 -C5 -C7,C7 C12 C5,C7 C12 -C5,C7 -C12 C5,C7 -C12 -C5,-C7 C12 C5,
+-C7 C12 -C5,-C7 -C12 C5,-C7 -C12 -C5,C9 C4 C11,C9 C4 -C11,C9 -C4 C11,
+C9 -C4 -C11,-C9 C4 C11,-C9 C4 -C11,-C9 -C4 C11,-C9 -C4 -C11,C11 C9 C4,
+C11 C9 -C4,C11 -C9 C4,C11 -C9 -C4,-C11 C9 C4,-C11 C9 -C4,-C11 -C9 C4,
+-C11 -C9 -C4,C4 C11 C9,C4 C11 -C9,C4 -C11 C9,C4 -C11 -C9,-C4 C11 C9,
+-C4 C11 -C9,-C4 -C11 C9,-C4 -C11 -C9">
+<INPUT type=hidden class=Faces value="0 26 74 158 118 100 116 156 72 24 #,
+1 25 73 157 117 101 119 159 75 27 #,2 28 76 160 120 102 122 162 78 30 #,
+3 31 79 163 123 103 121 161 77 29 #,4 33 81 165 125 104 124 164 80 32 #,
+5 34 82 166 126 105 127 167 83 35 #,6 36 84 168 128 106 129 169 85 37 #,
+7 39 87 171 131 107 130 170 86 38 #,8 44 92 176 112 96 108 172 88 40 #,
+9 41 89 173 109 97 113 177 93 45 #,10 42 90 174 110 98 114 178 94 46 #,
+11 47 95 179 115 99 111 175 91 43 #,12 24 48 96 52 28 #,13 29 53 97 49 25 #,
+14 30 54 98 50 26 #,15 27 51 99 55 31 #,16 32 56 100 58 34 #,
+17 35 59 101 57 33 #,18 38 62 102 60 36 #,19 37 61 103 63 39 #,
+20 40 64 104 65 41 #,21 43 67 105 66 42 #,22 45 69 106 68 44 #,
+23 46 70 107 71 47 #,132 156 140 164 148 172 #,133 173 149 165 141 157 #,
+134 174 150 166 142 158 #,135 159 143 167 151 175 #,136 176 152 168 144 160 #,
+137 161 145 169 153 177 #,138 162 146 170 154 178 #,139 179 155 171 147 163 #,
+0 12 2 14 #,1 15 3 13 #,4 16 5 17 #,6 19 7 18 #,8 20 9 22 #,10 23 11 21 #,
+48 72 132 108 #,49 109 133 73 #,50 110 134 74 #,51 75 135 111 #,
+52 112 136 76 #,53 77 137 113 #,54 78 138 114 #,55 115 139 79 #,
+56 80 140 116 #,57 117 141 81 #,58 118 142 82 #,59 83 143 119 #,
+60 120 144 84 #,61 85 145 121 #,62 86 146 122 #,63 123 147 87 #,
+64 88 148 124 #,65 125 149 89 #,66 126 150 90 #,67 91 151 127 #,
+68 128 152 92 #,69 93 153 129 #,70 94 154 130 #,71 131 155 95 #,0 14 26 #,
+0 24 12 #,1 13 25 #,1 27 15 #,2 12 28 #,2 30 14 #,3 15 31 #,3 29 13 #,
+4 17 33 #,4 32 16 #,5 16 34 #,5 35 17 #,6 18 36 #,6 37 19 #,7 19 39 #,
+7 38 18 #,8 22 44 #,8 40 20 #,9 20 41 #,9 45 22 #,10 21 42 #,10 46 23 #,
+11 23 47 #,11 43 21 #,24 72 48 #,25 49 73 #,26 50 74 #,27 75 51 #,28 52 76 #,
+29 77 53 #,30 78 54 #,31 55 79 #,32 80 56 #,33 57 81 #,34 58 82 #,35 83 59 #,
+36 60 84 #,37 85 61 #,38 86 62 #,39 63 87 #,40 88 64 #,41 65 89 #,42 66 90 #,
+43 91 67 #,44 68 92 #,45 93 69 #,46 94 70 #,47 71 95 #,48 108 96 #,49 97 109 #,
+50 98 110 #,51 111 99 #,52 96 112 #,53 113 97 #,54 114 98 #,55 99 115 #,
+56 116 100 #,57 101 117 #,58 100 118 #,59 119 101 #,60 102 120 #,61 121 103 #,
+62 122 102 #,63 103 123 #,64 124 104 #,65 104 125 #,66 105 126 #,67 127 105 #,
+68 106 128 #,69 129 106 #,70 130 107 #,71 107 131 #,72 156 132 #,73 133 157 #,
+74 134 158 #,75 159 135 #,76 136 160 #,77 161 137 #,78 162 138 #,79 139 163 #,
+80 164 140 #,81 141 165 #,82 142 166 #,83 167 143 #,84 144 168 #,85 169 145 #,
+86 170 146 #,87 147 171 #,88 172 148 #,89 149 173 #,90 150 174 #,91 175 151 #,
+92 152 176 #,93 177 153 #,94 178 154 #,95 155 179 #,108 132 172 #,
+109 173 133 #,110 174 134 #,111 135 175 #,112 176 136 #,113 137 177 #,
+114 138 178 #,115 179 139 #,116 140 156 #,117 157 141 #,118 158 142 #,
+119 143 159 #,120 160 144 #,121 145 161 #,122 146 162 #,123 163 147 #,
+124 148 164 #,125 165 149 #,126 166 150 #,127 151 167 #,128 168 152 #,
+129 153 169 #,130 154 170 #,131 171 155 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RectifiedTruncatedIcosidodecahedron.html>Rectified Truncated Icosidodecahedron</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

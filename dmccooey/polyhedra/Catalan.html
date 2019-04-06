@@ -1,0 +1,1091 @@
+<!-- File:   Catalan.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Catalan Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='Archimedean.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Catalan Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='SelfIntersectingQuasiRegular.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+The Catalan solids are the duals of the Archimedean solids.
+They are named after the Belgian mathematician Eugene Catalan (1814-1894)
+who first described the complete set in 1865.  The Rhombic Dodecahedron and
+Rhombic Triacontahedron were described in 1611 by Johannes Kepler
+<A href=http://www.thelatinlibrary.com/kepler/strena.html>
+<span style="font-size: 75%;">[1]</span></A>.
+Each Catalan solid has one type of face and a constant dihedral angle,
+and it possesses the same symmetry as its Archimedean dual.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Triakis Tetrahedron
+
+	(12) SHORT EDGE = 9 / 5
+	(6) LONG EDGE = 3
+	(4) INNER VERTEX RADIUS = 9 * sqrt(6) / 20
+	(4) OUTER VERTEX RADIUS = 3 * sqrt(6) / 4
+	EDGE-SCRIBED RADIUS = 3 * sqrt(2) / 4
+	INRADIUS = 9 * sqrt(22) / 44
+	VOLUME = 81 * sqrt(2) / 20
+	DIHEDRAL ANGLE = acos(-7/11) = 129.521196358642173216059181106 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Full Tetrahedral (Td)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 8 12">
+<INPUT type=hidden class=Constants value="0.636396103067892771960759925894,
+1.06066017177982128660126654316">
+<!--
+	C0 = 9 * sqrt(2) / 20
+	C1 = 3 * sqrt(2) / 4
+-->
+<INPUT type=hidden class=Vertices value="C1 C1 C1,C1 -C1 -C1,-C1 -C1 C1,
+-C1 C1 -C1,C0 -C0 C0,C0 C0 -C0,-C0 C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="4 0 2 #,4 2 1 #,4 1 0 #,5 0 1 #,5 1 3 #,
+5 3 0 #,6 0 3 #,6 3 2 #,6 2 0 #,7 1 2 #,7 2 3 #,7 3 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=TriakisTetrahedron.html>Triakis Tetrahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rhombic Dodecahedron
+
+	(24) EDGE = 3 * sqrt(6) / 8
+	RHOMBUS LENGTH = 3 / 2
+	RHOMBUS WIDTH = 3 * sqrt(2) / 4
+	(8) INNER VERTEX RADIUS = 3 * sqrt(6) / 8
+	(6) OUTER VERTEX RADIUS = 3 * sqrt(2) / 4
+	EDGE-SCRIBED RADIUS = sqrt(3) / 2
+	INRADIUS = 3 / 4
+	VOLUME = 27 * sqrt(2) / 16
+	DIHEDRAL ANGLE = acos(-1/2) = 120 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 14 12">
+<INPUT type=hidden class=Constants value="0.530330085889910643300633271579,
+1.06066017177982128660126654316">
+<!--
+	C0 = 3 * sqrt(2) / 8
+	C1 = 3 * sqrt(2) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C1,0.0 0.0 -C1,C1 0.0 0.0,
+-C1 0.0 0.0,0.0 C1 0.0,0.0 -C1 0.0,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,
+-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="6 0 8 2 #,6 2 7 4 #,6 4 10 0 #,9 1 7 2 #,
+9 2 8 5 #,9 5 13 1 #,11 1 13 3 #,11 3 10 4 #,11 4 7 1 #,12 0 10 3 #,
+12 3 13 5 #,12 5 8 0 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RhombicDodecahedron.html>Rhombic Dodecahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Tetrakis Hexahedron
+
+	(24) SHORT EDGE = 9 * sqrt(2) / 8
+	(12) LONG EDGE = 3 * sqrt(2) / 2
+	(6) INNER VERTEX RADIUS = 9 * sqrt(2) / 8
+	(8) OUTER VERTEX RADIUS = 3 * sqrt(6) / 4
+	EDGE-SCRIBED RADIUS = 3 / 2
+	INRADIUS = 9 * sqrt(10) / 20
+	VOLUME = 81 * sqrt(2) / 8
+	DIHEDRAL ANGLE = acos(-4/5) = 143.130102354155978703144387441 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 14 24">
+<INPUT type=hidden class=Constants value="1.06066017177982128660126654316,
+1.59099025766973192990189981474">
+<!--
+	C0 = 3 * sqrt(2) / 4
+	C1 = 9 * sqrt(2) / 8
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C1,0.0 0.0 -C1,C1 0.0 0.0,
+-C1 0.0 0.0,0.0 C1 0.0,0.0 -C1 0.0,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,
+-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 6 10 #,0 10 12 #,0 12 8 #,0 8 6 #,
+1 7 9 #,1 9 13 #,1 13 11 #,1 11 7 #,2 6 8 #,2 8 9 #,2 9 7 #,2 7 6 #,3 10 11 #,
+3 11 13 #,3 13 12 #,3 12 10 #,4 6 7 #,4 7 11 #,4 11 10 #,4 10 6 #,5 8 12 #,
+5 12 13 #,5 13 9 #,5 9 8 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=TetrakisHexahedron.html>Tetrakis Hexahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Triakis Octahedron
+
+	(24) SHORT EDGE = 2
+	(12) LONG EDGE = 2 + sqrt(2)
+	(8) INNER VERTEX RADIUS = sqrt(3)
+	(6) OUTER VERTEX RADIUS = 1 + sqrt(2)
+	EDGE-SCRIBED RADIUS = 1 + sqrt(2) / 2
+	INRADIUS = sqrt(17 * (23 + 16 * sqrt(2))) / 17
+	VOLUME = 4 * (3 + 2 * sqrt(2))
+	DIHEDRAL ANGLE = acos(-(3 + 8 * sqrt(2)) / 17)
+		= 147.3501001262095297760686013054 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 14 24">
+<INPUT type=hidden class=Constants value="2.41421356237309504880168872421">
+<!--
+	C0 = 1 + sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C0,0.0 0.0 -C0,C0 0.0 0.0,
+-C0 0.0 0.0,0.0 C0 0.0,0.0 -C0 0.0,1.0 1.0 1.0,1.0 1.0 -1.0,1.0 -1.0 1.0,
+1.0 -1.0 -1.0,-1.0 1.0 1.0,-1.0 1.0 -1.0,-1.0 -1.0 1.0,-1.0 -1.0 -1.0">
+<INPUT type=hidden class=Faces value="6 0 2 #,6 2 4 #,6 4 0 #,7 1 4 #,7 4 2 #,
+7 2 1 #,8 0 5 #,8 5 2 #,8 2 0 #,9 1 2 #,9 2 5 #,9 5 1 #,10 0 4 #,10 4 3 #,
+10 3 0 #,11 1 3 #,11 3 4 #,11 4 1 #,12 0 3 #,12 3 5 #,12 5 0 #,13 1 5 #,
+13 5 3 #,13 3 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=TriakisOctahedron.html>Triakis Octahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Deltoidal Icositetrahedron
+
+	(24) SHORT EDGE = 2 * sqrt(10 - sqrt(2)) / 7
+	(24) LONG EDGE = sqrt(2 * (2 - sqrt(2)))
+	KITE LENGTH = 2 * sqrt(31 - 8 * sqrt(2)) / 7
+	KITE WIDTH = sqrt(2)
+	(8) INNER VERTEX RADIUS = (4 * sqrt(3) + sqrt(6)) / 7
+	(18) OUTER VERTEX RADIUS = sqrt(2)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 + sqrt(2))) / 2
+	INRADIUS = sqrt(34 * (7 + 4 * sqrt(2))) / 17
+	VOLUME = 16 * (1 + 2 * sqrt(2)) / 7
+	DIHEDRAL ANGLE = acos(-(7 + 4 * sqrt(2)) / 17)
+		= 138.117959055512322254739639927 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 26 24">
+<INPUT type=hidden class=Constants value="0.773459080339013578400241246316,
+1.41421356237309504880168872421">
+<!--
+	C0 = (4 + sqrt(2)) / 7
+	C1 = sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C1,0.0 0.0 -C1,C1 0.0 0.0,
+-C1 0.0 0.0,0.0 C1 0.0,0.0 -C1 0.0,1.0 0.0 1.0,1.0 0.0 -1.0,-1.0 0.0 1.0,
+-1.0 0.0 -1.0,1.0 1.0 0.0,1.0 -1.0 0.0,-1.0 1.0 0.0,-1.0 -1.0 0.0,0.0 1.0 1.0,
+0.0 1.0 -1.0,0.0 -1.0 1.0,0.0 -1.0 -1.0,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,
+C0 -C0 -C0,-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 6 18 14 #,0 14 22 8 #,0 8 24 16 #,
+0 16 20 6 #,1 9 23 15 #,1 15 19 7 #,1 7 21 17 #,1 17 25 9 #,2 7 19 10 #,
+2 10 18 6 #,2 6 20 11 #,2 11 21 7 #,3 8 22 12 #,3 12 23 9 #,3 9 25 13 #,
+3 13 24 8 #,4 10 19 15 #,4 15 23 12 #,4 12 22 14 #,4 14 18 10 #,5 11 20 16 #,
+5 16 24 13 #,5 13 25 17 #,5 17 21 11 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=DeltoidalIcositetrahedron.html>Deltoidal Icositetrahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Pentagonal Icositetrahedron (dextro)
+
+	(36) SHORT EDGE
+		= sqrt(6*(4-cbrt(2*(13+3*sqrt(33)))-cbrt(2*(13-3*sqrt(33)))))/6
+	(24) LONG EDGE = sqrt(3*(4+cbrt(19+3*sqrt(33))+cbrt(19-3*sqrt(33))))/6
+	(32) INNER VERTEX RADIUS
+		= sqrt(2 * (6 + cbrt(6*(9 + sqrt(33))) + cbrt(6*(9 - sqrt(33))))) / 4
+	(6) OUTER VERTEX RADIUS
+		= sqrt(6*(14+cbrt(2*(1777+33*sqrt(33)))+cbrt(2*(1777-33*sqrt(33)))))/12
+	EDGE-SCRIBED RADIUS
+		= sqrt(3 * (7 + cbrt(199+3*sqrt(33)) + cbrt(199-3*sqrt(33)))) / 6
+	INRADIUS = sqrt(42 * (78 + cbrt(66 * (6039 + 49 * sqrt(33)))
+		+ cbrt(66 * (6039 - 49 * sqrt(33))))) / 84
+	VOLUME = sqrt(6 * (113 + cbrt(1327067 + 1419 * sqrt(33))
+		+ cbrt(1327067 - 1419 * sqrt(33)))) / 6
+	DIHEDRAL ANGLE
+		= acos((1-cbrt(2*(283+21*sqrt(33)))-cbrt(2*(283-21*sqrt(33))))/21)
+		= 136.3092328923242038182835507848 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Octahedral (O)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 38 24">
+<INPUT type=hidden class=Constants value="0.218796643000480441021525033712,
+0.740183741369857222808508165943,
+1.02365617811269018236347687527,
+1.36141015192644253450100912043">
+<!--
+	C0 = sqrt(6 * (cbrt(6*(9 + sqrt(33))) + cbrt(6*(9 - sqrt(33))) - 6)) / 12
+	C1 = sqrt(6 * (6 + cbrt(6*(9 + sqrt(33))) + cbrt(6*(9 - sqrt(33))))) / 12
+	C2 = sqrt(6 * (18 + cbrt(6*(9 + sqrt(33))) + cbrt(6*(9 - sqrt(33))))) / 12
+	C3 = sqrt(6*(14+cbrt(2*(1777+33*sqrt(33)))+cbrt(2*(1777-33*sqrt(33)))))/12
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C3,0.0 0.0 -C3,C3 0.0 0.0,
+-C3 0.0 0.0,0.0 C3 0.0,0.0 -C3 0.0,C1 -C0 C2,C1 C0 -C2,-C1 C0 C2,-C1 -C0 -C2,
+C2 -C1 C0,C2 C1 -C0,-C2 C1 C0,-C2 -C1 -C0,C0 -C2 C1,C0 C2 -C1,-C0 C2 C1,
+-C0 -C2 -C1,C0 C1 C2,C0 -C1 -C2,-C0 -C1 C2,-C0 C1 -C2,C2 C0 C1,C2 -C0 -C1,
+-C2 -C0 C1,-C2 C0 -C1,C1 C2 C0,C1 -C2 -C0,-C1 -C2 C0,-C1 C2 -C0,C1 C1 C1,
+C1 C1 -C1,C1 -C1 C1,C1 -C1 -C1,-C1 C1 C1,-C1 C1 -C1,-C1 -C1 C1,-C1 -C1 -C1">
+<INPUT type=hidden class=Faces value="0 6 22 30 18 #,0 18 16 34 8 #,
+0 8 24 36 20 #,0 20 14 32 6 #,1 7 23 33 19 #,1 19 17 37 9 #,1 9 25 35 21 #,
+1 21 15 31 7 #,2 10 27 33 23 #,2 23 7 31 11 #,2 11 26 30 22 #,2 22 6 32 10 #,
+3 12 29 35 25 #,3 25 9 37 13 #,3 13 28 36 24 #,3 24 8 34 12 #,4 15 21 35 29 #,
+4 29 12 34 16 #,4 16 18 30 26 #,4 26 11 31 15 #,5 14 20 36 28 #,
+5 28 13 37 17 #,5 17 19 33 27 #,5 27 10 32 14 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RpentagonalIcositetrahedron.html>Pentagonal Icositetrahedron (dextro)</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Pentagonal Icositetrahedron (laevo)
+
+	(36) SHORT EDGE
+		= sqrt(6*(4-cbrt(2*(13+3*sqrt(33)))-cbrt(2*(13-3*sqrt(33)))))/6
+	(24) LONG EDGE = sqrt(3*(4+cbrt(19+3*sqrt(33))+cbrt(19-3*sqrt(33))))/6
+	(32) INNER VERTEX RADIUS
+		= sqrt(2 * (6 + cbrt(6*(9 + sqrt(33))) + cbrt(6*(9 - sqrt(33))))) / 4
+	(6) OUTER VERTEX RADIUS
+		= sqrt(6*(14+cbrt(2*(1777+33*sqrt(33)))+cbrt(2*(1777-33*sqrt(33)))))/12
+	EDGE-SCRIBED RADIUS
+		= sqrt(3 * (7 + cbrt(199+3*sqrt(33)) + cbrt(199-3*sqrt(33)))) / 6
+	INRADIUS = sqrt(42 * (78 + cbrt(66 * (6039 + 49 * sqrt(33)))
+		+ cbrt(66 * (6039 - 49 * sqrt(33))))) / 84
+	VOLUME = sqrt(6 * (113 + cbrt(1327067 + 1419 * sqrt(33))
+		+ cbrt(1327067 - 1419 * sqrt(33)))) / 6
+	DIHEDRAL ANGLE
+		= acos((1-cbrt(2*(283+21*sqrt(33)))-cbrt(2*(283-21*sqrt(33))))/21)
+		= 136.3092328923242038182835507848 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Octahedral (O)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 38 24">
+<INPUT type=hidden class=Constants value="0.218796643000480441021525033712,
+0.740183741369857222808508165943,
+1.02365617811269018236347687527,
+1.36141015192644253450100912043">
+<!--
+	C0 = sqrt(6 * (cbrt(6*(9 + sqrt(33))) + cbrt(6*(9 - sqrt(33))) - 6)) / 12
+	C1 = sqrt(6 * (6 + cbrt(6*(9 + sqrt(33))) + cbrt(6*(9 - sqrt(33))))) / 12
+	C2 = sqrt(6 * (18 + cbrt(6*(9 + sqrt(33))) + cbrt(6*(9 - sqrt(33))))) / 12
+	C3 = sqrt(6*(14+cbrt(2*(1777+33*sqrt(33)))+cbrt(2*(1777-33*sqrt(33)))))/12
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 -C3,0.0 0.0 C3,-C3 0.0 0.0,
+C3 0.0 0.0,0.0 -C3 0.0,0.0 C3 0.0,-C1 C0 -C2,-C1 -C0 C2,C1 -C0 -C2,C1 C0 C2,
+-C2 C1 -C0,-C2 -C1 C0,C2 -C1 -C0,C2 C1 C0,-C0 C2 -C1,-C0 -C2 C1,C0 -C2 -C1,
+C0 C2 C1,-C0 -C1 -C2,-C0 C1 C2,C0 C1 -C2,C0 -C1 C2,-C2 -C0 -C1,-C2 C0 C1,
+C2 C0 -C1,C2 -C0 C1,-C1 -C2 -C0,-C1 C2 C0,C1 C2 -C0,C1 -C2 C0,-C1 -C1 -C1,
+-C1 -C1 C1,-C1 C1 -C1,-C1 C1 C1,C1 -C1 -C1,C1 -C1 C1,C1 C1 -C1,C1 C1 C1">
+<INPUT type=hidden class=Faces value="0 18 30 22 6 #,0 8 34 16 18 #,
+0 20 36 24 8 #,0 6 32 14 20 #,1 19 33 23 7 #,1 9 37 17 19 #,1 21 35 25 9 #,
+1 7 31 15 21 #,2 23 33 27 10 #,2 11 31 7 23 #,2 22 30 26 11 #,2 10 32 6 22 #,
+3 25 35 29 12 #,3 13 37 9 25 #,3 24 36 28 13 #,3 12 34 8 24 #,4 29 35 21 15 #,
+4 16 34 12 29 #,4 26 30 18 16 #,4 15 31 11 26 #,5 28 36 20 14 #,
+5 17 37 13 28 #,5 27 33 19 17 #,5 14 32 10 27 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=LpentagonalIcositetrahedron.html>Pentagonal Icositetrahedron (laevo)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Rhombic Triacontahedron
+
+	(60) EDGE = sqrt(10 * (5 + sqrt(5))) / 8
+	RHOMBUS LENGTH = (5 + sqrt(5)) / 4
+	RHOMBUS WIDTH = sqrt(5) / 2
+	(20) INNER VERTEX RADIUS = (5 * sqrt(3) + sqrt(15)) / 8
+	(12) OUTER VERTEX RADIUS = sqrt(5 * (5 + 2 * sqrt(5))) / 4
+	EDGE-SCRIBED RADIUS = sqrt(5 + 2 * sqrt(5)) / 2
+	INRADIUS = (5 + 3 * sqrt(5)) / 8
+	VOLUME = 25 * (5 + 2 * sqrt(5)) / 16
+	DIHEDRAL ANGLE = acos(-(1 + sqrt(5)) / 4) = 144 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 32 30">
+<INPUT type=hidden class=Constants value="0.559016994374947424102293417183,
+0.904508497187473712051146708591,
+1.46352549156242113615344012577">
+<!--
+	C0 = sqrt(5) / 4
+	C1 = (5 + sqrt(5)) / 8
+	C2 = (5 + 3 * sqrt(5)) / 8
+-->
+<INPUT type=hidden class=Vertices value="C1 0.0 C2,C1 0.0 -C2,-C1 0.0 C2,
+-C1 0.0 -C2,C2 C1 0.0,C2 -C1 0.0,-C2 C1 0.0,-C2 -C1 0.0,0.0 C2 C1,0.0 C2 -C1,
+0.0 -C2 C1,0.0 -C2 -C1,0.0 C0 C2,0.0 C0 -C2,0.0 -C0 C2,0.0 -C0 -C2,C2 0.0 C0,
+C2 0.0 -C0,-C2 0.0 C0,-C2 0.0 -C0,C0 C2 0.0,C0 -C2 0.0,-C0 C2 0.0,-C0 -C2 0.0,
+C1 C1 C1,C1 C1 -C1,C1 -C1 C1,C1 -C1 -C1,-C1 C1 C1,-C1 C1 -C1,-C1 -C1 C1,
+-C1 -C1 -C1">
+<INPUT type=hidden class=Faces value="0 12 2 14 #,0 14 10 26 #,0 26 5 16 #,
+1 13 9 25 #,1 25 4 17 #,1 17 5 27 #,2 28 6 18 #,2 18 7 30 #,2 30 10 14 #,
+3 19 6 29 #,3 29 9 13 #,3 13 1 15 #,4 20 8 24 #,4 24 0 16 #,4 16 5 17 #,
+7 18 6 19 #,7 19 3 31 #,7 31 11 23 #,8 22 6 28 #,8 28 2 12 #,8 12 0 24 #,
+9 29 6 22 #,9 22 8 20 #,9 20 4 25 #,10 30 7 23 #,10 23 11 21 #,10 21 5 26 #,
+11 31 3 15 #,11 15 1 27 #,11 27 5 21 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RhombicTriacontahedron.html>Rhombic Triacontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Disdyakis Dodecahedron
+
+	(24) SHORT EDGE = 2 * sqrt(3 * (10 - sqrt(2))) / 7
+	(24) MIDDLE EDGE = 3 * sqrt(6 * (2 + sqrt(2))) / 7
+	(24) LONG EDGE = 2 * sqrt(6 * (10 + sqrt(2))) / 7
+	(12) INNER VERTEX RADIUS = 3 * (4 + sqrt(2)) / 7
+	(8) MIDDLE VERTEX RADIUS = sqrt(6)
+	(6) OUTER VERTEX RADIUS = 3 * (2 + 3 * sqrt(2)) / 7
+	EDGE-SCRIBED RADIUS = sqrt(6 * (2 + sqrt(2))) / 2
+	INRADIUS = sqrt(1746 * (15 + 8 * sqrt(2))) / 97
+	VOLUME = 144 * (1 + sqrt(2)) / 7
+	DIHEDRAL ANGLE = acos(-(71 + 12 * sqrt(2)) / 97)
+		= 155.082179616618412198942993482 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 26 48">
+<INPUT type=hidden class=Constants value="1.41421356237309504880168872421,
+1.64075448203408147040144747789,
+2.67541743733683649131645693113">
+<!--
+	C0 = sqrt(2)
+	C1 = 3 * (1 + 2 * sqrt(2)) / 7
+	C2 = 3 * (2 + 3 * sqrt(2)) / 7
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C2,0.0 0.0 -C2,C2 0.0 0.0,
+-C2 0.0 0.0,0.0 C2 0.0,0.0 -C2 0.0,C1 0.0 C1,C1 0.0 -C1,-C1 0.0 C1,-C1 0.0 -C1,
+C1 C1 0.0,C1 -C1 0.0,-C1 C1 0.0,-C1 -C1 0.0,0.0 C1 C1,0.0 C1 -C1,0.0 -C1 C1,
+0.0 -C1 -C1,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,-C0 C0 C0,-C0 C0 -C0,
+-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 6 18 #,0 18 14 #,0 14 22 #,0 22 8 #,
+0 8 24 #,0 24 16 #,0 16 20 #,0 20 6 #,1 7 21 #,1 21 17 #,1 17 25 #,1 25 9 #,
+1 9 23 #,1 23 15 #,1 15 19 #,1 19 7 #,2 6 20 #,2 20 11 #,2 11 21 #,2 21 7 #,
+2 7 19 #,2 19 10 #,2 10 18 #,2 18 6 #,3 8 22 #,3 22 12 #,3 12 23 #,3 23 9 #,
+3 9 25 #,3 25 13 #,3 13 24 #,3 24 8 #,4 10 19 #,4 19 15 #,4 15 23 #,4 23 12 #,
+4 12 22 #,4 22 14 #,4 14 18 #,4 18 10 #,5 11 20 #,5 20 16 #,5 16 24 #,
+5 24 13 #,5 13 25 #,5 25 17 #,5 17 21 #,5 21 11 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=DisdyakisDodecahedron.html>Disdyakis Dodecahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Pentakis Dodecahedron
+
+	(60) SHORT EDGE = 9 * (2 * sqrt(5) - 1) / 19
+	(30) LONG EDGE = 3 * (sqrt(5) - 1) / 2
+	(12) INNER VERTEX RADIUS = 9 * sqrt(65 + 22 * sqrt(5)) / 38
+	(20) OUTER VERTEX RADIUS = 3 * sqrt(3) / 2
+	EDGE-SCRIBED RADIUS = 3 * (1 + sqrt(5)) / 4
+	INRADIUS = 9 * sqrt(109 * (17 + 6 * sqrt(5))) / 218
+	VOLUME = 405 * (9 + sqrt(5)) / 76
+	DIHEDRAL ANGLE = acos(-(80 + 9 * sqrt(5)) / 109)
+		= 156.718553726458786644184384443 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 32 60">
+<INPUT type=hidden class=Constants value="0.927050983124842272306880251548,
+1.33058699733550141141687582919,
+2.15293498667750705708437914596,
+2.427050983124842272306880251548">
+<!--
+	C0 = 3 * (sqrt(5) - 1) / 4
+	C1 = 9 * (9 + sqrt(5)) / 76
+	C2 = 9 * (7 + 5 * sqrt(5)) / 76
+	C3 = 3 * (1 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 C0 C3,0.0 C0 -C3,0.0 -C0 C3,
+0.0 -C0 -C3,C3 0.0 C0,C3 0.0 -C0,-C3 0.0 C0,-C3 0.0 -C0,C0 C3 0.0,C0 -C3 0.0,
+-C0 C3 0.0,-C0 -C3 0.0,C1 0.0 C2,C1 0.0 -C2,-C1 0.0 C2,-C1 0.0 -C2,C2 C1 0.0,
+C2 -C1 0.0,-C2 C1 0.0,-C2 -C1 0.0,0.0 C2 C1,0.0 C2 -C1,0.0 -C2 C1,0.0 -C2 -C1,
+1.5 1.5 1.5,1.5 1.5 -1.5,1.5 -1.5 1.5,1.5 -1.5 -1.5,-1.5 1.5 1.5,-1.5 1.5 -1.5,
+-1.5 -1.5 1.5,-1.5 -1.5 -1.5">
+<INPUT type=hidden class=Faces value="12 0 2 #,12 2 26 #,12 26 4 #,12 4 24 #,
+12 24 0 #,13 3 1 #,13 1 25 #,13 25 5 #,13 5 27 #,13 27 3 #,14 2 0 #,14 0 28 #,
+14 28 6 #,14 6 30 #,14 30 2 #,15 1 3 #,15 3 31 #,15 31 7 #,15 7 29 #,15 29 1 #,
+16 4 5 #,16 5 25 #,16 25 8 #,16 8 24 #,16 24 4 #,17 5 4 #,17 4 26 #,17 26 9 #,
+17 9 27 #,17 27 5 #,18 7 6 #,18 6 28 #,18 28 10 #,18 10 29 #,18 29 7 #,
+19 6 7 #,19 7 31 #,19 31 11 #,19 11 30 #,19 30 6 #,20 8 10 #,20 10 28 #,
+20 28 0 #,20 0 24 #,20 24 8 #,21 10 8 #,21 8 25 #,21 25 1 #,21 1 29 #,
+21 29 10 #,22 11 9 #,22 9 26 #,22 26 2 #,22 2 30 #,22 30 11 #,23 9 11 #,
+23 11 31 #,23 31 3 #,23 3 27 #,23 27 9 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=PentakisDodecahedron.html>Pentakis Dodecahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Triakis Icosahedron
+
+	(60) SHORT EDGE = 5 * (7 + sqrt(5)) / 22
+	(30) LONG EDGE = (5 + sqrt(5)) / 2
+	(20) INNER VERTEX RADIUS = 5 * (3 * sqrt(3) + 2 * sqrt(15)) / 22
+	(12) OUTER VERTEX RADIUS = sqrt(5 * (5 + 2 * sqrt(5))) / 2
+	EDGE-SCRIBED RADIUS = (5 + 3 * sqrt(5)) / 4
+	INRADIUS = 5 * sqrt(61 * (41 + 18 * sqrt(5))) / 122
+	VOLUME = 125 * (19 + 9 * sqrt(5)) / 44
+	DIHEDRAL ANGLE = acos(-3 * (8 + 5 * sqrt(5)) / 61)
+		= 160.612552209370371185836211291 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 32 60">
+<INPUT type=hidden class=Constants value="1.04955317926133973822831518963,
+1.69821271704535895291326075851,
+1.80901699437494742410229341718,
+2.74776589630669869114157594814,
+2.927050983124842272306880251548">
+<!--
+	C0 = 5 * (7 + sqrt(5)) / 44
+	C1 = 5 * (3 + 2 * sqrt(5)) / 22
+	C2 = (5 + sqrt(5)) / 4
+	C3 = 5 * (13 + 5 * sqrt(5)) / 44
+	C4 = (5 + 3 * sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="C2 0.0 C4,C2 0.0 -C4,-C2 0.0 C4,
+-C2 0.0 -C4,C4 C2 0.0,C4 -C2 0.0,-C4 C2 0.0,-C4 -C2 0.0,0.0 C4 C2,0.0 C4 -C2,
+0.0 -C4 C2,0.0 -C4 -C2,0.0 C0 C3,0.0 C0 -C3,0.0 -C0 C3,0.0 -C0 -C3,C3 0.0 C0,
+C3 0.0 -C0,-C3 0.0 C0,-C3 0.0 -C0,C0 C3 0.0,C0 -C3 0.0,-C0 C3 0.0,-C0 -C3 0.0,
+C1 C1 C1,C1 C1 -C1,C1 -C1 C1,C1 -C1 -C1,-C1 C1 C1,-C1 C1 -C1,-C1 -C1 C1,
+-C1 -C1 -C1">
+<INPUT type=hidden class=Faces value="12 0 8 #,12 8 2 #,12 2 0 #,13 1 3 #,
+13 3 9 #,13 9 1 #,14 0 2 #,14 2 10 #,14 10 0 #,15 1 11 #,15 11 3 #,15 3 1 #,
+16 0 5 #,16 5 4 #,16 4 0 #,17 1 4 #,17 4 5 #,17 5 1 #,18 2 6 #,18 6 7 #,
+18 7 2 #,19 3 7 #,19 7 6 #,19 6 3 #,20 4 9 #,20 9 8 #,20 8 4 #,21 5 10 #,
+21 10 11 #,21 11 5 #,22 6 8 #,22 8 9 #,22 9 6 #,23 7 11 #,23 11 10 #,23 10 7 #,
+24 0 4 #,24 4 8 #,24 8 0 #,25 1 9 #,25 9 4 #,25 4 1 #,26 0 10 #,26 10 5 #,
+26 5 0 #,27 1 5 #,27 5 11 #,27 11 1 #,28 2 8 #,28 8 6 #,28 6 2 #,29 3 6 #,
+29 6 9 #,29 9 3 #,30 2 7 #,30 7 10 #,30 10 2 #,31 3 11 #,31 11 7 #,31 7 3 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=TriakisIcosahedron.html>Triakis Icosahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Deltoidal Hexecontahedron
+
+	(60) SHORT EDGE = sqrt(5 * (85 - 31 * sqrt(5))) / 11
+	(60) LONG EDGE = sqrt(5 * (5 - sqrt(5))) / 3
+	KITE LENGTH = sqrt(10 * (157 + 31 * sqrt(5))) / 33
+	KITE WIDTH = (5 - sqrt(5)) / 2
+	(20) INNER VERTEX RADIUS = (5 * sqrt(3) + 4 * sqrt(15)) / 11
+	(30) MIDDLE VERTEX RADIUS = sqrt(5)
+	(12) OUTER VERTEX RADIUS = sqrt(5 * (5 + 2 * sqrt(5))) / 3
+	EDGE-SCRIBED RADIUS = sqrt(2 * (5 + 2 * sqrt(5))) / 2
+	INRADIUS = sqrt(205 * (19 + 8 * sqrt(5))) / 41
+	VOLUME = 100 * (5 + 4 * sqrt(5)) / 33
+	DIHEDRAL ANGLE = acos(-(19 + 8 * sqrt(5)) / 41)
+		= 154.121363125776320479219692917 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 62 60">
+<INPUT type=hidden class=Constants value="0.690983005625052575897706582817,
+0.783457635340899531654962439488,
+1.11803398874989484820458683437,
+1.20601132958329828273486227812,
+1.26766108272719625323969951590,
+1.80901699437494742410229341718,
+1.95136732208322818153792016770,
+2.05111871806809578489466195539,
+2.23606797749978969640917366873">
+<!--
+	C0 = (5 - sqrt(5)) / 4
+	C1 = (15 + sqrt(5)) / 22
+	C2 = sqrt(5) / 2
+	C3 = (5 + sqrt(5)) / 6
+	C4 = (5 + 4 * sqrt(5)) / 11
+	C5 = (5 + sqrt(5)) / 4
+	C6 = (5 + 3 * sqrt(5)) / 6
+	C7 = (25 + 9 * sqrt(5)) / 22
+	C8 = sqrt(5)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C8,0.0 0.0 -C8,C8 0.0 0.0,
+-C8 0.0 0.0,0.0 C8 0.0,0.0 -C8 0.0,0.0 C1 C7,0.0 C1 -C7,0.0 -C1 C7,0.0 -C1 -C7,
+C7 0.0 C1,C7 0.0 -C1,-C7 0.0 C1,-C7 0.0 -C1,C1 C7 0.0,C1 -C7 0.0,-C1 C7 0.0,
+-C1 -C7 0.0,C3 0.0 C6,C3 0.0 -C6,-C3 0.0 C6,-C3 0.0 -C6,C6 C3 0.0,C6 -C3 0.0,
+-C6 C3 0.0,-C6 -C3 0.0,0.0 C6 C3,0.0 C6 -C3,0.0 -C6 C3,0.0 -C6 -C3,C0 C2 C5,
+C0 C2 -C5,C0 -C2 C5,C0 -C2 -C5,-C0 C2 C5,-C0 C2 -C5,-C0 -C2 C5,-C0 -C2 -C5,
+C5 C0 C2,C5 C0 -C2,C5 -C0 C2,C5 -C0 -C2,-C5 C0 C2,-C5 C0 -C2,-C5 -C0 C2,
+-C5 -C0 -C2,C2 C5 C0,C2 C5 -C0,C2 -C5 C0,C2 -C5 -C0,-C2 C5 C0,-C2 C5 -C0,
+-C2 -C5 C0,-C2 -C5 -C0,C4 C4 C4,C4 C4 -C4,C4 -C4 C4,C4 -C4 -C4,-C4 C4 C4,
+-C4 C4 -C4,-C4 -C4 C4,-C4 -C4 -C4">
+<INPUT type=hidden class=Faces value="18 0 8 32 #,18 32 56 40 #,18 40 10 38 #,
+18 38 54 30 #,18 30 6 0 #,19 1 7 31 #,19 31 55 39 #,19 39 11 41 #,
+19 41 57 33 #,19 33 9 1 #,20 0 6 34 #,20 34 58 42 #,20 42 12 44 #,
+20 44 60 36 #,20 36 8 0 #,21 1 9 37 #,21 37 61 45 #,21 45 13 43 #,
+21 43 59 35 #,21 35 7 1 #,22 2 11 39 #,22 39 55 47 #,22 47 14 46 #,
+22 46 54 38 #,22 38 10 2 #,23 2 10 40 #,23 40 56 48 #,23 48 15 49 #,
+23 49 57 41 #,23 41 11 2 #,24 3 12 42 #,24 42 58 50 #,24 50 16 51 #,
+24 51 59 43 #,24 43 13 3 #,25 3 13 45 #,25 45 61 53 #,25 53 17 52 #,
+25 52 60 44 #,25 44 12 3 #,26 4 16 50 #,26 50 58 34 #,26 34 6 30 #,
+26 30 54 46 #,26 46 14 4 #,27 4 14 47 #,27 47 55 31 #,27 31 7 35 #,
+27 35 59 51 #,27 51 16 4 #,28 5 15 48 #,28 48 56 32 #,28 32 8 36 #,
+28 36 60 52 #,28 52 17 5 #,29 5 17 53 #,29 53 61 37 #,29 37 9 33 #,
+29 33 57 49 #,29 49 15 5 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=DeltoidalHexecontahedron.html>Deltoidal Hexecontahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Pentagonal Hexecontahedron (dextro)
+
+	(90) SHORT EDGE = 1 / x
+	(60) LONG EDGE = (x*(2+7*phi) + (5*phi-3) + 2*(8-3*phi)/x) / 31
+	(80) INNER VERTEX RADIUS = sqrt(3 * (x * phi + 1 + phi + (1/x))) / 2
+	(12) OUTER VERTEX RADIUS
+		= sqrt((x^2)*(1009+1067*phi) + x*(1168+2259*phi) + (1097+941*phi)) / 62
+	EDGE-SCRIBED RADIUS = phi * sqrt(x * (x + phi) + 1) / 2
+	INRADIUS = x * sqrt(209*((x^2)*(104*phi-7)+x*(52+153*phi)+(195-phi))) / 418
+	VOLUME = 5 * sqrt(x * ((x^2)*(287 + 11405 * phi)
+		+ x*(8265 + 14528 * phi) + (13146 + 2363 * phi))) / 62
+	DIHEDRAL ANGLE = acos(-(2*(x+(2/x))*(1+15*phi) + (15+16*phi)) / 209)
+		= 153.178732558449696486154044508 degrees
+
+	WHERE:	phi = (1 + sqrt(5)) / 2
+			x = cbrt((phi + sqrt(phi-5/27))/2) + cbrt((phi - sqrt(phi-5/27))/2)
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Icosahedral (I)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="20 92 60">
+<INPUT type=hidden class=Constants value="0.192893711352359022108262546061,
+0.218483370127321224365534157111,
+0.374821658114562295266609516608,
+0.567715369466921317374872062669,
+0.728335176957191477360671629838,
+0.755467260516595579705585253517,
+0.824957552676275846265811111988,
+0.921228888309550499468934175898,
+0.959987701391583803994339068107,
+1.13706613386050418840961998424,
+1.16712343647533397917215468549,
+1.22237170490362309266282747264,
+1.27209628257581214613814794036,
+1.52770307085850512136921113078,
+1.64691794069037444140475745697,
+1.74618644098582634573474528789,
+1.86540131081769566577029161408,
+1.88844538928366915418351670356,
+1.97783896542021867236841272616,
+2.097053835252087992403959052348">
+<!--
+	C0 = phi * sqrt(3 - (x^2)) / 2
+	C1 = phi * sqrt((x - 1 - (1/x)) * phi) / (2 * x)
+	C2 = phi * sqrt((x - 1 - (1/x)) * phi) / 2
+	C3 = (x^2) * phi * sqrt(3 - (x^2)) / 2
+	C4 = phi * sqrt(1 - x + (1 + phi) / x) / 2
+	C5 = sqrt(x * (x + phi) + 1) / (2 * x)
+	C6 = sqrt((x + 2) * phi + 2) / (2 * x)
+	C7 = sqrt(-(x^2) * (2 + phi) + x * (1 + 3 * phi) + 4) / 2
+	C8 = (1 + phi) * sqrt(1 + (1/x)) / (2 * x)
+	C9 = sqrt(2 + 3 * phi - 2 * x + (3/x)) / 2
+	C10 = sqrt((x^2)*(392 + 225*phi) + x*(249 + 670*phi) + (470 + 157*phi))/62
+	C11 = phi * sqrt(x * (x + phi) + 1) / (2 * x)
+	C12 = phi * sqrt((x^2) + x + 1 + phi) / (2 * x)
+	C13 = phi * sqrt((x^2) + 2 * x * phi + 2) / (2 * x)
+	C14 = sqrt((x^2) * (1 + 2 * phi) - phi) / 2
+	C15 = phi * sqrt((x^2) + x) / 2
+	C16 = (phi^3) * sqrt(x * (x + phi) + 1) / (2 * (x^2))
+	C17 = sqrt((x^2)*(617 + 842*phi) + x*(919 + 1589*phi) + (627 + 784*phi))/62
+	C18 = (phi^2) * sqrt(x * (x + phi) + 1) / (2 * x)
+	C19 = phi * sqrt(x * (x + phi) + 1) / 2
+	WHERE:	phi = (1 + sqrt(5)) / 2
+			x = cbrt((phi + sqrt(phi-5/27))/2) + cbrt((phi - sqrt(phi-5/27))/2)
+-->
+<INPUT type=hidden class=Vertices value="C0 C1 C19,C0 -C1 -C19,-C0 -C1 C19,
+-C0 C1 -C19,C19 C0 C1,C19 -C0 -C1,-C19 -C0 C1,-C19 C0 -C1,C1 C19 C0,
+C1 -C19 -C0,-C1 -C19 C0,-C1 C19 -C0,0.0 C5 C18,0.0 C5 -C18,0.0 -C5 C18,
+0.0 -C5 -C18,C18 0.0 C5,C18 0.0 -C5,-C18 0.0 C5,-C18 0.0 -C5,C5 C18 0.0,
+C5 -C18 0.0,-C5 C18 0.0,-C5 -C18 0.0,C10 0.0 C17,C10 0.0 -C17,-C10 0.0 C17,
+-C10 0.0 -C17,C17 C10 0.0,C17 -C10 0.0,-C17 C10 0.0,-C17 -C10 0.0,0.0 C17 C10,
+0.0 C17 -C10,0.0 -C17 C10,0.0 -C17 -C10,C3 -C6 C16,C3 C6 -C16,-C3 C6 C16,
+-C3 -C6 -C16,C16 -C3 C6,C16 C3 -C6,-C16 C3 C6,-C16 -C3 -C6,C6 -C16 C3,
+C6 C16 -C3,-C6 C16 C3,-C6 -C16 -C3,C2 C9 C15,C2 -C9 -C15,-C2 -C9 C15,
+-C2 C9 -C15,C15 C2 C9,C15 -C2 -C9,-C15 -C2 C9,-C15 C2 -C9,C9 C15 C2,
+C9 -C15 -C2,-C9 -C15 C2,-C9 C15 -C2,C7 C8 C14,C7 -C8 -C14,-C7 -C8 C14,
+-C7 C8 -C14,C14 C7 C8,C14 -C7 -C8,-C14 -C7 C8,-C14 C7 -C8,C8 C14 C7,
+C8 -C14 -C7,-C8 -C14 C7,-C8 C14 -C7,C4 -C12 C13,C4 C12 -C13,-C4 C12 C13,
+-C4 -C12 -C13,C13 -C4 C12,C13 C4 -C12,-C13 C4 C12,-C13 -C4 -C12,C12 -C13 C4,
+C12 C13 -C4,-C12 C13 C4,-C12 -C13 -C4,C11 C11 C11,C11 C11 -C11,C11 -C11 C11,
+C11 -C11 -C11,-C11 C11 C11,-C11 C11 -C11,-C11 -C11 C11,-C11 -C11 -C11">
+<INPUT type=hidden class=Faces value="24 0 2 14 36 #,24 36 72 86 76 #,
+24 76 40 16 52 #,24 52 64 84 60 #,24 60 48 12 0 #,25 1 3 13 37 #,
+25 37 73 85 77 #,25 77 41 17 53 #,25 53 65 87 61 #,25 61 49 15 1 #,
+26 2 0 12 38 #,26 38 74 88 78 #,26 78 42 18 54 #,26 54 66 90 62 #,
+26 62 50 14 2 #,27 3 1 15 39 #,27 39 75 91 79 #,27 79 43 19 55 #,
+27 55 67 89 63 #,27 63 51 13 3 #,28 4 5 17 41 #,28 41 77 85 81 #,
+28 81 45 20 56 #,28 56 68 84 64 #,28 64 52 16 4 #,29 5 4 16 40 #,
+29 40 76 86 80 #,29 80 44 21 57 #,29 57 69 87 65 #,29 65 53 17 5 #,
+30 7 6 18 42 #,30 42 78 88 82 #,30 82 46 22 59 #,30 59 71 89 67 #,
+30 67 55 19 7 #,31 6 7 19 43 #,31 43 79 91 83 #,31 83 47 23 58 #,
+31 58 70 90 66 #,31 66 54 18 6 #,32 8 11 22 46 #,32 46 82 88 74 #,
+32 74 38 12 48 #,32 48 60 84 68 #,32 68 56 20 8 #,33 11 8 20 45 #,
+33 45 81 85 73 #,33 73 37 13 51 #,33 51 63 89 71 #,33 71 59 22 11 #,
+34 10 9 21 44 #,34 44 80 86 72 #,34 72 36 14 50 #,34 50 62 90 70 #,
+34 70 58 23 10 #,35 9 10 23 47 #,35 47 83 91 75 #,35 75 39 15 49 #,
+35 49 61 87 69 #,35 69 57 21 9 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=RpentagonalHexecontahedron.html>Pentagonal Hexecontahedron (dextro)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Pentagonal Hexecontahedron (laevo)
+
+	(90) SHORT EDGE = 1 / x
+	(60) LONG EDGE = (x*(2+7*phi) + (5*phi-3) + 2*(8-3*phi)/x) / 31
+	(80) INNER VERTEX RADIUS = sqrt(3 * (x * phi + 1 + phi + (1/x))) / 2
+	(12) OUTER VERTEX RADIUS
+		= sqrt((x^2)*(1009+1067*phi) + x*(1168+2259*phi) + (1097+941*phi)) / 62
+	EDGE-SCRIBED RADIUS = phi * sqrt(x * (x + phi) + 1) / 2
+	INRADIUS = x * sqrt(209*((x^2)*(104*phi-7)+x*(52+153*phi)+(195-phi))) / 418
+	VOLUME = 5 * sqrt(x * ((x^2)*(287 + 11405 * phi)
+		+ x*(8265 + 14528 * phi) + (13146 + 2363 * phi))) / 62
+	DIHEDRAL ANGLE = acos(-(2*(x+(2/x))*(1+15*phi) + (15+16*phi)) / 209)
+		= 153.178732558449696486154044508 degrees
+
+	WHERE:	phi = (1 + sqrt(5)) / 2
+			x = cbrt((phi + sqrt(phi-5/27))/2) + cbrt((phi - sqrt(phi-5/27))/2)
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:    0
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                 0
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  Chiral Icosahedral (I)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="20 92 60">
+<INPUT type=hidden class=Constants value="0.192893711352359022108262546061,
+0.218483370127321224365534157111,
+0.374821658114562295266609516608,
+0.567715369466921317374872062669,
+0.728335176957191477360671629838,
+0.755467260516595579705585253517,
+0.824957552676275846265811111988,
+0.921228888309550499468934175898,
+0.959987701391583803994339068107,
+1.13706613386050418840961998424,
+1.16712343647533397917215468549,
+1.22237170490362309266282747264,
+1.27209628257581214613814794036,
+1.52770307085850512136921113078,
+1.64691794069037444140475745697,
+1.74618644098582634573474528789,
+1.86540131081769566577029161408,
+1.88844538928366915418351670356,
+1.97783896542021867236841272616,
+2.097053835252087992403959052348">
+<!--
+	C0 = phi * sqrt(3 - (x^2)) / 2
+	C1 = phi * sqrt((x - 1 - (1/x)) * phi) / (2 * x)
+	C2 = phi * sqrt((x - 1 - (1/x)) * phi) / 2
+	C3 = (x^2) * phi * sqrt(3 - (x^2)) / 2
+	C4 = phi * sqrt(1 - x + (1 + phi) / x) / 2
+	C5 = sqrt(x * (x + phi) + 1) / (2 * x)
+	C6 = sqrt((x + 2) * phi + 2) / (2 * x)
+	C7 = sqrt(-(x^2) * (2 + phi) + x * (1 + 3 * phi) + 4) / 2
+	C8 = (1 + phi) * sqrt(1 + (1/x)) / (2 * x)
+	C9 = sqrt(2 + 3 * phi - 2 * x + (3/x)) / 2
+	C10 = sqrt((x^2)*(392 + 225*phi) + x*(249 + 670*phi) + (470 + 157*phi))/62
+	C11 = phi * sqrt(x * (x + phi) + 1) / (2 * x)
+	C12 = phi * sqrt((x^2) + x + 1 + phi) / (2 * x)
+	C13 = phi * sqrt((x^2) + 2 * x * phi + 2) / (2 * x)
+	C14 = sqrt((x^2) * (1 + 2 * phi) - phi) / 2
+	C15 = phi * sqrt((x^2) + x) / 2
+	C16 = (phi^3) * sqrt(x * (x + phi) + 1) / (2 * (x^2))
+	C17 = sqrt((x^2)*(617 + 842*phi) + x*(919 + 1589*phi) + (627 + 784*phi))/62
+	C18 = (phi^2) * sqrt(x * (x + phi) + 1) / (2 * x)
+	C19 = phi * sqrt(x * (x + phi) + 1) / 2
+	WHERE:	phi = (1 + sqrt(5)) / 2
+			x = cbrt((phi + sqrt(phi-5/27))/2) + cbrt((phi - sqrt(phi-5/27))/2)
+-->
+<INPUT type=hidden class=Vertices value="-C0 -C1 -C19,-C0 C1 C19,C0 C1 -C19,
+C0 -C1 C19,-C19 -C0 -C1,-C19 C0 C1,C19 C0 -C1,C19 -C0 C1,-C1 -C19 -C0,
+-C1 C19 C0,C1 C19 -C0,C1 -C19 C0,0.0 -C5 -C18,0.0 -C5 C18,0.0 C5 -C18,
+0.0 C5 C18,-C18 0.0 -C5,-C18 0.0 C5,C18 0.0 -C5,C18 0.0 C5,-C5 -C18 0.0,
+-C5 C18 0.0,C5 -C18 0.0,C5 C18 0.0,-C10 0.0 -C17,-C10 0.0 C17,C10 0.0 -C17,
+C10 0.0 C17,-C17 -C10 0.0,-C17 C10 0.0,C17 -C10 0.0,C17 C10 0.0,0.0 -C17 -C10,
+0.0 -C17 C10,0.0 C17 -C10,0.0 C17 C10,-C3 C6 -C16,-C3 -C6 C16,C3 -C6 -C16,
+C3 C6 C16,-C16 C3 -C6,-C16 -C3 C6,C16 -C3 -C6,C16 C3 C6,-C6 C16 -C3,
+-C6 -C16 C3,C6 -C16 -C3,C6 C16 C3,-C2 -C9 -C15,-C2 C9 C15,C2 C9 -C15,
+C2 -C9 C15,-C15 -C2 -C9,-C15 C2 C9,C15 C2 -C9,C15 -C2 C9,-C9 -C15 -C2,
+-C9 C15 C2,C9 C15 -C2,C9 -C15 C2,-C7 -C8 -C14,-C7 C8 C14,C7 C8 -C14,C7 -C8 C14,
+-C14 -C7 -C8,-C14 C7 C8,C14 C7 -C8,C14 -C7 C8,-C8 -C14 -C7,-C8 C14 C7,
+C8 C14 -C7,C8 -C14 C7,-C4 C12 -C13,-C4 -C12 C13,C4 -C12 -C13,C4 C12 C13,
+-C13 C4 -C12,-C13 -C4 C12,C13 -C4 -C12,C13 C4 C12,-C12 C13 -C4,-C12 -C13 C4,
+C12 -C13 -C4,C12 C13 C4,-C11 -C11 -C11,-C11 -C11 C11,-C11 C11 -C11,
+-C11 C11 C11,C11 -C11 -C11,C11 -C11 C11,C11 C11 -C11,C11 C11 C11">
+<INPUT type=hidden class=Faces value="24 36 14 2 0 #,24 76 86 72 36 #,
+24 52 16 40 76 #,24 60 84 64 52 #,24 0 12 48 60 #,25 37 13 3 1 #,
+25 77 85 73 37 #,25 53 17 41 77 #,25 61 87 65 53 #,25 1 15 49 61 #,
+26 38 12 0 2 #,26 78 88 74 38 #,26 54 18 42 78 #,26 62 90 66 54 #,
+26 2 14 50 62 #,27 39 15 1 3 #,27 79 91 75 39 #,27 55 19 43 79 #,
+27 63 89 67 55 #,27 3 13 51 63 #,28 41 17 5 4 #,28 81 85 77 41 #,
+28 56 20 45 81 #,28 64 84 68 56 #,28 4 16 52 64 #,29 40 16 4 5 #,
+29 80 86 76 40 #,29 57 21 44 80 #,29 65 87 69 57 #,29 5 17 53 65 #,
+30 42 18 6 7 #,30 82 88 78 42 #,30 59 22 46 82 #,30 67 89 71 59 #,
+30 7 19 55 67 #,31 43 19 7 6 #,31 83 91 79 43 #,31 58 23 47 83 #,
+31 66 90 70 58 #,31 6 18 54 66 #,32 46 22 11 8 #,32 74 88 82 46 #,
+32 48 12 38 74 #,32 68 84 60 48 #,32 8 20 56 68 #,33 45 20 8 11 #,
+33 73 85 81 45 #,33 51 13 37 73 #,33 71 89 63 51 #,33 11 22 59 71 #,
+34 44 21 9 10 #,34 72 86 80 44 #,34 50 14 36 72 #,34 70 90 62 50 #,
+34 10 23 58 70 #,35 47 23 10 9 #,35 75 91 83 47 #,35 49 15 39 75 #,
+35 69 87 61 49 #,35 9 21 57 69 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=LpentagonalHexecontahedron.html>Pentagonal Hexecontahedron (laevo)</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Disdyakis Triacontahedron
+
+	(60) SHORT EDGE = sqrt(15 * (85 - 31 * sqrt(5))) / 11
+	(60) MIDDLE EDGE = 3 * sqrt(15 * (65 + 19 * sqrt(5))) / 55
+	(60) LONG EDGE = 2 * sqrt(15 * (5 - sqrt(5))) / 5
+	(30) INNER VERTEX RADIUS = 3 * (5 + 4 * sqrt(5)) / 11
+	(20) MIDDLE VERTEX RADIUS = sqrt(15)
+	(12) OUTER VERTEX RADIUS = 3 * sqrt(5 * (5 + 2 * sqrt(5))) / 5
+	EDGE-SCRIBED RADIUS = sqrt(6 * (5 + 2 * sqrt(5))) / 2
+	INRADIUS = sqrt(10845 * (39 + 16 * sqrt(5))) / 241
+	VOLUME = 180 * (5 + 4 * sqrt(5)) / 11
+	DIHEDRAL ANGLE = acos(-(179 + 24 * sqrt(5)) / 241)
+		= 164.887891907662481670032902772 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 62 120">
+<INPUT type=hidden class=Constants value="1.17518645301134929748244365923,
+1.38196601125010515179541316563,
+1.901491624090794379859549273853,
+2.17082039324993690892275210062,
+2.23606797749978969640917366873,
+3.07667807710214367734199293309,
+3.51246117974981072676825630186,
+3.61803398874989484820458683437,
+3.80298324818158875971909854771">
+<!--
+	C0 = 3 * (15 + sqrt(5)) / 44
+	C1 = (5 - sqrt(5)) / 2
+	C2 = 3 * (5 + 4 * sqrt(5)) / 22
+	C3 = 3 * (5 + sqrt(5)) / 10
+	C4 = sqrt(5)
+	C5 = 3 * (25 + 9 * sqrt(5)) / 44
+	C6 = 3 * (5 + 3 * sqrt(5)) / 10
+	C7 = (5 + sqrt(5)) / 2
+	C8 = 3 * (5 + 4 * sqrt(5)) / 11
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C8,0.0 0.0 -C8,C8 0.0 0.0,
+-C8 0.0 0.0,0.0 C8 0.0,0.0 -C8 0.0,0.0 C1 C7,0.0 C1 -C7,0.0 -C1 C7,0.0 -C1 -C7,
+C7 0.0 C1,C7 0.0 -C1,-C7 0.0 C1,-C7 0.0 -C1,C1 C7 0.0,C1 -C7 0.0,-C1 C7 0.0,
+-C1 -C7 0.0,C3 0.0 C6,C3 0.0 -C6,-C3 0.0 C6,-C3 0.0 -C6,C6 C3 0.0,C6 -C3 0.0,
+-C6 C3 0.0,-C6 -C3 0.0,0.0 C6 C3,0.0 C6 -C3,0.0 -C6 C3,0.0 -C6 -C3,C0 C2 C5,
+C0 C2 -C5,C0 -C2 C5,C0 -C2 -C5,-C0 C2 C5,-C0 C2 -C5,-C0 -C2 C5,-C0 -C2 -C5,
+C5 C0 C2,C5 C0 -C2,C5 -C0 C2,C5 -C0 -C2,-C5 C0 C2,-C5 C0 -C2,-C5 -C0 C2,
+-C5 -C0 -C2,C2 C5 C0,C2 C5 -C0,C2 -C5 C0,C2 -C5 -C0,-C2 C5 C0,-C2 C5 -C0,
+-C2 -C5 C0,-C2 -C5 -C0,C4 C4 C4,C4 C4 -C4,C4 -C4 C4,C4 -C4 -C4,-C4 C4 C4,
+-C4 C4 -C4,-C4 -C4 C4,-C4 -C4 -C4">
+<INPUT type=hidden class=Faces value="18 0 8 #,18 8 32 #,18 32 56 #,18 56 40 #,
+18 40 10 #,18 10 38 #,18 38 54 #,18 54 30 #,18 30 6 #,18 6 0 #,19 1 7 #,
+19 7 31 #,19 31 55 #,19 55 39 #,19 39 11 #,19 11 41 #,19 41 57 #,19 57 33 #,
+19 33 9 #,19 9 1 #,20 0 6 #,20 6 34 #,20 34 58 #,20 58 42 #,20 42 12 #,
+20 12 44 #,20 44 60 #,20 60 36 #,20 36 8 #,20 8 0 #,21 1 9 #,21 9 37 #,
+21 37 61 #,21 61 45 #,21 45 13 #,21 13 43 #,21 43 59 #,21 59 35 #,21 35 7 #,
+21 7 1 #,22 2 11 #,22 11 39 #,22 39 55 #,22 55 47 #,22 47 14 #,22 14 46 #,
+22 46 54 #,22 54 38 #,22 38 10 #,22 10 2 #,23 2 10 #,23 10 40 #,23 40 56 #,
+23 56 48 #,23 48 15 #,23 15 49 #,23 49 57 #,23 57 41 #,23 41 11 #,23 11 2 #,
+24 3 12 #,24 12 42 #,24 42 58 #,24 58 50 #,24 50 16 #,24 16 51 #,24 51 59 #,
+24 59 43 #,24 43 13 #,24 13 3 #,25 3 13 #,25 13 45 #,25 45 61 #,25 61 53 #,
+25 53 17 #,25 17 52 #,25 52 60 #,25 60 44 #,25 44 12 #,25 12 3 #,26 4 16 #,
+26 16 50 #,26 50 58 #,26 58 34 #,26 34 6 #,26 6 30 #,26 30 54 #,26 54 46 #,
+26 46 14 #,26 14 4 #,27 4 14 #,27 14 47 #,27 47 55 #,27 55 31 #,27 31 7 #,
+27 7 35 #,27 35 59 #,27 59 51 #,27 51 16 #,27 16 4 #,28 5 15 #,28 15 48 #,
+28 48 56 #,28 56 32 #,28 32 8 #,28 8 36 #,28 36 60 #,28 60 52 #,28 52 17 #,
+28 17 5 #,29 5 17 #,29 17 53 #,29 53 61 #,29 61 37 #,29 37 9 #,29 9 33 #,
+29 33 57 #,29 57 49 #,29 49 15 #,29 15 5 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=DisdyakisTriacontahedron.html>Disdyakis Triacontahedron</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE style="font-size:75%">
+<TR><TD valign=top>References:</TD><TD valign=top>[1]</TD><TD><A href=http://www.thelatinlibrary.com/kepler/strena.html>Johannes Kepler, <I>Strena Seu de Nive Sexangula</I> [<I>A New Year's Gift of Hexagonal Snow</I>] (1611).</A></TD></TR>
+<TR><TD></TD><TD valign=top>[2]</TD><TD>Johannes Kepler, translated by Colin Hardie, <I>The Six-Cornered Snowflake</I>. Oxford: Clarendon Press (1966).</TD></TR>
+<TR><TD></TD><TD valign=top>[3]</TD><TD>Eug&egrave;ne Catalan, M&eacute;moire sur la Th&eacute;orie des Poly&egrave;dres, <I>Journal de l'&Eacute;cole polytechnique</I> <B>41</B> (1865), 1-71, +7 plates.</TD></TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

@@ -1,0 +1,909 @@
+<!-- File:   SelfIntersectingQuasiQuasiRegularDual.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Self-Intersecting Quasi-Quasi-Regular Duals</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='SelfIntersectingQuasiQuasiRegular.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Self-Intersecting Quasi-Quasi-Regular Duals</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='VersiQuasiRegular.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+The dual of a quasi-quasi-regular polyhedron is face-transitive with faces
+shaped like kites or darts.  Face transitivity means that for any two faces
+of the polyhedron, there exists a translation, rotation, and/or reflection
+that leaves the outward appearance of the polyhedron unchanged yet moves one
+face to the other.  There are only two quasi-quasi-regular duals that are not
+self-intersecting, namely the
+<A href=DeltoidalIcositetrahedron.html>Deltoidal Icositetrahedron</A> and
+the <A href=DeltoidalHexecontahedron.html>Deltoidal Hexecontahedron</A>.
+When self-intersection is allowed, there are 12 other quasi-quasi-regular
+duals.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Small Hexacronic Icositetrahedron
+
+	(24) SHORT EDGE = 2 * sqrt(2 * (26 + 17 * sqrt(2))) / 7
+	(24) LONG EDGE = 2 * sqrt(2 + sqrt(2))
+	DART LENGTH = 2 * sqrt(31 - 8 * sqrt(2)) / 7
+	DART WIDTH = 2 * (1 + sqrt(2))
+	(8) INNER VERTEX RADIUS = (4 * sqrt(3) + sqrt(6)) / 7
+	(6) MIDDLE VERTEX RADIUS = sqrt(2)
+	(6) OUTER VERTEX RADIUS = 2 + sqrt(2)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 + sqrt(2))) / 2
+	INRADIUS = sqrt(34 * (7 + 4 * sqrt(2))) / 17
+	DIHEDRAL ANGLE = acos(-0.744520838205434129129809111579)
+		= acos(-(7 + 4 * sqrt(2)) / 17)
+		= 138.117959055512322254739639927 degrees
+
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 20 24">
+<INPUT type=hidden class=Constants value="0.773459080339013578400241246316,
+1.41421356237309504880168872421,
+3.41421356237309504880168872421">
+<!--
+	C0 = (4 + sqrt(2)) / 7
+	C1 = sqrt(2)
+	C2 = 2 + sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C2,0.0 0.0 -C2,C2 0.0 0.0,
+-C2 0.0 0.0,0.0 C2 0.0,0.0 -C2 0.0,0.0 0.0 C1,0.0 0.0 -C1,C1 0.0 0.0,
+-C1 0.0 0.0,0.0 C1 0.0,0.0 -C1 0.0,C0 C0 C0,C0 C0 -C0,C0 -C0 C0,C0 -C0 -C0,
+-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="12 0 8 4 #,12 4 6 2 #,12 2 10 0 #,
+13 1 10 2 #,13 2 7 4 #,13 4 8 1 #,14 0 11 2 #,14 2 6 5 #,14 5 8 0 #,15 1 8 5 #,
+15 5 7 2 #,15 2 11 1 #,16 0 10 3 #,16 3 6 4 #,16 4 9 0 #,17 1 9 4 #,17 4 7 3 #,
+17 3 10 1 #,18 0 9 5 #,18 5 6 3 #,18 3 11 0 #,19 1 11 3 #,19 3 7 5 #,
+19 5 9 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallHexacronicIcositetrahedron.html>Small Hexacronic Icositetrahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Hexacronic Icositetrahedron
+
+	(24) SHORT EDGE = 2 * sqrt(2 * (26 - 17 * sqrt(2))) / 7
+	(24) LONG EDGE = 2 * sqrt(2 - sqrt(2))
+	KITE LENGTH = 2 * sqrt(31 + 8 * sqrt(2)) / 7
+	KITE WIDTH = 2 * (sqrt(2) - 1)
+	(6) INNER VERTEX RADIUS = 2 - sqrt(2)
+	(8) MIDDLE VERTEX RADIUS = (4 * sqrt(3) - sqrt(6)) / 7
+	(6) OUTER VERTEX RADIUS = sqrt(2)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 - sqrt(2))) / 2
+	INRADIUS = sqrt(34 * (7 - 4 * sqrt(2))) / 17
+	DIHEDRAL ANGLE = acos(-0.0790085735592717532231320648918)
+		= acos(-(7 - 4 * sqrt(2)) / 17)
+		= 94.5315807982003719039626646393 degrees
+
+	EULER CHARACTERISTIC:         -4
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 20 24">
+<INPUT type=hidden class=Constants value="0.369398062518129278742615896541,
+0.585786437626904951198311275790,
+1.41421356237309504880168872421">
+<!--
+	C0 = (4 - sqrt(2)) / 7
+	C1 = 2 - sqrt(2)
+	C2 = sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 -C1,0.0 0.0 C1,-C1 0.0 0.0,
+C1 0.0 0.0,0.0 -C1 0.0,0.0 C1 0.0,0.0 0.0 C2,0.0 0.0 -C2,C2 0.0 0.0,
+-C2 0.0 0.0,0.0 C2 0.0,0.0 -C2 0.0,-C0 -C0 -C0,-C0 -C0 C0,-C0 C0 -C0,-C0 C0 C0,
+C0 -C0 -C0,C0 -C0 C0,C0 C0 -C0,C0 C0 C0">
+<INPUT type=hidden class=Faces value="12 0 8 4 #,12 4 6 2 #,12 2 10 0 #,
+13 1 10 2 #,13 2 7 4 #,13 4 8 1 #,14 0 11 2 #,14 2 6 5 #,14 5 8 0 #,15 1 8 5 #,
+15 5 7 2 #,15 2 11 1 #,16 0 10 3 #,16 3 6 4 #,16 4 9 0 #,17 1 9 4 #,17 4 7 3 #,
+17 3 10 1 #,18 0 9 5 #,18 5 6 3 #,18 3 11 0 #,19 1 11 3 #,19 3 7 5 #,
+19 5 9 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatHexacronicIcositetrahedron.html>Great Hexacronic Icositetrahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Deltoidal Icositetrahedron
+
+	(24) SHORT EDGE = 2 * sqrt(10 + sqrt(2)) / 7
+	(24) LONG EDGE = sqrt(2 * (2 + sqrt(2)))
+	DART LENGTH = 2 * sqrt(31 + 8 * sqrt(2)) / 7
+	DART WIDTH = sqrt(2)
+	(8) INNER VERTEX RADIUS = (4 * sqrt(3) - sqrt(6)) / 7
+	(18) OUTER VERTEX RADIUS = sqrt(2)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 - sqrt(2))) / 2
+	INRADIUS = sqrt(34 * (7 - 4 * sqrt(2))) / 17
+	DIHEDRAL ANGLE = acos(-0.0790085735592717532231320648918)
+		= acos(-(7 - 4 * sqrt(2)) / 17)
+		= 94.5315807982003719039626646393 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 26 24">
+<INPUT type=hidden class=Constants value="0.369398062518129278742615896541,
+1.41421356237309504880168872421">
+<!--
+	C0 = (4 - sqrt(2)) / 7
+	C1 = sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C1,0.0 0.0 -C1,C1 0.0 0.0,
+-C1 0.0 0.0,0.0 C1 0.0,0.0 -C1 0.0,-1.0 0.0 -1.0,-1.0 0.0 1.0,1.0 0.0 -1.0,
+1.0 0.0 1.0,-1.0 -1.0 0.0,-1.0 1.0 0.0,1.0 -1.0 0.0,1.0 1.0 0.0,0.0 -1.0 -1.0,
+0.0 -1.0 1.0,0.0 1.0 -1.0,0.0 1.0 1.0,-C0 -C0 -C0,-C0 -C0 C0,-C0 C0 -C0,
+-C0 C0 C0,C0 -C0 -C0,C0 -C0 C0,C0 C0 -C0,C0 C0 C0">
+<INPUT type=hidden class=Faces value="0 6 18 14 #,0 14 22 8 #,0 8 24 16 #,
+0 16 20 6 #,1 9 23 15 #,1 15 19 7 #,1 7 21 17 #,1 17 25 9 #,2 7 19 10 #,
+2 10 18 6 #,2 6 20 11 #,2 11 21 7 #,3 8 22 12 #,3 12 23 9 #,3 9 25 13 #,
+3 13 24 8 #,4 10 19 15 #,4 15 23 12 #,4 12 22 14 #,4 14 18 10 #,5 11 20 16 #,
+5 16 24 13 #,5 13 25 17 #,5 17 21 11 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatDeltoidalIcositetrahedron.html>Great Deltoidal Icositetrahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Small Dodecacronic Hexecontahedron
+
+	(60) SHORT EDGE = 2 * sqrt(65 + 19 * sqrt(5)) / 11
+	(60) LONG EDGE = 2 * sqrt(2 * (5 + 2 * sqrt(5))) / 3
+	DART LENGTH = sqrt(10 * (157 + 31 * sqrt(5))) / 33
+	DART WIDTH = sqrt(5) - 1
+	(20) INNER VERTEX RADIUS = (5 * sqrt(3) + 4 * sqrt(15)) / 11
+	(12) MIDDLE VERTEX RADIUS = sqrt(5 * (5 + 2 * sqrt(5))) / 3
+	(12) OUTER VERTEX RADIUS = sqrt(5 + 2 * sqrt(5))
+	EDGE-SCRIBED RADIUS = sqrt(2 * (5 + 2 * sqrt(5))) / 2
+	INRADIUS = sqrt(205 * (19 + 8 * sqrt(5))) / 41
+	DIHEDRAL ANGLE = acos(-0.899720580975568721250570471948)
+		= acos(-(19 + 8 * sqrt(5)) / 41)
+		= 154.121363125776320479219692917 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 44 60">
+<INPUT type=hidden class=Constants value="0.783457635340899531654962439488,
+1.20601132958329828273486227812,
+1.26766108272719625323969951590,
+1.61803398874989484820458683437,
+1.95136732208322818153792016770,
+2.05111871806809578489466195539,
+2.61803398874989484820458683437">
+<!--
+	C0 = (15 + sqrt(5)) / 22
+	C1 = (5 + sqrt(5)) / 6
+	C2 = (5 + 4 * sqrt(5)) / 11
+	C3 = (1 + sqrt(5)) / 2
+	C4 = (5 + 3 * sqrt(5)) / 6
+	C5 = (25 + 9 * sqrt(5)) / 22
+	C6 = (3 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C3 0.0 C6,C3 0.0 -C6,-C3 0.0 C6,
+-C3 0.0 -C6,C6 C3 0.0,C6 -C3 0.0,-C6 C3 0.0,-C6 -C3 0.0,0.0 C6 C3,0.0 C6 -C3,
+0.0 -C6 C3,0.0 -C6 -C3,0.0 C0 C5,0.0 C0 -C5,0.0 -C0 C5,0.0 -C0 -C5,C5 0.0 C0,
+C5 0.0 -C0,-C5 0.0 C0,-C5 0.0 -C0,C0 C5 0.0,C0 -C5 0.0,-C0 C5 0.0,-C0 -C5 0.0,
+C1 0.0 C4,C1 0.0 -C4,-C1 0.0 C4,-C1 0.0 -C4,C4 C1 0.0,C4 -C1 0.0,-C4 C1 0.0,
+-C4 -C1 0.0,0.0 C4 C1,0.0 C4 -C1,0.0 -C4 C1,0.0 -C4 -C1,C2 C2 C2,C2 C2 -C2,
+C2 -C2 C2,C2 -C2 -C2,-C2 C2 C2,-C2 C2 -C2,-C2 -C2 C2,-C2 -C2 -C2">
+<INPUT type=hidden class=Faces value="24 2 14 10 #,24 10 38 5 #,24 5 16 4 #,
+24 4 36 8 #,24 8 12 2 #,25 3 13 9 #,25 9 37 4 #,25 4 17 5 #,25 5 39 11 #,
+25 11 15 3 #,26 0 12 8 #,26 8 40 6 #,26 6 18 7 #,26 7 42 10 #,26 10 14 0 #,
+27 1 15 11 #,27 11 43 7 #,27 7 19 6 #,27 6 41 9 #,27 9 13 1 #,28 0 16 5 #,
+28 5 17 1 #,28 1 37 9 #,28 9 20 8 #,28 8 36 0 #,29 0 38 10 #,29 10 21 11 #,
+29 11 39 1 #,29 1 17 4 #,29 4 16 0 #,30 2 40 8 #,30 8 22 9 #,30 9 41 3 #,
+30 3 19 7 #,30 7 18 2 #,31 2 18 6 #,31 6 19 3 #,31 3 43 11 #,31 11 23 10 #,
+31 10 42 2 #,32 0 36 4 #,32 4 20 9 #,32 9 22 6 #,32 6 40 2 #,32 2 12 0 #,
+33 1 13 3 #,33 3 41 6 #,33 6 22 8 #,33 8 20 4 #,33 4 37 1 #,34 0 14 2 #,
+34 2 42 7 #,34 7 23 11 #,34 11 21 5 #,34 5 38 0 #,35 1 39 5 #,35 5 21 10 #,
+35 10 23 7 #,35 7 43 3 #,35 3 15 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallDodecacronicHexecontahedron.html>Small Dodecacronic Hexecontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Dodecacronic Hexecontahedron
+
+	(60) SHORT EDGE = 2 * sqrt(2 * (5 - 2 * sqrt(5))) / 3
+	(60) LONG EDGE = 2 * sqrt(65 - 19 * sqrt(5)) / 11
+	KITE LENGTH = sqrt(10 * (157 - 31 * sqrt(5))) / 33
+	KITE WIDTH = sqrt(5) - 1
+	(12) INNER VERTEX RADIUS = sqrt(5 * (5 - 2 * sqrt(5))) / 3
+	(20) MIDDLE VERTEX RADIUS = (4 * sqrt(15) - 5 * sqrt(3)) / 11
+	(12) OUTER VERTEX RADIUS = sqrt(5 - 2 * sqrt(5))
+	EDGE-SCRIBED RADIUS = sqrt(2 * (5 - 2 * sqrt(5))) / 2
+	INRADIUS = sqrt(205 * (19 - 8 * sqrt(5))) / 41
+	DIHEDRAL ANGLE = acos(-0.0271086873171142055786978207354)
+		= acos(-(19 - 8 * sqrt(5)) / 41)
+		= 91.5534036721629385440037283452 degrees
+
+	EULER CHARACTERISTIC:        -16
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 44 60">
+<INPUT type=hidden class=Constants value="0.221608554659176942378065317337,
+0.284700655416561514871253501032,
+0.358570173636287162330608606811,
+0.381966011250105151795413165634,
+0.4606553370833683839318043885448,
+0.580178728295464104708673924149,
+0.618033988749894848204586834366">
+<!--
+	C0 = (25 - 9 * sqrt(5)) / 22
+	C1 = (3 * sqrt(5) - 5) / 6
+	C2 = (4 * sqrt(5) - 5) / 11
+	C3 = (3 - sqrt(5)) / 2
+	C4 = (5 - sqrt(5)) / 6
+	C5 = (15 - sqrt(5)) / 22
+	C6 = (sqrt(5) - 1) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 C6 -C3,0.0 C6 C3,0.0 -C6 -C3,
+0.0 -C6 C3,C6 -C3 0.0,-C6 -C3 0.0,C6 C3 0.0,-C6 C3 0.0,-C3 0.0 C6,-C3 0.0 -C6,
+C3 0.0 C6,C3 0.0 -C6,-C5 0.0 -C0,-C5 0.0 C0,C5 0.0 -C0,C5 0.0 C0,0.0 -C0 -C5,
+0.0 -C0 C5,0.0 C0 -C5,0.0 C0 C5,-C0 -C5 0.0,C0 -C5 0.0,-C0 C5 0.0,C0 C5 0.0,
+0.0 -C4 C1,0.0 -C4 -C1,0.0 C4 C1,0.0 C4 -C1,-C4 C1 0.0,C4 C1 0.0,-C4 -C1 0.0,
+C4 -C1 0.0,C1 0.0 -C4,C1 0.0 C4,-C1 0.0 -C4,-C1 0.0 C4,C2 C2 C2,C2 C2 -C2,
+-C2 C2 C2,-C2 C2 -C2,C2 -C2 C2,C2 -C2 -C2,-C2 -C2 C2,-C2 -C2 -C2">
+<INPUT type=hidden class=Faces value="24 2 14 10 #,24 10 38 5 #,24 5 16 4 #,
+24 4 36 8 #,24 8 12 2 #,25 3 13 9 #,25 9 37 4 #,25 4 17 5 #,25 5 39 11 #,
+25 11 15 3 #,26 0 12 8 #,26 8 40 6 #,26 6 18 7 #,26 7 42 10 #,26 10 14 0 #,
+27 1 15 11 #,27 11 43 7 #,27 7 19 6 #,27 6 41 9 #,27 9 13 1 #,28 0 16 5 #,
+28 5 17 1 #,28 1 37 9 #,28 9 20 8 #,28 8 36 0 #,29 0 38 10 #,29 10 21 11 #,
+29 11 39 1 #,29 1 17 4 #,29 4 16 0 #,30 2 40 8 #,30 8 22 9 #,30 9 41 3 #,
+30 3 19 7 #,30 7 18 2 #,31 2 18 6 #,31 6 19 3 #,31 3 43 11 #,31 11 23 10 #,
+31 10 42 2 #,32 0 36 4 #,32 4 20 9 #,32 9 22 6 #,32 6 40 2 #,32 2 12 0 #,
+33 1 13 3 #,33 3 41 6 #,33 6 22 8 #,33 8 20 4 #,33 4 37 1 #,34 0 14 2 #,
+34 2 42 7 #,34 7 23 11 #,34 11 21 5 #,34 5 38 0 #,35 1 39 5 #,35 5 21 10 #,
+35 10 23 7 #,35 7 43 3 #,35 3 15 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatDodecacronicHexecontahedron.html>Great Dodecacronic Hexecontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Small Ditrigonal Dodecacronic Hexecontahedron
+
+	(60) SHORT EDGE = 3 * sqrt(6 * (85 + 31 * sqrt(5))) / 22
+	(60) LONG EDGE = 3 * sqrt(3 * (145 + 62 * sqrt(5))) / 19
+	DART LENGTH = 3 * sqrt(10 * (3517 - 585 * sqrt(5))) / 418
+	DART WIDTH = 3 * (3 + sqrt(5)) / 2
+	(12) INNER VERTEX RADIUS = 3 * sqrt(5 * (25 + 2 * sqrt(5))) / 22
+	(20) MIDDLE VERTEX RADIUS = 3 * (10 * sqrt(3) + sqrt(15)) / 38
+	(12) OUTER VERTEX RADIUS = 3 * sqrt(5 + 2 * sqrt(5)) / 2
+	EDGE-SCRIBED RADIUS = sqrt(6 * (5 + sqrt(5))) / 4
+	INRADIUS = 3 * sqrt(305 * (9 + 2 * sqrt(5))) / 122
+	DIHEDRAL ANGLE = acos(-0.831282031680317526052910180429)
+		= acos(-(44 + 3 * sqrt(5)) / 61)
+		= 146.230659755529322586204815283 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 44 60">
+<INPUT type=hidden class=Constants value="0.597024149901241076355890645470,
+0.870268092443196157063010886223,
+0.966005366644720239190197921216,
+1.40812335289762690055892379644,
+1.56302951654596131554608856669,
+2.427050983124842272306880251548,
+3.927050983124842272306880251548">
+<!--
+	C0 = 3 * (9 * sqrt(5) - 5) / 76
+	C1 = 3 * (15 - sqrt(5)) / 44
+	C2 = 3 * (10 + sqrt(5)) / 38
+	C3 = 3 * (5 + 7 * sqrt(5)) / 44
+	C4 = 3 * (15 + 11 * sqrt(5)) / 76
+	C5 = 3 * (1 + sqrt(5)) / 4
+	C6 = 3 * (3 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="C5 0.0 C6,C5 0.0 -C6,-C5 0.0 C6,
+-C5 0.0 -C6,C6 C5 0.0,C6 -C5 0.0,-C6 C5 0.0,-C6 -C5 0.0,0.0 C6 C5,0.0 C6 -C5,
+0.0 -C6 C5,0.0 -C6 -C5,0.0 C0 C4,0.0 C0 -C4,0.0 -C0 C4,0.0 -C0 -C4,C4 0.0 C0,
+C4 0.0 -C0,-C4 0.0 C0,-C4 0.0 -C0,C0 C4 0.0,C0 -C4 0.0,-C0 C4 0.0,-C0 -C4 0.0,
+C1 0.0 C3,C1 0.0 -C3,-C1 0.0 C3,-C1 0.0 -C3,C3 C1 0.0,C3 -C1 0.0,-C3 C1 0.0,
+-C3 -C1 0.0,0.0 C3 C1,0.0 C3 -C1,0.0 -C3 C1,0.0 -C3 -C1,C2 C2 C2,C2 C2 -C2,
+C2 -C2 C2,C2 -C2 -C2,-C2 C2 C2,-C2 C2 -C2,-C2 -C2 C2,-C2 -C2 -C2">
+<INPUT type=hidden class=Faces value="24 2 38 4 #,24 4 12 10 #,24 10 16 8 #,
+24 8 14 5 #,24 5 36 2 #,25 4 39 3 #,25 3 37 5 #,25 5 15 9 #,25 9 17 11 #,
+25 11 13 4 #,26 0 40 7 #,26 7 14 8 #,26 8 18 10 #,26 10 12 6 #,26 6 42 0 #,
+27 1 43 6 #,27 6 13 11 #,27 11 19 9 #,27 9 15 7 #,27 7 41 1 #,28 0 17 9 #,
+28 9 36 5 #,28 5 37 8 #,28 8 16 1 #,28 1 20 0 #,29 0 21 1 #,29 1 16 10 #,
+29 10 39 4 #,29 4 38 11 #,29 11 17 0 #,30 2 22 3 #,30 3 18 8 #,30 8 41 7 #,
+30 7 40 9 #,30 9 19 2 #,31 2 19 11 #,31 11 42 6 #,31 6 43 10 #,31 10 18 3 #,
+31 3 23 2 #,32 0 20 6 #,32 6 12 4 #,32 4 22 2 #,32 2 36 9 #,32 9 40 0 #,
+33 1 41 8 #,33 8 37 3 #,33 3 22 4 #,33 4 13 6 #,33 6 20 1 #,34 0 42 11 #,
+34 11 38 2 #,34 2 23 5 #,34 5 14 7 #,34 7 21 0 #,35 1 21 7 #,35 7 15 5 #,
+35 5 23 3 #,35 3 39 10 #,35 10 43 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallDitrigonalDodecacronicHexecontahedron.html>Small Ditrigonal Dodecacronic Hexecontahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Great Ditrigonal Dodecacronic Hexecontahedron
+
+	(60) SHORT EDGE = 3 * sqrt(3 * (145 - 62 * sqrt(5))) / 19
+	(60) LONG EDGE = 3 * sqrt(6 * (85 - 31 * sqrt(5))) / 22
+	KITE LENGTH = 3 * sqrt(10 * (3517 + 585 * sqrt(5))) / 418
+	KITE WIDTH = 3 * (3 - sqrt(5)) / 2
+	(20) INNER VERTEX RADIUS = 3 * (10 * sqrt(3) - sqrt(15)) / 38
+	(12) MIDDLE VERTEX RADIUS = 3 * sqrt(5 - 2 * sqrt(5)) / 2
+	(12) OUTER VERTEX RADIUS = 3 * sqrt(5 * (25 - 2 * sqrt(5))) / 22
+	EDGE-SCRIBED RADIUS = sqrt(6 * (5 - sqrt(5))) / 4
+	INRADIUS = 3 * sqrt(305 * (9 - 2 * sqrt(5))) / 122
+	DIHEDRAL ANGLE = acos(-0.611340919139354605094630803177)
+		= acos(-(44 - 3 * sqrt(5)) / 61)
+		= 127.686523427480794570047763587 degrees
+
+	EULER CHARACTERISTIC:        -16
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 44 60">
+<INPUT type=hidden class=Constants value="0.378818990230171841861878040370,
+0.572949016875157727693119748452,
+0.6129420017763323923887494472054,
+0.726305171079445082377105614622,
+0.927050983124842272306880251548,
+0.991760992006504234250627487576,
+1.17518645301134929748244365923">
+<!--
+	C0 = 3 * (11 * sqrt(5) - 15) / 76
+	C1 = 3 * (3 - sqrt(5)) / 4
+	C2 = 3 * (10 - sqrt(5)) / 38
+	C3 = 3 * (7 * sqrt(5) - 5) / 44
+	C4 = 3 * (sqrt(5) - 1) / 4
+	C5 = 3 * (5 + 9 * sqrt(5)) / 76
+	C6 = 3 * (15 + sqrt(5)) / 44
+-->
+<INPUT type=hidden class=Vertices value="0.0 C4 -C1,0.0 C4 C1,0.0 -C4 -C1,
+0.0 -C4 C1,C4 -C1 0.0,-C4 -C1 0.0,C4 C1 0.0,-C4 C1 0.0,-C1 0.0 C4,-C1 0.0 -C4,
+C1 0.0 C4,C1 0.0 -C4,C5 0.0 C0,C5 0.0 -C0,-C5 0.0 C0,-C5 0.0 -C0,0.0 C0 C5,
+0.0 C0 -C5,0.0 -C0 C5,0.0 -C0 -C5,C0 C5 0.0,-C0 C5 0.0,C0 -C5 0.0,-C0 -C5 0.0,
+0.0 -C6 C3,0.0 -C6 -C3,0.0 C6 C3,0.0 C6 -C3,-C6 C3 0.0,C6 C3 0.0,-C6 -C3 0.0,
+C6 -C3 0.0,C3 0.0 -C6,C3 0.0 C6,-C3 0.0 -C6,-C3 0.0 C6,-C2 -C2 -C2,-C2 -C2 C2,
+C2 -C2 -C2,C2 -C2 C2,-C2 C2 -C2,-C2 C2 C2,C2 C2 -C2,C2 C2 C2">
+<INPUT type=hidden class=Faces value="24 2 38 4 #,24 4 12 10 #,24 10 16 8 #,
+24 8 14 5 #,24 5 36 2 #,25 4 39 3 #,25 3 37 5 #,25 5 15 9 #,25 9 17 11 #,
+25 11 13 4 #,26 0 40 7 #,26 7 14 8 #,26 8 18 10 #,26 10 12 6 #,26 6 42 0 #,
+27 1 43 6 #,27 6 13 11 #,27 11 19 9 #,27 9 15 7 #,27 7 41 1 #,28 0 17 9 #,
+28 9 36 5 #,28 5 37 8 #,28 8 16 1 #,28 1 20 0 #,29 0 21 1 #,29 1 16 10 #,
+29 10 39 4 #,29 4 38 11 #,29 11 17 0 #,30 2 22 3 #,30 3 18 8 #,30 8 41 7 #,
+30 7 40 9 #,30 9 19 2 #,31 2 19 11 #,31 11 42 6 #,31 6 43 10 #,31 10 18 3 #,
+31 3 23 2 #,32 0 20 6 #,32 6 12 4 #,32 4 22 2 #,32 2 36 9 #,32 9 40 0 #,
+33 1 41 8 #,33 8 37 3 #,33 3 22 4 #,33 4 13 6 #,33 6 20 1 #,34 0 42 11 #,
+34 11 38 2 #,34 2 23 5 #,34 5 14 7 #,34 7 21 0 #,35 1 21 7 #,35 7 15 5 #,
+35 5 23 3 #,35 3 39 10 #,35 10 43 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatDitrigonalDodecacronicHexecontahedron.html>Great Ditrigonal Dodecacronic Hexecontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Medial Icosacronic Hexecontahedron
+
+	(60) SHORT EDGE = (7 * sqrt(6) - sqrt(30)) / 11
+	(60) LONG EDGE = (7 * sqrt(6) + sqrt(30)) / 11
+	DART LENGTH = 6 * sqrt(7) / 11
+	DART WIDTH = 2
+	(12) INNER VERTEX RADIUS = 3 * sqrt(25 - 2 * sqrt(5)) / 11
+	(12) MIDDLE VERTEX RADIUS = 3 * sqrt(25 + 2 * sqrt(5)) / 11
+	(20) OUTER VERTEX RADIUS = sqrt(3)
+	EDGE-SCRIBED RADIUS = sqrt(6) / 2
+	INRADIUS = 3 * sqrt(7) / 7
+	DIHEDRAL ANGLE = acos(-0.714285714285714285714285714286)
+		= acos(-5/7)
+		= 135.584691402807025025888759948 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 44 60">
+<INPUT type=hidden class=Constants value="0.618033988749894848204586834366,
+0.649627093977301405035112681537,
+0.778391445340823057621934682663,
+1.05111871806809578489466195539,
+1.259463815113607685873978227554,
+1.61803398874989484820458683437">
+<!--
+	C0 = (sqrt(5) - 1) / 2
+	C1 = 3 * (7 - sqrt(5)) / 22
+	C2 = 3 * (3 * sqrt(5) - 1) / 22
+	C3 = 3 * (1 + 3 * sqrt(5)) / 22
+	C4 = 3 * (7 + sqrt(5)) / 22
+	C5 = (1 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 C0 C5,0.0 C0 -C5,0.0 -C0 C5,
+0.0 -C0 -C5,C5 0.0 C0,C5 0.0 -C0,-C5 0.0 C0,-C5 0.0 -C0,C0 C5 0.0,C0 -C5 0.0,
+-C0 C5 0.0,-C0 -C5 0.0,C2 0.0 C4,C2 0.0 -C4,-C2 0.0 C4,-C2 0.0 -C4,C4 C2 0.0,
+C4 -C2 0.0,-C4 C2 0.0,-C4 -C2 0.0,0.0 C4 C2,0.0 C4 -C2,0.0 -C4 C2,0.0 -C4 -C2,
+C1 0.0 C3,C1 0.0 -C3,-C1 0.0 C3,-C1 0.0 -C3,C3 C1 0.0,C3 -C1 0.0,-C3 C1 0.0,
+-C3 -C1 0.0,0.0 C3 C1,0.0 C3 -C1,0.0 -C3 C1,0.0 -C3 -C1,1.0 1.0 1.0,
+1.0 1.0 -1.0,1.0 -1.0 1.0,1.0 -1.0 -1.0,-1.0 1.0 1.0,-1.0 1.0 -1.0,
+-1.0 -1.0 1.0,-1.0 -1.0 -1.0">
+<INPUT type=hidden class=Faces value="12 5 28 8 #,12 8 32 40 #,12 40 26 42 #,
+12 42 34 9 #,12 9 29 5 #,13 4 29 9 #,13 9 35 43 #,13 43 27 41 #,13 41 33 8 #,
+13 8 28 4 #,14 7 31 11 #,14 11 34 38 #,14 38 24 36 #,14 36 32 10 #,
+14 10 30 7 #,15 6 30 10 #,15 10 33 37 #,15 37 25 39 #,15 39 35 11 #,
+15 11 31 6 #,16 1 33 10 #,16 10 32 0 #,16 0 24 38 #,16 38 29 39 #,16 39 25 1 #,
+17 2 34 11 #,17 11 35 3 #,17 3 25 37 #,17 37 28 36 #,17 36 24 2 #,18 0 32 8 #,
+18 8 33 1 #,18 1 27 43 #,18 43 31 42 #,18 42 26 0 #,19 2 26 40 #,19 40 30 41 #,
+19 41 27 3 #,19 3 35 9 #,19 9 34 2 #,20 2 24 4 #,20 4 28 37 #,20 37 33 41 #,
+20 41 30 6 #,20 6 26 2 #,21 3 27 7 #,21 7 30 40 #,21 40 32 36 #,21 36 28 5 #,
+21 5 25 3 #,22 0 26 6 #,22 6 31 43 #,22 43 35 39 #,22 39 29 4 #,22 4 24 0 #,
+23 1 25 5 #,23 5 29 38 #,23 38 34 42 #,23 42 31 7 #,23 7 27 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=MedialIcosacronicHexecontahedron.html>Medial Icosacronic Hexecontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Small Icosacronic Hexecontahedron
+
+	(60) SHORT EDGE = sqrt(30 * (65 - 19 * sqrt(5))) / 22
+	(60) LONG EDGE = sqrt(30 * (85 - sqrt(5))) / 38
+	KITE LENGTH = 3 * sqrt(10 * (3517 - 585 * sqrt(5))) / 418
+	KITE WIDTH = sqrt(5)
+	(12) INNER VERTEX RADIUS = 3 * sqrt(5 * (25 + 2 * sqrt(5))) / 22
+	(20) MIDDLE VERTEX RADIUS = 3 * (10 * sqrt(3) + sqrt(15)) / 38
+	(20) OUTER VERTEX RADIUS = sqrt(15) / 2
+	EDGE-SCRIBED RADIUS = sqrt(6 * (5 + sqrt(5))) / 4
+	INRADIUS = 3 * sqrt(305 * (9 + 2 * sqrt(5))) / 122
+	DIHEDRAL ANGLE = acos(-0.831282031680317526052910180429)
+		= acos(-(44 + 3 * sqrt(5)) / 61)
+		= 146.230659755529322586204815283 degrees
+
+	EULER CHARACTERISTIC:         -8
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 52 60">
+<INPUT type=hidden class=Constants value="0.597024149901241076355890645470,
+0.690983005625052575897706582817,
+0.870268092443196157063010886223,
+0.966005366644720239190197921216,
+1.11803398874989484820458683437,
+1.40812335289762690055892379644,
+1.56302951654596131554608856669,
+1.80901699437494742410229341718">
+<!--
+	C0 = 3 * (9 * sqrt(5) - 5) / 76
+	C1 = (5 - sqrt(5)) / 4
+	C2 = 3 * (15 - sqrt(5)) / 44
+	C3 = 3 * (10 + sqrt(5)) / 38
+	C4 = sqrt(5) / 2
+	C5 = 3 * (5 + 7 * sqrt(5)) / 44
+	C6 = 3 * (15 + 11 * sqrt(5)) / 76
+	C7 = (5 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="C7 0.0 C1,C7 0.0 -C1,-C7 0.0 C1,
+-C7 0.0 -C1,0.0 C1 C7,0.0 C1 -C7,0.0 -C1 C7,0.0 -C1 -C7,C1 C7 0.0,-C1 C7 0.0,
+C1 -C7 0.0,-C1 -C7 0.0,0.0 -C5 C2,0.0 -C5 -C2,0.0 C5 C2,0.0 C5 -C2,-C5 C2 0.0,
+C5 C2 0.0,-C5 -C2 0.0,C5 -C2 0.0,C2 0.0 -C5,C2 0.0 C5,-C2 0.0 -C5,-C2 0.0 C5,
+-C4 -C4 -C4,-C4 -C4 C4,C4 -C4 -C4,C4 -C4 C4,-C4 C4 -C4,-C4 C4 C4,C4 C4 -C4,
+C4 C4 C4,-C6 0.0 -C0,-C6 0.0 C0,C6 0.0 -C0,C6 0.0 C0,0.0 -C0 -C6,0.0 -C0 C6,
+0.0 C0 -C6,0.0 C0 C6,-C0 -C6 0.0,C0 -C6 0.0,-C0 C6 0.0,C0 C6 0.0,C3 C3 C3,
+C3 C3 -C3,-C3 C3 C3,-C3 C3 -C3,C3 -C3 C3,C3 -C3 -C3,-C3 -C3 C3,-C3 -C3 -C3">
+<INPUT type=hidden class=Faces value="12 6 50 11 #,12 11 41 27 #,12 27 37 25 #,
+12 25 40 10 #,12 10 48 6 #,13 7 49 10 #,13 10 40 24 #,13 24 36 26 #,
+13 26 41 11 #,13 11 51 7 #,14 4 44 8 #,14 8 42 29 #,14 29 39 31 #,14 31 43 9 #,
+14 9 46 4 #,15 5 47 9 #,15 9 43 30 #,15 30 38 28 #,15 28 42 8 #,15 8 45 5 #,
+16 2 46 9 #,16 9 47 3 #,16 3 33 29 #,16 29 42 28 #,16 28 32 2 #,17 0 34 30 #,
+17 30 43 31 #,17 31 35 1 #,17 1 45 8 #,17 8 44 0 #,18 2 32 24 #,18 24 40 25 #,
+18 25 33 3 #,18 3 51 11 #,18 11 50 2 #,19 0 48 10 #,19 10 49 1 #,19 1 35 27 #,
+19 27 41 26 #,19 26 34 0 #,20 1 49 7 #,20 7 38 30 #,20 30 34 26 #,20 26 36 5 #,
+20 5 45 1 #,21 0 44 4 #,21 4 37 27 #,21 27 35 31 #,21 31 39 6 #,21 6 48 0 #,
+22 3 47 5 #,22 5 36 24 #,22 24 32 28 #,22 28 38 7 #,22 7 51 3 #,23 2 50 6 #,
+23 6 39 29 #,23 29 33 25 #,23 25 37 4 #,23 4 46 2 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallIcosacronicHexecontahedron.html>Small Icosacronic Hexecontahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Great Icosacronic Hexecontahedron
+
+	(60) SHORT EDGE = sqrt(30 * (85 + sqrt(5))) / 38
+	(60) LONG EDGE = sqrt(30 * (65 + 19 * sqrt(5))) / 22
+	DART LENGTH = 3 * sqrt(10 * (3517 + 585 * sqrt(5))) / 418
+	DART WIDTH = sqrt(5)
+	(20) INNER VERTEX RADIUS = 3 * (10 * sqrt(3) - sqrt(15)) / 38
+	(12) MIDDLE VERTEX RADIUS = 3 * sqrt(5 * (25 - 2 * sqrt(5))) / 22
+	(20) OUTER VERTEX RADIUS = sqrt(15) / 2
+	EDGE-SCRIBED RADIUS = sqrt(6 * (5 - sqrt(5))) / 4
+	INRADIUS = 3 * sqrt(305 * (9 - 2 * sqrt(5))) / 122
+	DIHEDRAL ANGLE = acos(-0.611340919139354605094630803177)
+		= acos(-(44 - 3 * sqrt(5)) / 61)
+		= 127.686523427480794570047763587 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 52 60">
+<INPUT type=hidden class=Constants value="0.378818990230171841861878040370,
+0.6129420017763323923887494472054,
+0.690983005625052575897706582817,
+0.726305171079445082377105614622,
+0.991760992006504234250627487576,
+1.11803398874989484820458683437,
+1.17518645301134929748244365923,
+1.80901699437494742410229341718">
+<!--
+	C0 = 3 * (11 * sqrt(5) - 15) / 76
+	C1 = 3 * (10 - sqrt(5)) / 38
+	C2 = (5 - sqrt(5)) / 4
+	C3 = 3 * (7 * sqrt(5) - 5) / 44
+	C4 = 3 * (5 + 9 * sqrt(5)) / 76
+	C5 = sqrt(5) / 2
+	C6 = 3 * (15 + sqrt(5)) / 44
+	C7 = (5 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 C2 C7,0.0 C2 -C7,0.0 -C2 C7,
+0.0 -C2 -C7,C7 0.0 C2,C7 0.0 -C2,-C7 0.0 C2,-C7 0.0 -C2,C2 C7 0.0,C2 -C7 0.0,
+-C2 C7 0.0,-C2 -C7 0.0,C3 0.0 C6,C3 0.0 -C6,-C3 0.0 C6,-C3 0.0 -C6,C6 C3 0.0,
+C6 -C3 0.0,-C6 C3 0.0,-C6 -C3 0.0,0.0 C6 C3,0.0 C6 -C3,0.0 -C6 C3,0.0 -C6 -C3,
+C5 C5 C5,C5 C5 -C5,C5 -C5 C5,C5 -C5 -C5,-C5 C5 C5,-C5 C5 -C5,-C5 -C5 C5,
+-C5 -C5 -C5,0.0 C0 C4,0.0 C0 -C4,0.0 -C0 C4,0.0 -C0 -C4,C4 0.0 C0,C4 0.0 -C0,
+-C4 0.0 C0,-C4 0.0 -C0,C0 C4 0.0,C0 -C4 0.0,-C0 C4 0.0,-C0 -C4 0.0,C1 C1 C1,
+C1 C1 -C1,C1 -C1 C1,C1 -C1 -C1,-C1 C1 C1,-C1 C1 -C1,-C1 -C1 C1,-C1 -C1 -C1">
+<INPUT type=hidden class=Faces value="12 6 50 11 #,12 11 41 27 #,12 27 37 25 #,
+12 25 40 10 #,12 10 48 6 #,13 7 49 10 #,13 10 40 24 #,13 24 36 26 #,
+13 26 41 11 #,13 11 51 7 #,14 4 44 8 #,14 8 42 29 #,14 29 39 31 #,14 31 43 9 #,
+14 9 46 4 #,15 5 47 9 #,15 9 43 30 #,15 30 38 28 #,15 28 42 8 #,15 8 45 5 #,
+16 2 46 9 #,16 9 47 3 #,16 3 33 29 #,16 29 42 28 #,16 28 32 2 #,17 0 34 30 #,
+17 30 43 31 #,17 31 35 1 #,17 1 45 8 #,17 8 44 0 #,18 2 32 24 #,18 24 40 25 #,
+18 25 33 3 #,18 3 51 11 #,18 11 50 2 #,19 0 48 10 #,19 10 49 1 #,19 1 35 27 #,
+19 27 41 26 #,19 26 34 0 #,20 1 49 7 #,20 7 38 30 #,20 30 34 26 #,20 26 36 5 #,
+20 5 45 1 #,21 0 44 4 #,21 4 37 27 #,21 27 35 31 #,21 31 39 6 #,21 6 48 0 #,
+22 3 47 5 #,22 5 36 24 #,22 24 32 28 #,22 28 38 7 #,22 7 51 3 #,23 2 50 6 #,
+23 6 39 29 #,23 29 33 25 #,23 25 37 4 #,23 4 46 2 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatIcosacronicHexecontahedron.html>Great Icosacronic Hexecontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Medial Deltoidal Hexecontahedron
+
+	(60) SHORT EDGE = 3 * (7 * sqrt(30) - 5 * sqrt(6)) / 110
+	(60) LONG EDGE = 3 * (5 * sqrt(6) + 7 * sqrt(30)) / 110
+	KITE LENGTH = 6 * sqrt(7) / 11
+	KITE WIDTH = 3 * sqrt(5) / 5
+	(12) INNER VERTEX RADIUS = 3 * sqrt(25 - 2 * sqrt(5)) / 11
+	(30) MIDDLE VERTEX RADIUS = 3 * sqrt(5) / 5
+	(12) OUTER VERTEX RADIUS = 3 * sqrt(25 + 2 * sqrt(5)) / 11
+	EDGE-SCRIBED RADIUS = sqrt(6) / 2
+	INRADIUS = 3 * sqrt(7) / 7
+	DIHEDRAL ANGLE = acos(-0.714285714285714285714285714286)
+		= acos(-5/7)
+		= 135.584691402807025025888759948 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 54 60">
+<INPUT type=hidden class=Constants value="0.414589803375031545538623949690,
+0.649627093977301405035112681537,
+0.670820393249936908922752100619,
+0.778391445340823057621934682663,
+1.05111871806809578489466195539,
+1.08541019662496845446137605031,
+1.259463815113607685873978227554,
+1.34164078649987381784550420124">
+<!--
+	C0 = 3 * (5 - sqrt(5)) / 20
+	C1 = 3 * (7 - sqrt(5)) / 22
+	C2 = 3 * sqrt(5) / 10
+	C3 = 3 * (3 * sqrt(5) - 1) / 22
+	C4 = 3 * (1 + 3 * sqrt(5)) / 22
+	C5 = 3 * (5 + sqrt(5)) / 20
+	C6 = 3 * (7 + sqrt(5)) / 22
+	C7 = 3 * sqrt(5) / 5
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C7,0.0 0.0 -C7,C7 0.0 0.0,
+-C7 0.0 0.0,0.0 C7 0.0,0.0 -C7 0.0,C3 0.0 C6,C3 0.0 -C6,-C3 0.0 C6,-C3 0.0 -C6,
+C6 C3 0.0,C6 -C3 0.0,-C6 C3 0.0,-C6 -C3 0.0,0.0 C6 C3,0.0 C6 -C3,0.0 -C6 C3,
+0.0 -C6 -C3,C0 C2 C5,C0 C2 -C5,C0 -C2 C5,C0 -C2 -C5,-C0 C2 C5,-C0 C2 -C5,
+-C0 -C2 C5,-C0 -C2 -C5,C5 C0 C2,C5 C0 -C2,C5 -C0 C2,C5 -C0 -C2,-C5 C0 C2,
+-C5 C0 -C2,-C5 -C0 C2,-C5 -C0 -C2,C2 C5 C0,C2 C5 -C0,C2 -C5 C0,C2 -C5 -C0,
+-C2 C5 C0,-C2 C5 -C0,-C2 -C5 C0,-C2 -C5 -C0,C1 0.0 C4,C1 0.0 -C4,-C1 0.0 C4,
+-C1 0.0 -C4,C4 C1 0.0,C4 -C1 0.0,-C4 C1 0.0,-C4 -C1 0.0,0.0 C4 C1,0.0 C4 -C1,
+0.0 -C4 C1,0.0 -C4 -C1">
+<INPUT type=hidden class=Faces value="6 2 46 34 #,6 34 50 22 #,6 22 44 24 #,
+6 24 52 36 #,6 36 47 2 #,7 2 47 37 #,7 37 53 25 #,7 25 45 23 #,7 23 51 35 #,
+7 35 46 2 #,8 3 49 40 #,8 40 52 20 #,8 20 42 18 #,8 18 50 38 #,8 38 48 3 #,
+9 3 48 39 #,9 39 51 19 #,9 19 43 21 #,9 21 53 41 #,9 41 49 3 #,10 4 50 18 #,
+10 18 42 28 #,10 28 47 29 #,10 29 43 19 #,10 19 51 4 #,11 5 53 21 #,
+11 21 43 27 #,11 27 46 26 #,11 26 42 20 #,11 20 52 5 #,12 4 51 23 #,
+12 23 45 33 #,12 33 49 32 #,12 32 44 22 #,12 22 50 4 #,13 5 52 24 #,
+13 24 44 30 #,13 30 48 31 #,13 31 45 25 #,13 25 53 5 #,14 0 42 26 #,
+14 26 46 35 #,14 35 51 39 #,14 39 48 30 #,14 30 44 0 #,15 1 45 31 #,
+15 31 48 38 #,15 38 50 34 #,15 34 46 27 #,15 27 43 1 #,16 0 44 32 #,
+16 32 49 41 #,16 41 53 37 #,16 37 47 28 #,16 28 42 0 #,17 1 43 29 #,
+17 29 47 36 #,17 36 52 40 #,17 40 49 33 #,17 33 45 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=MedialDeltoidalHexecontahedron.html>Medial Deltoidal Hexecontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Deltoidal Hexecontahedron
+
+	(60) SHORT EDGE = sqrt(5 * (5 + sqrt(5))) / 3
+	(60) LONG EDGE = sqrt(5 * (85 + 31 * sqrt(5))) / 11
+	DART LENGTH = sqrt(10 * (157 - 31 * sqrt(5))) / 33
+	DART WIDTH = (5 + sqrt(5)) / 2
+	(12) INNER VERTEX RADIUS = sqrt(5 * (5 - 2 * sqrt(5))) / 3
+	(20) MIDDLE VERTEX RADIUS = (4 * sqrt(15) - 5 * sqrt(3)) / 11
+	(30) OUTER VERTEX RADIUS = sqrt(5)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (5 - 2 * sqrt(5))) / 2
+	INRADIUS = sqrt(205 * (19 - 8 * sqrt(5))) / 41
+	DIHEDRAL ANGLE = acos(-0.0271086873171142055786978207354)
+		= acos(-(19 - 8 * sqrt(5)) / 41)
+		= 91.5534036721629385440037283452 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="9 62 60">
+<INPUT type=hidden class=Constants value="0.221608554659176942378065317337,
+0.284700655416561514871253501032,
+0.358570173636287162330608606811,
+0.4606553370833683839318043885448,
+0.580178728295464104708673924149,
+0.690983005625052575897706582817,
+1.11803398874989484820458683437,
+1.80901699437494742410229341718,
+2.23606797749978969640917366873">
+<!--
+	C0 = (25 - 9 * sqrt(5)) / 22
+	C1 = (3 * sqrt(5) - 5) / 6
+	C2 = (4 * sqrt(5) - 5) / 11
+	C3 = (5 - sqrt(5)) / 6
+	C4 = (15 - sqrt(5)) / 22
+	C5 = (5 - sqrt(5)) / 4
+	C6 = sqrt(5) / 2
+	C7 = (5 + sqrt(5)) / 4
+	C8 = sqrt(5)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 -C8,0.0 0.0 C8,0.0 -C8 0.0,
+0.0 C8 0.0,-C8 0.0 0.0,C8 0.0 0.0,C4 0.0 C0,C4 0.0 -C0,-C4 0.0 C0,-C4 0.0 -C0,
+0.0 C0 C4,0.0 C0 -C4,0.0 -C0 C4,0.0 -C0 -C4,C0 C4 0.0,-C0 C4 0.0,C0 -C4 0.0,
+-C0 -C4 0.0,0.0 C3 -C1,0.0 C3 C1,0.0 -C3 -C1,0.0 -C3 C1,C3 -C1 0.0,-C3 -C1 0.0,
+C3 C1 0.0,-C3 C1 0.0,-C1 0.0 C3,-C1 0.0 -C3,C1 0.0 C3,C1 0.0 -C3,-C6 C7 C5,
+-C6 C7 -C5,C6 C7 C5,C6 C7 -C5,-C6 -C7 C5,-C6 -C7 -C5,C6 -C7 C5,C6 -C7 -C5,
+C7 C5 -C6,C7 C5 C6,-C7 C5 -C6,-C7 C5 C6,C7 -C5 -C6,C7 -C5 C6,-C7 -C5 -C6,
+-C7 -C5 C6,C5 -C6 C7,C5 -C6 -C7,-C5 -C6 C7,-C5 -C6 -C7,C5 C6 C7,C5 C6 -C7,
+-C5 C6 C7,-C5 C6 -C7,-C2 -C2 -C2,-C2 -C2 C2,C2 -C2 -C2,C2 -C2 C2,-C2 C2 -C2,
+-C2 C2 C2,C2 C2 -C2,C2 C2 C2">
+<INPUT type=hidden class=Faces value="18 0 8 32 #,18 32 56 40 #,18 40 10 38 #,
+18 38 54 30 #,18 30 6 0 #,19 1 7 31 #,19 31 55 39 #,19 39 11 41 #,
+19 41 57 33 #,19 33 9 1 #,20 0 6 34 #,20 34 58 42 #,20 42 12 44 #,
+20 44 60 36 #,20 36 8 0 #,21 1 9 37 #,21 37 61 45 #,21 45 13 43 #,
+21 43 59 35 #,21 35 7 1 #,22 2 11 39 #,22 39 55 47 #,22 47 14 46 #,
+22 46 54 38 #,22 38 10 2 #,23 2 10 40 #,23 40 56 48 #,23 48 15 49 #,
+23 49 57 41 #,23 41 11 2 #,24 3 12 42 #,24 42 58 50 #,24 50 16 51 #,
+24 51 59 43 #,24 43 13 3 #,25 3 13 45 #,25 45 61 53 #,25 53 17 52 #,
+25 52 60 44 #,25 44 12 3 #,26 4 16 50 #,26 50 58 34 #,26 34 6 30 #,
+26 30 54 46 #,26 46 14 4 #,27 4 14 47 #,27 47 55 31 #,27 31 7 35 #,
+27 35 59 51 #,27 51 16 4 #,28 5 15 48 #,28 48 56 32 #,28 32 8 36 #,
+28 36 60 52 #,28 52 17 5 #,29 5 17 53 #,29 53 61 37 #,29 37 9 33 #,
+29 33 57 49 #,29 49 15 5 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatDeltoidalHexecontahedron.html>Great Deltoidal Hexecontahedron</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

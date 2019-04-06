@@ -1,0 +1,501 @@
+<!-- File:   VersiQuasiRegularDual.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Versi-Quasi-Regular Duals</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='VersiQuasiRegular.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Versi-Quasi-Regular Duals</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='SelfIntersectingTruncatedRegular.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+The dual of a versi-quasi-regular polyhedron is face-transitive with faces
+shaped like bowties.  Face transitivity means that for any two faces of the
+polyhedron, there exists a translation, rotation, and/or reflection that
+leaves the outward appearance of the polyhedron unchanged yet moves one face
+to the other.  There are seven versi-quasi-regular duals, all of which are
+self-intersecting.  All seven have non-orientable surfaces (like that of a
+<A href=http://mathworld.wolfram.com/KleinBottle.html>Klein Bottle</A>
+or the
+<A href=http://mathworld.wolfram.com/RealProjectivePlane.html>Real Projective
+Plane</A>).
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Small Rhombihexacron
+
+	(24) SHORT EDGE = sqrt(2 * (2 + sqrt(2)))
+	(24) LONG EDGE = 2 * sqrt(2 + sqrt(2))
+	(12) INNER VERTEX RADIUS = sqrt(2)
+	(6) OUTER VERTEX RADIUS = 2 + sqrt(2)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 + sqrt(2))) / 2
+	INRADIUS = sqrt(34 * (7 + 4 * sqrt(2))) / 17
+	DIHEDRAL ANGLE = acos(-0.744520838205434129129809111579)
+		= acos(-(7 + 4 * sqrt(2)) / 17)
+		= 138.117959055512322254739639927 degrees
+
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 18 24">
+<INPUT type=hidden class=Constants value="3.41421356237309504880168872421">
+<!--
+	C0 = 2 + sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C0,0.0 0.0 -C0,C0 0.0 0.0,
+-C0 0.0 0.0,0.0 C0 0.0,0.0 -C0 0.0,1.0 0.0 1.0,1.0 0.0 -1.0,-1.0 0.0 1.0,
+-1.0 0.0 -1.0,1.0 1.0 0.0,1.0 -1.0 0.0,-1.0 1.0 0.0,-1.0 -1.0 0.0,0.0 1.0 1.0,
+0.0 1.0 -1.0,0.0 -1.0 1.0,0.0 -1.0 -1.0">
+<INPUT type=hidden class=Faces value="0 10 2 14 #,0 11 5 6 #,0 12 4 8 #,
+0 13 3 16 #,1 10 4 7 #,1 11 2 17 #,1 12 3 15 #,1 13 5 9 #,2 14 4 6 #,
+2 15 1 10 #,2 16 0 11 #,2 17 5 7 #,3 14 0 12 #,3 15 4 9 #,3 16 5 8 #,
+3 17 1 13 #,4 6 0 10 #,4 7 2 15 #,4 8 3 14 #,4 9 1 12 #,5 6 2 16 #,5 7 1 11 #,
+5 8 0 13 #,5 9 3 17 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallRhombihexacron.html>Small Rhombihexacron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Rhombihexacron
+
+	(24) SHORT EDGE = sqrt(2 * (2 - sqrt(2)))
+	(24) LONG EDGE = 2 * sqrt(2 - sqrt(2))
+	(6) INNER VERTEX RADIUS = 2 - sqrt(2)
+	(12) OUTER VERTEX RADIUS = sqrt(2)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 - sqrt(2))) / 2
+	INRADIUS = sqrt(34 * (7 - 4 * sqrt(2))) / 17
+	DIHEDRAL ANGLE = acos(-0.0790085735592717532231320648918)
+		= acos(-(7 - 4 * sqrt(2)) / 17)
+		= 94.5315807982003719039626646393 degrees
+
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 18 24">
+<INPUT type=hidden class=Constants value="0.585786437626904951198311275790">
+<!--
+	C0 = 2 - sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C0,0.0 0.0 -C0,C0 0.0 0.0,
+-C0 0.0 0.0,0.0 C0 0.0,0.0 -C0 0.0,1.0 0.0 1.0,1.0 0.0 -1.0,-1.0 0.0 1.0,
+-1.0 0.0 -1.0,1.0 1.0 0.0,1.0 -1.0 0.0,-1.0 1.0 0.0,-1.0 -1.0 0.0,0.0 1.0 1.0,
+0.0 1.0 -1.0,0.0 -1.0 1.0,0.0 -1.0 -1.0">
+<INPUT type=hidden class=Faces value="0 10 2 14 #,0 11 5 6 #,0 12 4 8 #,
+0 13 3 16 #,1 10 4 7 #,1 11 2 17 #,1 12 3 15 #,1 13 5 9 #,2 14 4 6 #,
+2 15 1 10 #,2 16 0 11 #,2 17 5 7 #,3 14 0 12 #,3 15 4 9 #,3 16 5 8 #,
+3 17 1 13 #,4 6 0 10 #,4 7 2 15 #,4 8 3 14 #,4 9 1 12 #,5 6 2 16 #,5 7 1 11 #,
+5 8 0 13 #,5 9 3 17 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatRhombihexacron.html>Great Rhombihexacron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Small Dodecicosacron
+
+	(60) SHORT EDGE = sqrt(6 * (5 + sqrt(5))) / 2
+	(60) LONG EDGE = sqrt(3 * (5 + 2 * sqrt(5)))
+	(20) INNER VERTEX RADIUS = sqrt(15) / 2
+	(12) OUTER VERTEX RADIUS = 3 * sqrt(5 + 2 * sqrt(5)) / 2
+	EDGE-SCRIBED RADIUS = sqrt(6 * (5 + sqrt(5))) / 4
+	INRADIUS = 3 * sqrt(305 * (9 + 2 * sqrt(5))) / 122
+	DIHEDRAL ANGLE = acos(-0.831282031680317526052910180429)
+		= acos(-(44 + 3 * sqrt(5)) / 61)
+		= 146.230659755529322586204815283 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 32 60">
+<INPUT type=hidden class=Constants value="0.690983005625052575897706582817,
+1.11803398874989484820458683437,
+1.80901699437494742410229341718,
+2.427050983124842272306880251548,
+3.927050983124842272306880251548">
+<!--
+	C0 = (5 - sqrt(5)) / 4
+	C1 = sqrt(5) / 2
+	C2 = (5 + sqrt(5)) / 4
+	C3 = 3 * (1 + sqrt(5)) / 4
+	C4 = 3 * (3 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="C3 0.0 C4,C3 0.0 -C4,-C3 0.0 C4,
+-C3 0.0 -C4,C4 C3 0.0,C4 -C3 0.0,-C4 C3 0.0,-C4 -C3 0.0,0.0 C4 C3,0.0 C4 -C3,
+0.0 -C4 C3,0.0 -C4 -C3,0.0 C0 C2,0.0 C0 -C2,0.0 -C0 C2,0.0 -C0 -C2,C2 0.0 C0,
+C2 0.0 -C0,-C2 0.0 C0,-C2 0.0 -C0,C0 C2 0.0,C0 -C2 0.0,-C0 C2 0.0,-C0 -C2 0.0,
+C1 C1 C1,C1 C1 -C1,C1 -C1 C1,C1 -C1 -C1,-C1 C1 C1,-C1 C1 -C1,-C1 -C1 C1,
+-C1 -C1 -C1">
+<INPUT type=hidden class=Faces value="0 18 6 14 #,0 22 9 12 #,0 25 1 24 #,
+0 27 11 16 #,0 23 7 26 #,1 19 7 13 #,1 23 10 15 #,1 26 0 27 #,1 24 8 17 #,
+1 22 6 25 #,2 16 5 12 #,2 21 11 14 #,2 31 3 30 #,2 29 9 18 #,2 20 4 28 #,
+3 17 4 15 #,3 20 8 13 #,3 28 2 29 #,3 30 10 19 #,3 21 5 31 #,4 14 2 16 #,
+4 28 6 24 #,4 29 3 20 #,4 15 11 25 #,4 21 10 17 #,5 12 8 26 #,5 20 9 16 #,
+5 13 3 17 #,5 31 7 27 #,5 30 2 21 #,6 14 10 28 #,6 23 11 18 #,6 15 1 19 #,
+6 25 4 29 #,6 24 0 22 #,7 12 0 18 #,7 26 5 30 #,7 27 1 23 #,7 13 9 31 #,
+7 22 8 19 #,8 13 1 22 #,8 17 5 20 #,8 26 10 24 #,8 30 7 12 #,8 19 3 28 #,
+9 12 2 20 #,9 18 7 22 #,9 31 11 29 #,9 27 5 13 #,9 16 0 25 #,10 15 3 21 #,
+10 19 6 23 #,10 28 8 30 #,10 24 4 14 #,10 17 1 26 #,11 14 0 23 #,11 16 4 21 #,
+11 25 9 27 #,11 29 6 15 #,11 18 2 31 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallDodecicosacron.html>Small Dodecicosacron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Great Dodecicosacron
+
+	(60) SHORT EDGE = sqrt(3 * (5 - 2 * sqrt(5)))
+	(60) LONG EDGE = sqrt(6 * (5 - sqrt(5))) / 2
+	(12) INNER VERTEX RADIUS = 3 * sqrt(5 - 2 * sqrt(5)) / 2
+	(20) OUTER VERTEX RADIUS = sqrt(15) / 2
+	EDGE-SCRIBED RADIUS = sqrt(6 * (5 - sqrt(5))) / 4
+	INRADIUS = 3 * sqrt(305 * (9 - 2 * sqrt(5))) / 122
+	DIHEDRAL ANGLE = acos(-0.611340919139354605094630803177)
+		= acos(-(44 - 3 * sqrt(5)) / 61)
+		= 127.686523427480794570047763587 degrees
+
+	EULER CHARACTERISTIC:        -28
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 32 60">
+<INPUT type=hidden class=Constants value="0.572949016875157727693119748452,
+0.690983005625052575897706582817,
+0.927050983124842272306880251548,
+1.11803398874989484820458683437,
+1.80901699437494742410229341718">
+<!--
+	C0 = 3 * (3 - sqrt(5)) / 4
+	C1 = (5 - sqrt(5)) / 4
+	C2 = 3 * (sqrt(5) - 1) / 4
+	C3 = sqrt(5) / 2
+	C4 = (5 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 -C2 C0,0.0 -C2 -C0,0.0 C2 C0,
+0.0 C2 -C0,-C2 C0 0.0,C2 C0 0.0,-C2 -C0 0.0,C2 -C0 0.0,C0 0.0 -C2,C0 0.0 C2,
+-C0 0.0 -C2,-C0 0.0 C2,C4 0.0 C1,C4 0.0 -C1,-C4 0.0 C1,-C4 0.0 -C1,0.0 C1 C4,
+0.0 C1 -C4,0.0 -C1 C4,0.0 -C1 -C4,C1 C4 0.0,-C1 C4 0.0,C1 -C4 0.0,-C1 -C4 0.0,
+-C3 -C3 -C3,-C3 -C3 C3,C3 -C3 -C3,C3 -C3 C3,-C3 C3 -C3,-C3 C3 C3,C3 C3 -C3,
+C3 C3 C3">
+<INPUT type=hidden class=Faces value="0 18 6 14 #,0 22 9 12 #,0 25 1 24 #,
+0 27 11 16 #,0 23 7 26 #,1 19 7 13 #,1 23 10 15 #,1 26 0 27 #,1 24 8 17 #,
+1 22 6 25 #,2 16 5 12 #,2 21 11 14 #,2 31 3 30 #,2 29 9 18 #,2 20 4 28 #,
+3 17 4 15 #,3 20 8 13 #,3 28 2 29 #,3 30 10 19 #,3 21 5 31 #,4 14 2 16 #,
+4 28 6 24 #,4 29 3 20 #,4 15 11 25 #,4 21 10 17 #,5 12 8 26 #,5 20 9 16 #,
+5 13 3 17 #,5 31 7 27 #,5 30 2 21 #,6 14 10 28 #,6 23 11 18 #,6 15 1 19 #,
+6 25 4 29 #,6 24 0 22 #,7 12 0 18 #,7 26 5 30 #,7 27 1 23 #,7 13 9 31 #,
+7 22 8 19 #,8 13 1 22 #,8 17 5 20 #,8 26 10 24 #,8 30 7 12 #,8 19 3 28 #,
+9 12 2 20 #,9 18 7 22 #,9 31 11 29 #,9 27 5 13 #,9 16 0 25 #,10 15 3 21 #,
+10 19 6 23 #,10 28 8 30 #,10 24 4 14 #,10 17 1 26 #,11 14 0 23 #,11 16 4 21 #,
+11 25 9 27 #,11 29 6 15 #,11 18 2 31 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatDodecicosacron.html>Great Dodecicosacron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Small Rhombidodecacron
+
+	(60) SHORT EDGE = sqrt(5 - sqrt(5))
+	(60) LONG EDGE = sqrt(5 + sqrt(5))
+	(30) INNER VERTEX RADIUS = sqrt(5)
+	(12) OUTER VERTEX RADIUS = sqrt(5 + 2 * sqrt(5))
+	EDGE-SCRIBED RADIUS = sqrt(2 * (5 + 2 * sqrt(5))) / 2
+	INRADIUS = sqrt(205 * (19 + 8 * sqrt(5))) / 41
+	DIHEDRAL ANGLE = acos(-0.899720580975568721250570471948)
+		= acos(-(19 + 8 * sqrt(5)) / 41)
+		= 154.121363125776320479219692917 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 42 60">
+<INPUT type=hidden class=Constants value="0.690983005625052575897706582817,
+1.11803398874989484820458683437,
+1.61803398874989484820458683437,
+1.80901699437494742410229341718,
+2.23606797749978969640917366873,
+2.61803398874989484820458683437">
+<!--
+	C0 = (5 - sqrt(5)) / 4
+	C1 = sqrt(5) / 2
+	C2 = (1 + sqrt(5)) / 2
+	C3 = (5 + sqrt(5)) / 4
+	C4 = sqrt(5)
+	C5 = (3 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C2 0.0 C5,C2 0.0 -C5,-C2 0.0 C5,
+-C2 0.0 -C5,C5 C2 0.0,C5 -C2 0.0,-C5 C2 0.0,-C5 -C2 0.0,0.0 C5 C2,0.0 C5 -C2,
+0.0 -C5 C2,0.0 -C5 -C2,0.0 0.0 C4,0.0 0.0 -C4,C4 0.0 0.0,-C4 0.0 0.0,
+0.0 C4 0.0,0.0 -C4 0.0,C0 C1 C3,C0 C1 -C3,C0 -C1 C3,C0 -C1 -C3,-C0 C1 C3,
+-C0 C1 -C3,-C0 -C1 C3,-C0 -C1 -C3,C3 C0 C1,C3 C0 -C1,C3 -C0 C1,C3 -C0 -C1,
+-C3 C0 C1,-C3 C0 -C1,-C3 -C0 C1,-C3 -C0 -C1,C1 C3 C0,C1 C3 -C0,C1 -C3 C0,
+C1 -C3 -C0,-C1 C3 C0,-C1 C3 -C0,-C1 -C3 C0,-C1 -C3 -C0">
+<INPUT type=hidden class=Faces value="0 14 5 26 #,0 36 10 28 #,0 24 2 20 #,
+0 22 8 12 #,0 34 4 18 #,1 14 4 29 #,1 37 5 21 #,1 25 11 13 #,1 23 3 19 #,
+1 35 9 27 #,2 15 6 32 #,2 38 8 30 #,2 18 0 22 #,2 20 10 12 #,2 40 7 24 #,
+3 15 7 31 #,3 39 6 23 #,3 19 9 13 #,3 21 1 25 #,3 41 11 33 #,4 16 9 34 #,
+4 19 1 35 #,4 29 5 27 #,4 28 0 14 #,4 18 8 26 #,5 17 10 37 #,5 20 0 36 #,
+5 26 4 28 #,5 27 1 14 #,5 21 11 29 #,6 16 8 39 #,6 22 2 38 #,6 32 7 30 #,
+6 33 3 15 #,6 23 9 31 #,7 17 11 40 #,7 25 3 41 #,7 31 6 33 #,7 30 2 15 #,
+7 24 10 32 #,8 12 2 18 #,8 30 6 22 #,8 39 9 38 #,8 35 4 16 #,8 26 0 34 #,
+9 13 1 23 #,9 27 4 19 #,9 34 8 35 #,9 38 6 16 #,9 31 3 39 #,10 12 0 24 #,
+10 28 5 20 #,10 37 11 36 #,10 41 7 17 #,10 32 2 40 #,11 13 3 21 #,11 33 7 25 #,
+11 40 10 41 #,11 36 5 17 #,11 29 1 37 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallRhombidodecacron.html>Small Rhombidodecacron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Rhombidodecacron
+
+	(60) SHORT EDGE = sqrt(5 - sqrt(5))
+	(60) LONG EDGE = sqrt(5 + sqrt(5))
+	(12) INNER VERTEX RADIUS = sqrt(5 - 2 * sqrt(5))
+	(30) OUTER VERTEX RADIUS = sqrt(5)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (5 - 2 * sqrt(5))) / 2
+	INRADIUS = sqrt(205 * (19 - 8 * sqrt(5))) / 41
+	DIHEDRAL ANGLE = acos(-0.0271086873171142055786978207354)
+		= acos(-(19 - 8 * sqrt(5)) / 41)
+		= 91.5534036721629385440037283452 degrees
+
+	EULER CHARACTERISTIC:        -18
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 42 60">
+<INPUT type=hidden class=Constants value="0.381966011250105151795413165634,
+0.618033988749894848204586834366,
+0.690983005625052575897706582817,
+1.11803398874989484820458683437,
+1.80901699437494742410229341718,
+2.23606797749978969640917366873">
+<!--
+	C0 = (3 - sqrt(5)) / 2
+	C1 = (sqrt(5) - 1) / 2
+	C2 = (5 - sqrt(5)) / 4
+	C3 = sqrt(5) / 2
+	C4 = (5 + sqrt(5)) / 4
+	C5 = sqrt(5)
+-->
+<INPUT type=hidden class=Vertices value="0.0 -C1 C0,0.0 -C1 -C0,0.0 C1 C0,
+0.0 C1 -C0,-C1 C0 0.0,C1 C0 0.0,-C1 -C0 0.0,C1 -C0 0.0,C0 0.0 -C1,C0 0.0 C1,
+-C0 0.0 -C1,-C0 0.0 C1,0.0 0.0 -C5,0.0 0.0 C5,0.0 -C5 0.0,0.0 C5 0.0,
+-C5 0.0 0.0,C5 0.0 0.0,-C3 C4 C2,-C3 C4 -C2,C3 C4 C2,C3 C4 -C2,-C3 -C4 C2,
+-C3 -C4 -C2,C3 -C4 C2,C3 -C4 -C2,C4 C2 -C3,C4 C2 C3,-C4 C2 -C3,-C4 C2 C3,
+C4 -C2 -C3,C4 -C2 C3,-C4 -C2 -C3,-C4 -C2 C3,C2 -C3 C4,C2 -C3 -C4,-C2 -C3 C4,
+-C2 -C3 -C4,C2 C3 C4,C2 C3 -C4,-C2 C3 C4,-C2 C3 -C4">
+<INPUT type=hidden class=Faces value="0 14 5 26 #,0 36 10 28 #,0 24 2 20 #,
+0 22 8 12 #,0 34 4 18 #,1 14 4 29 #,1 37 5 21 #,1 25 11 13 #,1 23 3 19 #,
+1 35 9 27 #,2 15 6 32 #,2 38 8 30 #,2 18 0 22 #,2 20 10 12 #,2 40 7 24 #,
+3 15 7 31 #,3 39 6 23 #,3 19 9 13 #,3 21 1 25 #,3 41 11 33 #,4 16 9 34 #,
+4 19 1 35 #,4 29 5 27 #,4 28 0 14 #,4 18 8 26 #,5 17 10 37 #,5 20 0 36 #,
+5 26 4 28 #,5 27 1 14 #,5 21 11 29 #,6 16 8 39 #,6 22 2 38 #,6 32 7 30 #,
+6 33 3 15 #,6 23 9 31 #,7 17 11 40 #,7 25 3 41 #,7 31 6 33 #,7 30 2 15 #,
+7 24 10 32 #,8 12 2 18 #,8 30 6 22 #,8 39 9 38 #,8 35 4 16 #,8 26 0 34 #,
+9 13 1 23 #,9 27 4 19 #,9 34 8 35 #,9 38 6 16 #,9 31 3 39 #,10 12 0 24 #,
+10 28 5 20 #,10 37 11 36 #,10 41 7 17 #,10 32 2 40 #,11 13 3 21 #,11 33 7 25 #,
+11 40 10 41 #,11 36 5 17 #,11 29 1 37 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatRhombidodecacron.html>Great Rhombidodecacron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Rhombicosacron
+
+	(60) SHORT EDGE = (5 * sqrt(6) - sqrt(30)) / 10
+	(60) LONG EDGE = (5 * sqrt(6) + sqrt(30)) / 10
+	(30) INNER VERTEX RADIUS = 3 * sqrt(5) / 5
+	(20) OUTER VERTEX RADIUS = sqrt(3)
+	EDGE-SCRIBED RADIUS = sqrt(6) / 2
+	INRADIUS = 3 * sqrt(7) / 7
+	DIHEDRAL ANGLE = acos(-0.714285714285714285714285714286)
+		= acos(-5/7)
+		= 135.584691402807025025888759948 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 50 60">
+<INPUT type=hidden class=Constants value="0.414589803375031545538623949690,
+0.618033988749894848204586834366,
+0.670820393249936908922752100619,
+1.08541019662496845446137605031,
+1.34164078649987381784550420124,
+1.61803398874989484820458683437">
+<!--
+	C0 = 3 * (5 - sqrt(5)) / 20
+	C1 = (sqrt(5) - 1) / 2
+	C2 = 3 * sqrt(5) / 10
+	C3 = 3 * (5 + sqrt(5)) / 20
+	C4 = 3 * sqrt(5) / 5
+	C5 = (1 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 C1 C5,0.0 C1 -C5,0.0 -C1 C5,
+0.0 -C1 -C5,C5 0.0 C1,C5 0.0 -C1,-C5 0.0 C1,-C5 0.0 -C1,C1 C5 0.0,C1 -C5 0.0,
+-C1 C5 0.0,-C1 -C5 0.0,0.0 0.0 C4,0.0 0.0 -C4,C4 0.0 0.0,-C4 0.0 0.0,
+0.0 C4 0.0,0.0 -C4 0.0,C0 C2 C3,C0 C2 -C3,C0 -C2 C3,C0 -C2 -C3,-C0 C2 C3,
+-C0 C2 -C3,-C0 -C2 C3,-C0 -C2 -C3,C3 C0 C2,C3 C0 -C2,C3 -C0 C2,C3 -C0 -C2,
+-C3 C0 C2,-C3 C0 -C2,-C3 -C0 C2,-C3 -C0 -C2,C2 C3 C0,C2 C3 -C0,C2 -C3 C0,
+C2 -C3 -C0,-C2 C3 C0,-C2 C3 -C0,-C2 -C3 C0,-C2 -C3 -C0,1.0 1.0 1.0,
+1.0 1.0 -1.0,1.0 -1.0 1.0,1.0 -1.0 -1.0,-1.0 1.0 1.0,-1.0 1.0 -1.0,
+-1.0 -1.0 1.0,-1.0 -1.0 -1.0">
+<INPUT type=hidden class=Faces value="0 16 8 22 #,0 28 44 18 #,0 32 6 12 #,
+1 16 10 19 #,1 33 49 23 #,1 29 5 13 #,2 17 11 20 #,2 30 46 24 #,2 26 4 12 #,
+3 17 9 25 #,3 27 43 21 #,3 31 7 13 #,4 12 0 28 #,4 35 43 26 #,4 37 9 14 #,
+5 13 3 27 #,5 36 44 29 #,5 34 8 14 #,6 12 2 30 #,6 41 49 32 #,6 39 10 15 #,
+7 13 1 33 #,7 38 46 31 #,7 40 11 15 #,8 14 4 35 #,8 22 46 34 #,8 23 1 16 #,
+9 14 5 36 #,9 25 49 37 #,9 24 2 17 #,10 15 7 38 #,10 19 43 39 #,10 18 0 16 #,
+11 15 6 41 #,11 20 44 40 #,11 21 3 17 #,42 20 2 26 #,42 38 10 18 #,
+42 27 5 34 #,43 21 45 19 #,43 26 42 27 #,43 39 47 35 #,44 18 42 20 #,
+44 29 45 28 #,44 40 48 36 #,45 19 1 29 #,45 41 11 21 #,45 28 4 37 #,
+46 24 48 22 #,46 31 47 30 #,46 34 42 38 #,47 25 3 31 #,47 35 8 23 #,
+47 30 6 39 #,48 22 0 32 #,48 36 9 24 #,48 33 7 40 #,49 23 47 25 #,
+49 32 48 33 #,49 37 45 41 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=Rhombicosacron.html>Rhombicosacron</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

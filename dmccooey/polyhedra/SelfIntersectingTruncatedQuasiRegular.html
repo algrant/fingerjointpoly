@@ -1,0 +1,515 @@
+<!-- File:   SelfIntersectingTruncatedQuasiRegular.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Self-Intersecting Truncated Quasi-Regular Polyhedra</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='SelfIntersectingTruncatedRegularDual.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Self-Intersecting Truncated Quasi-Regular Polyhedra</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='SelfIntersectingTruncatedQuasiRegularDual.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+A polyhedron is truncated quasi-regular if it is vertex-transitive with
+scalene triangular vertex figures.  Vertex transitivity means that for any
+two vertices of the polyhedron, there exists a translation, rotation, and/or
+reflection that leaves the outward appearance of the polyhedron unchanged
+yet moves one vertex to the other.  A vertex figure is the polygon produced
+by connecting the midpoints of the edges meeting at the vertex in the same
+order that the edges appear around the vertex.  There are only two truncated
+quasi-regular polyhedra that are not self-intersecting, namely the
+<A href=TruncatedCuboctahedron.html>Truncated Cuboctahedron</A> and the
+<A href=TruncatedIcosidodecahedron.html>Truncated Icosidodecahedron</A>.
+When self-intersection is allowed, there are five other truncated
+quasi-regular polyhedra.
+</P>
+<P>
+Albert Badoureau and Johann Pitsch each described all five in 1881
+<span style="font-size: 75%;">[1][2]</span>.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Cubitruncated Cuboctahedron
+
+	(72) EDGE = 1
+	RADIUS = sqrt(7) / 2
+	MIDRADIUS = sqrt(6) / 2
+	OCTAGON CENTER RADIUS = (sqrt(2) - 1) / 2
+	HEXAGON CENTER RADIUS = sqrt(3) / 2
+	OCTAGRAM CENTER RADIUS = (1 + sqrt(2)) / 2
+	OCTAGON-HEXAGON ANGLE = acos(0.577350269189625764509148780502)
+		= acos(sqrt(3) / 3)
+		= 54.7356103172453456846229996700 degrees
+	OCTAGON-OCTAGRAM ANGLE = acos(0) = 90 degrees
+	OCTAGRAM-HEXAGON ANGLE = acos(-0.577350269189625764509148780502)
+		= acos(-sqrt(3) / 3)
+		= 125.264389682754654315377000330 degrees
+
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 48 20">
+<INPUT type=hidden class=Constants value="0.2071067811865475244008443621048,
+1.20710678118654752440084436210">
+<!--
+	C0 = (sqrt(2) - 1) / 2
+	C1 = (1 + sqrt(2)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.5 C0 C1,0.5 C0 -C1,0.5 -C0 C1,
+0.5 -C0 -C1,-0.5 C0 C1,-0.5 C0 -C1,-0.5 -C0 C1,-0.5 -C0 -C1,C1 0.5 C0,
+C1 0.5 -C0,C1 -0.5 C0,C1 -0.5 -C0,-C1 0.5 C0,-C1 0.5 -C0,-C1 -0.5 C0,
+-C1 -0.5 -C0,C0 C1 0.5,C0 C1 -0.5,C0 -C1 0.5,C0 -C1 -0.5,-C0 C1 0.5,
+-C0 C1 -0.5,-C0 -C1 0.5,-C0 -C1 -0.5,C0 0.5 C1,C0 0.5 -C1,C0 -0.5 C1,
+C0 -0.5 -C1,-C0 0.5 C1,-C0 0.5 -C1,-C0 -0.5 C1,-C0 -0.5 -C1,C1 C0 0.5,
+C1 C0 -0.5,C1 -C0 0.5,C1 -C0 -0.5,-C1 C0 0.5,-C1 C0 -0.5,-C1 -C0 0.5,
+-C1 -C0 -0.5,0.5 C1 C0,0.5 C1 -C0,0.5 -C1 C0,0.5 -C1 -C0,-0.5 C1 C0,
+-0.5 C1 -C0,-0.5 -C1 C0,-0.5 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 4 26 24 6 2 28 30 #,
+1 31 29 3 7 25 27 5 #,8 10 33 32 11 9 34 35 #,12 39 38 13 15 36 37 14 #,
+16 17 44 40 21 20 41 45 #,18 47 43 22 23 42 46 19 #,0 32 33 1 5 37 36 4 #,
+2 6 38 39 7 3 35 34 #,8 40 44 12 14 46 42 10 #,9 11 43 47 15 13 45 41 #,
+16 24 26 18 19 27 25 17 #,20 21 29 31 23 22 30 28 #,0 30 22 43 11 32 #,
+1 33 10 42 23 31 #,2 34 9 41 20 28 #,3 29 21 40 8 35 #,4 36 15 47 18 26 #,
+5 27 19 46 14 37 #,6 24 16 45 13 38 #,7 39 12 44 17 25 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=CubitruncatedCuboctahedron.html>Cubitruncated Cuboctahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #16)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Truncated Cuboctahedron
+
+	(72) EDGE = 1
+	RADIUS = sqrt(13 - 6 * sqrt(2)) / 2
+	MIDRADIUS = sqrt(6 * (2 - sqrt(2))) / 2
+	HEXAGON CENTER RADIUS = -(sqrt(6) - sqrt(3)) / 2
+	SQUARE CENTER RADIUS = (3 - sqrt(2)) / 2
+	OCTAGRAM CENTER RADIUS = (2 * sqrt(2) - 1) / 2
+	HEXAGON-SQUARE ANGLE = acos(0.816496580927726032732428024902)
+		= acos(sqrt(6) / 3) = 35.2643896827546543153770003300 degrees
+	OCTAGRAM-HEXAGON ANGLE = acos(0.577350269189625764509148780502)
+		= acos(sqrt(3) / 3) = 54.7356103172453456846229996700 degrees
+	OCTAGRAM-SQUARE ANGLE = acos(-0.7071067811865475244008443621048)
+		= acos(-sqrt(2) / 2) = 135 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 48 26">
+<INPUT type=hidden class=Constants value="0.2071067811865475244008443621048,
+0.914213562373095048801688724210">
+<!--
+	C0 = (sqrt(2) - 1) / 2
+	C1 = (2 * sqrt(2) - 1) / 2
+-->
+<INPUT type=hidden class=Vertices value="-C0 0.5 -C1,-C0 0.5 C1,-C0 -0.5 -C1,
+-C0 -0.5 C1,C0 0.5 -C1,C0 0.5 C1,C0 -0.5 -C1,C0 -0.5 C1,-C1 -C0 0.5,
+-C1 -C0 -0.5,-C1 C0 0.5,-C1 C0 -0.5,C1 -C0 0.5,C1 -C0 -0.5,C1 C0 0.5,
+C1 C0 -0.5,0.5 -C1 -C0,0.5 -C1 C0,0.5 C1 -C0,0.5 C1 C0,-0.5 -C1 -C0,
+-0.5 -C1 C0,-0.5 C1 -C0,-0.5 C1 C0,0.5 -C0 -C1,0.5 -C0 C1,0.5 C0 -C1,0.5 C0 C1,
+-0.5 -C0 -C1,-0.5 -C0 C1,-0.5 C0 -C1,-0.5 C0 C1,-C1 0.5 -C0,-C1 0.5 C0,
+-C1 -0.5 -C0,-C1 -0.5 C0,C1 0.5 -C0,C1 0.5 C0,C1 -0.5 -C0,C1 -0.5 C0,
+-C0 -C1 0.5,-C0 -C1 -0.5,-C0 C1 0.5,-C0 C1 -0.5,C0 -C1 0.5,C0 -C1 -0.5,
+C0 C1 0.5,C0 C1 -0.5">
+<INPUT type=hidden class=Faces value="0 24 28 4 6 30 26 2 #,
+1 3 27 31 7 5 29 25 #,8 32 34 10 11 35 33 9 #,12 13 37 39 15 14 38 36 #,
+16 40 41 17 21 45 44 20 #,18 22 46 47 23 19 43 42 #,0 32 8 40 16 24 #,
+1 25 17 41 9 33 #,2 26 18 42 10 34 #,3 35 11 43 19 27 #,4 28 20 44 12 36 #,
+5 37 13 45 21 29 #,6 38 14 46 22 30 #,7 31 23 47 15 39 #,0 2 34 32 #,
+1 33 35 3 #,4 36 38 6 #,5 7 39 37 #,8 9 41 40 #,10 42 43 11 #,12 44 45 13 #,
+14 15 47 46 #,16 20 28 24 #,17 25 29 21 #,18 26 30 22 #,19 23 31 27 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatTruncatedCuboctahedron.html>Great Truncated Cuboctahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #20)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Icositruncated Dodecadodecahedron
+
+	(180) EDGE = 1
+	RADIUS = 2
+	MIDRADIUS = sqrt(15) / 2
+	DECAGON CENTER RADIUS = sqrt(2 * (5 - sqrt(5))) / 2
+	HEXAGON CENTER RADIUS = sqrt(3)
+	DECAGRAM CENTER RADIUS = sqrt(2 * (5 + sqrt(5))) / 2
+	DECAGON-HEXAGON ANGLE = acos(-0.187592474085079899860139346908)
+		= acos(-sqrt(15 * (5 - 2 * sqrt(5))) / 15)
+		= 100.812316963571706291284944774 degrees
+	DECAGON-DECAGRAM ANGLE = acos(-0.447213595499957939281834733746)
+		= acos(-sqrt(5) / 5) = 116.565051177077989351572193720 degrees
+	DECAGRAM-HEXAGON ANGLE = acos(-0.794654472291766122955530928328)
+		= acos(-sqrt(15 * (5 + 2 * sqrt(5))) / 15)
+		= 142.6226318593503043571428615051 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 120 44">
+<INPUT type=hidden class=Constants value="0.190983005625052575897706582817,
+0.618033988749894848204586834366,
+0.690983005625052575897706582817,
+1.30901699437494742410229341718,
+1.427050983124842272306880251548,
+1.61803398874989484820458683437,
+1.80901699437494742410229341718,
+1.927050983124842272306880251548">
+<!--
+	C0 = (3 - sqrt(5)) / 4
+	C1 = (sqrt(5) - 1) / 2
+	C2 = (5 - sqrt(5)) / 4
+	C3 = (3 + sqrt(5)) / 4
+	C4 = (3 * sqrt(5) - 1) / 4
+	C5 = (1 + sqrt(5)) / 2
+	C6 = (5 + sqrt(5)) / 4
+	C7 = (1 + 3 * sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.5 C0 C7,0.5 C0 -C7,0.5 -C0 C7,
+0.5 -C0 -C7,-0.5 C0 C7,-0.5 C0 -C7,-0.5 -C0 C7,-0.5 -C0 -C7,C7 0.5 C0,
+C7 0.5 -C0,C7 -0.5 C0,C7 -0.5 -C0,-C7 0.5 C0,-C7 0.5 -C0,-C7 -0.5 C0,
+-C7 -0.5 -C0,C0 C7 0.5,C0 C7 -0.5,C0 -C7 0.5,C0 -C7 -0.5,-C0 C7 0.5,
+-C0 C7 -0.5,-C0 -C7 0.5,-C0 -C7 -0.5,C2 0.5 C6,C2 0.5 -C6,C2 -0.5 C6,
+C2 -0.5 -C6,-C2 0.5 C6,-C2 0.5 -C6,-C2 -0.5 C6,-C2 -0.5 -C6,C6 C2 0.5,
+C6 C2 -0.5,C6 -C2 0.5,C6 -C2 -0.5,-C6 C2 0.5,-C6 C2 -0.5,-C6 -C2 0.5,
+-C6 -C2 -0.5,0.5 C6 C2,0.5 C6 -C2,0.5 -C6 C2,0.5 -C6 -C2,-0.5 C6 C2,
+-0.5 C6 -C2,-0.5 -C6 C2,-0.5 -C6 -C2,1.0 C1 C5,1.0 C1 -C5,1.0 -C1 C5,
+1.0 -C1 -C5,-1.0 C1 C5,-1.0 C1 -C5,-1.0 -C1 C5,-1.0 -C1 -C5,C5 1.0 C1,
+C5 1.0 -C1,C5 -1.0 C1,C5 -1.0 -C1,-C5 1.0 C1,-C5 1.0 -C1,-C5 -1.0 C1,
+-C5 -1.0 -C1,C1 C5 1.0,C1 C5 -1.0,C1 -C5 1.0,C1 -C5 -1.0,-C1 C5 1.0,
+-C1 C5 -1.0,-C1 -C5 1.0,-C1 -C5 -1.0,C0 C3 1.5,C0 C3 -1.5,C0 -C3 1.5,
+C0 -C3 -1.5,-C0 C3 1.5,-C0 C3 -1.5,-C0 -C3 1.5,-C0 -C3 -1.5,1.5 C0 C3,
+1.5 C0 -C3,1.5 -C0 C3,1.5 -C0 -C3,-1.5 C0 C3,-1.5 C0 -C3,-1.5 -C0 C3,
+-1.5 -C0 -C3,C3 1.5 C0,C3 1.5 -C0,C3 -1.5 C0,C3 -1.5 -C0,-C3 1.5 C0,
+-C3 1.5 -C0,-C3 -1.5 C0,-C3 -1.5 -C0,0.5 C4 C3,0.5 C4 -C3,0.5 -C4 C3,
+0.5 -C4 -C3,-0.5 C4 C3,-0.5 C4 -C3,-0.5 -C4 C3,-0.5 -C4 -C3,C3 0.5 C4,
+C3 0.5 -C4,C3 -0.5 C4,C3 -0.5 -C4,-C3 0.5 C4,-C3 0.5 -C4,-C3 -0.5 C4,
+-C3 -0.5 -C4,C4 C3 0.5,C4 C3 -0.5,C4 -C3 0.5,C4 -C3 -0.5,-C4 C3 0.5,
+-C4 C3 -0.5,-C4 -C3 0.5,-C4 -C3 -0.5">
+<INPUT type=hidden class=Faces value="0 50 80 24 26 82 48 2 106 104 #,
+1 105 107 3 49 83 27 25 81 51 #,4 108 110 6 52 86 30 28 84 54 #,
+5 55 85 29 31 87 53 7 111 109 #,8 57 88 32 33 89 56 9 113 112 #,
+10 114 115 11 58 91 35 34 90 59 #,12 116 117 13 60 93 37 36 92 61 #,
+14 63 94 38 39 95 62 15 119 118 #,16 68 72 40 44 76 64 20 100 96 #,
+17 97 101 21 65 77 45 41 73 69 #,18 98 102 22 66 78 46 42 74 70 #,
+19 71 75 43 47 79 67 23 103 99 #,0 104 56 89 41 45 93 60 108 4 #,
+1 5 109 61 92 44 40 88 57 105 #,2 6 110 62 95 47 43 91 58 106 #,
+3 107 59 90 42 46 94 63 111 7 #,8 112 64 76 28 30 78 66 114 10 #,
+9 11 115 67 79 31 29 77 65 113 #,12 14 118 70 74 26 24 72 68 116 #,
+13 117 69 73 25 27 75 71 119 15 #,16 96 48 82 34 35 83 49 97 17 #,
+18 19 99 51 81 33 32 80 50 98 #,20 21 101 53 87 39 38 86 52 100 #,
+22 102 54 84 36 37 85 55 103 23 #,0 4 54 102 98 50 #,1 51 99 103 55 5 #,
+2 48 96 100 52 6 #,3 7 53 101 97 49 #,8 10 59 107 105 57 #,
+9 56 104 106 58 11 #,12 61 109 111 63 14 #,13 15 62 110 108 60 #,
+16 17 69 117 116 68 #,18 70 118 119 71 19 #,20 64 112 113 65 21 #,
+22 23 67 115 114 66 #,24 80 32 88 40 72 #,25 73 41 89 33 81 #,
+26 74 42 90 34 82 #,27 83 35 91 43 75 #,28 76 44 92 36 84 #,
+29 85 37 93 45 77 #,30 86 38 94 46 78 #,31 79 47 95 39 87 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=IcositruncatedDodecadodecahedron.html>Icositruncated Dodecadodecahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #45)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Truncated Dodecadodecahedron
+
+	(180) EDGE = 1
+	RADIUS = sqrt(11) / 2
+	MIDRADIUS = sqrt(10) / 2
+	DECAGON CENTER RADIUS = -sqrt(5 - 2 * sqrt(5)) / 2
+	SQUARE CENTER RADIUS = 3 / 2
+	DECAGRAM CENTER RADIUS = sqrt(5 + 2 * sqrt(5)) / 2
+	DECAGON-SQUARE ANGLE = acos(0.525731112119133606025669084848)
+		= acos(sqrt(10 * (5 - sqrt(5))) / 10)
+		= 58.2825255885389946757860968602 degrees
+	DECAGON-DECAGRAM ANGLE = acos(0.447213595499957939281834733746)
+		= acos(sqrt(5) / 5) = 63.434948822922010648427806279547 degrees
+	DECAGRAM-SQUARE ANGLE = acos(-0.850650808352039932181540497063)
+		= acos(-sqrt(10 * (5 + sqrt(5))) / 10)
+		= 148.282525588538994675786096860 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 120 54">
+<INPUT type=hidden class=Constants value="0.190983005625052575897706582817,
+0.309016994374947424102293417183,
+0.618033988749894848204586834366,
+0.809016994374947424102293417183,
+1.11803398874989484820458683437,
+1.30901699437494742410229341718,
+1.61803398874989484820458683437">
+<!--
+	C0 = (3 - sqrt(5)) / 4
+	C1 = (sqrt(5) - 1) / 4
+	C2 = (sqrt(5) - 1) / 2
+	C3 = (1 + sqrt(5)) / 4
+	C4 = sqrt(5) / 2
+	C5 = (3 + sqrt(5)) / 4
+	C6 = (1 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C1 C0 C6,C1 C0 -C6,C1 -C0 C6,
+C1 -C0 -C6,-C1 C0 C6,-C1 C0 -C6,-C1 -C0 C6,-C1 -C0 -C6,C6 C1 C0,C6 C1 -C0,
+C6 -C1 C0,C6 -C1 -C0,-C6 C1 C0,-C6 C1 -C0,-C6 -C1 C0,-C6 -C1 -C0,C0 C6 C1,
+C0 C6 -C1,C0 -C6 C1,C0 -C6 -C1,-C0 C6 C1,-C0 C6 -C1,-C0 -C6 C1,-C0 -C6 -C1,
+0.5 0.5 1.5,0.5 0.5 -1.5,0.5 -0.5 1.5,0.5 -0.5 -1.5,-0.5 0.5 1.5,-0.5 0.5 -1.5,
+-0.5 -0.5 1.5,-0.5 -0.5 -1.5,1.5 0.5 0.5,1.5 0.5 -0.5,1.5 -0.5 0.5,
+1.5 -0.5 -0.5,-1.5 0.5 0.5,-1.5 0.5 -0.5,-1.5 -0.5 0.5,-1.5 -0.5 -0.5,
+0.5 1.5 0.5,0.5 1.5 -0.5,0.5 -1.5 0.5,0.5 -1.5 -0.5,-0.5 1.5 0.5,-0.5 1.5 -0.5,
+-0.5 -1.5 0.5,-0.5 -1.5 -0.5,C0 1.0 C5,C0 1.0 -C5,C0 -1.0 C5,C0 -1.0 -C5,
+-C0 1.0 C5,-C0 1.0 -C5,-C0 -1.0 C5,-C0 -1.0 -C5,C5 C0 1.0,C5 C0 -1.0,
+C5 -C0 1.0,C5 -C0 -1.0,-C5 C0 1.0,-C5 C0 -1.0,-C5 -C0 1.0,-C5 -C0 -1.0,
+1.0 C5 C0,1.0 C5 -C0,1.0 -C5 C0,1.0 -C5 -C0,-1.0 C5 C0,-1.0 C5 -C0,-1.0 -C5 C0,
+-1.0 -C5 -C0,C3 C2 C5,C3 C2 -C5,C3 -C2 C5,C3 -C2 -C5,-C3 C2 C5,-C3 C2 -C5,
+-C3 -C2 C5,-C3 -C2 -C5,C5 C3 C2,C5 C3 -C2,C5 -C3 C2,C5 -C3 -C2,-C5 C3 C2,
+-C5 C3 -C2,-C5 -C3 C2,-C5 -C3 -C2,C2 C5 C3,C2 C5 -C3,C2 -C5 C3,C2 -C5 -C3,
+-C2 C5 C3,-C2 C5 -C3,-C2 -C5 C3,-C2 -C5 -C3,0.5 C4 C4,0.5 C4 -C4,0.5 -C4 C4,
+0.5 -C4 -C4,-0.5 C4 C4,-0.5 C4 -C4,-0.5 -C4 C4,-0.5 -C4 -C4,C4 0.5 C4,
+C4 0.5 -C4,C4 -0.5 C4,C4 -0.5 -C4,-C4 0.5 C4,-C4 0.5 -C4,-C4 -0.5 C4,
+-C4 -0.5 -C4,C4 C4 0.5,C4 C4 -0.5,C4 -C4 0.5,C4 -C4 -0.5,-C4 C4 0.5,
+-C4 C4 -0.5,-C4 -C4 0.5,-C4 -C4 -0.5">
+<INPUT type=hidden class=Faces value="0 74 56 24 26 58 72 2 106 104 #,
+1 105 107 3 73 59 27 25 57 75 #,4 108 110 6 76 62 30 28 60 78 #,
+5 79 61 29 31 63 77 7 111 109 #,8 81 64 32 33 65 80 9 113 112 #,
+10 114 115 11 82 67 35 34 66 83 #,12 116 117 13 84 69 37 36 68 85 #,
+14 87 70 38 39 71 86 15 119 118 #,16 92 48 40 44 52 88 20 100 96 #,
+17 97 101 21 89 53 45 41 49 93 #,18 98 102 22 90 54 46 42 50 94 #,
+19 95 51 43 47 55 91 23 103 99 #,0 52 44 45 53 1 75 115 114 74 #,
+2 72 112 113 73 3 55 47 46 54 #,4 78 118 119 79 5 49 41 40 48 #,
+6 50 42 43 51 7 77 117 116 76 #,8 58 26 30 62 12 85 101 97 81 #,
+9 80 96 100 84 13 63 31 27 59 #,10 83 99 103 87 14 60 28 24 56 #,
+11 57 25 29 61 15 86 102 98 82 #,16 65 33 35 67 18 94 110 108 92 #,
+17 93 109 111 95 19 66 34 32 64 #,20 88 104 106 90 22 71 39 37 69 #,
+21 68 36 38 70 23 91 107 105 89 #,0 104 88 52 #,1 53 89 105 #,2 54 90 106 #,
+3 107 91 55 #,4 48 92 108 #,5 109 93 49 #,6 110 94 50 #,7 51 95 111 #,
+8 112 72 58 #,9 59 73 113 #,10 56 74 114 #,11 115 75 57 #,12 62 76 116 #,
+13 117 77 63 #,14 118 78 60 #,15 61 79 119 #,16 96 80 65 #,17 64 81 97 #,
+18 67 82 98 #,19 99 83 66 #,20 69 84 100 #,21 101 85 68 #,22 102 86 71 #,
+23 70 87 103 #,24 28 30 26 #,25 27 31 29 #,32 34 35 33 #,36 37 39 38 #,
+40 41 45 44 #,42 46 47 43 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=TruncatedDodecadodecahedron.html>Truncated Dodecadodecahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #59)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Truncated Icosidodecahedron
+
+	(180) EDGE = 1
+	RADIUS = sqrt(31 - 12 * sqrt(5)) / 2
+	MIDRADIUS = sqrt(6 * (5 - 2 * sqrt(5))) / 2
+	HEXAGON CENTER RADIUS = (sqrt(15) - 2 * sqrt(3)) / 2
+	SQUARE CENTER RADIUS = (2 * sqrt(5) - 3) / 2
+	DECAGRAM CENTER RADIUS = sqrt(5 * (5 - 2 * sqrt(5))) / 2
+	HEXAGON-SQUARE ANGLE = acos(0.356822089773089931941969843046)
+		= acos((sqrt(15) - sqrt(3)) / 6)
+		= 69.0948425521107009670710416347 degrees
+	DECAGRAM-HEXAGON ANGLE = acos(0.187592474085079899860139346908)
+		= acos(sqrt(15 * (5 - 2 * sqrt(5))) / 15)
+		= 79.18768303642829370871505522552 degrees
+	DECAGRAM-SQUARE ANGLE = acos(-0.525731112119133606025669084848)
+		= acos(-sqrt(10 * (5 - sqrt(5))) / 10)
+		= 121.717474411461005324213903140 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="10 120 62">
+<INPUT type=hidden class=Constants value="0.07294901687515772769311974845154,
+0.118033988749894848204586834366,
+0.190983005625052575897706582817,
+0.381966011250105151795413165634,
+0.427050983124842272306880251548,
+0.618033988749894848204586834366,
+0.690983005625052575897706582817,
+0.736067977499789696409173668731,
+0.881966011250105151795413165634,
+0.927050983124842272306880251548">
+<!--
+	C0 = (7 - 3 * sqrt(5)) / 4
+	C1 = (sqrt(5) - 2) / 2
+	C2 = (3 - sqrt(5)) / 4
+	C3 = (3 - sqrt(5)) / 2
+	C4 = (3 * sqrt(5) - 5) / 4
+	C5 = (sqrt(5) - 1) / 2
+	C6 = (5 - sqrt(5)) / 4
+	C7 = (2 * sqrt(5) - 3) / 2
+	C8 = (4 - sqrt(5)) / 2
+	C9 = 3 * (sqrt(5) - 1) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.5 0.5 -C7,0.5 0.5 C7,-0.5 0.5 -C7,
+-0.5 0.5 C7,0.5 -0.5 -C7,0.5 -0.5 C7,-0.5 -0.5 -C7,-0.5 -0.5 C7,0.5 -C7 0.5,
+0.5 -C7 -0.5,-0.5 -C7 0.5,-0.5 -C7 -0.5,0.5 C7 0.5,0.5 C7 -0.5,-0.5 C7 0.5,
+-0.5 C7 -0.5,-C7 0.5 0.5,-C7 0.5 -0.5,C7 0.5 0.5,C7 0.5 -0.5,-C7 -0.5 0.5,
+-C7 -0.5 -0.5,C7 -0.5 0.5,C7 -0.5 -0.5,C2 1.0 C0,C2 1.0 -C0,-C2 1.0 C0,
+-C2 1.0 -C0,C2 -1.0 C0,C2 -1.0 -C0,-C2 -1.0 C0,-C2 -1.0 -C0,1.0 C0 C2,
+1.0 C0 -C2,-1.0 C0 C2,-1.0 C0 -C2,1.0 -C0 C2,1.0 -C0 -C2,-1.0 -C0 C2,
+-1.0 -C0 -C2,C0 C2 1.0,C0 C2 -1.0,-C0 C2 1.0,-C0 C2 -1.0,C0 -C2 1.0,
+C0 -C2 -1.0,-C0 -C2 1.0,-C0 -C2 -1.0,-C1 0.5 C8,-C1 0.5 -C8,C1 0.5 C8,
+C1 0.5 -C8,-C1 -0.5 C8,-C1 -0.5 -C8,C1 -0.5 C8,C1 -0.5 -C8,0.5 C8 -C1,
+0.5 C8 C1,-0.5 C8 -C1,-0.5 C8 C1,0.5 -C8 -C1,0.5 -C8 C1,-0.5 -C8 -C1,
+-0.5 -C8 C1,C8 -C1 0.5,C8 -C1 -0.5,-C8 -C1 0.5,-C8 -C1 -0.5,C8 C1 0.5,
+C8 C1 -0.5,-C8 C1 0.5,-C8 C1 -0.5,-C5 C6 -C4,-C5 C6 C4,C5 C6 -C4,C5 C6 C4,
+-C5 -C6 -C4,-C5 -C6 C4,C5 -C6 -C4,C5 -C6 C4,C6 -C4 -C5,C6 -C4 C5,-C6 -C4 -C5,
+-C6 -C4 C5,C6 C4 -C5,C6 C4 C5,-C6 C4 -C5,-C6 C4 C5,-C4 -C5 C6,-C4 -C5 -C6,
+C4 -C5 C6,C4 -C5 -C6,-C4 C5 C6,-C4 C5 -C6,C4 C5 C6,C4 C5 -C6,-C9 C2 C3,
+-C9 C2 -C3,C9 C2 C3,C9 C2 -C3,-C9 -C2 C3,-C9 -C2 -C3,C9 -C2 C3,C9 -C2 -C3,
+C2 C3 -C9,C2 C3 C9,-C2 C3 -C9,-C2 C3 C9,C2 -C3 -C9,C2 -C3 C9,-C2 -C3 -C9,
+-C2 -C3 C9,C3 -C9 C2,C3 -C9 -C2,-C3 -C9 C2,-C3 -C9 -C2,C3 C9 C2,C3 C9 -C2,
+-C3 C9 C2,-C3 C9 -C2">
+<INPUT type=hidden class=Faces value="0 2 26 74 106 58 56 104 72 24 #,
+1 25 73 105 57 59 107 75 27 3 #,4 28 76 108 60 62 110 78 30 6 #,
+5 7 31 79 111 63 61 109 77 29 #,8 9 33 81 113 65 64 112 80 32 #,
+10 34 82 114 66 67 115 83 35 11 #,12 36 84 116 68 69 117 85 37 13 #,
+14 15 39 87 119 71 70 118 86 38 #,16 20 44 92 100 52 48 96 88 40 #,
+17 41 89 97 49 53 101 93 45 21 #,18 42 90 98 50 54 102 94 46 22 #,
+19 23 47 95 103 55 51 99 91 43 #,0 24 48 52 28 4 #,1 5 29 53 49 25 #,
+2 6 30 54 50 26 #,3 27 51 55 31 7 #,8 32 56 58 34 10 #,9 11 35 59 57 33 #,
+12 14 38 62 60 36 #,13 37 61 63 39 15 #,16 40 64 65 41 17 #,
+18 19 43 67 66 42 #,20 21 45 69 68 44 #,22 46 70 71 47 23 #,
+72 104 80 112 88 96 #,73 97 89 113 81 105 #,74 98 90 114 82 106 #,
+75 107 83 115 91 99 #,76 100 92 116 84 108 #,77 109 85 117 93 101 #,
+78 110 86 118 94 102 #,79 103 95 119 87 111 #,0 4 6 2 #,1 3 7 5 #,8 10 11 9 #,
+12 13 15 14 #,16 17 21 20 #,18 22 23 19 #,24 72 96 48 #,25 49 97 73 #,
+26 50 98 74 #,27 75 99 51 #,28 52 100 76 #,29 77 101 53 #,30 78 102 54 #,
+31 55 103 79 #,32 80 104 56 #,33 57 105 81 #,34 58 106 82 #,35 83 107 59 #,
+36 60 108 84 #,37 85 109 61 #,38 86 110 62 #,39 63 111 87 #,40 88 112 64 #,
+41 65 113 89 #,42 66 114 90 #,43 91 115 67 #,44 68 116 92 #,45 93 117 69 #,
+46 94 118 70 #,47 71 119 95 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatTruncatedIcosidodecahedron.html>Great Truncated Icosidodecahedron</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #68)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE style="font-size:75%">
+<TR><TD valign=top>References:</TD><TD valign=top>[1]</TD><TD>Jean Paul Albert Badoureau, M&eacute;moire sur les Figures Isoc&egrave;les, <I>Journal de l'&Eacute;cole polytechnique</I> <B>49</B> (1881), 47-172.</TD></TR>
+<TR><TD></TD><TD valign=top>[2]</TD><TD>Johann Pitsch, &Uuml;ber Halbregul&auml;re Sternpolyeder, <I>Zeitschrift f&uuml;r das Realschulwesen</I> <B>6</B> (1881), 9-24, 64-65, 72-89, 216.</TD></TR>
+<TR><TD></TD><TD valign=top>[3]</TD><TD>H. S. M. Coxeter, M. S. Longuet-Higgins, and J. C. P. Miller, Uniform Polyhedra, <I>Philosophical Transactions of the Royal Society of London. Series A. Mathematical and Physical Sciences</I> <B>246</B> (1954), 401-450.</TD></TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

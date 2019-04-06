@@ -1,0 +1,827 @@
+<!-- File:   index.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Visual Polyhedra</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<H3>Visual Polyhedra</H3><BR>
+</CENTER>
+
+<P>
+These pages present interactive graphical polyhedra organized in several
+categories.  Each polyhedron's page contains a 3-dimensional virtual model
+of the polyhedron, followed by a summary of the polyhedron's vital statistics.
+The model provides an opaque visual mode, a translucent visual mode, and a
+metrics mode.  In the visual modes, the polyhedron can be rotated and scaled,
+the perspective can be changed, and individual faces can be examined in
+isolation.  The metrics mode computes the polyhedron's vital statistics
+empirically.
+</P>
+
+<P>
+The virtual model on each polyhedron's page requires a browser that
+supports the HTML5 Canvas element.  For older browsers, try using the
+<A href=java/index.html>Java applet version</A> of these pages.
+</P>
+
+<HR>
+
+<TABLE>
+<TR valign=top><TD colspan=2>
+<A href=Platonic.html>
+Platonic Solids</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=5%></TD><TD>
+<A href=Tetrahedron.html>
+U1: Tetrahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=Octahedron.html>
+U5: Octahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=Cube.html>
+U6: Cube</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=Icosahedron.html>
+U22: Icosahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=Dodecahedron.html>
+U23: Dodecahedron</A>
+</TD></TR>
+</TABLE>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=KeplerPoinsot.html>
+Kepler-Poinsot Solids</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=5%></TD><TD>
+<A href=SmallStellatedDodecahedron.html>
+U34: Small Stellated Dodecahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=GreatStellatedDodecahedron.html>
+U52: Great Stellated Dodecahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=GreatDodecahedron.html>
+U35: Great Dodecahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=GreatIcosahedron.html>
+U53: Great Icosahedron</A>
+</TD></TR>
+</TABLE>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=VersiRegular.html>
+Versi-Regular Polyhedra</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=5%></TD><TD>
+<A href=Tetrahemihexahedron.html>
+U4: Tetrahemihexahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=Cubohemioctahedron.html>
+U15: Cubohemioctahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=Octahemioctahedron.html>
+U3: Octahemioctahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=SmallDodecahemidodecahedron.html>
+U51: Small Dodecahemidodecahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=GreatDodecahemidodecahedron.html>
+U70: Great Dodecahemidodecahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=SmallDodecahemicosahedron.html>
+U62: Small Dodecahemicosahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=GreatDodecahemicosahedron.html>
+U65: Great Dodecahemicosahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=SmallIcosihemidodecahedron.html>
+U49: Small Icosihemidodecahedron</A>
+</TD></TR>
+<TR><TD width=5%></TD><TD>
+<A href=GreatIcosihemidodecahedron.html>
+U71: Great Icosihemidodecahedron</A>
+</TD></TR>
+</TABLE>
+</TD></TR>
+<TR valign=top>
+<TD>
+<A href=Archimedean.html>
+Archimedean Solids</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedTetrahedron.html>
+U2: Truncated Tetrahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Cuboctahedron.html>
+U7: Cuboctahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedOctahedron.html>
+U8: Truncated Octahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedCube.html>
+U9: Truncated Cube</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Rhombicuboctahedron.html>
+U10: Rhombicuboctahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=LsnubCube.html>
+U12: Snub Cube (laevo)</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=RsnubCube.html>
+U12: Snub Cube (dextro)</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Icosidodecahedron.html>
+U24: Icosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedCuboctahedron.html>
+U11: Truncated Cuboctahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedIcosahedron.html>
+U25: Truncated Icosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedDodecahedron.html>
+U26: Truncated Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Rhombicosidodecahedron.html>
+U27: Rhombicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=LsnubDodecahedron.html>
+U29: Snub Dodecahedron (laevo)</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=RsnubDodecahedron.html>
+U29: Snub Dodecahedron (dextro)</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedIcosidodecahedron.html>
+U28: Truncated Icosidodecahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+<TD>
+<A href=Catalan.html>
+Catalan Solids</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=TriakisTetrahedron.html>
+Triakis Tetrahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=RhombicDodecahedron.html>
+Rhombic Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TetrakisHexahedron.html>
+Tetrakis Hexahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TriakisOctahedron.html>
+Triakis Octahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=DeltoidalIcositetrahedron.html>
+Deltoidal Icositetrahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=RpentagonalIcositetrahedron.html>
+Pentagonal Icositetrahedron (dextro)</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=LpentagonalIcositetrahedron.html>
+Pentagonal Icositetrahedron (laevo)</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=RhombicTriacontahedron.html>
+Rhombic Triacontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=DisdyakisDodecahedron.html>
+Disdyakis Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=PentakisDodecahedron.html>
+Pentakis Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TriakisIcosahedron.html>
+Triakis Icosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=DeltoidalHexecontahedron.html>
+Deltoidal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=RpentagonalHexecontahedron.html>
+Pentagonal Hexecontahedron (dextro)</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=LpentagonalHexecontahedron.html>
+Pentagonal Hexecontahedron (laevo)</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=DisdyakisTriacontahedron.html>
+Disdyakis Triacontahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+</TR>
+<TR valign=top>
+<TD>
+<A href=SelfIntersectingQuasiRegular.html>
+Self-Intersecting Quasi-Regular Polyhedra</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=DitrigonalDodecadodecahedron.html>
+U41: Ditrigonal Dodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallDitrigonalIcosidodecahedron.html>
+U30: Small Ditrigonal Icosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDitrigonalIcosidodecahedron.html>
+U47: Great Ditrigonal Icosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Dodecadodecahedron.html>
+U36: Dodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatIcosidodecahedron.html>
+U54: Great Icosidodecahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+<TD>
+<A href=SelfIntersectingQuasiRegularDual.html>
+Self-Intersecting Quasi-Regular Duals</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=MedialTriambicIcosahedron.html>
+Medial Triambic Icosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallTriambicIcosahedron.html>
+Small Triambic Icosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatTriambicIcosahedron.html>
+Great Triambic Icosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=MedialRhombicTriacontahedron.html>
+Medial Rhombic Triacontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatRhombicTriacontahedron.html>
+Great Rhombic Triacontahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+</TR>
+<TR valign=top>
+<TD>
+<A href=SelfIntersectingQuasiQuasiRegular.html>
+Self-Intersecting Quasi-Quasi-Regular Polyhedra</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=SmallCubicuboctahedron.html>
+U13: Small Cubicuboctahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatCubicuboctahedron.html>
+U14: Great Cubicuboctahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=UniformGreatRhombicuboctahedron.html>
+U17: Uniform Great Rhombicuboctahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallDodecicosidodecahedron.html>
+U33: Small Dodecicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDodecicosidodecahedron.html>
+U61: Great Dodecicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallDitrigonalDodecicosidodecahedron.html>
+U43: Small Ditrigonal Dodecicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDitrigonalDodecicosidodecahedron.html>
+U42: Great Ditrigonal Dodecicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Icosidodecadodecahedron.html>
+U44: Icosidodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallIcosicosidodecahedron.html>
+U31: Small Icosicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatIcosicosidodecahedron.html>
+U48: Great Icosicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Rhombidodecadodecahedron.html>
+U38: Rhombidodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=UniformGreatRhombicosidodecahedron.html>
+U67: Uniform Great Rhombicosidodecahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+<TD>
+<A href=SelfIntersectingQuasiQuasiRegularDual.html>
+Self-Intersecting Quasi-Quasi-Regular Duals</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=SmallHexacronicIcositetrahedron.html>
+Small Hexacronic Icositetrahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatHexacronicIcositetrahedron.html>
+Great Hexacronic Icositetrahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDeltoidalIcositetrahedron.html>
+Great Deltoidal Icositetrahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallDodecacronicHexecontahedron.html>
+Small Dodecacronic Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDodecacronicHexecontahedron.html>
+Great Dodecacronic Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallDitrigonalDodecacronicHexecontahedron.html>
+Small Ditrigonal Dodecacronic Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDitrigonalDodecacronicHexecontahedron.html>
+Great Ditrigonal Dodecacronic Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=MedialIcosacronicHexecontahedron.html>
+Medial Icosacronic Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallIcosacronicHexecontahedron.html>
+Small Icosacronic Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatIcosacronicHexecontahedron.html>
+Great Icosacronic Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=MedialDeltoidalHexecontahedron.html>
+Medial Deltoidal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDeltoidalHexecontahedron.html>
+Great Deltoidal Hexecontahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+</TR>
+<TR valign=top>
+<TD>
+<A href=VersiQuasiRegular.html>
+Versi-Quasi-Regular Polyhedra</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=SmallRhombihexahedron.html>
+U18: Small Rhombihexahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatRhombihexahedron.html>
+U21: Great Rhombihexahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallDodecicosahedron.html>
+U50: Small Dodecicosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDodecicosahedron.html>
+U63: Great Dodecicosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallRhombidodecahedron.html>
+U39: Small Rhombidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatRhombidodecahedron.html>
+U73: Great Rhombidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Rhombicosahedron.html>
+U56: Rhombicosahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+<TD>
+<A href=VersiQuasiRegularDual.html>
+Versi-Quasi-Regular Duals</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=SmallRhombihexacron.html>
+Small Rhombihexacron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatRhombihexacron.html>
+Great Rhombihexacron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallDodecicosacron.html>
+Small Dodecicosacron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDodecicosacron.html>
+Great Dodecicosacron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallRhombidodecacron.html>
+Small Rhombidodecacron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatRhombidodecacron.html>
+Great Rhombidodecacron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=Rhombicosacron.html>
+Rhombicosacron</A>
+</TD></TR>
+</TABLE>
+</TD>
+</TR>
+<TR valign=top>
+<TD>
+<A href=SelfIntersectingTruncatedRegular.html>
+Self-Intersecting Truncated Regular Polyhedra</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=StellatedTruncatedHexahedron.html>
+U19: Stellated Truncated Hexahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedGreatDodecahedron.html>
+U37: Truncated Great Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallStellatedTruncatedDodecahedron.html>
+U58: Small Stellated Truncated Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatStellatedTruncatedDodecahedron.html>
+U66: Great Stellated Truncated Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedGreatIcosahedron.html>
+U55: Truncated Great Icosahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+<TD>
+<A href=SelfIntersectingTruncatedRegularDual.html>
+Self-Intersecting Truncated Regular Duals</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=GreatTriakisOctahedron.html>
+Great Triakis Octahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallStellapentakisDodecahedron.html>
+Small Stellapentakis Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatPentakisDodecahedron.html>
+Great Pentakis Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatTriakisIcosahedron.html>
+Great Triakis Icosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatStellapentakisDodecahedron.html>
+Great Stellapentakis Dodecahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+</TR>
+<TR valign=top>
+<TD>
+<A href=SelfIntersectingTruncatedQuasiRegular.html>
+Self-Intersecting Truncated Quasi-Regular Polyhedra</A> &nbsp;
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=CubitruncatedCuboctahedron.html>
+U16: Cubitruncated Cuboctahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatTruncatedCuboctahedron.html>
+U20: Great Truncated Cuboctahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=IcositruncatedDodecadodecahedron.html>
+U45: Icositruncated Dodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TruncatedDodecadodecahedron.html>
+U59: Truncated Dodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatTruncatedIcosidodecahedron.html>
+U68: Great Truncated Icosidodecahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+<TD>
+<A href=SelfIntersectingTruncatedQuasiRegularDual.html>
+Self-Intersecting Truncated Quasi-Regular Duals</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=TetradyakisHexahedron.html>
+Tetradyakis Hexahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDisdyakisDodecahedron.html>
+Great Disdyakis Dodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=TridyakisIcosahedron.html>
+Tridyakis Icosahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=MedialDisdyakisTriacontahedron.html>
+Medial Disdyakis Triacontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDisdyakisTriacontahedron.html>
+Great Disdyakis Triacontahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+</TR>
+<TR valign=top>
+<TD>
+<A href=SelfIntersectingSnubQuasiRegular.html>
+Self-Intersecting Snub Quasi-Regular Polyhedra</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=SnubDodecadodecahedron.html>
+U40: Snub Dodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=InvertedSnubDodecadodecahedron.html>
+U60: Inverted Snub Dodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatSnubIcosidodecahedron.html>
+U57: Great Snub Icosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatInvertedSnubIcosidodecahedron.html>
+U69: Great Inverted Snub Icosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatRetrosnubIcosidodecahedron.html>
+U74: Great Retrosnub Icosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SnubIcosidodecadodecahedron.html>
+U46: Snub Icosidodecadodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatSnubDodecicosidodecahedron.html>
+U64: Great Snub Dodecicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallSnubIcosicosidodecahedron.html>
+U32: Small Snub Icosicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallRetrosnubIcosicosidodecahedron.html>
+U72: Small Retrosnub Icosicosidodecahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatDirhombicosidodecahedron.html>
+U75: Great Dirhombicosidodecahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+<TD>
+<A href=SelfIntersectingSnubQuasiRegularDual.html>
+Self-Intersecting Snub Quasi-Regular Duals</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0 style="font-size:75%">
+<TR><TD width=10%></TD><TD>
+<A href=MedialPentagonalHexecontahedron.html>
+Medial Pentagonal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=MedialInvertedPentagonalHexecontahedron.html>
+Medial Inverted Pentagonal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatPentagonalHexecontahedron.html>
+Great Pentagonal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatInvertedPentagonalHexecontahedron.html>
+Great Inverted Pentagonal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatPentagrammicHexecontahedron.html>
+Great Pentagrammic Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=MedialHexagonalHexecontahedron.html>
+Medial Hexagonal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=GreatHexagonalHexecontahedron.html>
+Great Hexagonal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallHexagonalHexecontahedron.html>
+Small Hexagonal Hexecontahedron</A>
+</TD></TR>
+<TR><TD width=10%></TD><TD>
+<A href=SmallHexagrammicHexecontahedron.html>
+Small Hexagrammic Hexecontahedron</A>
+</TD></TR>
+</TABLE>
+</TD>
+</TR>
+<TR valign=top><TD colspan=2>
+<A href=PrismAntiprism.html>Prisms &amp; Antiprisms</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=DipyramidTrapezohedron.html>Dipyramids &amp; Trapezohedra</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=StarPrismAntiprism.html>Star Prisms &amp; Antiprisms</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=StarDipyramidTrapezohedron.html>Star Dipyramids &amp; Trapezohedra</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=Hull.html>Archimedean-Catalan Hulls</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=Propellor.html>Propellor Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=BiscribedNonChiral.html>Biscribed Non-Chiral Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=BiscribedChiral.html>Biscribed Chiral Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=TruncatedArchimedean.html>Truncated Archimedean Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=RectifiedArchimedean.html>Rectified Archimedean Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=TruncatedCatalan.html>Truncated Catalan Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=Chamfer.html>Chamfered Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=Johnson.html>Johnson Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=Derived.html>Derived Solids</A>
+</TD></TR>
+<TR valign=top><TD>
+<A href=GeodesicIcosahedra.html>Geodesic Icosahedra</A>
+</TD><TD>
+<A href=GeodesicIcosahedraPage2.html>Geodesic Icosahedra (Page 2)</A>
+</TD></TR>
+<TR valign=top><TD>
+<A href=DualGeodesicIcosahedra.html>Dual Geodesic Icosahedra</A>
+</TD><TD>
+<A href=DualGeodesicIcosahedraPage2.html>Dual Geodesic Icosahedra (Page 2)</A>
+</TD></TR>
+<TR valign=top><TD>
+<A href=GeodesicCubes.html>Geodesic Cubes</A>
+</TD><TD>
+<A href=GeodesicCubesPage2.html>Geodesic Cubes (Page 2)</A>
+</TD></TR>
+<TR valign=top><TD>
+<A href=GeodesicRTs.html>Geodesic Rhombic Triacontahedra</A>
+</TD><TD>
+<A href=GeodesicRTsPage2.html>Geodesic Rhombic Triacontahedra (Page 2)</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=HighOrderGeodesics.html>High Order Geodesic Polyhedra</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=GreaterSelfDual.html>Greater Self-Dual Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=ToroidalRegularHexagonal.html>Regular Hexagonal Toroidal Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=ToroidalRegularTriangular.html>Regular Triangular Toroidal Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=ToroidalRegularTetragonal.html>Regular Tetragonal Toroidal Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=ToroidalNonRegular.html>Non-Regular Toroidal Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=HigherGenus.html>Higher Genus Toroidal Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=Other.html>Other Solids</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=Simplest.html>Simplest Canonical Polyhedra of Each Symmetry Type</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=SymmetricCanonicals.html>Symmetries of Canonical Polyhedra</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=SymmetricSelfDuals.html>Symmetries of Canonical Self-Dual Polyhedra</A>
+</TD></TR>
+<TR valign=top><TD colspan=2>
+<A href=ImproperSelfDuals.html>Improper Self-Dual Polyhedra</A>
+</TD></TR>
+</TABLE>
+
+<P style="font-size:60%">
+Copyright &copy; 2015 David I. McCooey.  All Rights Reserved
+</P>
+
+<HR>
+
+<P style="font-size:60%">
+<SCRIPT type="text/javascript" language="javascript">
+<!--
+v="ezPm/ c.Aj<E>n:?lVhrbdfy\"=@ugts\naoi"
+e="+#@B0.?*(%23 698#@B0=A.5#&&AA 7:#@&'&A#/>;4) &=91B>;@0B!B-<%\"A072 53@8,5#&&AA 7:#@&'&A#*$(,"
+o=""
+for(j=0;j<e.length;j++){o+=v.charAt(e.charCodeAt(j)-32)}
+document.write(o)
+// -->
+</SCRIPT>
+</P>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

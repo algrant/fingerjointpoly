@@ -1,0 +1,722 @@
+<!-- File:   DipyramidTrapezohedron.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Dipyramids &amp; Trapezohedra</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='PrismAntiprism.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Dipyramids &amp; Trapezohedra</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='StarPrismAntiprism.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+The duals of the regular prisms are often called dipyramids, and the duals
+of the regular antiprisms are often called trapezohedra.  The Square
+Dipyramid and the Trigonal Trapezohedron are the Octahedron and the Cube,
+respectively.  The remaining regular dipyramids and trapezohedra are closely
+related to Catalan solids in the sense that they have one type of face and
+they have constant dihedral angles.  The distinguishing factor is that regular
+dipyramids and trapezohedra do not have polyhedral group (tetrahedral,
+octahedral, or icosahedral) rotational symmetries.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Triangular Dipyramid
+
+	(6) SHORT EDGE = 4 / 3
+	(3) LONG EDGE = 2
+	(2) INNER VERTEX RADIUS = 2 / 3
+	(3) OUTER VERTEX RADIUS = 2 * sqrt(3) / 3
+	EDGE-SCRIBED RADIUS = sqrt(3) / 3
+	INRADIUS = 2 * sqrt(21) / 21
+	VOLUME = 4 * sqrt(3) / 9
+	DIHEDRAL ANGLE = acos(-1/7) = 98.2132107017381887890349494803 degrees
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 4
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Prismatic (D3h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 5 6">
+<INPUT type=hidden class=Constants value="0.577350269189625764509148780502,
+0.666666666666666666666666666667,
+1.15470053837925152901829756100">
+<!--
+	C0 = sqrt(3) / 3
+	C1 = 2 / 3
+	C2 = 2 * sqrt(3) / 3
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C1,0.0 0.0 -C1,1.0 C0 0.0,
+-1.0 C0 0.0,0.0 -C2 0.0">
+<INPUT type=hidden class=Faces value="0 2 3 #,0 3 4 #,0 4 2 #,1 2 4 #,1 4 3 #,
+1 3 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=TriangularDipyramid.html>Triangular Dipyramid</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Square Dipyramid (Octahedron)
+
+	(12) EDGE = sqrt(2)
+	RADIUS = 1
+	MIDRADIUS = sqrt(2) / 2
+	INRADIUS = sqrt(3) / 3
+	VOLUME = 4 / 3
+	DIHEDRAL ANGLE = acos(-1/3) = 109.471220634490691369245999340 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 6 8">
+<INPUT type=hidden class=Vertices value="0.0 0.0 1.0,0.0 0.0 -1.0,1.0 0.0 0.0,
+-1.0 0.0 0.0,0.0 1.0 0.0,0.0 -1.0 0.0">
+<INPUT type=hidden class=Faces value="0 2 4 #,0 4 3 #,0 3 5 #,0 5 2 #,1 2 5 #,
+1 5 3 #,1 3 4 #,1 4 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=SquareDipyramid.html>Square Dipyramid (Octahedron)</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #5)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Pentagonal Dipyramid
+
+	(5) SHORT EDGE = sqrt(5) - 1
+	(10) LONG EDGE = 4 * sqrt(5) / 5
+	(5) INNER VERTEX RADIUS = sqrt(10 * (5 - sqrt(5))) / 5
+	(2) OUTER VERTEX RADIUS = (5 + sqrt(5)) / 5
+	EDGE-SCRIBED RADIUS = sqrt(10 * (5 + sqrt(5))) / 10
+	INRADIUS = sqrt(410 * (35 + 9 * sqrt(5))) / 205
+	VOLUME = 2 * sqrt(2 * (5 + sqrt(5))) / 3
+	DIHEDRAL ANGLE = acos(-(11 + 4 * sqrt(5)) / 41)
+		= 119.107231365869541878425037424 degrees
+
+	ROTATION SYMMETRIES:          10
+	MIRROR ROTATION SYMMETRIES:   10
+	ROTATION AXES:                 6 (1[5] + 5[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  5-fold Prismatic (D5h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 7 10">
+<INPUT type=hidden class=Constants value="0.3249196962329063261558714122151,
+0.618033988749894848204586834366,
+0.850650808352039932181540497063,
+1.05146222423826721205133816970,
+1.447213595499957939281834733746">
+<!--
+	C0 = sqrt(5 * (5 - 2 * sqrt(5))) / 5
+	C1 = (sqrt(5) - 1) / 2
+	C2 = sqrt(10 * (5 + sqrt(5))) / 10
+	C3 = sqrt(10 * (5 - sqrt(5))) / 5
+	C4 = (5 + sqrt(5)) / 5
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C4,0.0 0.0 -C4,1.0 -C0 0.0,
+-1.0 -C0 0.0,C1 C2 0.0,-C1 C2 0.0,0.0 -C3 0.0">
+<INPUT type=hidden class=Faces value="0 2 4 #,0 4 5 #,0 5 3 #,0 3 6 #,0 6 2 #,
+1 2 6 #,1 6 3 #,1 3 5 #,1 5 4 #,1 4 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=PentagonalDipyramid.html>Pentagonal Dipyramid</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Hexagonal Dipyramid
+
+	(6) SHORT EDGE = 2 * sqrt(3) / 3
+	(12) LONG EDGE = 4 * sqrt(3) / 3
+	(6) INNER VERTEX RADIUS = 2 * sqrt(3) / 3
+	(2) OUTER VERTEX RADIUS = 2
+	EDGE-SCRIBED RADIUS = 1
+	INRADIUS = 2 * sqrt(5) / 5
+	VOLUME = 8 * sqrt(3) / 3
+	DIHEDRAL ANGLE = acos(-3/5) = 126.869897645844021296855612559 degrees
+
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (1[6] + 6[2])
+	MIRROR PLANES:                 7
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  6-fold Prismatic (D6h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 8 12">
+<INPUT type=hidden class=Constants value="0.577350269189625764509148780502,
+1.15470053837925152901829756100">
+<!--
+	C0 = sqrt(3) / 3
+	C1 = 2 * sqrt(3) / 3
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 2.0,0.0 0.0 -2.0,1.0 C0 0.0,
+1.0 -C0 0.0,-1.0 C0 0.0,-1.0 -C0 0.0,0.0 C1 0.0,0.0 -C1 0.0">
+<INPUT type=hidden class=Faces value="0 2 6 #,0 6 4 #,0 4 5 #,0 5 7 #,0 7 3 #,
+0 3 2 #,1 2 3 #,1 3 7 #,1 7 5 #,1 5 4 #,1 4 6 #,1 6 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=HexagonalDipyramid.html>Hexagonal Dipyramid</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Heptagonal Dipyramid
+
+	(7) SHORT EDGE = 1.10991626417474238284438974201
+		= root of the polynomial:  (x^3) - 4*(x^2) - 4*x + 8
+		= 1 / cos(pi/7)
+	(14) LONG EDGE = 2.94790491639831296935234522802
+		= root of the polynomial:  7*(x^3) - 28*(x^2) + 64
+		= 3 - tan(pi/14)^2
+	(7) INNER VERTEX RADIUS = 1.27904800768993260574785060727
+		= square-root of a root of the polynomial:  7*(x^3)-56*(x^2)+112*x-64
+		= 1 / sin(2*pi/7)
+	(2) OUTER VERTEX RADIUS = 2.65597055521136353559206405001
+		= root of the polynomial:  7*(x^3) - 28*(x^2) + 28*x - 8
+		= 1 / (2 * (sin(pi/7)^2))
+	EDGE-SCRIBED RADIUS = 1.15238243548124325262057511177
+		= square-root of a root of the polynomial:  7*(x^3)-14*(x^2)+7*x-1
+		= 1 / (2 * sin(pi/7))
+	INRADIUS = 1.057162591433579781950046342747
+		= square-root of a root of the polynomial:
+			1673*(x^3) - 2520*(x^2) + 784*x - 64
+		= 2 * sqrt(1673 * (436 * (cos(pi/7)^2) + 116 * cos(pi/7) + 9)) / 1673
+	VOLUME = 7.92659897662784358642877085117
+		= square-root of a root of the polynomial:
+			729*(x^3) - 54432*(x^2) + 564480*x - 1404928
+		= 2 * sqrt(7) / (3 * sin(pi/14))
+	DIHEDRAL ANGLE = acos(-0.683140263032958681799908393207)
+		= acos(-root[239*(x^3) - 227*(x^2) + 45*x - 1])
+		= 133.089524325502888504542064910 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  7-fold Prismatic (D7h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 9 14">
+<INPUT type=hidden class=Constants value="0.284614957246127011669038446077,
+0.554958132087371191422194871006,
+0.797473388882403961415688254214,
+1.15238243548124325262057511177,
+1.24697960371746706105000976801,
+1.27904800768993260574785060727,
+2.65597055521136353559206405001">
+<!--
+	C0 = square-root of a root of the polynomial:  7*(x^3)-21*(x^2)+14*x-1
+		= 1 / (2 * sin(pi/7)) - 2 * sin(pi/7)
+	C1 = root of the polynomial:  (x^3) - 2*(x^2) - x + 1
+		= 1 / (2 * cos(pi/7))
+	C2 = square-root of a root of the polynomial:  7*(x^3)-35*(x^2)+21*x-1
+		= cot(2*pi/7)
+		= tan(3*pi/14)
+	C3 = square-root of a root of the polynomial:  7*(x^3)-14*(x^2)+7*x-1
+		= 1 / (2 * sin(pi/7))
+	C4 = root of the polynomial:  (x^3) + (x^2) - 2*x - 1
+		= 2 * cos(2*pi/7)
+	C5 = square-root of a root of the polynomial:  7*(x^3)-56*(x^2)+112*x-64
+		= 1 / sin(2*pi/7)
+	C6 = root of the polynomial:  7*(x^3) - 28*(x^2) + 28*x - 8
+		= 1 / (2 * (sin(pi/7)^2))
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C6,0.0 0.0 -C6,C4 C0 0.0,
+-C4 C0 0.0,1.0 -C2 0.0,-1.0 -C2 0.0,C1 C3 0.0,-C1 C3 0.0,0.0 -C5 0.0">
+<INPUT type=hidden class=Faces value="0 2 6 #,0 6 7 #,0 7 3 #,0 3 5 #,0 5 8 #,
+0 8 4 #,0 4 2 #,1 2 4 #,1 4 8 #,1 8 5 #,1 5 3 #,1 3 7 #,1 7 6 #,1 6 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=HeptagonalDipyramid.html>Heptagonal Dipyramid</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Octagonal Dipyramid
+
+	(8) SHORT EDGE = sqrt(2 * (2 - sqrt(2)))
+	(16) LONG EDGE = 2 * sqrt(2 + sqrt(2))
+	(8) INNER VERTEX RADIUS = sqrt(2)
+	(2) OUTER VERTEX RADIUS = 2 + sqrt(2)
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 + sqrt(2))) / 2
+	INRADIUS = sqrt(34 * (7 + 4 * sqrt(2))) / 17
+	VOLUME = 16 * (1 + sqrt(2)) / 3
+	DIHEDRAL ANGLE = acos(-(7 + 4 * sqrt(2)) / 17)
+		= 138.117959055512322254739639927 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:   16
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  8-fold Prismatic (D8h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 10 16">
+<INPUT type=hidden class=Constants value="1.41421356237309504880168872421,
+3.41421356237309504880168872421">
+<!--
+	C0 = sqrt(2)
+	C1 = 2 + sqrt(2)
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C1,0.0 0.0 -C1,C0 0.0 0.0,
+-C0 0.0 0.0,0.0 C0 0.0,0.0 -C0 0.0,1.0 1.0 0.0,1.0 -1.0 0.0,-1.0 1.0 0.0,
+-1.0 -1.0 0.0">
+<INPUT type=hidden class=Faces value="0 2 6 #,0 6 4 #,0 4 8 #,0 8 3 #,0 3 9 #,
+0 9 5 #,0 5 7 #,0 7 2 #,1 2 7 #,1 7 5 #,1 5 9 #,1 9 3 #,1 3 8 #,1 8 4 #,
+1 4 6 #,1 6 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=OctagonalDipyramid.html>Octagonal Dipyramid</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Trigonal Trapezohedron (Cube)
+
+	(12) EDGE = sqrt(2) / 2
+	RADIUS = sqrt(6) / 4
+	MIDRADIUS = 1 / 2
+	INRADIUS = sqrt(2) / 4
+	VOLUME = sqrt(2) / 4
+	DIHEDRAL ANGLE = acos(0) = 90 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 8 6">
+<INPUT type=hidden class=Constants value="0.353553390593273762200422181052">
+<!--
+	C0 = sqrt(2) / 4
+-->
+<INPUT type=hidden class=Vertices value="C0 C0 C0,C0 C0 -C0,C0 -C0 C0,
+C0 -C0 -C0,-C0 C0 C0,-C0 C0 -C0,-C0 -C0 C0,-C0 -C0 -C0">
+<INPUT type=hidden class=Faces value="0 1 5 4 #,0 4 6 2 #,0 2 3 1 #,7 3 2 6 #,
+7 6 4 5 #,7 5 1 3 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="673887339 -302905447 0 673887339">
+</DIV>
+<BR>
+<CENTER>
+<A href=TrigonalTrapezohedron.html>Trigonal Trapezohedron (Cube)</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #6)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Tetragonal Trapezohedron
+
+	(8) SHORT EDGE = sqrt(sqrt(2) - 1)
+	(8) LONG EDGE = sqrt(2 * (1 + sqrt(2))) / 2
+	(8) INNER VERTEX RADIUS = sqrt(6 * sqrt(2)) / 4
+	(2) OUTER VERTEX RADIUS = sqrt(2 * (4 + 3 * sqrt(2))) / 4
+	EDGE-SCRIBED RADIUS = sqrt(2 * (2 + sqrt(2))) / 4
+	INRADIUS = sqrt(14 * (8 + 5 * sqrt(2))) / 28
+	VOLUME = sqrt(4 + 3 * sqrt(2)) / 3
+	DIHEDRAL ANGLE = acos(-(2 * sqrt(2) - 1) / 7)
+		= 105.141507814384464992073886544 degrees
+
+	ROTATION SYMMETRIES:           8
+	MIRROR ROTATION SYMMETRIES:    8
+	ROTATION AXES:                 5 (1[4] + 4[2])
+	MIRROR PLANES:                 4
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  4-fold Antiprismatic (D4v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 10 8">
+<INPUT type=hidden class=Constants value="0.174155349874503261843187247164,
+0.7071067811865475244008443621048,
+1.01505176512821780487431272340">
+<!--
+	C0 = sqrt(2 * (3 * sqrt(2) - 4)) / 4
+	C1 = sqrt(2) / 2
+	C2 = sqrt(2 * (4 + 3 * sqrt(2))) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C2,0.0 0.0 -C2,C1 0.0 C0,
+-C1 0.0 C0,0.0 C1 C0,0.0 -C1 C0,0.5 0.5 -C0,0.5 -0.5 -C0,-0.5 0.5 -C0,
+-0.5 -0.5 -C0">
+<INPUT type=hidden class=Faces value="0 2 6 4 #,0 4 8 3 #,0 3 9 5 #,0 5 7 2 #,
+1 6 2 7 #,1 7 5 9 #,1 9 3 8 #,1 8 4 6 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=TetragonalTrapezohedron.html>Tetragonal Trapezohedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Pentagonal Trapezohedron
+
+	(10) SHORT EDGE = (sqrt(5) - 1) / 2
+	(10) LONG EDGE = (1 + sqrt(5)) / 2
+	(10) INNER VERTEX RADIUS = sqrt(3) / 2
+	(2) OUTER VERTEX RADIUS = sqrt(5 + 2 * sqrt(5)) / 2
+	EDGE-SCRIBED RADIUS = (1 + sqrt(5)) / 4
+	INRADIUS = sqrt(5 * (5 + 2 * sqrt(5))) / 10
+	VOLUME = 5 * (3 + sqrt(5)) / 12
+	DIHEDRAL ANGLE = acos(-sqrt(5) / 5)
+		= 116.565051177077989351572193720 degrees
+
+	ROTATION SYMMETRIES:          10
+	MIRROR ROTATION SYMMETRIES:   10
+	ROTATION AXES:                 6 (1[5] + 5[2])
+	MIRROR PLANES:                 5
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  5-fold Antiprismatic (D5v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 12 10">
+<INPUT type=hidden class=Constants value="0.309016994374947424102293417183,
+0.809016994374947424102293417183,
+1.30901699437494742410229341718">
+<!--
+	C0 = (sqrt(5) - 1) / 4
+	C1 = (1 + sqrt(5)) / 4
+	C2 = (3 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 C0 C1,0.0 C0 -C1,0.0 -C0 C1,
+0.0 -C0 -C1,0.5 0.5 0.5,0.5 0.5 -0.5,-0.5 -0.5 0.5,-0.5 -0.5 -0.5,C2 -C1 0.0,
+-C2 C1 0.0,C0 C1 0.0,-C0 -C1 0.0">
+<INPUT type=hidden class=Faces value="8 2 6 11 #,8 11 7 3 #,8 3 1 5 #,
+8 5 10 4 #,8 4 0 2 #,9 0 4 10 #,9 10 5 1 #,9 1 3 7 #,9 7 11 6 #,9 6 2 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="9025 -3146 2623 -1328">
+</DIV>
+<BR>
+<CENTER>
+<A href=PentagonalTrapezohedron.html>Pentagonal Trapezohedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Hexagonal Trapezohedron
+
+	(12) SHORT EDGE = sqrt(2 * (sqrt(3) - 1)) / 2
+	(12) LONG EDGE = sqrt(2 * (5 + 3 * sqrt(3))) / 2
+	(12) INNER VERTEX RADIUS = sqrt(6 * (1 + sqrt(3))) / 4
+	(2) OUTER VERTEX RADIUS = sqrt(2 * (19 + 11 * sqrt(3))) / 4
+	EDGE-SCRIBED RADIUS = (sqrt(2) + sqrt(6)) / 4
+	INRADIUS = sqrt(6 * (9 + 5 * sqrt(3))) / 12
+	VOLUME = sqrt(2 * (19 + 11 * sqrt(3))) / 2
+	DIHEDRAL ANGLE = acos(-sqrt(3) / 3)
+		= 125.264389682754654315377000330 degrees
+
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (1[6] + 6[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  6-fold Antiprismatic (D6v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 14 12">
+<INPUT type=hidden class=Constants value="0.156585608656507718901567227964,
+0.866025403784438646763723170753,
+2.18095618030422754264317321632">
+<!--
+	C0 = sqrt(2 * (3 * sqrt(3) - 5)) / 4
+	C1 = sqrt(3) / 2
+	C2 = sqrt(2 * (19 + 11 * sqrt(3))) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C2,0.0 0.0 -C2,0.0 1.0 C0,
+0.0 -1.0 C0,1.0 0.0 -C0,-1.0 0.0 -C0,C1 0.5 C0,C1 -0.5 C0,-C1 0.5 C0,
+-C1 -0.5 C0,0.5 C1 -C0,0.5 -C1 -C0,-0.5 C1 -C0,-0.5 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 2 12 8 #,0 8 5 9 #,0 9 13 3 #,
+0 3 11 7 #,0 7 4 6 #,0 6 10 2 #,1 4 7 11 #,1 11 3 13 #,1 13 9 5 #,1 5 8 12 #,
+1 12 2 10 #,1 10 6 4 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=HexagonalTrapezohedron.html>Hexagonal Trapezohedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Heptagonal Trapezohedron
+
+	(14) SHORT EDGE = 0.597407622894292707144804443062
+		= square-root of a root of the polynomial:  (x^3) + 3*(x^2) - 4*x + 1
+		= sqrt(3 - tan(2*pi/7)^2) / 2
+	(14) LONG EDGE = 3.01626170599379698902101672220
+		= square-root of a root of the polynomial:  (x^3) - 9*(x^2) - x + 1
+		= sqrt(2 * (cot(pi/14)^2 - 1)) / 2
+	(14) INNER VERTEX RADIUS = 1.16252023718025170959740583013
+		= square-root of a root of the polynomial:  64*(x^3)-48*(x^2)-72*x+27
+		= sqrt(6 * cos(pi/7)) / 2
+	(2) OUTER VERTEX RADIUS = 2.94063772761851796655260234634
+		= sqrt(root[64*(x^3) - 560*(x^2) + 56*x + 7])
+		= sqrt(2 * (16 * (cos(pi/7)^2) + 7 * cos(pi/7) - 2)) / 2
+	EDGE-SCRIBED RADIUS = 1.12348980185873353052500488400
+		= root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * sin(pi/14))
+	INRADIUS = 1.02643024359692312805085232556
+		= square-root of a root of the polynomial:  832*(x^3)-944*(x^2)+72*x-1
+		= sqrt(26 * (24 * (cos(pi/7)^2) + 11 * cos(pi/7) - 2)) / 26
+	VOLUME = 7.907058288315798617145113949749
+		= square-root of a root of the polynomial:
+			46656*(x^3) - 2921184*(x^2) + 259308*x + 117649
+		= 7 * sqrt(7 + 40 * cos(2*pi/7) + 36 * (cos(2*pi/7)^2)) / 6
+	DIHEDRAL ANGLE = acos(-0.669362319281099010152987545544)
+		= acos(-root[13*(x^3) + (x^2) - 5*x - 1])
+		= acos(-(8 * (cos(pi/7)^2) + 8 * cos(pi/7) - 5) / 13)
+		= 132.017867360984623382077050571 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 7
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  7-fold Antiprismatic (D7v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 16 14">
+<INPUT type=hidden class=Constants value="0.1531927682625616683458021483497,
+0.256429215818138474873324904069,
+0.7184986963636851321448067789251,
+0.900968867902419126236102319507,
+1.03826069828616828358176943074,
+1.12348980185873353052500488400,
+1.15238243548124325262057511177,
+2.94063772761851796655260234634">
+<!--
+	C0 = square-root of a root of the polynomial:  448*(x^3)+560*(x^2)-56*x+1
+		= sqrt(14 * (3 - 8 * sin(pi/14) - 18 * (sin(pi/14)^2))) / 14
+		= sqrt(14 * (17 * cos(pi/7) - 8 * cos(2*pi/7) - 10)) / 14
+		= sqrt(14 * (9 * cos(pi/7) + 2 / cos(pi/7) - 10)) / 14
+	C1 = square-root of a root of the polynomial:  448*(x^3)-224*(x^2)+28*x-1
+		= 1 / (4 * cos(pi/14))
+	C2 = square-root of a root of the polynomial:  448*(x^3)-336*(x^2)+56*x-1
+		= (1 + cos(pi/7)) * sqrt(7) / 7
+	C3 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= cos(pi/7)
+	C4 = square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= cot(pi/7) / 2
+		= tan(5*pi/14) / 2
+	C5 = root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * sin(pi/14))
+	C6 = square-root of a root of the polynomial:  7*(x^3) - 14*(x^2) + 7*x - 1
+		= 1 / (2 * sin(pi/7))
+	C7 = square-root of a root of the polynomial:  64*(x^3)-560*(x^2)+56*x+7
+		= sqrt(2 * (16 * (cos(pi/7)^2) + 7 * cos(pi/7) - 2)) / 2
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C7,0.0 0.0 -C7,C5 C1 C0,
+C5 -C1 -C0,-C5 C1 C0,-C5 -C1 -C0,C3 -C2 C0,C3 C2 -C0,-C3 -C2 C0,-C3 C2 -C0,
+0.5 C4 C0,0.5 -C4 -C0,-0.5 C4 C0,-0.5 -C4 -C0,0.0 -C6 C0,0.0 C6 -C0">
+<INPUT type=hidden class=Faces value="0 2 7 10 #,0 10 15 12 #,0 12 9 4 #,
+0 4 5 8 #,0 8 13 14 #,0 14 11 6 #,0 6 3 2 #,1 3 6 11 #,1 11 14 13 #,1 13 8 5 #,
+1 5 4 9 #,1 9 12 15 #,1 15 10 7 #,1 7 2 3 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=HeptagonalTrapezohedron.html>Heptagonal Trapezohedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Octagonal Trapezohedron
+
+	(16) SHORT EDGE = sqrt(1 - sqrt(2) + sqrt(2 - sqrt(2)))
+	(16) LONG EDGE = sqrt(2 * (8 + 5*sqrt(2) + sqrt(2*(58 + 41*sqrt(2))))) / 2
+	(16) INNER VERTEX RADIUS = sqrt(6 * (2 + sqrt(2 * (2 + sqrt(2))))) / 4
+	(2) OUTER VERTEX RADIUS
+		= sqrt(2 * (30 + 20 * sqrt(2) + sqrt(2 * (850 + 601 * sqrt(2))))) / 4
+	EDGE-SCRIBED RADIUS = sqrt(2*(4 + 2*sqrt(2) + sqrt(2*(10 + 7*sqrt(2)))))/4
+	INRADIUS = sqrt(94*(146 + 88*sqrt(2) + 5*sqrt(2*(706 + 497*sqrt(2)))))/188
+	VOLUME = 2 * sqrt(2 * (50 + 35*sqrt(2) + sqrt(4954 + 3503 * sqrt(2)))) / 3
+	DIHEDRAL ANGLE = acos(-(2 * sqrt(130 + 79*sqrt(2)) - 5 - 6 * sqrt(2)) / 47)
+		= 137.370466428637215833609438430 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:   16
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  8-fold Antiprismatic (D8v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniConvex">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 18 16">
+<INPUT type=hidden class=Constants value="0.151047815180276180953489848716,
+0.923879532511286756128183189397,
+1.20710678118654752440084436210,
+1.30656296487637652785664317343,
+3.817603985406019048222189005746">
+<!--
+	C0 = sqrt(2 * (3 * sqrt(2 * (2 + sqrt(2))) - 2 - 4 * sqrt(2))) / 4
+	C1 = sqrt(2 + sqrt(2)) / 2
+	C2 = (1 + sqrt(2)) / 2
+	C3 = sqrt(2 * (2 + sqrt(2))) / 2
+	C4 = sqrt(2 * (30 + 20 * sqrt(2) + sqrt(2 * (850 + 601 * sqrt(2))))) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 C4,0.0 0.0 -C4,C3 0.0 C0,
+-C3 0.0 C0,0.0 C3 C0,0.0 -C3 C0,C1 C1 C0,C1 -C1 C0,-C1 C1 C0,-C1 -C1 C0,
+C2 0.5 -C0,C2 -0.5 -C0,-C2 0.5 -C0,-C2 -0.5 -C0,0.5 C2 -C0,0.5 -C2 -C0,
+-0.5 C2 -C0,-0.5 -C2 -C0">
+<INPUT type=hidden class=Faces value="0 2 10 6 #,0 6 14 4 #,0 4 16 8 #,
+0 8 12 3 #,0 3 13 9 #,0 9 17 5 #,0 5 15 7 #,0 7 11 2 #,1 10 2 11 #,1 11 7 15 #,
+1 15 5 17 #,1 17 9 13 #,1 13 3 12 #,1 12 8 16 #,1 16 4 14 #,1 14 6 10 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -9 -8 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=OctagonalTrapezohedron.html>Octagonal Trapezohedron</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniConvex.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

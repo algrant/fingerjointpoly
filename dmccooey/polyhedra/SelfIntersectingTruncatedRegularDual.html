@@ -1,0 +1,358 @@
+<!-- File:   SelfIntersectingTruncatedRegularDual.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Self-Intersecting Truncated Regular Duals</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='SelfIntersectingTruncatedRegular.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Self-Intersecting Truncated Regular Duals</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='SelfIntersectingTruncatedQuasiRegular.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+The dual of a truncated regular polyhedron is face-transitive with faces
+shaped like isosceles triangles.  Face transitivity means that for any
+two faces of the polyhedron, there exists a translation, rotation, and/or
+reflection that leaves the outward appearance of the polyhedron unchanged
+yet moves one face to the other.  There are five truncated regular duals
+that are not self-intersecting, namely the
+<A href=TriakisTetrahedron.html>Triakis Tetrahedron</A>, the
+<A href=TetrakisHexahedron.html>Tetrakis Hexahedron</A>, the
+<A href=TriakisOctahedron.html>Triakis Octahedron</A>, the
+<A href=PentakisDodecahedron.html>Pentakis Dodecahedron</A>, and the
+<A href=TriakisIcosahedron.html>Triakis Icosahedron</A>.
+When self-intersection is allowed, there are five other truncated regular
+duals.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Great Triakis Octahedron
+
+	(12) SHORT EDGE = 2 - sqrt(2)
+	(24) LONG EDGE = 2
+	(6) INNER VERTEX RADIUS = sqrt(2) - 1
+	(8) OUTER VERTEX RADIUS = sqrt(3)
+	EDGE-SCRIBED RADIUS = (2 - sqrt(2)) / 2
+	INRADIUS = sqrt(17 * (23 - 16 * sqrt(2))) / 17
+	DIHEDRAL ANGLE = acos(0.489041676410868258259618223158)
+		= acos((8 * sqrt(2) - 3) / 17)
+		= 60.7223868096434273897160390129 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          24
+	MIRROR ROTATION SYMMETRIES:   24
+	ROTATION AXES:                13 (3[4] + 4[3] + 6[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Octahedral (Oh)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 14 24">
+<INPUT type=hidden class=Constants value="0.414213562373095048801688724210">
+<!--
+	C0 = sqrt(2) - 1
+-->
+<INPUT type=hidden class=Vertices value="0.0 0.0 -C0,0.0 0.0 C0,-C0 0.0 0.0,
+C0 0.0 0.0,0.0 -C0 0.0,0.0 C0 0.0,1.0 1.0 1.0,1.0 1.0 -1.0,1.0 -1.0 1.0,
+1.0 -1.0 -1.0,-1.0 1.0 1.0,-1.0 1.0 -1.0,-1.0 -1.0 1.0,-1.0 -1.0 -1.0">
+<INPUT type=hidden class=Faces value="6 0 2 #,6 2 4 #,6 4 0 #,7 1 4 #,7 4 2 #,
+7 2 1 #,8 0 5 #,8 5 2 #,8 2 0 #,9 1 2 #,9 2 5 #,9 5 1 #,10 0 4 #,10 4 3 #,
+10 3 0 #,11 1 3 #,11 3 4 #,11 4 1 #,12 0 3 #,12 3 5 #,12 5 0 #,13 1 5 #,
+13 5 3 #,13 3 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatTriakisOctahedron.html>Great Triakis Octahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Small Stellapentakis Dodecahedron
+
+	(60) SHORT EDGE = 5 * (sqrt(5) - 1) / 2
+	(30) LONG EDGE = (5 + 3 * sqrt(5)) / 2
+	(12) INNER VERTEX RADIUS = 5 * sqrt(5 - 2 * sqrt(5)) / 2
+	(12) OUTER VERTEX RADIUS = sqrt(5 * (5 + 2 * sqrt(5))) / 2
+	EDGE-SCRIBED RADIUS = (5 + sqrt(5)) / 4
+	INRADIUS = 5 * sqrt(41 * (11 + 4 * sqrt(5))) / 82
+	DIHEDRAL ANGLE = acos(-0.858057070426803621513313862040)
+		= acos(-(24 + 5 * sqrt(5)) / 41)
+		= 149.099125827348339266933228093 degrees
+
+	EULER CHARACTERISTIC:         -6
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 24 60">
+<INPUT type=hidden class=Constants value="0.954915028125262879488532914086,
+1.54508497187473712051146708591,
+1.80901699437494742410229341718,
+2.927050983124842272306880251548">
+<!--
+	C0 = 5 * (3 - sqrt(5)) / 4
+	C1 = 5 * (sqrt(5) - 1) / 4
+	C2 = (5 + sqrt(5)) / 4
+	C3 = (5 + 3 * sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="C2 0.0 C3,C2 0.0 -C3,-C2 0.0 C3,
+-C2 0.0 -C3,C3 C2 0.0,C3 -C2 0.0,-C3 C2 0.0,-C3 -C2 0.0,0.0 C3 C2,0.0 C3 -C2,
+0.0 -C3 C2,0.0 -C3 -C2,C0 0.0 C1,C0 0.0 -C1,-C0 0.0 C1,-C0 0.0 -C1,C1 C0 0.0,
+C1 -C0 0.0,-C1 C0 0.0,-C1 -C0 0.0,0.0 C1 C0,0.0 C1 -C0,0.0 -C1 C0,0.0 -C1 -C0">
+<INPUT type=hidden class=Faces value="12 2 5 #,12 5 8 #,12 8 10 #,12 10 4 #,
+12 4 2 #,13 3 4 #,13 4 11 #,13 11 9 #,13 9 5 #,13 5 3 #,14 0 6 #,14 6 10 #,
+14 10 8 #,14 8 7 #,14 7 0 #,15 1 7 #,15 7 9 #,15 9 11 #,15 11 6 #,15 6 1 #,
+16 0 1 #,16 1 8 #,16 8 5 #,16 5 9 #,16 9 0 #,17 1 0 #,17 0 11 #,17 11 4 #,
+17 4 10 #,17 10 1 #,18 3 2 #,18 2 9 #,18 9 7 #,18 7 8 #,18 8 3 #,19 2 3 #,
+19 3 10 #,19 10 6 #,19 6 11 #,19 11 2 #,20 0 9 #,20 9 2 #,20 2 4 #,20 4 6 #,
+20 6 0 #,21 1 6 #,21 6 4 #,21 4 3 #,21 3 8 #,21 8 1 #,22 0 7 #,22 7 5 #,
+22 5 2 #,22 2 11 #,22 11 0 #,23 1 10 #,23 10 3 #,23 3 5 #,23 5 7 #,23 7 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallStellapentakisDodecahedron.html>Small Stellapentakis Dodecahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Pentakis Dodecahedron
+
+	(30) SHORT EDGE = (3 * sqrt(5) - 5) / 2
+	(60) LONG EDGE = 5 * (1 + sqrt(5)) / 2
+	(12) INNER VERTEX RADIUS = sqrt(5 * (5 - 2 * sqrt(5))) / 2
+	(12) OUTER VERTEX RADIUS = 5 * sqrt(5 + 2 * sqrt(5)) / 2
+	EDGE-SCRIBED RADIUS = (5 - sqrt(5)) / 4
+	INRADIUS = 5 * sqrt(41 * (11 - 4 * sqrt(5))) / 82
+	DIHEDRAL ANGLE = acos(-0.312674636890269549218393455033)
+		= acos(-(24 - 5 * sqrt(5)) / 41)
+		= 108.220490680831841941078496577 degrees
+
+	EULER CHARACTERISTIC:         -6
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 24 60">
+<INPUT type=hidden class=Constants value="0.427050983124842272306880251548,
+0.690983005625052575897706582817,
+4.04508497187473712051146708591,
+6.54508497187473712051146708591">
+<!--
+	C0 = (3 * sqrt(5) - 5) / 4
+	C1 = (5 - sqrt(5)) / 4
+	C2 = 5 * (1 + sqrt(5)) / 4
+	C3 = 5 * (3 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 C1 -C0,0.0 C1 C0,0.0 -C1 -C0,
+0.0 -C1 C0,C1 -C0 0.0,-C1 -C0 0.0,C1 C0 0.0,-C1 C0 0.0,-C0 0.0 C1,-C0 0.0 -C1,
+C0 0.0 C1,C0 0.0 -C1,0.0 C3 -C2,0.0 C3 C2,0.0 -C3 -C2,0.0 -C3 C2,C3 -C2 0.0,
+-C3 -C2 0.0,C3 C2 0.0,-C3 C2 0.0,-C2 0.0 C3,-C2 0.0 -C3,C2 0.0 C3,C2 0.0 -C3">
+<INPUT type=hidden class=Faces value="12 2 5 #,12 5 8 #,12 8 10 #,12 10 4 #,
+12 4 2 #,13 3 4 #,13 4 11 #,13 11 9 #,13 9 5 #,13 5 3 #,14 0 6 #,14 6 10 #,
+14 10 8 #,14 8 7 #,14 7 0 #,15 1 7 #,15 7 9 #,15 9 11 #,15 11 6 #,15 6 1 #,
+16 0 1 #,16 1 8 #,16 8 5 #,16 5 9 #,16 9 0 #,17 1 0 #,17 0 11 #,17 11 4 #,
+17 4 10 #,17 10 1 #,18 3 2 #,18 2 9 #,18 9 7 #,18 7 8 #,18 8 3 #,19 2 3 #,
+19 3 10 #,19 10 6 #,19 6 11 #,19 11 2 #,20 0 9 #,20 9 2 #,20 2 4 #,20 4 6 #,
+20 6 0 #,21 1 6 #,21 6 4 #,21 4 3 #,21 3 8 #,21 8 1 #,22 0 7 #,22 7 5 #,
+22 5 2 #,22 2 11 #,22 11 0 #,23 1 10 #,23 10 3 #,23 3 5 #,23 5 7 #,23 7 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatPentakisDodecahedron.html>Great Pentakis Dodecahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Great Triakis Icosahedron
+
+	(60) SHORT EDGE = 5 * (7 - sqrt(5)) / 22
+	(30) LONG EDGE = (5 - sqrt(5)) / 2
+	(20) INNER VERTEX RADIUS = 5 * (2 * sqrt(15) - 3 * sqrt(3)) / 22
+	(12) OUTER VERTEX RADIUS = sqrt(5 * (5 - 2 * sqrt(5))) / 2
+	EDGE-SCRIBED RADIUS = (3 * sqrt(5) - 5) / 4
+	INRADIUS = 5 * sqrt(61 * (41 - 18 * sqrt(5))) / 122
+	DIHEDRAL ANGLE = acos(0.156410158401587630264550902147)
+		= acos(3 * (5 * sqrt(5) - 8) / 61)
+		= 81.00141002483998317327723165252 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 32 60">
+<INPUT type=hidden class=Constants value="0.206779558238755854312969506403,
+0.334576353408995316549624394878,
+0.427050983124842272306880251548,
+0.541355911647751170862593901281,
+0.690983005625052575897706582817">
+<!--
+	C0 = 5 * (13 - 5 * sqrt(5)) / 44
+	C1 = 5 * (2 * sqrt(5) - 3) / 22
+	C2 = (3 * sqrt(5) - 5) / 4
+	C3 = 5 * (7 - sqrt(5)) / 44
+	C4 = (5 - sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 C4 -C2,0.0 C4 C2,0.0 -C4 -C2,
+0.0 -C4 C2,C4 -C2 0.0,-C4 -C2 0.0,C4 C2 0.0,-C4 C2 0.0,-C2 0.0 C4,-C2 0.0 -C4,
+C2 0.0 C4,C2 0.0 -C4,C3 0.0 C0,C3 0.0 -C0,-C3 0.0 C0,-C3 0.0 -C0,0.0 C0 C3,
+0.0 C0 -C3,0.0 -C0 C3,0.0 -C0 -C3,C0 C3 0.0,-C0 C3 0.0,C0 -C3 0.0,-C0 -C3 0.0,
+-C1 -C1 -C1,-C1 -C1 C1,C1 -C1 -C1,C1 -C1 C1,-C1 C1 -C1,-C1 C1 C1,C1 C1 -C1,
+C1 C1 C1">
+<INPUT type=hidden class=Faces value="12 0 8 #,12 8 2 #,12 2 0 #,13 1 3 #,
+13 3 9 #,13 9 1 #,14 0 2 #,14 2 10 #,14 10 0 #,15 1 11 #,15 11 3 #,15 3 1 #,
+16 0 5 #,16 5 4 #,16 4 0 #,17 1 4 #,17 4 5 #,17 5 1 #,18 2 6 #,18 6 7 #,
+18 7 2 #,19 3 7 #,19 7 6 #,19 6 3 #,20 4 9 #,20 9 8 #,20 8 4 #,21 5 10 #,
+21 10 11 #,21 11 5 #,22 6 8 #,22 8 9 #,22 9 6 #,23 7 11 #,23 11 10 #,23 10 7 #,
+24 0 4 #,24 4 8 #,24 8 0 #,25 1 9 #,25 9 4 #,25 4 1 #,26 0 10 #,26 10 5 #,
+26 5 0 #,27 1 5 #,27 5 11 #,27 11 1 #,28 2 8 #,28 8 6 #,28 6 2 #,29 3 6 #,
+29 6 9 #,29 9 3 #,30 2 7 #,30 7 10 #,30 10 2 #,31 3 11 #,31 11 7 #,31 7 3 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatTriakisIcosahedron.html>Great Triakis Icosahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Stellapentakis Dodecahedron
+
+	(60) SHORT EDGE = 9 * (1 + 2 * sqrt(5)) / 19
+	(30) LONG EDGE = 3 * (1 + sqrt(5)) / 2
+	(12) INNER VERTEX RADIUS = 9 * sqrt(65 - 22 * sqrt(5)) / 38
+	(20) OUTER VERTEX RADIUS = 3 * sqrt(3) / 2
+	EDGE-SCRIBED RADIUS = 3 * (sqrt(5) - 1) / 4
+	INRADIUS = 9 * sqrt(109 * (17 - 6 * sqrt(5))) / 218
+	DIHEDRAL ANGLE = acos(-0.549315488096347639746031531940)
+		= acos(-(80 - 9 * sqrt(5)) / 109)
+		= 123.320065258471542963446690083 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 32 60">
+<INPUT type=hidden class=Constants value="0.495040249835401793926484409117,
+0.800991950032919641214703118177,
+0.927050983124842272306880251548,
+2.427050983124842272306880251548">
+<!--
+	C0 = 9 * (5 * sqrt(5) - 7) / 76
+	C1 = 9 * (9 - sqrt(5)) / 76
+	C2 = 3 * (sqrt(5) - 1) / 4
+	C3 = 3 * (1 + sqrt(5)) / 4
+-->
+<INPUT type=hidden class=Vertices value="C3 0.0 C2,C3 0.0 -C2,-C3 0.0 C2,
+-C3 0.0 -C2,0.0 C2 C3,0.0 C2 -C3,0.0 -C2 C3,0.0 -C2 -C3,C2 C3 0.0,-C2 C3 0.0,
+C2 -C3 0.0,-C2 -C3 0.0,0.0 -C1 C0,0.0 -C1 -C0,0.0 C1 C0,0.0 C1 -C0,-C1 C0 0.0,
+C1 C0 0.0,-C1 -C0 0.0,C1 -C0 0.0,C0 0.0 -C1,C0 0.0 C1,-C0 0.0 -C1,-C0 0.0 C1,
+-1.5 -1.5 -1.5,-1.5 -1.5 1.5,1.5 -1.5 -1.5,1.5 -1.5 1.5,-1.5 1.5 -1.5,
+-1.5 1.5 1.5,1.5 1.5 -1.5,1.5 1.5 1.5">
+<INPUT type=hidden class=Faces value="12 0 2 #,12 2 26 #,12 26 4 #,12 4 24 #,
+12 24 0 #,13 3 1 #,13 1 25 #,13 25 5 #,13 5 27 #,13 27 3 #,14 2 0 #,14 0 28 #,
+14 28 6 #,14 6 30 #,14 30 2 #,15 1 3 #,15 3 31 #,15 31 7 #,15 7 29 #,15 29 1 #,
+16 4 5 #,16 5 25 #,16 25 8 #,16 8 24 #,16 24 4 #,17 5 4 #,17 4 26 #,17 26 9 #,
+17 9 27 #,17 27 5 #,18 7 6 #,18 6 28 #,18 28 10 #,18 10 29 #,18 29 7 #,
+19 6 7 #,19 7 31 #,19 31 11 #,19 11 30 #,19 30 6 #,20 8 10 #,20 10 28 #,
+20 28 0 #,20 0 24 #,20 24 8 #,21 10 8 #,21 8 25 #,21 25 1 #,21 1 29 #,
+21 29 10 #,22 11 9 #,22 9 26 #,22 26 2 #,22 2 30 #,22 30 11 #,23 9 11 #,
+23 11 31 #,23 31 3 #,23 3 27 #,23 27 9 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatStellapentakisDodecahedron.html>Great Stellapentakis Dodecahedron</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

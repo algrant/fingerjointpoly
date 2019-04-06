@@ -1,0 +1,351 @@
+<!-- File:   SelfIntersectingQuasiRegularDual.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Self-Intersecting Quasi-Regular Duals</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='SelfIntersectingQuasiRegular.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Self-Intersecting Quasi-Regular Duals</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='SelfIntersectingQuasiQuasiRegular.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+The dual of a quasi-regular polyhedron is face-transitive and edge-transitive
+but not vertex-transitive.  In this context, transitivity means that for any
+two faces (edges, vertices) of the polyhedron, there exists a translation,
+rotation, and/or reflection that leaves the outward appearance of the
+polyhedron unchanged yet moves one face (edge, vertex) to the other.
+This definition implies that a quasi-regular dual must have two kinds of
+regular vertices, where each vertex of one type is connected along all of its
+edges to vertices of the other type.  There are only two quasi-regular duals
+that are not self-intersecting, namely the
+<A href=RhombicDodecahedron.html>Rhombic Dodecahedron</A> and the
+<A href=RhombicTriacontahedron.html>Rhombic Triacontahedron</A>.
+When self-intersection is allowed, there are 14 other quasi-regular duals,
+but only five of these are finite.
+The nine <A href=VersiRegular.html>versi-regular polyhedra</A>, due to their
+faces that pass through their centers, produce duals with vertices at infinity.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Medial Triambic Icosahedron
+
+	(60) EDGE = 2 * sqrt(2)
+	(12) INNER VERTEX RADIUS = sqrt(5 - 2 * sqrt(5))
+	(12) OUTER VERTEX RADIUS = sqrt(5 + 2 * sqrt(5))
+	EDGE-SCRIBED RADIUS = sqrt(2) / 2
+	INRADIUS = sqrt(3) / 3
+	DIHEDRAL ANGLE = acos(-1/3) = 109.471220634490691369245999340 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 24 20">
+<INPUT type=hidden class=Constants value="0.381966011250105151795413165634,
+0.618033988749894848204586834366,
+1.61803398874989484820458683437,
+2.61803398874989484820458683437">
+<!--
+	C0 = (3 - sqrt(5)) / 2
+	C1 = (sqrt(5) - 1) / 2
+	C2 = (1 + sqrt(5)) / 2
+	C3 = (3 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C2 0.0 C3,C2 0.0 -C3,-C2 0.0 C3,
+-C2 0.0 -C3,C3 C2 0.0,C3 -C2 0.0,-C3 C2 0.0,-C3 -C2 0.0,0.0 C3 C2,0.0 C3 -C2,
+0.0 -C3 C2,0.0 -C3 -C2,C0 0.0 C1,C0 0.0 -C1,-C0 0.0 C1,-C0 0.0 -C1,C1 C0 0.0,
+C1 -C0 0.0,-C1 C0 0.0,-C1 -C0 0.0,0.0 C1 C0,0.0 C1 -C0,0.0 -C1 C0,0.0 -C1 -C0">
+<INPUT type=hidden class=Faces value="0 14 6 19 11 22 #,0 22 7 23 1 17 #,
+0 17 11 13 9 16 #,0 16 1 21 6 20 #,0 20 9 18 7 14 #,3 13 4 17 10 23 #,
+3 23 5 22 2 19 #,3 19 10 14 8 18 #,3 18 2 20 4 21 #,3 21 8 16 5 13 #,
+12 2 22 11 17 4 #,12 4 20 6 14 10 #,12 10 17 1 16 8 #,12 8 14 7 22 5 #,
+12 5 16 9 20 2 #,15 1 23 10 19 6 #,15 6 21 4 13 11 #,15 11 19 2 18 9 #,
+15 9 13 5 23 7 #,15 7 18 8 21 1 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=MedialTriambicIcosahedron.html>Medial Triambic Icosahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Small Triambic Icosahedron
+
+	(60) EDGE = (3 * sqrt(10) - 5 * sqrt(2)) / 5
+	(12) INNER VERTEX RADIUS = sqrt(5 - 2 * sqrt(5))
+	(20) OUTER VERTEX RADIUS = sqrt(15) / 5
+	EDGE-SCRIBED RADIUS = sqrt(2) / 2
+	INRADIUS = sqrt(3) / 3
+	DIHEDRAL ANGLE = acos(-1/3) = 109.471220634490691369245999340 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 32 20">
+<INPUT type=hidden class=Constants value="0.276393202250021030359082633127,
+0.381966011250105151795413165634,
+0.447213595499957939281834733746,
+0.618033988749894848204586834366,
+0.723606797749978969640917366873">
+<!--
+	C0 = (5 - sqrt(5)) / 10
+	C1 = (3 - sqrt(5)) / 2
+	C2 = sqrt(5) / 5
+	C3 = (sqrt(5) - 1) / 2
+	C4 = (5 + sqrt(5)) / 10
+-->
+<INPUT type=hidden class=Vertices value="0.0 C0 C4,0.0 C0 -C4,0.0 -C0 C4,
+0.0 -C0 -C4,C4 0.0 C0,C4 0.0 -C0,-C4 0.0 C0,-C4 0.0 -C0,C0 C4 0.0,C0 -C4 0.0,
+-C0 C4 0.0,-C0 -C4 0.0,C1 0.0 C3,C1 0.0 -C3,-C1 0.0 C3,-C1 0.0 -C3,C3 C1 0.0,
+C3 -C1 0.0,-C3 C1 0.0,-C3 -C1 0.0,0.0 C3 C1,0.0 C3 -C1,0.0 -C3 C1,0.0 -C3 -C1,
+C2 C2 C2,C2 C2 -C2,C2 -C2 C2,C2 -C2 -C2,-C2 C2 C2,-C2 C2 -C2,-C2 -C2 C2,
+-C2 -C2 -C2">
+<INPUT type=hidden class=Faces value="12 0 14 30 22 26 #,12 26 17 5 16 24 #,
+12 24 20 28 14 2 #,12 2 22 9 17 4 #,12 4 16 8 20 0 #,15 1 13 27 23 31 #,
+15 31 19 6 18 29 #,15 29 21 25 13 3 #,15 3 23 11 19 7 #,15 7 18 10 21 1 #,
+13 1 21 8 16 5 #,13 5 17 9 23 3 #,13 25 16 4 17 27 #,14 0 20 10 18 6 #,
+14 6 19 11 22 2 #,14 28 18 7 19 30 #,20 8 21 29 18 28 #,20 24 16 25 21 10 #,
+22 11 23 27 17 26 #,22 30 19 31 23 9 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=SmallTriambicIcosahedron.html>Small Triambic Icosahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Triambic Icosahedron
+
+	(60) EDGE = (5 * sqrt(2) + 3 * sqrt(10)) / 5
+	(20) INNER VERTEX RADIUS = sqrt(15) / 5
+	(12) OUTER VERTEX RADIUS = sqrt(5 + 2 * sqrt(5))
+	EDGE-SCRIBED RADIUS = sqrt(2) / 2
+	INRADIUS = sqrt(3) / 3
+	DIHEDRAL ANGLE = acos(-1/3) = 109.471220634490691369245999340 degrees
+
+	EULER CHARACTERISTIC:         -8
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 32 20">
+<INPUT type=hidden class=Constants value="0.276393202250021030359082633127,
+0.447213595499957939281834733746,
+0.723606797749978969640917366873,
+1.61803398874989484820458683437,
+2.61803398874989484820458683437">
+<!--
+	C0 = (5 - sqrt(5)) / 10
+	C1 = sqrt(5) / 5
+	C2 = (5 + sqrt(5)) / 10
+	C3 = (1 + sqrt(5)) / 2
+	C4 = (3 + sqrt(5)) / 2
+-->
+<INPUT type=hidden class=Vertices value="C2 0.0 C0,C2 0.0 -C0,-C2 0.0 C0,
+-C2 0.0 -C0,0.0 C0 C2,0.0 C0 -C2,0.0 -C0 C2,0.0 -C0 -C2,C0 C2 0.0,-C0 C2 0.0,
+C0 -C2 0.0,-C0 -C2 0.0,0.0 C4 -C3,0.0 C4 C3,0.0 -C4 -C3,0.0 -C4 C3,C4 -C3 0.0,
+-C4 -C3 0.0,C4 C3 0.0,-C4 C3 0.0,-C3 0.0 C4,-C3 0.0 -C4,C3 0.0 C4,C3 0.0 -C4,
+-C1 -C1 -C1,-C1 -C1 C1,C1 -C1 -C1,C1 -C1 C1,-C1 C1 -C1,-C1 C1 C1,C1 C1 -C1,
+C1 C1 C1">
+<INPUT type=hidden class=Faces value="12 0 14 30 22 26 #,12 26 17 5 16 24 #,
+12 24 20 28 14 2 #,12 2 22 9 17 4 #,12 4 16 8 20 0 #,15 1 13 27 23 31 #,
+15 31 19 6 18 29 #,15 29 21 25 13 3 #,15 3 23 11 19 7 #,15 7 18 10 21 1 #,
+13 1 21 8 16 5 #,13 5 17 9 23 3 #,13 25 16 4 17 27 #,14 0 20 10 18 6 #,
+14 6 19 11 22 2 #,14 28 18 7 19 30 #,20 8 21 29 18 28 #,20 24 16 25 21 10 #,
+22 11 23 27 17 26 #,22 30 19 31 23 9 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatTriambicIcosahedron.html>Great Triambic Icosahedron</A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Medial Rhombic Triacontahedron
+
+	(60) EDGE = 3 * sqrt(3) / 4
+	RHOMBUS LENGTH = 3 * (1 + sqrt(5)) / 4
+	RHOMBUS WIDTH = 3 * (sqrt(5) - 1) / 4
+	(12) INNER VERTEX RADIUS = 3 * sqrt(2 * (5 - sqrt(5))) / 8
+	(12) OUTER VERTEX RADIUS = 3 * sqrt(2 * (5 + sqrt(5))) / 8
+	EDGE-SCRIBED RADIUS = sqrt(3) / 2
+	INRADIUS = 3 / 4
+	DIHEDRAL ANGLE = acos(-1/2) = 120 degrees
+
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="2 24 30">
+<INPUT type=hidden class=Constants value="0.463525491562421136153440125774,
+1.21352549156242113615344012577">
+<!--
+	C0 = 3 * (sqrt(5) - 1) / 8
+	C1 = 3 * (1 + sqrt(5)) / 8
+-->
+<INPUT type=hidden class=Vertices value="0.75 0.0 C1,0.75 0.0 -C1,-0.75 0.0 C1,
+-0.75 0.0 -C1,C1 0.75 0.0,C1 -0.75 0.0,-C1 0.75 0.0,-C1 -0.75 0.0,0.0 C1 0.75,
+0.0 C1 -0.75,0.0 -C1 0.75,0.0 -C1 -0.75,C0 0.0 0.75,C0 0.0 -0.75,-C0 0.0 0.75,
+-C0 0.0 -0.75,0.75 C0 0.0,0.75 -C0 0.0,-0.75 C0 0.0,-0.75 -C0 0.0,0.0 0.75 C0,
+0.0 0.75 -C0,0.0 -0.75 C0,0.0 -0.75 -C0">
+<INPUT type=hidden class=Faces value="0 14 7 22 #,0 22 11 17 #,0 17 1 16 #,
+0 16 9 20 #,0 20 6 14 #,3 13 5 23 #,3 23 10 19 #,3 19 2 18 #,3 18 8 21 #,
+3 21 4 13 #,1 15 6 21 #,1 21 8 16 #,2 19 11 22 #,2 22 5 12 #,4 21 6 20 #,
+4 20 2 12 #,5 13 9 16 #,5 16 8 12 #,6 15 11 19 #,6 19 10 14 #,7 15 1 23 #,
+7 23 5 22 #,8 18 7 14 #,8 14 10 12 #,9 15 7 18 #,9 18 2 20 #,10 23 1 17 #,
+10 17 4 12 #,11 15 9 13 #,11 13 4 17 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=MedialRhombicTriacontahedron.html>Medial Rhombic Triacontahedron</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Great Rhombic Triacontahedron
+
+	(60) EDGE = sqrt(10 * (5 - sqrt(5))) / 8
+	RHOMBUS LENGTH = sqrt(5) / 2
+	RHOMBUS WIDTH = (5 - sqrt(5)) / 4
+	(12) INNER VERTEX RADIUS = sqrt(5 * (5 - 2 * sqrt(5))) / 4
+	(20) OUTER VERTEX RADIUS = (5 * sqrt(3) - sqrt(15)) / 8
+	EDGE-SCRIBED RADIUS = sqrt(5 - 2 * sqrt(5)) / 2
+	INRADIUS = (3 * sqrt(5) - 5) / 8
+	DIHEDRAL ANGLE = acos((sqrt(5) - 1) / 4) = 72 degrees
+
+	EULER CHARACTERISTIC:          2
+	ROTATION SYMMETRIES:          60
+	MIRROR ROTATION SYMMETRIES:   60
+	ROTATION AXES:                31 (6[5] + 10[3] + 15[2])
+	MIRROR PLANES:                15
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Full Icosahedral (Ih)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="3 32 30">
+<INPUT type=hidden class=Constants value="0.213525491562421136153440125774,
+0.345491502812526287948853291409,
+0.559016994374947424102293417183">
+<!--
+	C0 = (3 * sqrt(5) - 5) / 8
+	C1 = (5 - sqrt(5)) / 8
+	C2 = sqrt(5) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 -C1 C0,0.0 -C1 -C0,0.0 C1 C0,
+0.0 C1 -C0,-C1 C0 0.0,C1 C0 0.0,-C1 -C0 0.0,C1 -C0 0.0,C0 0.0 -C1,C0 0.0 C1,
+-C0 0.0 -C1,-C0 0.0 C1,C2 0.0 C0,C2 0.0 -C0,-C2 0.0 C0,-C2 0.0 -C0,0.0 C0 C2,
+0.0 C0 -C2,0.0 -C0 C2,0.0 -C0 -C2,C0 C2 0.0,-C0 C2 0.0,C0 -C2 0.0,-C0 -C2 0.0,
+-C1 -C1 -C1,-C1 -C1 C1,C1 -C1 -C1,C1 -C1 C1,-C1 C1 -C1,-C1 C1 C1,C1 C1 -C1,
+C1 C1 C1">
+<INPUT type=hidden class=Faces value="0 12 2 14 #,0 14 10 26 #,0 26 5 16 #,
+1 13 9 25 #,1 25 4 17 #,1 17 5 27 #,2 28 6 18 #,2 18 7 30 #,2 30 10 14 #,
+3 19 6 29 #,3 29 9 13 #,3 13 1 15 #,4 20 8 24 #,4 24 0 16 #,4 16 5 17 #,
+7 18 6 19 #,7 19 3 31 #,7 31 11 23 #,8 22 6 28 #,8 28 2 12 #,8 12 0 24 #,
+9 29 6 22 #,9 22 8 20 #,9 20 4 25 #,10 30 7 23 #,10 23 11 21 #,10 21 5 26 #,
+11 31 3 15 #,11 15 1 27 #,11 27 5 21 #">
+<INPUT type=hidden class=Background value="#606060">
+</DIV>
+<BR>
+<CENTER>
+<A href=GreatRhombicTriacontahedron.html>Great Rhombic Triacontahedron</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE style="font-size:75%">
+<TR><TD valign=top>References:</TD><TD valign=top>[1]</TD><TD>Edmund Hess, &Uuml;ber vier Archimedeische Polyeder h&ouml;herer Art, <I>Schriften der Gesellschaft zur Bef&ouml;rderung der gesammten Naturwissenschaften zu Marburg</I> <B>11</B>(4) (1878).</TD></TR>
+<TR><TD></TD><TD valign=top>[2]</TD><TD>Johann Pitsch, &Uuml;ber Halbregul&auml;re Sternpolyeder, <I>Zeitschrift f&uuml;r das Realschulwesen</I> <B>6</B> (1881), 9-24, 64-65, 72-89, 216.</TD></TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

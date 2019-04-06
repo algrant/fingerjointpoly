@@ -1,0 +1,373 @@
+<!-- File:   ToroidalRegularTetragonal.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Regular Tetragonal Toroidal Solids</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='ToroidalRegularTriangular.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Regular Tetragonal Toroidal Solids</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='ToroidalNonRegular.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+A toroidal solid, or toroid, is an orientable polyhedron without
+self-intersections that has genus greater than zero, meaning that it contains
+one or more holes.  An orientable polyhedron's genus (G) is related to the
+number of vertices (V), faces (F), and edges (E) as follows:
+</P>
+<P align=center>
+V + F &#8722; E = 2 &#8722; 2 * G
+</P>
+<P>
+A toroid is said to be regular if every face has p vertices, and every vertex
+joins q faces.  This notion of regularity is strictly topological, in the
+sense that it does not specify any geometric criteria, such as equal edge
+lengths or equal vertex angles.  A regular toroid can be further classified
+as being either globally regular or locally regular by examining its set of
+mutually incident face-edge-vertex triples.  If all such triples are
+topologically equivalent, then the toroid is globally regular.
+Otherwise, it is locally regular.  The set of regular genus-1 toroids can
+be divided into three classes:
+</P>
+
+<UL type=circle>
+<LI>
+{6,3} toroids where 3 hexagonal faces meet at every vertex
+</LI>
+<LI>
+{3,6} toroids where 6 triangular faces meet at every vertex
+</LI>
+<LI>
+{4,4} toroids where 4 tetragonal (quadrilateral) faces meet at every vertex
+</LI>
+</UL>
+
+<P>
+The toroids on this page are regular genus-1 toroids in the class {4,4}.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Regular Tetragonal Toroid with 9 faces
+
+	(15) SHORT EDGE = 2
+	(3) LONG EDGE = 5
+	(6) INNER VERTEX RADIUS = sqrt(21) / 3
+	(3) OUTER VERTEX RADIUS = 5 * sqrt(3) / 3
+	VOLUME = 9 * sqrt(3) / 2
+	DIHEDRAL ANGLE 1 = acos(0.755928946018454454429033072468)
+		= acos(2 * sqrt(7) / 7) = 40.8933946491309056054825252599 degrees
+	DIHEDRAL ANGLE 2 = acos(-1/7) = 98.2132107017381887890349494803 degrees
+	DIHEDRAL ANGLE 3 = acos(1/2) = 300 degrees
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 4
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Prismatic (D3h)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 9 9">
+<INPUT type=hidden class=Constants value="0.577350269189625764509148780502,
+1.15470053837925152901829756100,
+1.4433756729740644112728719512549,
+2.88675134594812882254574390251">
+<!--
+	C0 = sqrt(3) / 3
+	C1 = 2 * sqrt(3) / 3
+	C2 = 5 * sqrt(3) / 6
+	C3 = 5 * sqrt(3) / 3
+-->
+<INPUT type=hidden class=Vertices value="0.0 C1 1.0,0.0 C1 -1.0,-1.0 -C0 1.0,
+-1.0 -C0 -1.0,1.0 -C0 1.0,1.0 -C0 -1.0,-2.5 -C2 0.0,2.5 -C2 0.0,0.0 C3 0.0">
+<INPUT type=hidden class=Faces value="0 1 5 4 #,0 4 7 8 #,0 8 6 2 #,0 2 3 1 #,
+1 3 6 8 #,1 8 7 5 #,5 7 6 3 #,5 3 2 4 #,4 2 6 7 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="96 -20 3 17">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTetragonalToroid9.html>Regular Tetragonal Toroid with 9 faces</A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Tetragonal Toroid with 18 faces (type A) (version 1)
+
+	(6) EDGE 1 = 2 * sqrt(3)
+	(12) EDGE 2 = sqrt(39)
+	(6) EDGE 3 = 3 * (5 * sqrt(2) - 2 * sqrt(3))
+	(6) EDGE 4 = 15 * sqrt(2)
+	(6) EDGE 5 = 3 * (5 * sqrt(2) + 2 * sqrt(3))
+	RADIUS = sqrt(3 * (63 + 20 * sqrt(6)))
+	INRADIUS = (5 * sqrt(6) - 12) / 4
+	VOLUME = 810 * sqrt(6)
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 4
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  3-fold Prismatic (D3h)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="8 18 18">
+<INPUT type=hidden class=Constants value="1.55051025721682190180271592529,
+3.55051025721682190180271592529,
+4.10102051443364380360543185059,
+6.10102051443364380360543185059,
+6.44948974278317809819728407471,
+8.44948974278317809819728407471,
+13.8989794855663561963945681494,
+15.8989794855663561963945681494">
+<!--
+	C0 = 4 - sqrt(6)
+	C1 = 6 - sqrt(6)
+	C2 = 9 - 2 * sqrt(6)
+	C3 = 11 - 2 * sqrt(6)
+	C4 = 4 + sqrt(6)
+	C5 = 6 + sqrt(6)
+	C6 = 9 + 2 * sqrt(6)
+	C7 = 11 + 2 * sqrt(6)
+-->
+<INPUT type=hidden class=Vertices value="-C4 -C4 C7,C7 -C4 -C4,-C4 C7 -C4,
+-C5 -C5 C6,C6 -C5 -C5,-C5 C6 -C5,-3.0 -3.0 12.0,12.0 -3.0 -3.0,-3.0 12.0 -3.0,
+-7.0 -7.0 8.0,8.0 -7.0 -7.0,-7.0 8.0 -7.0,-C0 -C0 C3,C3 -C0 -C0,-C0 C3 -C0,
+-C1 -C1 C2,C2 -C1 -C1,-C1 C2 -C1">
+<INPUT type=hidden class=Faces value="0 3 4 1 #,0 1 7 6 #,1 4 5 2 #,1 2 8 7 #,
+2 5 3 0 #,2 0 6 8 #,9 15 16 10 #,9 10 4 3 #,10 16 17 11 #,10 11 5 4 #,
+11 17 15 9 #,11 9 3 5 #,12 6 7 13 #,12 13 16 15 #,13 7 8 14 #,13 14 17 16 #,
+14 8 6 12 #,14 12 15 17 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="99 9 -9 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTetragonalToroid18A1.html>Regular Tetragonal Toroid with 18 faces <NOBR>(type A)</NOBR> <NOBR>(version 1)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Tetragonal Toroid with 18 faces (type A) (version 2)
+
+	(30) SHORT EDGE = 1
+	(6) LONG EDGE = (2 + sqrt(3)) / 2
+	RADIUS = (2 + sqrt(3)) / 2
+	INRADIUS = sqrt(3) / 2
+	VOLUME = 3 * (6 + sqrt(3)) / 8
+
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (1[6] + 6[2])
+	MIRROR PLANES:                 7
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  6-fold Prismatic (D6h)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 18 18">
+<INPUT type=hidden class=Constants value="0.866025403784438646763723170753,
+0.93301270189221932338186158538,
+1.61602540378443864676372317075,
+1.86602540378443864676372317075">
+<!--
+	C0 = sqrt(3) / 2
+	C1 = (2 + sqrt(3)) / 4
+	C2 = (3 + 2 * sqrt(3)) / 4
+	C3 = (2 + sqrt(3)) / 2
+-->
+<INPUT type=hidden class=Vertices value="1.0 0.0 0.5,1.0 0.0 -0.5,C3 0.0 0.0,
+0.5 C0 0.5,0.5 C0 -0.5,C1 C2 0.0,0.5 -C0 0.5,0.5 -C0 -0.5,C1 -C2 0.0,
+-0.5 C0 0.5,-0.5 C0 -0.5,-C1 C2 0.0,-0.5 -C0 0.5,-0.5 -C0 -0.5,-C1 -C2 0.0,
+-1.0 0.0 0.5,-1.0 0.0 -0.5,-C3 0.0 0.0">
+<INPUT type=hidden class=Faces value="0 3 4 1 #,0 1 7 6 #,1 4 5 2 #,1 2 8 7 #,
+2 5 3 0 #,2 0 6 8 #,9 15 16 10 #,9 10 4 3 #,10 16 17 11 #,10 11 5 4 #,
+11 17 15 9 #,11 9 3 5 #,12 6 7 13 #,12 13 16 15 #,13 7 8 14 #,13 14 17 16 #,
+14 8 6 12 #,14 12 15 17 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="96 -20 3 17">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTetragonalToroid18A2.html>Regular Tetragonal Toroid with 18 faces <NOBR>(type A)</NOBR> <NOBR>(version 2)</NOBR></A>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Regular Tetragonal Toroid with 18 faces (type B) (antiprismatic form)
+
+	(6) EDGE 1 = sqrt(1362)
+	(12) EDGE 2 = 5 * sqrt(390)
+	(12) EDGE 3 = 27 * sqrt(38)
+	(6) EDGE 4 = 189 * sqrt(2)
+	VOLUME = 3017088
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  3-fold Antiprismatic (D3v)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 18 18">
+<INPUT type=hidden class=Vertices value="0 0 189,0 0 -189,189 0 0,-189 0 0,
+0 189 0,0 -189 0,-16 -16 29,16 16 -29,-29 16 16,29 -16 -16,16 -29 16,
+-16 29 -16,-54 -54 81,54 54 -81,-81 54 54,81 -54 -54,54 -81 54,-54 81 -54">
+<INPUT type=hidden class=Faces value="0 14 4 3 #,0 3 12 5 #,0 5 2 16 #,
+1 17 3 4 #,1 4 13 2 #,1 2 5 15 #,6 8 11 14 #,6 14 0 16 #,6 16 9 10 #,
+7 11 8 17 #,7 17 1 15 #,7 15 10 9 #,12 3 17 8 #,12 8 6 10 #,12 10 15 5 #,
+13 4 14 11 #,13 11 7 9 #,13 9 16 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="898352667 -215675394 -372109859 089335673">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTetragonalToroid18B1.html>Regular Tetragonal Toroid with 18 faces <NOBR>(type B)</NOBR> <NOBR>(antiprismatic form)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Regular Tetragonal Toroid with 18 faces (type B) (cubic form)
+
+	(12) EDGE 1 = sqrt(706)
+	(12) EDGE 2 = 14 * sqrt(10)
+	(6) EDGE 3 = 5 * sqrt(118)
+	(6) EDGE 4 = 56
+	VOLUME = 84672
+
+	ROTATION SYMMETRIES:           6
+	MIRROR ROTATION SYMMETRIES:    6
+	ROTATION AXES:                 4 (1[3] + 3[2])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  3-fold Antiprismatic (D3v)
+	TOPOLOGICALLY SELF-DUAL:     YES
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 18 18">
+<INPUT type=hidden class=Vertices value="-28 28 28,28 -28 -28,28 -28 28,
+-28 28 -28,28 28 -28,-28 -28 28,-10 25 25,10 -25 -25,-25 10 -25,25 -10 25,
+-25 -25 10,25 25 -10,-28 -14 -14,28 14 14,14 28 14,-14 -28 -14,14 14 28,
+-14 -14 -28">
+<INPUT type=hidden class=Faces value="0 14 4 3 #,0 3 12 5 #,0 5 2 16 #,
+1 17 3 4 #,1 4 13 2 #,1 2 5 15 #,6 8 11 14 #,6 14 0 16 #,6 16 9 10 #,
+7 11 8 17 #,7 17 1 15 #,7 15 10 9 #,12 3 17 8 #,12 8 6 10 #,12 10 15 5 #,
+13 4 14 11 #,13 11 7 9 #,13 9 16 2 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="820473239 424708200 -175919897 339851143">
+</DIV>
+<BR>
+<CENTER>
+<A href=RegularTetragonalToroid18B2.html>Regular Tetragonal Toroid with 18 faces <NOBR>(type B)</NOBR> <NOBR>(cubic form)</NOBR></A>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Borromean Rings
+
+	ROTATION SYMMETRIES:          12
+	MIRROR ROTATION SYMMETRIES:   12
+	ROTATION AXES:                 7 (4[3] + 3[2])
+	MIRROR PLANES:                 3
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  Pyritohedral (Th)
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="0 36 36">
+<INPUT type=hidden class=Vertices value="0 3 5,0 3 -5,0 -3 5,0 -3 -5,1 2 4,
+1 2 -4,1 -2 4,1 -2 -4,-1 2 4,-1 2 -4,-1 -2 4,-1 -2 -4,3 5 0,3 -5 0,-3 5 0,
+-3 -5 0,2 4 1,2 -4 1,-2 4 1,-2 -4 1,2 4 -1,2 -4 -1,-2 4 -1,-2 -4 -1,5 0 3,
+-5 0 3,5 0 -3,-5 0 -3,4 1 2,-4 1 2,4 1 -2,-4 1 -2,4 -1 2,-4 -1 2,4 -1 -2,
+-4 -1 -2">
+<INPUT type=hidden class=Faces value="0 2 6 4 #c00000,0 4 5 1 #c00000,
+0 1 9 8 #c00000,0 8 10 2 #c00000,3 2 10 11 #c00000,3 11 9 1 #c00000,
+3 1 5 7 #c00000,3 7 6 2 #c00000,4 6 10 8 #c00000,4 8 9 5 #c00000,
+7 5 9 11 #c00000,7 11 10 6 #c00000,12 14 18 16 #c000,12 16 17 13 #c000,
+12 13 21 20 #c000,12 20 22 14 #c000,15 14 22 23 #c000,15 23 21 13 #c000,
+15 13 17 19 #c000,15 19 18 14 #c000,16 18 22 20 #c000,16 20 21 17 #c000,
+19 17 21 23 #c000,19 23 22 18 #c000,24 26 30 28 #c0,24 28 29 25 #c0,
+24 25 33 32 #c0,24 32 34 26 #c0,27 26 34 35 #c0,27 35 33 25 #c0,
+27 25 29 31 #c0,27 31 30 26 #c0,28 30 34 32 #c0,28 32 33 29 #c0,
+31 29 33 35 #c0,31 35 34 30 #c0">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="91 8 40 4">
+</DIV>
+<BR>
+<CENTER>
+<A href=BorromeanRings.html>Borromean Rings</A>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>

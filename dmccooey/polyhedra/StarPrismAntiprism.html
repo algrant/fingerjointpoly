@@ -1,0 +1,835 @@
+<!-- File:   StarPrismAntiprism.html
+     Author: Dave McCooey
+             dmccooey@mac.com
+
+Copyright 2015 David I McCooey
+
+This document is copyrighted, and protected by the copyright
+laws of the United States.  All rights reserved.
+-->
+
+<HTML>
+<HEAD>
+<TITLE>Star Prisms &amp; Antiprisms</TITLE>
+</HEAD>
+<BODY text="#000000" bgcolor="#a0a0a0"
+	style="font-family:Verdana,Comic Sans MS"
+	link="#0000e0" vlink="#800000" alink="#ff0000">
+
+<CENTER>
+<INPUT type=button value="Main Menu" onClick="window.location.href='index.html'">
+</CENTER>
+
+<TABLE width=100%>
+<TR>
+<TD align=right>
+<INPUT type=button value="prev" onClick="window.location.href='DipyramidTrapezohedron.html'">
+</TD>
+<TD width=60% align=center style="font-size:120%"><B>Star Prisms &amp; Antiprisms</B></TD>
+<TD align=left>
+<INPUT type=button value="next" onClick="window.location.href='StarDipyramidTrapezohedron.html'">
+</TD>
+</TR>
+</TABLE>
+
+<P>
+A regular star prism consists of two regular N-sided star polygons joined
+together by N squares.  A regular star antiprism consists of two regular
+N-sided star polygons joined together by 2N equilateral triangles.
+They are considered uniform polyhedra because they have regular polygons as
+faces and are vertex-transitive.  Vertex transitivity means that for any
+two vertices of the polyhedron, there exists a translation, rotation, and/or
+reflection that leaves the outward appearance of the polyhedron unchanged yet
+moves one vertex to the other.  Like regular prisms and antiprisms, they can
+be distinguished from other uniform polyhedra by the fact that they do not
+have polyhedral group (tetrahedral, octahedral, or icosahedral) rotational
+symmetries.
+</P>
+
+<TABLE border=7 cellspacing=7 cellpadding=2 bgcolor="#707070">
+<CAPTION align=top style="font-size:72%">
+<NOBR>(box: x-ray)</NOBR> &nbsp;<NOBR>(slider: perspective)</NOBR> &nbsp;<NOBR>(image: L=rotate R=zoom)</NOBR>
+</CAPTION>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Pentagrammic Prism
+
+	(15) EDGE = 1
+	RADIUS = sqrt(5 * (15 - 2 * sqrt(5))) / 10
+	MIDRADIUS = sqrt(10 * (5 - sqrt(5))) / 10
+	PENTAGRAM CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = sqrt(5 * (5 - 2 * sqrt(5))) / 10
+	PENTAGRAM-SQUARE ANGLE = acos(0) = 90 degrees
+	SQUARE-SQUARE ANGLE = acos((1 + sqrt(5)) / 4) = 36 degrees
+
+	ROTATION SYMMETRIES:          10
+	MIRROR ROTATION SYMMETRIES:   10
+	ROTATION AXES:                 6 (1[5] + 5[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  5-fold Prismatic (D5h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 10 7">
+<INPUT type=hidden class=Constants value="0.162459848116453163077935706108,
+0.309016994374947424102293417183,
+0.425325404176019966090770248532,
+0.525731112119133606025669084848">
+<!--
+	C0 = sqrt(5 * (5 - 2 * sqrt(5))) / 10
+	C1 = (sqrt(5) - 1) / 4
+	C2 = sqrt(10 * (5 + sqrt(5))) / 20
+	C3 = sqrt(10 * (5 - sqrt(5))) / 10
+-->
+<INPUT type=hidden class=Vertices value="0.0 C3 0.5,0.0 C3 -0.5,0.5 C0 0.5,
+0.5 C0 -0.5,C1 -C2 0.5,C1 -C2 -0.5,-0.5 C0 0.5,-0.5 C0 -0.5,-C1 -C2 0.5,
+-C1 -C2 -0.5">
+<INPUT type=hidden class=Faces value="0 8 2 6 4 #,1 5 7 3 9 #,0 1 9 8 #,
+8 9 3 2 #,2 3 7 6 #,6 7 5 4 #,4 5 1 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=PentagrammicPrism.html>Pentagrammic Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #78)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Heptagrammic 7/2 Prism
+
+	(21) EDGE = 1
+	RADIUS = 0.8117825764907106421444412399453
+		= square-root of a root of the polynomial:
+			448*(x^3) - 1232*(x^2) + 980*x - 239
+		= sqrt(cot(2*pi/7) * cot(2*pi/7) + 2) / 2
+		= sqrt(tan(3*pi/14) * tan(3*pi/14) + 2) / 2
+	MIDRADIUS = 0.639524003844966302873925303636
+		= square-root of a root of the polynomial:  7*(x^3)-14*(x^2)+7*x-1
+		= 1 / (2 * sin(2*pi/7))
+	HEPTAGRAM CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = 0.398736694441201980707844127107
+		= square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= cot(2*pi/7) / 2
+	HEPTAGRAM-SQUARE ANGLE = acos(0) = 90 degrees
+	SQUARE-SQUARE ANGLE = acos(0.222520933956314404288902564497)
+		= acos(root[8*(x^3) - 4*(x^2) - 4*x + 1])
+		= acos(sin(pi/14))
+		= 77.1428571428571428571428571429 degrees
+		= 540/7 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  7-fold Prismatic (D7h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 14 9">
+<INPUT type=hidden class=Constants value="0.142307478623063505834519223038,
+0.277479066043685595711097435503,
+0.398736694441201980707844127107,
+0.576191217740621626310287555887,
+0.623489801858733530525004884004,
+0.639524003844966302873925303636">
+<!--
+	C0 = square-root of a root of the polynomial:  448*(x^3)-336*(x^2)+56*x-1
+		= (1 - cos(2*pi/7)) * sqrt(7) / 7
+	C1 = root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * cos(pi/7))
+	C2 = square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= cot(2*pi/7) / 2
+	C3 = square-root of a root of the polynomial:  448*(x^3)-224*(x^2)+28*x-1
+		= 1 / (4 * sin(pi/7))
+	C4 = root of the polynomial:  8*(x^3) + 4*(x^2) - 4*x - 1
+		= cos(2*pi/7)
+	C5 = square-root of a root of the polynomial:  7*(x^3) - 14*(x^2) + 7*x - 1
+		= 1 / (2 * sin(2*pi/7))
+-->
+<INPUT type=hidden class=Vertices value="-C1 -C3 0.5,-C1 -C3 -0.5,C1 -C3 0.5,
+C1 -C3 -0.5,C4 -C0 0.5,C4 -C0 -0.5,-C4 -C0 0.5,-C4 -C0 -0.5,-0.5 C2 0.5,
+-0.5 C2 -0.5,0.5 C2 0.5,0.5 C2 -0.5,0.0 C5 0.5,0.0 C5 -0.5">
+<INPUT type=hidden class=Faces value="0 4 12 6 2 10 8 #,1 9 11 3 7 13 5 #,
+0 1 5 4 #,4 5 13 12 #,12 13 7 6 #,6 7 3 2 #,2 3 11 10 #,10 11 9 8 #,8 9 1 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=Heptagrammic72Prism.html>Heptagrammic 7/2 Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #78)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Heptagrammic 7/3 Prism
+
+	(21) EDGE = 1
+	RADIUS = 0.716256777210814081147235774207
+		= square-root of a root of the polynomial:
+			448*(x^3) - 1232*(x^2) + 980*x - 239
+		= sqrt(tan(pi/14) * tan(pi/14) + 2) / 2
+	MIDRADIUS = 0.512858431636276949746649808138
+		= square-root of a root of the polynomial:  7*(x^3)-14*(x^2)+7*x-1
+		= 1 / (2 * cos(pi/14))
+	HEPTAGRAM CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = 0.114121737195074969038805681031
+		= square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= tan(pi/14) / 2
+	HEPTAGRAM-SQUARE ANGLE = acos(0) = 90 degrees
+	SQUARE-SQUARE ANGLE = acos(0.900968867902419126236102319507)
+		= acos(root[8*(x^3) - 4*(x^2) - 4*x + 1])
+		= acos(cos(pi/7))
+		= 25.7142857142857142857142857143 degrees
+		= 180/7 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  7-fold Prismatic (D7h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 14 9">
+<INPUT type=hidden class=Constants value="0.114121737195074969038805681031,
+0.222520933956314404288902564497,
+0.319762001922483151436962651818,
+0.400968867902419126236102319507,
+0.462069480545546657271481874856,
+0.512858431636276949746649808138">
+<!--
+	C0 = square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= tan(pi/14) / 2
+	C1 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= sin(pi/14)
+	C2 = square-root of a root of the polynomial:  448*(x^3)-224*(x^2)+28*x-1
+		= 1 / (4 * sin(2*pi/7))
+	C3 = root of the polynomial:  8*(x^3) + 8*(x^2) - 2*x - 1
+		= cos(pi/7) - 1/2
+		= (2 * cos(pi/7) - 1) / 2
+		= 1 / (4 * cos(2*pi/7))
+	C4 = square-root of a root of the polynomial:  448*(x^3)-336*(x^2)+56*x-1
+		= (sin(pi/14) + 1) * sqrt(7) / 7
+		= (2 * cos(pi/14) - 1 / cos(pi/14)) / 2
+		= (cot(pi/14) - 3 * tan(pi/14)) / 8
+	C5 = square-root of a root of the polynomial:  7*(x^3) - 14*(x^2) + 7*x - 1
+		= 1 / (2 * cos(pi/14))
+-->
+<INPUT type=hidden class=Vertices value="-C3 C2 0.5,-C3 C2 -0.5,C3 C2 0.5,
+C3 C2 -0.5,C1 -C4 0.5,C1 -C4 -0.5,-C1 -C4 0.5,-C1 -C4 -0.5,0.5 -C0 0.5,
+0.5 -C0 -0.5,-0.5 -C0 0.5,-0.5 -C0 -0.5,0.0 C5 0.5,0.0 C5 -0.5">
+<INPUT type=hidden class=Faces value="0 4 12 6 2 10 8 #,1 9 11 3 7 13 5 #,
+0 1 5 4 #,4 5 13 12 #,12 13 7 6 #,6 7 3 2 #,2 3 11 10 #,10 11 9 8 #,8 9 1 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=Heptagrammic73Prism.html>Heptagrammic 7/3 Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #78)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Octagrammic Prism
+
+	(24) EDGE = 1
+	RADIUS = sqrt(5 - 2 * sqrt(2)) / 2
+	MIDRADIUS = sqrt(2 * (2 - sqrt(2))) / 2
+	OCTAGRAM CENTER RADIUS = 1 / 2
+	SQUARE CENTER RADIUS = (sqrt(2) - 1) / 2
+	OCTAGRAM-SQUARE ANGLE = acos(0) = 90 degrees
+	SQUARE-SQUARE ANGLE = acos(sqrt(2) / 2) = 45 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:   16
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 9
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  8-fold Prismatic (D8h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 16 10">
+<INPUT type=hidden class=Constants value="0.2071067811865475244008443621048">
+<!--
+	C0 = (sqrt(2) - 1) / 2
+-->
+<INPUT type=hidden class=Vertices value="C0 0.5 0.5,C0 0.5 -0.5,C0 -0.5 0.5,
+C0 -0.5 -0.5,-C0 0.5 0.5,-C0 0.5 -0.5,-C0 -0.5 0.5,-C0 -0.5 -0.5,-0.5 -C0 0.5,
+-0.5 -C0 -0.5,-0.5 C0 0.5,-0.5 C0 -0.5,0.5 -C0 0.5,0.5 -C0 -0.5,0.5 C0 0.5,
+0.5 C0 -0.5">
+<INPUT type=hidden class=Faces value="0 8 12 4 6 14 10 2 #,
+1 3 11 15 7 5 13 9 #,0 1 9 8 #,8 9 13 12 #,12 13 5 4 #,4 5 7 6 #,6 7 15 14 #,
+14 15 11 10 #,10 11 3 2 #,2 3 1 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=OctagrammicPrism.html>Octagrammic Prism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #78)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Pentagrammic Antiprism
+
+	(20) EDGE = 1
+	RADIUS = sqrt(10 * (15 + sqrt(5))) / 20
+	MIDRADIUS = sqrt(10 * (5 + sqrt(5))) / 20
+	PENTAGRAM CENTER RADIUS = sqrt(2 * (sqrt(5) - 1)) / 2
+	TRIANGLE CENTER RADIUS = sqrt(30 * (5 + 3 * sqrt(5))) / 60
+	PENTAGRAM-TRIANGLE ANGLE = acos(-0.0786893258332632321363912229104)
+		= acos(-(sqrt(5) - 2) / 3)
+		= 94.5132321235764048240951176566 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(-0.419469524121606323235252234512)
+		= acos(-sqrt(3 * (5 - 2 * sqrt(5))) / 3)
+		= 114.801100863206540194881392080 degrees
+
+	ROTATION SYMMETRIES:          10
+	MIRROR ROTATION SYMMETRIES:   10
+	ROTATION AXES:                 6 (1[5] + 5[2])
+	MIRROR PLANES:                 6
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  5-fold Prismatic (D5h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="5 10 12">
+<INPUT type=hidden class=Constants value="0.162459848116453163077935706108,
+0.309016994374947424102293417183,
+0.393075688878711643034779292921,
+0.425325404176019966090770248532,
+0.525731112119133606025669084848">
+<!--
+	C0 = sqrt(5 * (5 - 2 * sqrt(5))) / 10
+	C1 = (sqrt(5) - 1) / 4
+	C2 = sqrt(2 * (sqrt(5) - 1)) / 2
+	C3 = sqrt(10 * (5 + sqrt(5))) / 20
+	C4 = sqrt(10 * (5 - sqrt(5))) / 10
+-->
+<INPUT type=hidden class=Vertices value="-C1 -C3 C2,C1 -C3 C2,C1 -C3 -C2,
+-C1 -C3 -C2,-0.5 C0 -C2,0.5 C0 -C2,0.5 C0 C2,-0.5 C0 C2,0.0 C4 C2,0.0 C4 -C2">
+<INPUT type=hidden class=Faces value="0 6 7 1 8 #,2 4 5 3 9 #,0 4 2 #,0 2 6 #,
+6 2 9 #,6 9 7 #,7 9 3 #,7 3 1 #,1 3 5 #,1 5 8 #,8 5 4 #,8 4 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=PentagrammicAntiprism.html>Pentagrammic Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #79)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Pentagrammic Crossed Antiprism
+
+	(20) EDGE = 1
+	RADIUS = sqrt(2 * (5 - sqrt(5))) / 4
+	MIDRADIUS = (sqrt(5) - 1) / 4
+	PENTAGRAM CENTER RADIUS = sqrt(10 * (5 - sqrt(5))) / 20
+	TRIANGLE CENTER RADIUS = -(3 * sqrt(3) - sqrt(15)) / 12
+	PENTAGRAM-TRIANGLE ANGLE = acos(0.794654472291766122955530928328)
+		= acos(sqrt(15 * (5 + 2 * sqrt(5))) / 15)
+		= 37.3773681406496956428571384949 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(0.745355992499929898803057889577)
+		= acos(sqrt(5) / 3)
+		= 318.189685104221401934142083269 degrees
+
+	ROTATION SYMMETRIES:          10
+	MIRROR ROTATION SYMMETRIES:   10
+	ROTATION AXES:                 6 (1[5] + 5[2])
+	MIRROR PLANES:                 5
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  5-fold Antiprismatic (D5v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="1 10 12">
+<INPUT type=hidden class=Constants value="0.309016994374947424102293417183">
+<!--
+	C0 = (sqrt(5) - 1) / 4
+-->
+<INPUT type=hidden class=Vertices value="0.0 -0.5 C0,0.0 -0.5 -C0,0.0 0.5 C0,
+0.0 0.5 -C0,-C0 0.0 -0.5,-C0 0.0 0.5,C0 0.0 -0.5,C0 0.0 0.5,0.5 C0 0.0,
+-0.5 -C0 0.0">
+<INPUT type=hidden class=Faces value="0 6 7 1 8 #,2 4 5 3 9 #,0 4 2 #,0 2 6 #,
+6 2 9 #,6 9 7 #,7 9 3 #,7 3 1 #,1 3 5 #,1 5 8 #,8 5 4 #,8 4 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="2759 7926 -3948 -3740">
+</DIV>
+<BR>
+<CENTER>
+<A href=PentagrammicCrossedAntiprism.html>Pentagrammic Crossed Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #80)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Heptagrammic 7/2 Antiprism
+
+	(28) EDGE = 1
+	RADIUS = 0.762886832630777840946615868199
+		= square-root of a root of the polynomial:
+			448*(x^3) - 560*(x^2) + 224*x - 29
+		= sqrt(cot(pi/7) * cot(pi/7) + 5) / 4
+		= sqrt(tan(5*pi/14) * tan(5*pi/14) + 5) / 4
+	MIDRADIUS = 0.576191217740621626310287555887
+		= square-root of a root of the polynomial:  448*(x^3)-224*(x^2)+28*x-1
+		= 1 / (4 * sin(pi/7))
+	HEPTAGRAM CENTER RADIUS = 0.415939139667721060461567082374
+		= square-root of a root of the polynomial:  64*(x^3)+48*(x^2)-16*x+1
+		= sqrt(cos(2*pi/7) - cos(pi/7) / 2)
+		= sqrt(3 - tan(pi/7) * tan(pi/7)) / 4
+		= sqrt(sin(pi/14) * (1 - sin(pi/14)))
+		= sqrt(4 - 1/(cos(pi/7) * cos(pi/7))) / 4
+	TRIANGLE CENTER RADIUS = 0.498661193665686310156219043687
+		= square-root of a root of the polynomial:  12096*(x^3)-3024*(x^2)+1
+		= sqrt(3 * (3 * cot(pi/7) * cot(pi/7) - 1)) / 12
+		= sqrt(3 * (3 * tan(5*pi/14) * tan(5*pi/14) - 1)) / 12
+	HEPTAGRAM-TRIANGLE ANGLE = acos(-0.278037235803418077289958777909)
+		= acos(-sqrt(root[27*(x^3) - 189*(x^2) + 105*x - 7]))
+		= acos(-tan(pi/7) * sqrt(3) / 3)
+		= 106.143095674951255255767949444 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(-0.497986402478311374033339845339)
+		= acos(-root[27*(x^3) + 45*(x^2) - 3*x - 13])
+		= acos(-(4 * cos(2*pi/7) - 1) / 3)
+		= acos(-(8 * cos(pi/7) * cos(pi/7) - 5) / 3)
+		= acos(-(3 - 8 * sin(pi/7) * sin(pi/7)) / 3)
+		= 119.866870636977064371781434810 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  7-fold Prismatic (D7h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 14 16">
+<INPUT type=hidden class=Constants value="0.142307478623063505834519223038,
+0.277479066043685595711097435503,
+0.398736694441201980707844127107,
+0.415939139667721060461567082374,
+0.576191217740621626310287555887,
+0.623489801858733530525004884004,
+0.639524003844966302873925303636">
+<!--
+	C0 = square-root of a root of the polynomial:  448*(x^3)-336*(x^2)+56*x-1
+		= (1 - cos(2*pi/7)) * sqrt(7) / 7
+	C1 = root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * cos(pi/7))
+	C2 = square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= cot(2*pi/7) / 2
+	C3 = square-root of a root of the polynomial:  64*(x^3)+48*(x^2)-16*x+1
+		= sqrt(cos(2*pi/7) - cos(pi/7) / 2)
+		= sqrt(3 - tan(pi/7) * tan(pi/7)) / 4
+		= sqrt(sin(pi/14) * (1 - sin(pi/14)))
+		= sqrt(4 - 1/(cos(pi/7) * cos(pi/7))) / 4
+	C4 = square-root of a root of the polynomial:  448*(x^3)-224*(x^2)+28*x-1
+		= 1 / (4 * sin(pi/7))
+	C5 = root of the polynomial:  8*(x^3) + 4*(x^2) - 4*x - 1
+		= cos(2*pi/7)
+	C6 = square-root of a root of the polynomial:  7*(x^3) - 14*(x^2) + 7*x - 1
+		= 1 / (2 * sin(2*pi/7))
+-->
+<INPUT type=hidden class=Vertices value="C1 -C4 -C3,-C1 -C4 -C3,-C1 -C4 C3,
+C1 -C4 C3,C5 -C0 C3,-C5 -C0 C3,-C5 -C0 -C3,C5 -C0 -C3,0.5 C2 -C3,-0.5 C2 -C3,
+-0.5 C2 C3,0.5 C2 C3,0.0 C6 C3,0.0 C6 -C3">
+<INPUT type=hidden class=Faces value="0 6 13 7 1 9 8 #,2 4 12 5 3 11 10 #,
+0 4 2 #,0 2 6 #,6 2 10 #,6 10 13 #,13 10 11 #,13 11 7 #,7 11 3 #,7 3 1 #,
+1 3 5 #,1 5 9 #,9 5 12 #,9 12 8 #,8 12 4 #,8 4 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=Heptagrammic72Antiprism.html>Heptagrammic 7/2 Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #79)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Heptagrammic 7/3 Antiprism
+
+	(28) EDGE = 1
+	RADIUS = 0.640918117255978058083881061732
+		= square-root of a root of the polynomial:  64*(x^3)-144*(x^2)+80*x-13
+		= sqrt(tan(2*pi/7) * tan(2*pi/7) + 5) / 4
+		= sqrt(1 / (cos(2*pi/7) * cos(2*pi/7)) + 4) / 4
+	MIDRADIUS = 0.400968867902419126236102319507
+		= root of the polynomial:  8*(x^3) + 8*(x^2) - 2*x - 1
+		= cos(pi/7) - 1/2
+		= (2 * cos(pi/7) - 1) / 2
+		= 1 / (4 * cos(2*pi/7))
+	HEPTAGRAM CENTER RADIUS = 0.384385564409650900933252229088
+		= square-root of a root of the polynomial:  448*(x^3) - 112*(x^2) + 1
+		= sqrt(3 - cot(2*pi/7) * cot(2*pi/7)) / 4
+		= sqrt(3 - tan(3*pi/14) * tan(3*pi/14)) / 4
+		= sqrt(4 - 1 / (sin(2*pi/7) * sin(2*pi/7))) / 4
+	TRIANGLE CENTER RADIUS = 0.278285284723454800379742575552
+		= square-root of a root of the polynomial:
+			1728*(x^3) - 2160*(x^2) + 144*x + 1
+		= sqrt(3 * (3 * tan(2*pi/7) * tan(2*pi/7) - 1)) / 12
+	HEPTAGRAM-TRIANGLE ANGLE = acos(-0.460421475742819037532540795163)
+		= acos(-sqrt(root[189*(x^3) - 315*(x^2) + 63*x - 1]))
+		= acos(-cot(2*pi/7) * sqrt(3) / 3)
+		= acos(-tan(3*pi/14) * sqrt(3) / 3)
+		= 117.414307905438413045567041890 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(0.0366387547249141276147965806709)
+		= acos(root[27*(x^3) - 9*(x^2) - 27*x + 1])
+		= acos((1 - 4 * sin(pi/14)) / 3)
+		= acos(((1 / cos(pi/7) - 1) / 3)
+		= acos(sqrt(5 - 8 * cos(2*pi/7)) / 3)
+		= 87.9002840329723949752488221014 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 7
+	INVERTIBLE:                  YES
+	SYMMETRY CLASSIFICATION:  7-fold Antiprismatic (D7v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="6 14 16">
+<INPUT type=hidden class=Constants value="0.222520933956314404288902564497,
+0.277479066043685595711097435503,
+0.333557291897744610143308031014,
+0.400968867902419126236102319507,
+0.415939139667721060461567082374,
+0.601049471323415442320432334194">
+<!--
+	C0 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= sin(pi/14)
+	C1 = root of the polynomial:  8*(x^3) - 8*(x^2) - 2*x + 1
+		= 1 / (4 * cos(pi/7))
+	C2 = square-root of a root of the polynomial:  64*(x^3)-16*(x^2)-8*x+1
+		= sqrt(sin(pi/14) / 2)
+	C3 = root of the polynomial:  8*(x^3) + 8*(x^2) - 2*x - 1
+		= cos(pi/7) - 1/2
+		= (2 * cos(pi/7) - 1) / 2
+		= 1 / (4 * cos(2*pi/7))
+	C4 = square-root of a root of the polynomial:  64*(x^3)+48*(x^2)-16*x+1
+		= sqrt(cos(2*pi/7) - cos(pi/7) / 2)
+		= sqrt(3 - tan(pi/7) * tan(pi/7)) / 4
+		= sqrt(sin(pi/14) * (1 - sin(pi/14)))
+		= sqrt(4 - 1/(cos(pi/7) * cos(pi/7))) / 4
+	C5 = square-root of a root of the polynomial:  64*(x^3)-64*(x^2)+12*x+1
+		= sqrt(1 + 2 * sin(pi/14)) / 2
+		= sqrt(cos(pi/7) * (cos(pi/7) - 1/2))
+		= sqrt(3 - 4 * cos(2*pi/7) * cos(2*pi/7)) / 2
+		= sqrt(4 * sin(2*pi/7) * sin(2*pi/7) - 1) / 2
+-->
+<INPUT type=hidden class=Vertices value="-C1 C4 -C3,-C1 C4 C3,C1 -C4 -C3,
+C1 -C4 C3,0.5 C2 C0,0.5 C2 -C0,-0.5 -C2 C0,-0.5 -C2 -C0,-C3 0.0 0.5,
+-C3 0.0 -0.5,C3 0.0 0.5,C3 0.0 -0.5,C0 -C5 0.0,-C0 C5 0.0">
+<INPUT type=hidden class=Faces value="0 6 13 7 1 9 8 #,2 4 12 5 3 11 10 #,
+0 4 2 #,0 2 6 #,6 2 10 #,6 10 13 #,13 10 11 #,13 11 7 #,7 11 3 #,7 3 1 #,
+1 3 5 #,1 5 9 #,9 5 12 #,9 12 8 #,8 12 4 #,8 4 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="8847 -989 4541 -363">
+</DIV>
+<BR>
+<CENTER>
+<A href=Heptagrammic73Antiprism.html>Heptagrammic 7/3 Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #79)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Heptagrammic Crossed Antiprism
+
+	(28) EDGE = 1
+	RADIUS = 0.593504623295787072199455789597
+		= square-root of a root of the polynomial:
+			448*(x^3) - 560*(x^2) + 224*x - 29
+		= sqrt(cot(2*pi/7) * cot(2*pi/7) + 5) / 4
+		= sqrt(tan(3*pi/14) * tan(3*pi/14) + 5) / 4
+		= sqrt(1 / (sin(2*pi/7) * sin(2*pi/7)) + 4) / 4
+	MIDRADIUS = 0.319762001922483151436962651818
+		= square-root of a root of the polynomial:  448*(x^3)-224*(x^2)+28*x-1
+		= 1 / (4 * sin(2*pi/7))
+	HEPTAGRAM CENTER RADIUS = 0.298703811447146353572402221531
+		= square-root of a root of the polynomial:  64*(x^3)+48*(x^2)-16*x+1
+		= -sqrt(cos(pi/7) * (1 - cos(pi/7)))
+		= -sqrt(3 - tan(2*pi/7) * tan(2*pi/7)) / 4
+		= -sqrt(1 / cos(2*pi/7) - 2 * cos(2*pi/7)) / 2
+	TRIANGLE CENTER RADIUS = -0.137529649676499886379147746156
+		= square-root of a root of the polynomial:  12096*(x^3)-3024*(x^2)+1
+		= sqrt(48 * (3 * cot(2*pi/7) * cot(2*pi/7) - 1)) / 48
+		= sqrt(48 * (3 / (sin(2*pi/7) * sin(2*pi/7)) - 4)) / 48
+		= sqrt(48 * (3 * tan(3*pi/14) * tan(3*pi/14) - 1)) / 48
+	HEPTAGRAM-TRIANGLE ANGLE = acos(0.723974338502676079582338326142)
+		= acos(sqrt(root[27*(x^3) - 189*(x^2) + 105*x - 7]))
+		= acos(tan(2*pi/7) * sqrt(3) / 3)
+		= 43.61640836505622403224854049352 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(0.630027911941752539051870085996)
+		= acos(root[27*(x^3) - 45*(x^2) - 3*x + 13])
+		= acos((4 * sin(pi/14) + 1) / 3)
+		= acos((3 - 1 / cos(pi/7)) / 3)
+		= 309.052181858583782739604955914 degrees
+
+	ROTATION SYMMETRIES:          14
+	MIRROR ROTATION SYMMETRIES:   14
+	ROTATION AXES:                 8 (1[7] + 7[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  7-fold Prismatic (D7h)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="7 14 16">
+<INPUT type=hidden class=Constants value="0.114121737195074969038805681031,
+0.222520933956314404288902564497,
+0.298703811447146353572402221531,
+0.319762001922483151436962651818,
+0.400968867902419126236102319507,
+0.462069480545546657271481874856,
+0.512858431636276949746649808138">
+<!--
+	C0 = square-root of a root of the polynomial:  448*(x^3)-560*(x^2)+84*x-1
+		= tan(pi/14) / 2
+	C1 = root of the polynomial:  8*(x^3) - 4*(x^2) - 4*x + 1
+		= sin(pi/14)
+	C2 = square-root of a root of the polynomial:  64*(x^3)+48*(x^2)-16*x+1
+		= sqrt(cos(pi/7) * (1 - cos(pi/7)))
+		= sqrt(3 - tan(2*pi/7) * tan(2*pi/7)) / 4
+		= sqrt(1 / cos(2*pi/7) - 2 * cos(2*pi/7)) / 2
+	C3 = square-root of a root of the polynomial:  448*(x^3)-224*(x^2)+28*x-1
+		= 1 / (4 * sin(2*pi/7))
+	C4 = root of the polynomial:  8*(x^3) + 8*(x^2) - 2*x - 1
+		= cos(pi/7) - 1/2
+		= (2 * cos(pi/7) - 1) / 2
+		= 1 / (4 * cos(2*pi/7))
+	C5 = square-root of a root of the polynomial:  448*(x^3)-336*(x^2)+56*x-1
+		= (sin(pi/14) + 1) * sqrt(7) / 7
+		= (2 * cos(pi/14) - 1 / cos(pi/14)) / 2
+		= (cot(pi/14) - 3 * tan(pi/14)) / 8
+	C6 = square-root of a root of the polynomial:  7*(x^3) - 14*(x^2) + 7*x - 1
+		= 1 / (2 * cos(pi/14))
+-->
+<INPUT type=hidden class=Vertices value="-C4 C3 C2,C4 C3 C2,C4 C3 -C2,
+-C4 C3 -C2,-C1 -C5 -C2,C1 -C5 -C2,C1 -C5 C2,-C1 -C5 C2,0.5 -C0 C2,-0.5 -C0 C2,
+-0.5 -C0 -C2,0.5 -C0 -C2,0.0 C6 -C2,0.0 C6 C2">
+<INPUT type=hidden class=Faces value="0 6 13 7 1 9 8 #,2 4 12 5 3 11 10 #,
+0 4 2 #,0 2 6 #,6 2 10 #,6 10 13 #,13 10 11 #,13 11 7 #,7 11 3 #,7 3 1 #,
+1 3 5 #,1 5 9 #,9 5 12 #,9 12 8 #,8 12 4 #,8 4 0 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=HeptagrammicCrossedAntiprism.html>Heptagrammic Crossed Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #80)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+
+<TR bgcolor="#606060">
+<TD align=center>
+<!--
+	Octagrammic Antiprism
+
+	(32) EDGE = 1
+	RADIUS = sqrt(2 * (6 - 2 * sqrt(2) + sqrt(2 * (10 - 7 * sqrt(2))))) / 4
+	MIDRADIUS = sqrt(2 * (4 - 2 * sqrt(2) + sqrt(2 * (10 - 7 * sqrt(2))))) / 4
+	OCTAGRAM CENTER RADIUS
+		= sqrt(2 * (2 * sqrt(2) + sqrt(2 * (10 - 7 * sqrt(2))) - 2)) / 4
+	TRIANGLE CENTER RADIUS
+		= sqrt(6 * (10 - 6 * sqrt(2) + 3 * sqrt(2 * (10 - 7 * sqrt(2))))) / 12
+	OCTAGRAM-TRIANGLE ANGLE
+		= acos(-sqrt(3 * (7 - 4 * sqrt(2) - 2 * sqrt(2*(10 - 7*sqrt(2))))) / 3)
+		= 112.691744664988457308346128386 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos(-(2 * sqrt(2 - sqrt(2)) - 1) / 3)
+		= 100.189899875896509423045413720 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:   16
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  8-fold Antiprismatic (D8v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 16 18">
+<INPUT type=hidden class=Constants value="0.2071067811865475244008443621048,
+0.382683432365089771728459984030,
+0.399494783118965649860024011727,
+0.541196100146196984399723205366">
+<!--
+	C0 = (sqrt(2) - 1) / 2
+	C1 = sqrt(2 - sqrt(2)) / 2
+	C2 = sqrt(2 * (2 * sqrt(2) + sqrt(2 * (10 - 7 * sqrt(2))) - 2)) / 4
+	C3 = sqrt(2 * (2 - sqrt(2))) / 2
+-->
+<INPUT type=hidden class=Vertices value="C0 0.5 C2,C0 -0.5 C2,-C0 0.5 C2,
+-C0 -0.5 C2,-0.5 -C0 C2,-0.5 C0 C2,0.5 -C0 C2,0.5 C0 C2,C3 0.0 -C2,-C3 0.0 -C2,
+0.0 -C3 -C2,0.0 C3 -C2,-C1 C1 -C2,-C1 -C1 -C2,C1 C1 -C2,C1 -C1 -C2">
+<INPUT type=hidden class=Faces value="0 4 6 2 3 7 5 1 #,
+8 13 11 15 9 14 10 12 #,0 1 8 #,0 8 12 #,1 5 13 #,1 13 8 #,2 6 14 #,2 14 9 #,
+3 2 9 #,3 9 15 #,4 0 12 #,4 12 10 #,5 7 11 #,5 11 13 #,6 4 10 #,6 10 14 #,
+7 3 15 #,7 15 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=OctagrammicAntiprism.html>Octagrammic Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #79)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+
+<TD align=center>
+<!--
+	Octagrammic Crossed Antiprism
+
+	(32) EDGE = 1
+	RADIUS = sqrt(2 * (6 - 2 * sqrt(2) - sqrt(2 * (10 - 7 * sqrt(2))))) / 4
+	MIDRADIUS = sqrt(2 * (4 - 2 * sqrt(2) - sqrt(2 * (10 - 7 * sqrt(2))))) / 4
+	OCTAGRAM CENTER RADIUS
+		= sqrt(2 * (2 * sqrt(2) - sqrt(2 * (10 - 7 * sqrt(2))) - 2)) / 4
+	TRIANGLE CENTER RADIUS
+		= -sqrt(6 * (10 - 6 * sqrt(2) - 3 * sqrt(2 * (10 - 7 * sqrt(2))))) / 12
+	OCTAGRAM-TRIANGLE ANGLE
+		= acos(sqrt(3 * (7 - 4*sqrt(2) + 2 * sqrt(2 * (10 - 7*sqrt(2))))) / 3)
+		= 30.2238044183738578113743913557 degrees
+	TRIANGLE-TRIANGLE ANGLE = acos((2 * sqrt(2 - sqrt(2)) + 1) / 3)
+		= 327.519889298606416668481297700 degrees
+
+	ROTATION SYMMETRIES:          16
+	MIRROR ROTATION SYMMETRIES:   16
+	ROTATION AXES:                 9 (1[8] + 8[2])
+	MIRROR PLANES:                 8
+	INVERTIBLE:                   NO
+	SYMMETRY CLASSIFICATION:  8-fold Antiprismatic (D8v)
+	TOPOLOGICALLY SELF-DUAL:      NO
+-->
+<DIV name="miniViewer">
+<CANVAS name="canvas" width=200 height=200>
+Please use a browser that supports "canvas"
+</CANVAS>
+<INPUT type=hidden class=Counts value="4 16 18">
+<INPUT type=hidden class=Constants value="0.2071067811865475244008443621048,
+0.2179694920104144355119535029053,
+0.382683432365089771728459984030,
+0.541196100146196984399723205366">
+<!--
+	C0 = (sqrt(2) - 1) / 2
+	C1 = sqrt(2 * (2 * sqrt(2) - sqrt(2 * (10 - 7 * sqrt(2))) - 2)) / 4
+	C2 = sqrt(2 - sqrt(2)) / 2
+	C3 = sqrt(2 * (2 - sqrt(2))) / 2
+-->
+<INPUT type=hidden class=Vertices value="C0 0.5 C1,C0 -0.5 C1,-C0 0.5 C1,
+-C0 -0.5 C1,-0.5 -C0 C1,-0.5 C0 C1,0.5 -C0 C1,0.5 C0 C1,-C3 0.0 -C1,C3 0.0 -C1,
+0.0 C3 -C1,0.0 -C3 -C1,C2 -C2 -C1,C2 C2 -C1,-C2 -C2 -C1,-C2 C2 -C1">
+<INPUT type=hidden class=Faces value="0 4 6 2 3 7 5 1 #,
+8 13 11 15 9 14 10 12 #,0 1 8 #,0 8 12 #,1 5 13 #,1 13 8 #,2 6 14 #,2 14 9 #,
+3 2 9 #,3 9 15 #,4 0 12 #,4 12 10 #,5 7 11 #,5 11 13 #,6 4 10 #,6 10 14 #,
+7 3 15 #,7 15 11 #">
+<INPUT type=hidden class=Background value="#606060">
+<INPUT type=hidden class=Quaternion value="12 -3 -4 0">
+</DIV>
+<BR>
+<CENTER>
+<A href=OctagrammicCrossedAntiprism.html>Octagrammic Crossed Antiprism</A>
+<TABLE width=100% border=0 cellpadding=0 cellspacing=0>
+<TR><TD align=left style="font-size:60%"><NOBR>(Uniform #80)</NOBR></TD></TR>
+</TABLE>
+</CENTER>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE style="font-size:75%">
+<TR><TD valign=top>References:</TD><TD valign=top>[1]</TD><TD>Jean Paul Albert Badoureau, M&eacute;moire sur les Figures Isoc&egrave;les, <I>Journal de l'&Eacute;cole polytechnique</I> <B>49</B> (1881), 47-172.</TD></TR>
+<TR><TD></TD><TD valign=top>[2]</TD><TD>H. S. M. Coxeter, M. S. Longuet-Higgins, and J. C. P. Miller, Uniform Polyhedra, <I>Philosophical Transactions of the Royal Society of London. Series A. Mathematical and Physical Sciences</I> <B>246</B> (1954), 401-450.</TD></TR>
+</TABLE>
+<SCRIPT src="miniViewer.js"></SCRIPT>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=2986213;
+var sc_invisible=1;
+var sc_partition=32;
+var sc_security="bf184278";
+</script>
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c33.statcounter.com/2986213/0/bf184278/0/" alt="counter customizable free hit" /></a></div></noscript>
+<!-- End of StatCounter Code -->
+</BODY>
+</HTML>
