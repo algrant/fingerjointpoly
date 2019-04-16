@@ -1,14 +1,16 @@
 import numpy as np
 import svgwrite
-from math import pi, cos, tan
+from math import pi, cos, tan, sin
 
 
-offset_multi = 5
-polygon_scale = 55
+offset_multi = 14.5
+polygon_scale = 35
 # fn = "./dmccooey/TruncatedIcosahedron.txt"
 # fn = "./dmccooey/DualGeo_3_0.txt"
-# fn = "./dmccooey/Rhombicosidodecahedron.txt"
-fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron2.txt"
+fn = "./dmccooey/Rhombicosidodecahedron.txt"
+# fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron3.txt"
+# fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron4.txt"
+
 def rotate_via_numpy(xy, radians):
     """Use numpy to build a rotation matrix and take the dot product."""
     x, y = xy
@@ -24,6 +26,8 @@ def svg_poly(face, filename, dihedrals, min_length):
   min_y = 1000000000
   max_x = -100000000
   max_y = -100000000
+  squaggles = []
+  outline = []
   for i in range(len(face)):
     prev = face[i-1]
     curr = face[i]
@@ -36,46 +40,52 @@ def svg_poly(face, filename, dihedrals, min_length):
     norm = rotate_via_numpy(v, pi/2)
     norm /= np.linalg.norm(norm)
     l = 3
-    bump = 0
-    outer = norm*(l/tan(dihedrals[i]) + bump)
-    inner = norm*(l/cos(dihedrals[i]) - bump)
+    tab_diff = 0.03
+    # tab_offset = v*tab_diff/2.0
+    outer = norm*(l/tan(dihedrals[i]))
+    inner = norm*(l/sin(dihedrals[i]))
 
-    lines.append([[prev, curr], svgwrite.rgb(10, 10, 16, '%')])
-    out_start, out_end = prev + outer + a_o, curr + outer - a_o
+    # lines.append([[prev, curr], svgwrite.rgb(10, 10, 16, '%')])
+    outline.append(prev)
+    out_start, out_end = prev - outer + a_o, curr - outer - a_o
     in_start, in_end = prev - inner + a_o, curr - inner - a_o
 
-    # start = prev
-    # out_start
-    # out_start*(1-t)+out_end(t)
-    # in_start*(1-t)+in_end(t)
-    # in_start*(1-t)+in_end(t)
-    squiggles = [prev, prev + a_o]
+    squiggles = [in_start]
     divs = 2
     for i in range(divs):
       t_0 = i/divs
       t_2 = (i+1)/divs
-      t_1 = (t_0 + t_2)/2
+      t_1 = (t_0 + t_2)/2+tab_diff/2.0
       squiggles.append(out_start*(1-t_0) + out_end*t_0)
       squiggles.append(out_start*(1-t_1) + out_end*t_1)
       squiggles.append(in_start*(1-t_1) + in_end*t_1)
       squiggles.append(in_start*(1-t_2) + in_end*t_2)
+    
+    # squiggles.append(curr - a_o)
+    # squiggles.append( curr)
 
-    squiggles.append(curr - a_o)
-    squiggles.append( curr)
-
-    lines.append([squiggles, svgwrite.rgb(100, 10, 16, '%')])
-    min_x = min(prev[0], curr[0],(prev+outer)[0], (curr+outer)[0],(prev-inner)[0], (curr-inner)[0], min_x)
-    min_y = min(prev[1], curr[1],(prev+outer)[1], (curr+outer)[1],(prev-inner)[1], (curr-inner)[1], min_y)
-    max_x = max(prev[0], curr[0],(prev+outer)[0], (curr+outer)[0],(prev-inner)[0], (curr-inner)[0], max_x)
-    max_y = max(prev[1], curr[1],(prev+outer)[1], (curr+outer)[1],(prev-inner)[1], (curr-inner)[1], max_y)
+    # lines.append([squiggles, svgwrite.rgb(100, 10, 16, '%')])
+    squaggles += squiggles
+    min_x = min(*[ s[0] for s in squiggles], min_x)
+    min_y = min(*[ s[1] for s in squiggles], min_y)
+    max_x = max(*[ s[0] for s in squiggles], max_x)
+    max_y = max(*[ s[1] for s in squiggles], max_y)
     # dwg.add(dwg.line(prev+outer, curr+outer, stroke=svgwrite.rgb(100, 10, 16, '%')))
     # dwg.add(dwg.line(prev-inner, curr-inner, stroke=svgwrite.rgb(100, 10, 16, '%')))
+  squaggles.append(squaggles[0])
+  outline.append(outline[0])
+  lines.append([outline, svgwrite.rgb(0, 0, 0, "%")])
+  lines.append([squaggles, svgwrite.rgb(100, 0, 0, '%')])
+
   minp = np.array([min_x, min_y])
-  print("%imm"%max_x, "%imm"%max_y)
+  # print("%imm"%max_x, "%imm"%max_y)
 
   size = ("%imm"%(max_x - min_x),"%imm"%(max_y- min_y))
   # size = (max_x, max_y)
   dwg = svgwrite.Drawing(filename, size=size, profile="tiny")
+
+
+  # properly scaled to mms...
   pixies_per_mm = 3.543307
   for line in lines:
     dwg.add(dwg.polyline([(point - minp)*pixies_per_mm for point in line[0]], stroke=line[1], fill="white"))
@@ -173,6 +183,7 @@ class Polyhedron:
         self.half_edges["%i_%i"%(face[i-1], face[i])]["length"] = length
         self.min_length = min(length, self.min_length)
         self.max_length = max(length, self.max_length)
+    print(self.min_length)
   def find_dihedrals(self):
     for key, he in self.half_edges.items():
       # print(key, he)
@@ -228,11 +239,6 @@ ti.find_dihedrals()
 ti.get_2d_faces()
 
 # handy to double check dihedral against know dihedrals...
-for k, he in ti.half_edges.items():
-  print(k, he["length"]*100, 180*he["dihedral"]/pi)
-# print(ti.half_edges)
-# a = "0.809016994374947424102293417183"
-# print(np.float128(a))
+# for k, he in ti.half_edges.items():
+#   print(k, he["length"]*100, 180*he["dihedral"]/pi)
 
-# b = "08090169943749474.24102293417183"
-# print(float(b))

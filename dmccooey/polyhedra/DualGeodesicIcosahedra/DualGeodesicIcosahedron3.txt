@@ -65,8 +65,7 @@ C28 = (phi / x)^2
 C29 = (3 * x * (1 + 15*phi) + (127 + 24*phi) - (119*phi - 6) / x) / 209
 C30 = phi / x
 C31 = (2 * (x^2) * (14 + phi) + x * (1 + 15 * phi) + 4 * (14 + phi)) / 209
-WHERE:  phi = (1 + sqrt(5)) / 2
-        x = cbrt((phi + sqrt(phi-5/27))/2) + cbrt((phi - sqrt(phi-5/27))/2)
+
 
 V0   = (  C2,   C3,  1.0)
 V1   = (  C2,  -C3, -1.0)
