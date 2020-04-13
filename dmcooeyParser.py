@@ -2,14 +2,34 @@ import numpy as np
 import svgwrite
 from math import pi, cos, tan, sin
 
+offset_multi = 10 # 14.5
+polygon_scale = 100
+overlap = 2
 
-offset_multi = 14.5
-polygon_scale = 35
 # fn = "./dmccooey/TruncatedIcosahedron.txt"
 # fn = "./dmccooey/DualGeo_3_0.txt"
-fn = "./dmccooey/Rhombicosidodecahedron.txt"
+# fn = "./dmccooey/Rhombicosidodecahedron.txt"
+fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron2.txt"
 # fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron3.txt"
 # fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron4.txt"
+# fn = "./dmccooey/polyhedra/Catalan/RpentagonalHexecontahedron.txt"
+
+def spline(p1, p2):
+    A = (p1[1] - p2[1])
+    B = (p2[0] - p1[0])
+    C = (p1[0]*p2[1] - p2[0]*p1[1])
+    return A, B, -C
+
+def intersection(L1, L2):
+    D  = L1[0] * L2[1] - L1[1] * L2[0]
+    Dx = L1[2] * L2[1] - L1[1] * L2[2]
+    Dy = L1[0] * L2[2] - L1[2] * L2[0]
+    if D != 0:
+        x = Dx / D
+        y = Dy / D
+        return [x,y]
+    else:
+        return False
 
 def rotate_via_numpy(xy, radians):
     """Use numpy to build a rotation matrix and take the dot product."""
@@ -28,10 +48,15 @@ def svg_poly(face, filename, dihedrals, min_length):
   max_y = -100000000
   squaggles = []
   outline = []
+  innerLine = []
   for i in range(len(face)):
+    prev_minus_one = face[i-2]
     prev = face[i-1]
     curr = face[i]
     length = np.linalg.norm(curr-prev)
+    line_1, line_2 = spline(prev_minus_one, prev), spline(prev, curr)
+    p_inter = intersection(line_1, line_2)
+    innerLine.append(p_inter)
     # dwg.add(dwg.line(prev, curr, stroke=svgwrite.rgb(10, 10, 16, '%')))
     v = (curr - prev)
     v /= np.linalg.norm(v)
@@ -42,16 +67,22 @@ def svg_poly(face, filename, dihedrals, min_length):
     l = 3
     tab_diff = 0.03
     # tab_offset = v*tab_diff/2.0
-    outer = norm*(l/tan(dihedrals[i]))
+    etch = norm*(l/tan(dihedrals[i]))
+    outer = norm*(l/tan(dihedrals[i]) - overlap)
     inner = norm*(l/sin(dihedrals[i]))
 
     # lines.append([[prev, curr], svgwrite.rgb(10, 10, 16, '%')])
     outline.append(prev)
     out_start, out_end = prev - outer + a_o, curr - outer - a_o
     in_start, in_end = prev - inner + a_o, curr - inner - a_o
+    etch_start, etch_end = prev - etch + a_o, curr - etch - a_o
+
+    lines.append([[etch_start, etch_end], svgwrite.rgb(0, 0, 100, '%')])
 
     squiggles = [in_start]
     divs = 2
+    length = out_start - out_end
+    print(np.linalg.norm(norm))
     for i in range(divs):
       t_0 = i/divs
       t_2 = (i+1)/divs
@@ -74,9 +105,12 @@ def svg_poly(face, filename, dihedrals, min_length):
     # dwg.add(dwg.line(prev-inner, curr-inner, stroke=svgwrite.rgb(100, 10, 16, '%')))
   squaggles.append(squaggles[0])
   outline.append(outline[0])
+  # etchline.append(etchline[0])
+
   lines.append([outline, svgwrite.rgb(0, 0, 0, "%")])
   lines.append([squaggles, svgwrite.rgb(100, 0, 0, '%')])
-
+  lines.append([innerLine, svgwrite.rgb(0, 100, 0, '%')])
+  # lines.append([etchline, svgwrite.rgb(0,0,100,'%')])
   minp = np.array([min_x, min_y])
   # print("%imm"%max_x, "%imm"%max_y)
 
