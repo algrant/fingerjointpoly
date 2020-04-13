@@ -1,0 +1,28 @@
+## Writing What I Currently See
+So this is a year after I wrote this code and I didn't originally write it to be particularly useful to anyone but myself.
+
+Obviously now it's a bit of a hassle, but I'm going to try and pull this code apart a little for the sake of making a glorious wooden egg.
+
+## dmcooeyParser.py
+This is the meat of the project. In essence it's just a script which I run & it generates all the required pieces as individual SVGs in the "poly" folder.
+
+The things to pull out of here are likely:
+### svg_poly
+This takes in:
+ - face -- list of points [p1, p2, p3 ...]
+ - filename -- where we'll save our SVG after calculating it
+ - dihedrals -- list of dihedral angles for edges [dh1, dh2, ...] edges are looking backwards i.e edge2 is between p1 & p2:
+   - dihedrals are used to determine how long the tabs for the face should be.
+ - min_length -- currently unused, but should point to the minimun edge length within the polyhedron... I forget why I was interested in this, though perhaps I'll figure it out as I work through this project.
+
+Honestly don't currently remember exactly what we're doing here - but in general this just generates the shape of the SVG to output as well as saving it to file.
+
+Potentially would be good to split this in two -- part 1 generate the outline, part 2 turn it into an SVG
+
+### class Polyhedron
+I think the notion was to make various versions of the Polyhedron based on different input types (i.e. the dmmcooey stuff as per this file name, but also say an STL which is what I want to do today!)
+
+It stores - vertices, faces, half_edges (and the unused faces_2d, I guess I had more plans here...)
+
+I could likely pull out the half_edge generating code into a new function as the half_edges are the only "interesting" / custom piece of information here... though I guess generating while parsing the faces from the dmmcooey files was handy.
+
