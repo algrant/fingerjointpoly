@@ -54,8 +54,8 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
     norm = rotate_via_numpy(v, pi/2)
     norm /= np.linalg.norm(norm)
     l = 3
-    tab_diff = 0.03
-    # tab_offset = v*tab_diff/2.0
+    tab_diff = 0.0003
+    # tab_offset = v*tab_diff/2.0 
     etch = norm*(l/tan(dihedrals[i]))
     outer = norm*(l/tan(dihedrals[i]) - overlap)
     inner = norm*(l/sin(dihedrals[i]))
@@ -69,9 +69,11 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
     lines.append([[etch_start, etch_end], svgwrite.rgb(0, 0, 100, '%')])
 
     squiggles = [in_start]
-    divs = 2
-    length = out_start - out_end
-    print(np.linalg.norm(norm))
+    length = np.linalg.norm(out_start - out_end)
+    # print(length)
+    divs = int(length/6)
+    print(length, divs)
+    # print(np.linalg.norm(norm))
     for i in range(divs):
       t_0 = i/divs
       t_2 = (i+1)/divs
@@ -104,6 +106,7 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
   # print("%imm"%max_x, "%imm"%max_y)
 
   size = ("%imm"%(max_x - min_x),"%imm"%(max_y- min_y))
+  print(size)
   # size = (max_x, max_y)
   dwg = svgwrite.Drawing(filename, size=size, profile="tiny")
 
@@ -111,7 +114,7 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
   # properly scaled to mms...
   pixies_per_mm = 3.543307
   for line in lines:
-    dwg.add(dwg.polyline([(point - minp)*pixies_per_mm for point in line[0]], stroke=line[1], fill="white"))
+    dwg.add(dwg.polyline([(point - minp)*pixies_per_mm for point in line[0]], stroke=line[1], fill="none"))
   dwg.save()
 
 """ https://stackoverflow.com/questions/20305272/dihedral-torsion-angle-from-four-points-in-cartesian-coordinates-in-python """
