@@ -4,7 +4,7 @@ import numpy as np
 
 offset_multi = 5 # 14.5
 polygon_scale = 70
-overlap = 2
+overlap = 3
 
 files = {
   "egg": "./obj/egg5.obj"
