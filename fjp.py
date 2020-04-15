@@ -2,6 +2,10 @@ import numpy as np
 from math import pi, cos, tan, sin
 import numpy as np
 import svgwrite
+import pyclipper
+
+def vec_mag(vector):
+  return np.linalg.norm(vector)
 
 def spline(p1, p2):
     A = (p1[1] - p2[1])
@@ -29,7 +33,100 @@ def rotate_via_numpy(xy, radians):
 
     return np.array([float(m.T[0]), float(m.T[1])])
 
-def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
+def get_bounding_box(vertices):
+  tl = vertices[0].copy()
+  br = vertices[0].copy()
+  for v in vertices:
+    tl[0] = min(tl[0], v[0])
+    tl[1] = min(tl[1], v[1])
+    br[0] = max(br[0], v[0])
+    br[1] = max(br[1], v[1])
+
+  return [tl, br]
+
+epsilon = 0.000000001
+
+def epsilon_eq(a,b):
+  return abs(a-b) < epsilon
+
+def epsilon_gte(a, b):
+  if a < b:
+    return abs(a-b) < epsilon
+  return True
+
+def epsilon_lte(a,b):
+  if a > b:
+    return abs(a-b) < epsilon
+  return True
+
+def point_is_between_points(p1, p2, p_test):
+  tl, br = get_bounding_box([p1, p2])
+
+  less_than_br = epsilon_lte(p_test[0], br[0]) and epsilon_lte(p_test[1], br[1])
+  greater_than_tl = epsilon_gte(p_test[0], tl[0]) and epsilon_gte(p_test[1], tl[1])
+
+  return less_than_br and greater_than_tl
+
+
+def determine_min_offsets(face, dihedrals):
+  material_thickness = 3
+  innerSplines = []
+  innerLines = []
+  innerIntersections = []
+  minOffsets = []
+
+  # generate innerSplines, find intersections & add to innerLine
+  for i in range(len(face)):
+    prev = face[i-1]
+    curr = face[i]
+
+    v = (curr - prev)
+    v /= vec_mag(v)
+
+    norm = rotate_via_numpy(v, pi/2)
+    norm /= vec_mag(norm)
+
+    inner = norm*(material_thickness/sin(dihedrals[i]))
+    in_start, in_end = prev - inner, curr - inner
+    innerLines.append([in_start, in_end])
+    innerSplines.append(spline(in_start, in_end))
+
+    if i > 0:
+      prev_inner_spline = innerSplines[i-1]
+      inner_spline = innerSplines[i]
+      innerIntersections.append(np.array(intersection(prev_inner_spline, inner_spline)))
+
+    if i == len(face) - 1:
+      prev_inner_spline = innerSplines[0]
+      inner_spline = innerSplines[i]
+      innerIntersections.append(np.array(intersection(prev_inner_spline, inner_spline)))
+
+  # calculate offsets as a percentage
+  for i in range(len(innerLines)):
+    prev_intersection = innerIntersections[i-1]
+    curr_intersection = innerIntersections[i]
+    minOffsets.append([None, None])
+
+    if point_is_between_points(innerLines[i][0], innerLines[i][1], prev_intersection):
+      minOffsets[i][0] = vec_mag(prev_intersection - innerLines[i][0])
+    else:
+      minOffsets[i][0] = 0
+
+    if point_is_between_points(innerLines[i][0], innerLines[i][1], curr_intersection):
+      minOffsets[i][1] = vec_mag(curr_intersection - innerLines[i][1])
+    else:
+      minOffsets[i][1] = 0
+
+  return minOffsets
+
+def gen_offset_polyline(line, offset):
+  coordinates = pyclipper.scale_to_clipper(line)
+  pco = pyclipper.PyclipperOffset()
+  pco.AddPath(coordinates, pyclipper.JT_MITER, pyclipper.ET_CLOSEDPOLYGON)
+  pco.MiterLimit = 20.0
+  return pyclipper.scale_from_clipper(pco.Execute(pyclipper.scale_to_clipper(offset))[0])
+
+def svg_poly(face, filename, dihedrals, offsets, overlap, tab_width, border_width):
   material_thickness = 3
   innerSplines = []
   innerLine = []
@@ -40,10 +137,10 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
     curr = face[i]
 
     v = (curr - prev)
-    v /= np.linalg.norm(v)
+    v /= vec_mag(v)
 
     norm = rotate_via_numpy(v, pi/2)
-    norm /= np.linalg.norm(norm)
+    norm /= vec_mag(norm)
 
     inner = norm*(material_thickness/sin(dihedrals[i]))
     in_start, in_end = prev - inner, curr - inner
@@ -60,11 +157,10 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
       inner_spline = innerSplines[i]
       innerLine.append(np.array(intersection(prev_inner_spline, inner_spline)))
 
+  windowLine = gen_offset_polyline(innerLine, -border_width)
+
   lines = []
-  min_x = 1000000000
-  min_y = 1000000000
-  max_x = -100000000
-  max_y = -100000000
+
   squaggles = []
   outline = []
 
@@ -72,19 +168,19 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
     prev_minus_one = face[i-2]
     prev = face[i-1]
     curr = face[i]
-    length = np.linalg.norm(curr-prev)
-    innerLength = np.linalg.norm(innerLine[i] - innerLine[i-1])
+    length = vec_mag(curr-prev)
+    innerLength = vec_mag(innerLine[i] - innerLine[i-1])
 
 
     # dwg.add(dwg.line(prev, curr, stroke=svgwrite.rgb(10, 10, 16, '%')))
     v = (curr - prev)
-    v /= np.linalg.norm(v)
+    v /= vec_mag(v)
 
     norm = rotate_via_numpy(v, pi/2)
-    norm /= np.linalg.norm(norm)
+    norm /= vec_mag(norm)
 
-    tab_diff = 0.0003
-    # tab_offset = v*tab_diff/2.0 
+    tab_diff = 0 #0.01
+
     etch = norm*(material_thickness/tan(dihedrals[i]))
     outer = norm*(material_thickness/tan(dihedrals[i]) - overlap)
     inner = norm*(material_thickness/sin(dihedrals[i]))
@@ -92,25 +188,22 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
 
     offset_multi = (length - innerLength)/2
 
-    a_curr = innerLine[i] - curr + inner
-    a_prev = innerLine[i-1] - prev + inner
-
-    # make both offsets the same larger length because we want tabs to remain symmetric
-    if np.linalg.norm(a_curr) < np.linalg.norm(a_prev):
-      a_curr = -a_prev
-    else:
-      a_prev = -a_curr
+    a_curr = -v*offsets[i][1]
+    a_prev = v*offsets[i][0]
 
     outline.append(curr)
     out_start, out_end = prev - outer + a_prev, curr - outer + a_curr
     in_start, in_end = prev - inner + a_prev, curr - inner + a_curr
     etch_start, etch_end = prev - etch + a_prev, curr - etch + a_curr
 
-    lines.append([[etch_start, etch_end], "fill:none;stroke:#0000ff"])
+    # lines.append([[etch_start, etch_end], "fill:none;stroke:#0000ff"])
 
-    squiggles = [in_start]
-    length = np.linalg.norm(out_start - out_end)
-    divs = int(length/6)
+    squiggles = [innerLine[i-1], in_start]
+    length = vec_mag(out_start - out_end)
+
+    # floating point issues, as these lengths should now be very close to a
+    #   a multiple of the tab length
+    divs = int(round(length/(tab_width*2)))
 
     for i in range(divs):
       t_0 = i/divs
@@ -121,40 +214,34 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
       squiggles.append(in_start*(1-t_1) + in_end*t_1)
       squiggles.append(in_start*(1-t_2) + in_end*t_2)
     
-    # squiggles.append(curr - a_o)
     # squiggles.append( curr)
 
     # lines.append([squiggles, svgwrite.rgb(100, 10, 16, '%')])
     squaggles += squiggles
-    min_x = min(*[ s[0] for s in squiggles], min_x)
-    min_y = min(*[ s[1] for s in squiggles], min_y)
-    max_x = max(*[ s[0] for s in squiggles], max_x)
-    max_y = max(*[ s[1] for s in squiggles], max_y)
-    # dwg.add(dwg.line(prev+outer, curr+outer, stroke=svgwrite.rgb(100, 10, 16, '%')))
-    # dwg.add(dwg.line(prev-inner, curr-inner, stroke=svgwrite.rgb(100, 10, 16, '%')))
-  
+
+  # outset squaggles -- for lasering purposes...
+  squaggles = gen_offset_polyline(squaggles, 0.05)
+
+  tl, br = get_bounding_box(squaggles)
+
   # close open polygons
   innerLine.append(innerLine[0])
+  windowLine.append(windowLine[0])
   squaggles.append(squaggles[0])
   outline.append(outline[0])
-  # etchline.append(etchline[0])
 
 
   lines = [
     [outline, "fill:none;stroke:#000000"],
     [squaggles, "fill:none;stroke:#ff0000"],
-    [innerLine, "fill:none;stroke:#00ff00"]
+    # [innerLine, "fill:none;stroke:#00ff00"],
+    [windowLine, "fill:none;stroke:#ff0000"]
   ] + lines
-  # lines.append([outline, "fill:none;stroke:#000000"])
-  # lines.append([squaggles, "fill:none;stroke:#ff0000"])
-  # lines.append([innerLine, "fill:none;stroke:#00ff00"])
-  # # lines.append([etchline, svgwrite.rgb(0,0,100,'%')])
-  minp = np.array([min_x, min_y])
-  # print("%imm"%max_x, "%imm"%max_y)
 
-  size = ("%imm"%(max_x - min_x),"%imm"%(max_y- min_y))
-  print(size)
-  # size = (max_x, max_y)
+  minp = np.array(tl)
+
+  size = ("%imm"%(br[0] - tl[0]),"%imm"%(br[1]- tl[1]))
+
   dwg = svgwrite.Drawing(filename, size=size, profile="full")
 
   i = 1
@@ -162,15 +249,9 @@ def svg_poly(face, filename, dihedrals, offset_multi, overlap, min_length):
   # properly scaled to mms...
   pixies_per_mm = 3.543307
 
-  points_total = len(innerLine) - 1
-  for p in range(points_total):
-    point = innerLine[p]
-    dwg.add(dwg.circle(center=(point - minp)*pixies_per_mm, r=15, style="fill:none;stroke:#ff00dd" ))
-    # dwg.add(dwg.circle(center=(outline[p] - minp)*pixies_per_mm, r=15, stroke="none", fill=svgwrite.rgb(0,100.0*p/points_total,100.0*p/points_total, "%") ))
-
-
   for line in lines:
-    dwg.add(dwg.polyline([(point - minp)*pixies_per_mm for point in line[0]], style=line[1]))
+    pline = [(point - minp)*pixies_per_mm for point in line[0]]
+    dwg.add(dwg.polyline(pline, style=line[1]))
   dwg.save()
 
 """ https://stackoverflow.com/questions/20305272/dihedral-torsion-angle-from-four-points-in-cartesian-coordinates-in-python """
@@ -181,9 +262,9 @@ def new_dihedral(p0, p1, p2, p3):
   b1 = p2 - p1
   b2 = p3 - p2
 
-  # normalize b1 so that it does not influence magnitude of vector
+  # normalize b1 so that it does not influence vec_mag of vector
   # rejections that come next
-  b1 /= np.linalg.norm(b1)
+  b1 /= vec_mag(b1)
 
   # vector rejections
   # v = projection of b0 onto plane perpendicular to b1
@@ -199,28 +280,26 @@ def new_dihedral(p0, p1, p2, p3):
   y = np.dot(np.cross(b1, v), w)
   return np.arctan2(y, x)
 
-# def get_normal(p0, p1, p2):
-
-def get_bounding_box(vertices):
-  tl = vertices[0].copy()
-  br = vertices[0].copy()
-  for v in vertices:
-    tl[0] = min(tl[0], v[0])
-    br[0] = max(tl[0], v[0])
-    tl[1] = min(tl[1], v[1])
-    br[1] = max(tl[1], v[1])
-
-  return [tl, br]
-
 class Polyhedron:
-  def __init__(self, vertices=[], faces=[]):
+  def __init__(self, vertices=[], faces=[], scale=70, overlap=3, material_thickness=3, tab_width=3, border_width=3):
     self.vertices = vertices
     self.faces = faces
     self.half_edges = {}
-    self.faces_2d = {}
+    self.faces_2d = []
+    self.scale = scale
+    self.overlap = overlap
+    self.material_thickness = material_thickness
+    self.tab_width = tab_width
+    self.border_width = border_width
 
   def load_from_file(self, filename):
     pass
+
+  def print_face_connectivity(self):
+    for idx in range(len(self.faces)):
+      hes = self.half_edges_for_face_id(idx)
+      connected_faces = [str(self.half_edges[he["opp"]]["face_id"]) for he in hes]
+      print("%i connects to %s"%(idx, ", ".join(connected_faces)))
 
   def generate_half_edges(self):
     for face_id, face in enumerate(self.faces):
@@ -230,20 +309,27 @@ class Polyhedron:
         prev = face[i-1]
         curr = face[i]
         curr_1 = face[(i+1)%face_len]
-        self.half_edges["%i_%i"%(prev, curr)] = { "id": "%i_%i"%(prev, curr), "s": prev, "e": curr, "opp": "%i_%i"%(curr, prev), "prev":"%i_%i"%(pre_m1, prev),  "next":"%i_%i"%(curr, curr_1), "face_id": face_id }
+        self.half_edges["%i_%i"%(prev, curr)] = { 
+          "id": "%i_%i"%(prev, curr), 
+          "s": prev, 
+          "e": curr, 
+          "opp": "%i_%i"%(curr, prev), 
+          "prev":"%i_%i"%(pre_m1, prev),  
+          "next":"%i_%i"%(curr, curr_1), 
+          "face_id": face_id
+        }
 
   def find_lengths(self):
-    self.min_length = 1000000000
-    self.max_length = 0
+    self.min_length = 10000000000000000
+    self.max_length = -10000000000000000
     for face in self.faces:
       for i in range(len(face)):
         prev = self.vertices[face[i-1]]
         curr = self.vertices[face[i]]
-        length = np.linalg.norm(curr-prev)
+        length = vec_mag(curr-prev)*self.scale
         self.half_edges["%i_%i"%(face[i-1], face[i])]["length"] = length
         self.min_length = min(length, self.min_length)
         self.max_length = max(length, self.max_length)
-    print(self.min_length)
 
   def find_dihedrals(self):
     for key, he in self.half_edges.items():
@@ -262,34 +348,61 @@ class Polyhedron:
         he["dihedral"] = new_dihedral(p0, p1, p2, p3)
         opp_he["dihedral"] = he["dihedral"]
 
-  def get_2d_face(self, scale, offset_multi, overlap, index):
+
+  def half_edges_for_face_id(self, face_idx):
+    vids = self.faces[face_idx]
+    return [self.half_edges["%i_%i"%(vids[i-1],vids[i])] for i in range(len(vids))]
+
+  def determine_offsets(self):
+    # determine offsets for every half edge using their face & dihedral information
+    for face_idx in range(len(self.faces)):
+      hes = self.half_edges_for_face_id(face_idx)
+      dihedrals = [he["dihedral"] for he in hes]
+      face_2d = self.get_2d_face(face_idx)
+      offsets = determine_min_offsets(face_2d, dihedrals)
+      for i in range(len(hes)):
+        he = hes[i]
+        opp_he = self.half_edges[he["opp"]]
+        hes[i]["offsets"] = offsets[i]
+
+        if "offsets" in opp_he:
+          start_offset = max(opp_he["offsets"][1], he["offsets"][0])
+          end_offset = max(opp_he["offsets"][0], he["offsets"][1])
+          
+          ## now we want to make sure that the edge length - offsets is a multiple of tab_width*2
+          current_length = he["length"] - start_offset - end_offset
+          add_to_offsets = (current_length%(2*self.tab_width)) / 2
+
+          he["offsets"][0] = start_offset + add_to_offsets
+          he["offsets"][1] = end_offset + add_to_offsets
+          opp_he["offsets"][1] = he["offsets"][0]
+          opp_he["offsets"][0] = he["offsets"][1]
+
+  def get_2d_face(self, face_idx):
     # polygon in 3D
-    face_vert_ids = self.faces[index]
+    face_vert_ids = self.faces[face_idx]
 
     face = [self.vertices[f] for f in face_vert_ids]
-
-    dihedrals = []
-    for i in range(len(face_vert_ids)):
-      prev = face_vert_ids[i-1]
-      curr = face_vert_ids[i]
-      dihedrals.append(self.half_edges["%i_%i"%(prev,curr)]["dihedral"])    
 
     p0, p1, p2 = face[0], face[1], face[2]
     a = p0 - p1
     b = p2 - p1
     norm = np.cross(a, b)
-    norm /= np.linalg.norm(norm)
-    u = a/np.linalg.norm(a)
+    norm /= vec_mag(norm)
+    u = a/vec_mag(a)
     v = np.cross(u, norm)
-    v /= np.linalg.norm(v)
-    # print(u, v)
-    new_face = [np.array([scale + np.dot(u, f)*scale, scale + np.dot(v, f)*scale]) for f in face]
-    top_left, bottom_right = get_bounding_box(new_face)
-    n_f = [p - top_left for p in new_face]
-    print(n_f)
-    self.min_length
-    svg_poly(new_face, "./poly/num%i.svg"%index, dihedrals, offset_multi, overlap, self.min_length)
+    v /= vec_mag(v)
 
-  def get_2d_faces(self, scale, offset_multi, overlap):
-    for i in range(len(self.faces)):
-      self.get_2d_face(scale, offset_multi, overlap, i)
+    scale = self.scale
+    face_2d = [np.array([np.dot(u, f)*scale, np.dot(v, f)*scale]) for f in face]
+
+    return face_2d
+
+  def get_2d_faces(self):
+    for face_idx in range(len(self.faces)):
+      face_2d = self.get_2d_face(face_idx)
+      dihedrals = [he["dihedral"] for he in self.half_edges_for_face_id(face_idx)]
+      offsets = [he["offsets"] for he in self.half_edges_for_face_id(face_idx)]
+      svg_poly(face_2d, "./poly/num%i.svg"%face_idx, dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
+
+

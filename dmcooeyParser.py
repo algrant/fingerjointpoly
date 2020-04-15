@@ -51,7 +51,7 @@ class DmCooeyPoly(Polyhedron):
           self.faces.append([int(f) for f in line[1:-2].split(", ")])
 
 
-ti = DmCooeyPoly()
+ti = DmCooeyPoly(scale=polygon_scale, overlap=overlap, material_thickness=3)
 ti.load_from_file(fn)
 ti.generate_half_edges()
 ti.find_lengths()

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="34mm"
+   version="1.1"
+   width="40mm"
+   id="svg13830"
+   sodipodi:docname="num12.svg">
+  <metadata
+     id="metadata13834">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     inkscape:document-rotation="0"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview13832"
+     showgrid="false" />
+  <defs
+     id="defs13824" />
+  <path
+     id="polyline13826"
+     style="fill:none;stroke:#ff0000"
+     d="M 116.03125 0 L 84.767578 17.919922 L 79.212891 8.2285156 L 73.962891 8.2285156 L 68.710938 8.2285156 L 63.068359 18.074219 L 57.871094 27.142578 L 26.607422 9.2226562 L 21.144531 18.751953 L 52.408203 36.671875 L 47.296875 45.585938 L 16.035156 27.666016 L 10.572266 37.197266 L 41.835938 55.117188 L 36.724609 64.03125 L 5.4628906 46.111328 L 0 55.640625 L 31.261719 73.560547 L 27.277344 80.513672 L 28.470703 82.525391 L 29.662109 84.537109 L 52.525391 84.537109 L 52.525391 121.51172 L 63.509766 121.51172 L 63.509766 84.537109 L 73.785156 84.537109 L 73.785156 121.51172 L 84.769531 121.51172 L 84.769531 84.537109 L 95.044922 84.537109 L 95.044922 121.51172 L 106.0293 121.51172 L 106.0293 84.537109 L 118.26367 84.537109 L 119.45508 82.525391 L 120.64844 80.513672 L 116.57422 73.408203 L 111.37695 64.337891 L 142.63867 46.417969 L 137.17578 36.888672 L 105.91406 54.808594 L 100.80469 45.894531 L 132.06641 27.974609 L 126.60352 18.445312 L 95.341797 36.365234 L 90.230469 27.449219 L 121.49414 9.5292969 L 116.03125 0 z M 73.962891 24.363281 L 101.24414 71.957031 L 46.679688 71.957031 L 73.962891 24.363281 z " />
+</svg>
