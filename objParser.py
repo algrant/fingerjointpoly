@@ -10,7 +10,8 @@ material_thickness = 3
 border_width = 3.5
 
 files = {
-  "egg": "./obj/egg5.obj"
+  "egg": "./obj/egg5.obj",
+  "donut": "./obj/donut.obj"
 }
 
 
@@ -35,7 +36,8 @@ ti = ObjPoly(
   tab_width=tab_width,
   border_width=border_width
 )
-ti.load_from_file(files["egg"])
+
+ti.load_from_file(files["donut"])
 ti.generate_half_edges()
 ti.find_lengths()
 ti.find_dihedrals()

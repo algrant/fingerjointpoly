@@ -4,6 +4,9 @@ import numpy as np
 import svgwrite
 import pyclipper
 
+def vec_norm(vector):
+  return vector/vec_mag(vector)
+
 def vec_mag(vector):
   return np.linalg.norm(vector)
 
@@ -377,6 +380,14 @@ class Polyhedron:
           he["offsets"][1] = end_offset + add_to_offsets
           opp_he["offsets"][1] = he["offsets"][0]
           opp_he["offsets"][0] = he["offsets"][1]
+
+  def get_face_orientation(self, face_idx):
+    verts = [self.vertices[f] for f in self.faces[face_idx]]
+    o = verts[1]
+    u = vec_norm(verts[0] - verts[1])
+    w = vec_norm(np.cross(u, verts[2] - verts[1]))
+    v = vec_norm(np.cross(u, w))
+    return np.array([u, w, v, o, [0,0,0,1]])
 
   def get_2d_face(self, face_idx):
     # polygon in 3D
