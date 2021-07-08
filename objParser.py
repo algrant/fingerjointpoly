@@ -34,7 +34,8 @@ ti = ObjPoly(
   overlap=overlap, 
   material_thickness=material_thickness, 
   tab_width=tab_width,
-  border_width=border_width
+  border_width=border_width,
+  poly_path="./poly/donut/"
 )
 
 ti.load_from_file(files["donut"])

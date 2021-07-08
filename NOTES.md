@@ -1,10 +1,6 @@
-## Finger Joint Polyhedra
-
-Generate patterns to build polyhedra using a laser cutter.
-
 ### Next steps
 
-#### find identical faces
+#### find identical faces (so that we don't need to calculate each face individually)
  - Find matching edges (length & dihedral)
  - Find matching vertices (dihedrals of all connected edges)
  

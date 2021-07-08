@@ -14,7 +14,6 @@ border_width = 3
 # fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron4.txt"
 fn = "./dmccooey/polyhedra/Catalan/RpentagonalHexecontahedron.txt"
 
-
 class DmCooeyPoly(Polyhedron):
   def load_from_file(self, filename):
     with open(filename) as fp:
@@ -59,8 +58,10 @@ ti = DmCooeyPoly(
   overlap=overlap, 
   material_thickness=material_thickness, 
   tab_width=tab_width,
-  border_width=border_width
+  border_width=border_width,
+  poly_path="poly/dmcooey"
 )
+
 ti.load_from_file(fn)
 ti.generate_half_edges()
 ti.find_lengths()

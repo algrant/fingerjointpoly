@@ -3,6 +3,11 @@ from math import pi, cos, tan, sin
 import numpy as np
 import svgwrite
 import pyclipper
+import os
+
+def ensure_dir(dir_path):
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
 
 def vec_norm(vector):
   return vector/vec_mag(vector)
@@ -284,7 +289,7 @@ def new_dihedral(p0, p1, p2, p3):
   return np.arctan2(y, x)
 
 class Polyhedron:
-  def __init__(self, vertices=[], faces=[], scale=70, overlap=3, material_thickness=3, tab_width=3, border_width=3):
+  def __init__(self, vertices=[], faces=[], scale=70, overlap=3, material_thickness=3, tab_width=3, border_width=3, poly_path="./poly"):
     self.vertices = vertices
     self.faces = faces
     self.half_edges = {}
@@ -294,6 +299,7 @@ class Polyhedron:
     self.material_thickness = material_thickness
     self.tab_width = tab_width
     self.border_width = border_width
+    self.poly_path = poly_path
 
   def load_from_file(self, filename):
     pass
@@ -410,10 +416,11 @@ class Polyhedron:
     return face_2d
 
   def get_2d_faces(self):
+    ensure_dir(self.poly_path)
     for face_idx in range(len(self.faces)):
       face_2d = self.get_2d_face(face_idx)
       dihedrals = [he["dihedral"] for he in self.half_edges_for_face_id(face_idx)]
       offsets = [he["offsets"] for he in self.half_edges_for_face_id(face_idx)]
-      svg_poly(face_2d, "./poly/num%i.svg"%face_idx, dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
+      svg_poly(face_2d, "%s/num%i.svg"%(self.poly_path, face_idx), dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
 
 
