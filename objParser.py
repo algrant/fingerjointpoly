@@ -15,7 +15,7 @@ files = {
 }
 
 
-class ObjPoly(Polyhedron):
+class ObjFJP(FingerJointPolyhedron):
   def load_from_file(self, filename):
     self.vertices = []
     self.faces = []
@@ -29,7 +29,7 @@ class ObjPoly(Polyhedron):
           self.faces.append([int(d.strip().split("/")[0]) - 1 for d in spl[1:]])
           self.faces[-1].reverse()
 
-ti = ObjPoly(
+ti = ObjFJP(
   scale=polygon_scale, 
   overlap=overlap, 
   material_thickness=material_thickness, 

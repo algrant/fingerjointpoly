@@ -4,6 +4,7 @@ import numpy as np
 import svgwrite
 import pyclipper
 import os
+import tripy
 
 def ensure_dir(dir_path):
     if not os.path.exists(dir_path):
@@ -134,6 +135,98 @@ def gen_offset_polyline(line, offset):
   pco.MiterLimit = 20.0
   return pyclipper.scale_from_clipper(pco.Execute(pyclipper.scale_to_clipper(offset))[0])
 
+def get_fjpolygon(face, dihedrals, offsets, overlap, tab_width, border_width):
+  material_thickness = 3
+  innerSplines = []
+  innerLine = []
+
+  # generate innerSplines
+  for i in range(len(face)):
+    prev = face[i-1]
+    curr = face[i]
+
+    v = (curr - prev)
+    v /= vec_mag(v)
+
+    norm = rotate_via_numpy(v, pi/2)
+    norm /= vec_mag(norm)
+
+    inner = norm*(material_thickness/sin(dihedrals[i]))
+    in_start, in_end = prev - inner, curr - inner
+
+    innerSplines.append(spline(in_start, in_end))
+
+    if i > 0:
+      prev_inner_spline = innerSplines[i-1]
+      inner_spline = innerSplines[i]
+      innerLine.append(np.array(intersection(prev_inner_spline, inner_spline)))
+
+    if i == len(face) - 1:
+      prev_inner_spline = innerSplines[0]
+      inner_spline = innerSplines[i]
+      innerLine.append(np.array(intersection(prev_inner_spline, inner_spline)))
+
+  windowLine = gen_offset_polyline(innerLine, -border_width)
+
+
+  squaggles = []
+  outline = []
+
+  for i in range(len(face)):
+    prev = face[i-1]
+    curr = face[i]
+    length = vec_mag(curr-prev)
+
+
+    # dwg.add(dwg.line(prev, curr, stroke=svgwrite.rgb(10, 10, 16, '%')))
+    v = (curr - prev)
+    v /= vec_mag(v)
+
+    norm = rotate_via_numpy(v, pi/2)
+    norm /= vec_mag(norm)
+
+    tab_diff = 0 #0.01
+
+    outer = norm*(material_thickness/tan(dihedrals[i]) - overlap)
+    inner = norm*(material_thickness/sin(dihedrals[i]))
+
+    a_curr = -v*offsets[i][1]
+    a_prev = v*offsets[i][0]
+
+    outline.append(curr)
+    out_start, out_end = prev - outer + a_prev, curr - outer + a_curr
+    in_start, in_end = prev - inner + a_prev, curr - inner + a_curr
+
+    squiggles = [innerLine[i-1], in_start]
+    length = vec_mag(out_start - out_end)
+
+    # floating point issues, as these lengths should now be very close to a
+    #   a multiple of the tab length
+    divs = int(round(length/(tab_width*2)))
+
+    for i in range(divs):
+      t_0 = i/divs
+      t_2 = (i+1)/divs
+      t_1 = (t_0 + t_2)/2+tab_diff/2.0
+      squiggles.append(out_start*(1-t_0) + out_end*t_0)
+      squiggles.append(out_start*(1-t_1) + out_end*t_1)
+      squiggles.append(in_start*(1-t_1) + in_end*t_1)
+      squiggles.append(in_start*(1-t_2) + in_end*t_2)
+    
+    # squiggles.append( curr)
+
+    # lines.append([squiggles, svgwrite.rgb(100, 10, 16, '%')])
+    squaggles += squiggles
+
+  # outset squaggles -- for lasering purposes...
+  # squaggles = gen_offset_polyline(squaggles, 0.05)
+
+  # tl, br = get_bounding_box(squaggles)
+
+  return [squaggles, windowLine, outline]
+
+
+
 def svg_poly(face, filename, dihedrals, offsets, overlap, tab_width, border_width):
   material_thickness = 3
   innerSplines = []
@@ -242,7 +335,7 @@ def svg_poly(face, filename, dihedrals, offsets, overlap, tab_width, border_widt
   lines = [
     [outline, "fill:none;stroke:#000000"],
     [squaggles, "fill:none;stroke:#ff0000"],
-    # [innerLine, "fill:none;stroke:#00ff00"],
+    [innerLine, "fill:none;stroke:#00ff00"],
     [windowLine, "fill:none;stroke:#ff0000"]
   ] + lines
 
@@ -288,7 +381,7 @@ def new_dihedral(p0, p1, p2, p3):
   y = np.dot(np.cross(b1, v), w)
   return np.arctan2(y, x)
 
-class Polyhedron:
+class FingerJointPolyhedron:
   def __init__(self, vertices=[], faces=[], scale=70, overlap=3, material_thickness=3, tab_width=3, border_width=3, poly_path="./poly"):
     self.vertices = vertices
     self.faces = faces
@@ -300,6 +393,7 @@ class Polyhedron:
     self.tab_width = tab_width
     self.border_width = border_width
     self.poly_path = poly_path
+
 
   def load_from_file(self, filename):
     pass
@@ -357,12 +451,12 @@ class Polyhedron:
         he["dihedral"] = new_dihedral(p0, p1, p2, p3)
         opp_he["dihedral"] = he["dihedral"]
 
-
   def half_edges_for_face_id(self, face_idx):
     vids = self.faces[face_idx]
     return [self.half_edges["%i_%i"%(vids[i-1],vids[i])] for i in range(len(vids))]
 
   def determine_offsets(self):
+    self.t_2d_to_3d = [0]*len(self.faces)
     # determine offsets for every half edge using their face & dihedral information
     for face_idx in range(len(self.faces)):
       hes = self.half_edges_for_face_id(face_idx)
@@ -401,19 +495,69 @@ class Polyhedron:
 
     face = [self.vertices[f] for f in face_vert_ids]
 
+
+    # this is generating a transformation matrix...
+    # I should be saving this and applying rather than the opposite...
+
+
+    # grab any three ordered vertices on the face 
     p0, p1, p2 = face[0], face[1], face[2]
+
+    # calc a & b as directional vectors
     a = p0 - p1
     b = p2 - p1
+
+    #            a 
+    #    p0 <--------- p1
+    #                     \  
+    #                      \  b
+    #                       v
+    #                       p2
+
+
+    # calculate normal vector for a & b (and normalize)
+    # (given p0, p1, p2 lie on a plane must be orthogonal)
     norm = np.cross(a, b)
     norm /= vec_mag(norm)
+
+    # u can be either a or b, but also must be normalized
     u = a/vec_mag(a)
+
+    # v is orthogonal to both u & norm
     v = np.cross(u, norm)
     v /= vec_mag(v)
 
-    scale = self.scale
-    face_2d = [np.array([np.dot(u, f)*scale, np.dot(v, f)*scale]) for f in face]
+    # Create 2D to 3D Transform 
+    # (https://cs184.eecs.berkeley.edu/uploads/lectures/04_transforms-1/04_transforms-1_slides.pdf)
 
-    return face_2d
+    t_2d_3d = np.zeros((4,4))
+    t_2d_3d[0:3, 0] = u
+    t_2d_3d[0:3, 1] = v
+    t_2d_3d[0:3, 2] = norm
+    t_2d_3d[0:3, 3] = p1
+    t_2d_3d[3,3] = 1
+    
+    self.t_2d_to_3d[face_idx] = t_2d_3d
+
+    t_3d_2d = np.linalg.inv(t_2d_3d)
+
+    face_points = np.zeros((4, len(face)))
+    face_points[3,:] =1
+
+    for i,vert in enumerate(face):
+      face_points[0:3,i] = vert
+
+    face_2d = t_3d_2d.dot(face_points)[0:2,:]*self.scale
+
+    return face_2d.transpose()
+
+  def gen_2d_faces(self):
+    for face_idx in range(len(self.faces)):
+      self.faces_2d.append(self.get_2d_face(face_idx))
+
+      # dihedrals = [he["dihedral"] for he in self.half_edges_for_face_id(face_idx)]
+      # offsets = [he["offsets"] for he in self.half_edges_for_face_id(face_idx)]
+      # svg_poly(face_2d, "%s/num%i.svg"%(self.poly_path, face_idx), dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
 
   def get_2d_faces(self):
     ensure_dir(self.poly_path)
@@ -423,4 +567,77 @@ class Polyhedron:
       offsets = [he["offsets"] for he in self.half_edges_for_face_id(face_idx)]
       svg_poly(face_2d, "%s/num%i.svg"%(self.poly_path, face_idx), dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
 
+  def save_3d_orig(self):
+    with open("test2.obj", 'w') as f:
+      f.write("# OBJ file\n")
+      for v in self.vertices:
+        f.write("v %s\n" % " ".join(["%.4f"%vv for vv in v]))
+      for p in self.faces:
+          f.write("f")
+          for i in p:
+              f.write(" %d" % (i + 1))
+          f.write("\n")
 
+  def save_3d_fjp(self):
+    new_verts = []
+    new_faces = []
+    self.t_2d_to_3d = [0]*len(self.faces)
+
+    for face_idx in range(2): #len(self.faces)):
+      face_2d = self.get_2d_face(face_idx)
+      dihedrals = [he["dihedral"] for he in self.half_edges_for_face_id(face_idx)]
+      offsets = [he["offsets"] for he in self.half_edges_for_face_id(face_idx)]
+      new_poly_2d, window, orig = get_fjpolygon(face_2d, dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
+
+      t_3d_2d = self.t_2d_to_3d[face_idx]
+
+      # for tri in tripy.earclip(new_poly_2d):
+      #   face_points = np.zeros((4, len(tri)))
+      #   face_points[3,:] =1
+      #   for i, vert in enumerate(tri):
+      #     face_points[0:2,i] = vert
+
+      #   new_poly_3d = t_3d_2d.dot(face_points/self.scale)[0:3,:]
+      #   np_3d = new_poly_3d.transpose()
+
+      #   new_poly_list = [v for v in np_3d]
+      #   # print("\n".join([str(i) for i in new_poly_list]))
+      #   v_off = len(new_verts)
+      #   new_verts += new_poly_list
+      #   new_faces.append([v_off + i for i in range(len(new_poly_list))])
+
+      
+      for tri in tripy.earclip(orig):
+        face_points = np.zeros((4, len(tri)))
+        face_points[3,:] =1
+        for i, vert in enumerate(tri):
+          face_points[0:2,i] = vert
+
+        new_poly_3d = t_3d_2d.dot(face_points/self.scale)[0:3,:]
+        np_3d = new_poly_3d.transpose()
+
+        new_poly_list = [v for v in np_3d]
+        # print("\n".join([str(i) for i in new_poly_list]))
+        v_off = len(new_verts)
+        new_verts += new_poly_list
+        new_faces.append([v_off + i for i in range(len(new_poly_list))])
+
+      face_vert_ids = self.faces[face_idx]
+
+      actual_face = [self.vertices[f] for f in face_vert_ids]
+      # actual = this.faces
+      new_poly_list = [v for v in actual_face]
+      v_off = len(new_verts)
+      new_verts += new_poly_list
+      new_faces.append([v_off + i for i in range(len(new_poly_list))])
+      
+    # print(new_verts)
+    with open("test2.obj", 'w') as f:
+      f.write("# OBJ file\n")
+      for v in new_verts:
+        f.write("v %s\n" % " ".join(["%.4f"%vv for vv in v]))
+      for p in new_faces:
+          f.write("f")
+          for i in p:
+              f.write(" %d" % (i + 1))
+          f.write("\n")
