@@ -4,7 +4,10 @@ Parameters:
     - verts
     - faces
   - Material Thickness
-  - Number of Fingers
+  - Fingers
+    - Width (non-unique count)
+    - Count (non-unique width)
+  - 
 """
 
 

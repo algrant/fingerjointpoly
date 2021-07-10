@@ -26,6 +26,11 @@ conda install -c anaconda numpy
 
 # install pyclipper
 conda install -c conda-forge pyclipper
+
+# install bottle for api
+conda install bottle
+
+
 ```
 
 ### run (for now...)
@@ -35,4 +40,10 @@ python dmcooeyParser.py
 
 # or 
 python objParser.py
+```
+
+
+### run viewer
+```
+python api/server.py
 ```
