@@ -1,20 +1,4 @@
 from fjp import *
-
-offset_multi = 10 # 14.5
-polygon_scale = 28
-overlap = 2
-material_thickness=3
-tab_width = 2
-border_width = 3
-
-fn = "./dmccooey/TruncatedIcosahedron.txt"
-# fn = "./dmccooey/DualGeo_3_0.txt"
-# fn = "./dmccooey/Rhombicosidodecahedron.txt"
-# fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron2.txt"
-# fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron3.txt"
-# fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron4.txt"
-fn = "./dmccooey/polyhedra/Catalan/RpentagonalHexecontahedron.txt"
-
 class DmCooeyFJP(FingerJointPolyhedron):
   def load_from_file(self, filename):
     with open(filename) as fp:
@@ -54,23 +38,41 @@ class DmCooeyFJP(FingerJointPolyhedron):
           self.faces.append([int(f) for f in line[1:-2].split(", ")])
 
 
-ti = DmCooeyFJP(
-  scale=polygon_scale, 
-  overlap=overlap, 
-  material_thickness=material_thickness, 
-  tab_width=tab_width,
-  border_width=border_width,
-  poly_path="poly/dmcooey"
-)
 
-ti.load_from_file(fn)
-ti.generate_half_edges()
-ti.find_lengths()
-ti.find_dihedrals()
-ti.determine_offsets()
-#ti.get_2d_faces()
-# ti.save_3d_orig()
-ti.save_3d_fjp()
+if __name__ == "__main__":
+
+  fn = "./dmccooey/TruncatedIcosahedron.txt"
+  # fn = "./dmccooey/DualGeo_3_0.txt"
+  # fn = "./dmccooey/Rhombicosidodecahedron.txt"
+  # fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron2.txt"
+  # fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron3.txt"
+  # fn = "./dmccooey/polyhedra/DualGeodesicIcosahedra/DualGeodesicIcosahedron4.txt"
+  fn = "./dmccooey/polyhedra/Catalan/RpentagonalHexecontahedron.txt"
+
+
+  polygon_scale = 28
+  overlap = 2
+  material_thickness=3
+  tab_width = 2
+  border_width = 3
+
+  ti = DmCooeyFJP(
+    scale=polygon_scale, 
+    overlap=overlap, 
+    material_thickness=material_thickness, 
+    tab_width=tab_width,
+    border_width=border_width,
+    poly_path="poly/dmcooey"
+  )
+
+  ti.load_from_file(fn)
+  ti.generate_half_edges()
+  ti.find_lengths()
+  ti.find_dihedrals()
+  ti.determine_offsets()
+  #ti.get_2d_faces()
+  # ti.save_3d_orig()
+  ti.save_3d_fjp()
 
 # handy to double check dihedral against know dihedrals...
 # for k, he in ti.half_edges.items():

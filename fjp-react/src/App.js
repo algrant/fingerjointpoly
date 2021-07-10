@@ -5,10 +5,12 @@ import locale    from 'react-json-editor-ajrm/locale/en';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import Viewer from './fjpViewer.js';
+
 function App() {
-  const [data, setData] = useState({ hits: [] });
-  const init = { model: 1};
-  const [query, setQuery] = useState({ model: 1 });
+  const [data, setData] = useState({});
+  const init = { model: 95 };
+  const [query, setQuery] = useState({ model: 95 });
 
   useEffect(() => {
     const update = async () => {
@@ -38,9 +40,10 @@ function App() {
           id          = 'data_view'
           placeholder = { data }
           locale      = { locale }
-          // height      = '550px'
+          height      = '250px'
           viewOnly
       />
+      <Viewer data={data} />
     </div>
   );
 }
