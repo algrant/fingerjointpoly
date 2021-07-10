@@ -29,8 +29,6 @@ conda install -c conda-forge pyclipper
 
 # install bottle for api
 conda install bottle
-
-
 ```
 
 ### run (for now...)
@@ -45,5 +43,12 @@ python objParser.py
 
 ### run viewer
 ```
+# one term
 python api/server.py
+
+# another for webpack/hot module reload
+cd fjp-react
+yarn start
+
+# load on http://127.0.0.1:3000 so cors is happy
 ```
