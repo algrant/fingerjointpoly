@@ -76,7 +76,7 @@ def point_is_between_points(p1, p2, p_test):
 
   return less_than_br and greater_than_tl
 
-def determine_min_offsets(face, dihedrals):
+def determine_min_offsets(face_2d, dihedrals):
   material_thickness = 3
   innerSplines = []
   innerLines = []
@@ -84,9 +84,9 @@ def determine_min_offsets(face, dihedrals):
   minOffsets = []
 
   # generate innerSplines, find intersections & add to innerLine
-  for i in range(len(face)):
-    prev = face[i-1]
-    curr = face[i]
+  for i in range(len(face_2d)):
+    prev = face_2d[i-1]
+    curr = face_2d[i]
 
     v = (curr - prev)
     v /= vec_mag(v)
@@ -104,7 +104,7 @@ def determine_min_offsets(face, dihedrals):
       inner_spline = innerSplines[i]
       innerIntersections.append(np.array(intersection(prev_inner_spline, inner_spline)))
 
-    if i == len(face) - 1:
+    if i == len(face_2d) - 1:
       prev_inner_spline = innerSplines[0]
       inner_spline = innerSplines[i]
       innerIntersections.append(np.array(intersection(prev_inner_spline, inner_spline)))
