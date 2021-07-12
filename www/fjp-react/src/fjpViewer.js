@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo } from 'react'
+import React, { useRef, useState, useMemo, useUpdate } from 'react'
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import * as THREE from 'three';
 
@@ -28,13 +28,13 @@ const Face = ({ points }) => {
 
   return <group position={[0,0,0]}>
       <line ref={ref} geometry={lineGeometry}>
-        <lineBasicMaterial attach="material" color={'#9c88ff'} linewidth={1} />
+        <lineBasicMaterial attach="material" color={'#FFF'} linewidth={1} />
       </line>
     </group>
 }
 
 
-const Polyhedron = ({ vertices, faces, triFaces }) => {
+const Polyhedron = ({ vertices, faces, triangles }) => {
 
     const vFaces = useMemo(() => faces.map(
       face => {
@@ -47,13 +47,46 @@ const Polyhedron = ({ vertices, faces, triFaces }) => {
         return vFace;
       } ) ,[vertices, faces]);
 
+    const vTriangles = useMemo(() => triangles.map((v) => new THREE.Vector3(v[0], v[1], v[2])), [triangles]);
+    console.log(vTriangles)
+
+    // const radius = 0.1;
+    // const detail = 2;
+    // {vTriangles && <polyhedronBufferGeometry
+    //   attach="geometry"
+    //   args={[vTriangles, [...Array(vTriangles.length).keys()], radius, detail]}
+    // />}
+
+    //works but is scaled annoyingly...
+    // radius = 1
+    // detail = 0
+    // var geometry = new THREE.PolyhedronGeometry( triangles.flat(), [...Array(vTriangles.length).keys()], radius, detail);
+
+    const geometry = new THREE.BufferGeometry();
+    // create a simple square shape. We duplicate the top left and bottom right
+    // vertices because each vertex needs to appear once per triangle.
+    const verts2 = new Float32Array( triangles.flat() ); //vertices.slice(0, 6).flat());
+    console.log(verts2)
+    // itemSize = 3 because there are 3 values (components) per vertex
+    geometry.setAttribute( 'position', new THREE.BufferAttribute( verts2, 3 ) );
+
     return <>
       { vFaces.map((face, fId) => <Face key={fId} points={face} /> )}
+      <mesh 
+        onClick={e => console.log('click')} 
+        onPointerOver={e => console.log('hover')} 
+        onPointerOut={e => console.log('unhover')}
+        geometry={geometry}
+        >
+        {/* <boxBufferGeometry args={[1,1,1]} /> */}
+
+        <meshPhongMaterial attach="material" color="red" opacity={1} flatShading reflectivity={0}/>
+      </mesh>
     </>
 }
 
 const CameraControls = () => {
-  // stolen directly from here... not pretty, but works
+  // stolen directly from somewhere... not pretty, but works
 
   // Get a reference to the Three.js Camera, and the canvas html element.
   // We need these to setup the OrbitControls component.
@@ -76,7 +109,7 @@ export default function Viewer({ data }) {
       {/* <orbitControls enableDamping /> */}
       <CameraControls />
       <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+      <pointLight position={[2, 2, 2]} />
       {/* <Line /> */}
       { data?.model?.data && 
         

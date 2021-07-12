@@ -1,5 +1,5 @@
 import numpy as np
-import tripy
+import fjp.tripy as tripy
 
 def apply_transform_to_points(transform, points):
   if (points.shape[1] != 3):

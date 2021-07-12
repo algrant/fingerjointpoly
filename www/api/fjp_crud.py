@@ -5,15 +5,16 @@ import fnmatch
 import json
 import sys
 
-sys.path.insert(0,'..')
+sys.path.insert(0,'../..')
 
-from dmcooeyParser import *
+from fjp.dmccooey_parser import load_from_file
+from fjp.polyhedron import Polyhedron
 
 dmcooeyModels = []
 
 i = 0
 
-for root, dirnames, filenames in os.walk('../dmccooey/polyhedra'):
+for root, dirnames, filenames in os.walk('../../data/dmccooey/polyhedra'):
   for filename in fnmatch.filter(filenames, '**.txt'):
     path = os.path.join(root, filename)
     name = filename[:-4]
@@ -48,26 +49,12 @@ def individual_handler(model_id):
     for m in dmcooeyModels:
       if m["id"] == model_id:
         model = m
-        polygon_scale = 28
-        overlap = 2
-        material_thickness=3
-        tab_width = 2
-        border_width = 3
-
-        ti = DmCooeyFJP(
-          scale=polygon_scale, 
-          overlap=overlap, 
-          material_thickness=material_thickness, 
-          tab_width=tab_width,
-          border_width=border_width,
-          poly_path="poly/dmcooeyAPI"
-        )
-
-        ti.load_from_file(m["path"])
-
+        data = load_from_file(m["path"])
+        poly = Polyhedron(data["vertices"], data["faces"])
         model["data"] = {
-          "vertices": [list(v) for v in ti.vertices],
-          "faces": ti.faces
+          "vertices": [list(v) for v in poly.vertices],
+          "faces": [list(f) for f in poly.faces],
+          "triangles": [list(v) for v in poly.as_triangles()]
         }
 
         break

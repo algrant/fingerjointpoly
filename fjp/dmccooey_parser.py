@@ -1,6 +1,6 @@
 from collections import namedtuple  
 import numpy as np
-from polyhedron import Polyhedron
+from fjp.polyhedron import Polyhedron
 
 def load_from_file(filename):
   polyhedron_info = namedtuple('PolyhedronData', ['title', 'coefficients', 'vertices', 'faces'])
