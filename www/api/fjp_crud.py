@@ -54,7 +54,7 @@ def individual_handler(model_id):
         model["data"] = {
           "vertices": [list(v) for v in poly.vertices],
           "faces": [list(f) for f in poly.faces],
-          "triangles": [list(v) for v in poly.as_triangles()]
+          "triangles": [list(v) for v in poly.save_3d_fjp()]
         }
 
         break

@@ -41,7 +41,7 @@ def load_from_file(filename):
         polyhedron_info.faces.append([int(f) for f in line[1:-2].split(", ")])
 
     return {
-      "faces": np.array(polyhedron_info.faces),
+      "faces": polyhedron_info.faces,
       "vertices": np.array(polyhedron_info.vertices)
     }
 

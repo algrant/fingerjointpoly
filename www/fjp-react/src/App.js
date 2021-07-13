@@ -9,8 +9,8 @@ import Viewer from './fjpViewer.js';
 
 function App() {
   const [data, setData] = useState({});
-  const init = { model: 95 };
-  const [query, setQuery] = useState({ model: 95 });
+  const init = { model: 100 };
+  const [query, setQuery] = useState({ model: 100 });
 
   useEffect(() => {
     const update = async () => {
@@ -36,13 +36,13 @@ function App() {
         height = '150px'
       />
       <div> Output</div>
-      <JSONInput
+      {/* <JSONInput
           id          = 'data_view'
           placeholder = { data }
           locale      = { locale }
           height      = '250px'
           viewOnly
-      />
+      /> */}
       <Viewer data={data} />
     </div>
   );

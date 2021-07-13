@@ -65,7 +65,7 @@ const Polyhedron = ({ vertices, faces, triangles }) => {
     const geometry = new THREE.BufferGeometry();
     // create a simple square shape. We duplicate the top left and bottom right
     // vertices because each vertex needs to appear once per triangle.
-    const verts2 = new Float32Array( triangles.flat() ); //vertices.slice(0, 6).flat());
+    const verts2 = useMemo(() => new Float32Array( triangles.flat() ), [triangles]); //vertices.slice(0, 6).flat());
     console.log(verts2)
     // itemSize = 3 because there are 3 values (components) per vertex
     geometry.setAttribute( 'position', new THREE.BufferAttribute( verts2, 3 ) );
@@ -109,7 +109,7 @@ export default function Viewer({ data }) {
       {/* <orbitControls enableDamping /> */}
       <CameraControls />
       <ambientLight />
-      <pointLight position={[2, 2, 2]} />
+      <pointLight position={[20, 20, 20]} />
       {/* <Line /> */}
       { data?.model?.data && 
         

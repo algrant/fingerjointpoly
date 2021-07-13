@@ -1,8 +1,10 @@
 import numpy as np
 import fjp.tripy as tripy
 from collections import namedtuple
+import pyclipper
+import sys
 
-from math import pi, sin
+from math import pi, sin, tan
 
 def vec_norm(vector):
   return vector/vec_mag(vector)
@@ -218,6 +220,105 @@ def determine_min_offsets(face_2d, dihedrals, material_thickness):
 
   return minOffsets
 
+def gen_offset_polyline(line, offset):
+  coordinates = pyclipper.scale_to_clipper(line)
+  pco = pyclipper.PyclipperOffset()
+  pco.AddPath(coordinates, pyclipper.JT_MITER, pyclipper.ET_CLOSEDPOLYGON)
+  pco.MiterLimit = 20.0
+  return pyclipper.scale_from_clipper(pco.Execute(pyclipper.scale_to_clipper(offset))[0])
+
+def get_fjpolygon(face_2d, dihedrals, offsets, overlap, tab_width, border_width):
+  material_thickness = 3
+  innerSplines = []
+  innerLine = []
+
+  # generate innerSplines
+  for i in range(len(face_2d)):
+    prev = face_2d[i-1]
+    curr = face_2d[i]
+
+    v = (curr - prev)
+    v /= vec_mag(v)
+
+    norm = rotate_via_numpy(v, pi/2)
+    norm /= vec_mag(norm)
+
+    inner = norm*(material_thickness/sin(dihedrals[i]))
+    in_start, in_end = prev - inner, curr - inner
+
+    innerSplines.append(spline(in_start, in_end))
+
+    if i > 0:
+      prev_inner_spline = innerSplines[i-1]
+      inner_spline = innerSplines[i]
+      innerLine.append(np.array(intersection(prev_inner_spline, inner_spline)))
+
+    if i == len(face_2d) - 1:
+      prev_inner_spline = innerSplines[0]
+      inner_spline = innerSplines[i]
+      innerLine.append(np.array(intersection(prev_inner_spline, inner_spline)))
+
+  try:
+    windowLine = gen_offset_polyline(innerLine, -border_width)
+  except:
+    windowLine = []
+
+  squaggles = []
+  outline = []
+
+  for i in range(len(face_2d)):
+    prev = face_2d[i-1]
+    curr = face_2d[i]
+    length = vec_mag(curr-prev)
+
+
+    # dwg.add(dwg.line(prev, curr, stroke=svgwrite.rgb(10, 10, 16, '%')))
+    v = (curr - prev)
+    v /= vec_mag(v)
+
+    norm = rotate_via_numpy(v, pi/2)
+    norm /= vec_mag(norm)
+
+    tab_diff = 0 #0.01
+
+    outer = norm*(material_thickness/tan(dihedrals[i]) - overlap)
+    inner = norm*(material_thickness/sin(dihedrals[i]))
+
+    a_curr = -v*offsets[i][1]
+    a_prev = v*offsets[i][0]
+
+    outline.append(curr)
+    out_start, out_end = prev - outer + a_prev, curr - outer + a_curr
+    in_start, in_end = prev - inner + a_prev, curr - inner + a_curr
+
+    squiggles = [innerLine[i-1], in_start]
+    length = vec_mag(out_start - out_end)
+
+    # floating point issues, as these lengths should now be very close to a
+    #   a multiple of the tab length
+    divs = int(round(length/(tab_width*2)))
+
+    for i in range(divs):
+      t_0 = i/divs
+      t_2 = (i+1)/divs
+      t_1 = (t_0 + t_2)/2+tab_diff/2.0
+      squiggles.append(out_start*(1-t_0) + out_end*t_0)
+      squiggles.append(out_start*(1-t_1) + out_end*t_1)
+      squiggles.append(in_start*(1-t_1) + in_end*t_1)
+      squiggles.append(in_start*(1-t_2) + in_end*t_2)
+    
+    # squiggles.append( curr)
+
+    # lines.append([squiggles, svgwrite.rgb(100, 10, 16, '%')])
+    squaggles += squiggles
+
+  # outset squaggles -- for lasering purposes...
+  # squaggles = gen_offset_polyline(squaggles, 0.05)
+
+  # tl, br = get_bounding_box(squaggles)
+
+  return [squaggles, windowLine, outline]
+
 class HalfEdge:
   def __init__(self, id, s, e, opp, prev, next, face_id, length, dihedral ):
     self.id = id             # s_e
@@ -248,25 +349,23 @@ class HalfEdge:
 class Polyhedron:
   def __init__(self, vertices, faces):
     self.vertices = np.array(vertices)
-    self.faces = np.array(faces)
+    self.faces = faces
 
-    self.face_polygons = np.array([
+    self.face_polygons = [
       self.vertices[f] for f in faces
-    ])
+    ]
 
     self.face_transforms = [find_flat_transform(f) for f in self.face_polygons]
 
     # FJP info
+    self.overlap = 2
     self.material_thickness = 3 
     self.tab_width = 2
     self.border_width = 5
 
     self.generate_half_edges()
     self.find_dihedrals()
-    self.determine_offsets()
 
-    for k, v in self.half_edges.items():
-      print(v)
 
   def half_edges_for_face_id(self, face_idx):
     vids = self.faces[face_idx]
@@ -342,9 +441,11 @@ class Polyhedron:
       t_3d_2d, t_2d_3d = self.face_transforms[face_id]
       return apply_transform_to_points(t_3d_2d, self.face_polygons[face_id])
 
-  def determine_offsets(self):
+  def determine_offsets(self, scale):
     # determine offsets for every half edge using their face & dihedral information
-    #   Basically trying to find space where finger joints won't overlap neighbours.
+    #   Basically trying to find space where finger joints won't overlap neighbouring faces
+    #   in retrospect - this is only "valid" if the vertices have 3 faces, otherwise this will no longer
+    #   work...
     #       o[0]              o[1]
     #      *--|--------------|--*  
     #    ./                     |  o[0]
@@ -355,7 +456,7 @@ class Polyhedron:
     for face_idx in range(len(self.faces)):
       hes = self.half_edges_for_face_id(face_idx)
       dihedrals = [he.dihedral for he in hes]
-      face_2d = self.get_2d_face(face_idx)[:,0:2]
+      face_2d = self.get_2d_face(face_idx)[:,0:2]*scale
 
       offsets = determine_min_offsets(face_2d, dihedrals, self.material_thickness)
       for i in range(len(hes)):
@@ -375,6 +476,44 @@ class Polyhedron:
           he.offsets[1] = end_offset + add_to_offsets
           opp_he.offsets[1] = he.offsets[0]
           opp_he.offsets[0] = he.offsets[1]
+
+  def save_3d_fjp(self, scale=40):
+    self.determine_offsets(scale)
+    new_verts = []
+    new_faces = []
+    triangles = []
+    for face_idx in range(len(self.faces)):
+      face_2d = self.get_2d_face(face_idx)[:,0:2]*scale
+      dihedrals = [he.dihedral for he in self.half_edges_for_face_id(face_idx)]
+      offsets = [he.offsets for he in self.half_edges_for_face_id(face_idx)]
+      print(len(face_2d), len(dihedrals), len(offsets))
+      new_poly_2d, window, orig = get_fjpolygon(face_2d, dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
+      t_3d_2d, t_2d_3d = self.face_transforms[face_idx]
+      
+
+      if len(window) > 0:
+        last = new_poly_2d[-1]
+        window.reverse()
+        new_poly_2d.append(window[-1])
+        new_poly_2d += window
+        new_poly_2d.append(last)
+
+      np_poly_2d = np.array(new_poly_2d)/scale
+      # create a column of zeros
+      zeros = np.zeros((np_poly_2d.shape[0],1))
+
+      # append column of zeros
+      np2_poly_2d = np.append(np_poly_2d, zeros, axis=1)
+
+      poly_triangles = get_triangle_array(np2_poly_2d)
+      poly3d_triangles = apply_transform_to_points(t_2d_3d, poly_triangles)
+
+      if face_idx == 0:
+        triangles = poly3d_triangles
+      else:
+        triangles = np.append(triangles, poly3d_triangles, axis=0)
+
+    return triangles
 
 if __name__ == "__main__":
   v = [
