@@ -506,12 +506,19 @@ class Polyhedron:
       np2_poly_2d = np.append(np_poly_2d, zeros, axis=1)
 
       poly_triangles = get_triangle_array(np2_poly_2d)
-      poly3d_triangles = apply_transform_to_points(t_2d_3d, poly_triangles)
+      
+      poly_triangles_bottom_face = np.flip(poly_triangles.copy(), 0)
+      poly_triangles_bottom_face[:,2] = 1.0*self.material_thickness/scale
+
+      top_and_bottom = np.append(poly_triangles, poly_triangles_bottom_face, axis=0)
+      poly3d_triangles = apply_transform_to_points(t_2d_3d, top_and_bottom)
 
       if face_idx == 0:
         triangles = poly3d_triangles
       else:
         triangles = np.append(triangles, poly3d_triangles, axis=0)
+
+
 
     return triangles
 
