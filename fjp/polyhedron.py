@@ -4,7 +4,7 @@ from collections import namedtuple
 import pyclipper
 import sys
 
-from math import pi, sin, tan
+from math import pi, sin, tan, cos
 
 def vec_norm(vector):
   return vector/vec_mag(vector)
@@ -186,8 +186,8 @@ def determine_min_offsets(face_2d, dihedrals, material_thickness):
 
     norm = rotate_via_numpy(v, pi/2)
     norm /= vec_mag(norm)
-
-    inner = norm*(material_thickness/sin(dihedrals[i]))
+    outset, inset = outsetInset(material_thickness, dihedrals[i], 0)
+    inner = norm*inset
     in_start, in_end = prev - inner, curr - inner
     innerLines.append([in_start, in_end])
     innerSplines.append(spline(in_start, in_end))
@@ -227,6 +227,29 @@ def gen_offset_polyline(line, offset):
   pco.MiterLimit = 20.0
   return pyclipper.scale_from_clipper(pco.Execute(pyclipper.scale_to_clipper(offset))[0])
 
+def outsetInset(material_thickness, dihedral, overlap, style="full"):
+  if not (pi/2 < dihedral < pi):
+    # this calc is "full" coverage
+    # i.e. fingers will have no gaps after sanding to plane
+    # fingers get infinitely long as we approach 0 / 180 degrees
+    if style == "full":
+      outset = -material_thickness/tan(dihedral) + overlap
+      inset = material_thickness/sin(dihedral)
+      return [-outset, inset]
+    
+    # this metric is defined such that finger A overlaps
+    # finger B by material thickness
+    # In essence is a smooth transition from 90 (outset of 0 inset r) 
+    # to 180 (outset r inset r) 
+    rtd = material_thickness/tan(dihedral/2)
+    outset2 = material_thickness - rtd
+    inset2 = material_thickness*cos(pi - dihedral) + rtd
+
+    return [-outset2, inset2]
+
+  print("warning this currently only works for dihedrals between 90 & 180 degrees")
+# to do implement other angles... (see overlap_calc_diagrams.svg)
+  return [0, 0]
 def get_fjpolygon(face_2d, dihedrals, offsets, overlap, tab_width, border_width):
   material_thickness = 3
   innerSplines = []
@@ -242,8 +265,10 @@ def get_fjpolygon(face_2d, dihedrals, offsets, overlap, tab_width, border_width)
 
     norm = rotate_via_numpy(v, pi/2)
     norm /= vec_mag(norm)
+    
+    outset, inset = outsetInset(material_thickness, dihedrals[i], 0)
 
-    inner = norm*(material_thickness/sin(dihedrals[i]))
+    inner = norm*inset
     in_start, in_end = prev - inner, curr - inner
 
     innerSplines.append(spline(in_start, in_end))
@@ -281,8 +306,14 @@ def get_fjpolygon(face_2d, dihedrals, offsets, overlap, tab_width, border_width)
 
     tab_diff = 0 #0.01
 
-    outer = norm*(material_thickness/tan(dihedrals[i]) - overlap)
-    inner = norm*(material_thickness/sin(dihedrals[i]))
+    # v1
+    # outer = norm*(material_thickness/tan(dihedrals[i]) - overlap)
+    # inner = norm*(material_thickness/sin(dihedrals[i]))
+
+    outset, inset = outsetInset(material_thickness, dihedrals[i], overlap)
+    outer = norm*outset
+    inner = norm*inset
+
 
     a_curr = -v*offsets[i][1]
     a_prev = v*offsets[i][0]
@@ -422,20 +453,22 @@ class Polyhedron:
 
   def find_dihedrals(self):
     for key, he in self.half_edges.items():
+      try:
+        if he.dihedral == None:
+          opp_he = self.half_edges[he.opp]
+          p0_id = self.half_edges[opp_he.next].e
+          p1_id = he.s
+          p2_id = he.e
+          p3_id = self.half_edges[he.next].e
 
-      if he.dihedral == None:
-        opp_he = self.half_edges[he.opp]
-        p0_id = self.half_edges[opp_he.next].e
-        p1_id = he.s
-        p2_id = he.e
-        p3_id = self.half_edges[he.next].e
-
-        p0 = self.vertices[p0_id]
-        p1 = self.vertices[p1_id]
-        p2 = self.vertices[p2_id]
-        p3 = self.vertices[p3_id]
-        he.dihedral = get_dihedral(p0, p1, p2, p3)
-        opp_he.dihedral = he.dihedral
+          p0 = self.vertices[p0_id]
+          p1 = self.vertices[p1_id]
+          p2 = self.vertices[p2_id]
+          p3 = self.vertices[p3_id]
+          he.dihedral = get_dihedral(p0, p1, p2, p3)
+          opp_he.dihedral = he.dihedral
+      except:
+        print("failed on dihedral", key)
 
   def get_2d_face(self, face_id):
       t_3d_2d, t_2d_3d = self.face_transforms[face_id]
@@ -486,7 +519,6 @@ class Polyhedron:
       face_2d = self.get_2d_face(face_idx)[:,0:2]*scale
       dihedrals = [he.dihedral for he in self.half_edges_for_face_id(face_idx)]
       offsets = [he.offsets for he in self.half_edges_for_face_id(face_idx)]
-      print(len(face_2d), len(dihedrals), len(offsets))
       new_poly_2d, window, orig = get_fjpolygon(face_2d, dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
       t_3d_2d, t_2d_3d = self.face_transforms[face_idx]
       
