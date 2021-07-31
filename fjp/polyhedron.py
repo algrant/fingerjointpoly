@@ -241,7 +241,8 @@ def gen_offset_polyline(line, offset):
   pco = pyclipper.PyclipperOffset()
   pco.AddPath(coordinates, pyclipper.JT_MITER, pyclipper.ET_CLOSEDPOLYGON)
   pco.MiterLimit = 20.0
-  return pyclipper.scale_from_clipper(pco.Execute(pyclipper.scale_to_clipper(offset))[0])
+  out = pyclipper.scale_from_clipper(pco.Execute(pyclipper.scale_to_clipper(offset))[0])
+  return [np.array(p) for p in out]
 
 def outsetInset(material_thickness, dihedral, overlap, style="simple"):
   if not (pi/2 < dihedral < pi):
@@ -359,8 +360,7 @@ def get_fjpolygon(face_2d, dihedrals, offsets, overlap, tab_width, border_width)
     # lines.append([squiggles, svgwrite.rgb(100, 10, 16, '%')])
     fjp_cut_line += squiggles
 
-
-  return [fjp_cut_line, window_line, outline]
+  return [gen_offset_polyline(fjp_cut_line, 0.05), window_line, outline]
 
 def svg_poly(face_2d, filename, dihedrals, offsets, overlap, tab_width, border_width):
   fjp_cut_line, window_line, outline = get_fjpolygon(face_2d, dihedrals, offsets, overlap, tab_width, border_width)
@@ -394,6 +394,69 @@ def svg_poly(face_2d, filename, dihedrals, offsets, overlap, tab_width, border_w
     pline = [(point - minp)*pixies_per_mm for point in line[0]]
     dwg.add(dwg.polyline(pline, style=line[1]))
   dwg.save()
+
+class Shape:
+  # https://svgwrite.readthedocs.io/en/latest/classes/path.html
+  def __init__(self, polys):
+    self.polys = polys
+
+  def points(self):
+    points = []
+    for poly in self.polys:
+      points += poly
+    return points
+
+  def bounding_box(self):
+    return get_bounding_box(self.points())
+
+  def translate(self, v):
+    self.polys = [[p + v for p in poly] for poly in self.polys]
+  
+  def normalize(self):
+    self.translate(-self.bounding_box()[0])
+
+
+def svg_from_polys(shapes, filename):
+  # in mms
+  max_width = 200
+
+  curr = np.array([0, 0])
+  curr_bottom = 0
+
+  lines = []
+  for shape in shapes:
+    shape.normalize()
+    bb = shape.bounding_box()[1]
+    margin = 2
+    if curr[0] + bb[0] + margin > max_width:
+      curr = np.array([0, curr[1] + curr_bottom + margin])
+      curr_bottom = 0
+    
+    shape.translate(curr)
+    curr[0] = curr[0] + bb[0] + margin
+
+    curr_bottom = max(curr_bottom, bb[1])
+
+
+  max_height = curr_bottom + curr[1]
+
+  dwg = svgwrite.Drawing(filename, size=(f"{max_width}mm", f"{max_height}mm"), profile="full")
+
+  # properly scaled to mms...
+  pixies_per_mm = 3.543307
+
+  for shape in shapes:
+    path = dwg.path(fill="none", stroke="#f00")
+    for line in shape.polys:
+      pline = [point*pixies_per_mm for point in line]
+      x = f"M {pline[-1][0]} {pline[-1][1]} L " + " ".join([f"{p[0]} {p[1]}" for p in pline])
+      path.push(x)
+
+    dwg.add(path)
+
+  dwg.save()
+
+
 
 class HalfEdge:
   def __init__(self, id, s, e, opp, prev, next, face_id, length, dihedral ):
@@ -605,6 +668,19 @@ class Polyhedron:
       offsets = [he.offsets for he in self.half_edges_for_face_id(face_idx)]
       svg_poly(face_2d, "%s/num%i.svg"%(path, face_idx), dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
 
+  def gen_fjp_svg(self, scale, path):
+    self.determine_offsets(scale)
+
+    shapes = []
+    for face_idx in range(len(self.faces)):
+      face_2d = self.get_2d_face(face_idx)[:,0:2]*scale
+      dihedrals = [he.dihedral for he in self.half_edges_for_face_id(face_idx)]
+      offsets = [he.offsets for he in self.half_edges_for_face_id(face_idx)]
+      new_poly_2d, window, orig = get_fjpolygon(face_2d, dihedrals, offsets, self.overlap, self.tab_width, self.border_width)
+      window.reverse()
+      shapes.append(Shape([new_poly_2d, window]))
+
+    svg_from_polys(shapes, path)
 
 
 
@@ -618,4 +694,4 @@ if __name__ == "__main__":
 
   p = Polyhedron(v, f)
 
-  p.gen_svg_faces(121, "./svg_out/poly_vase/")
+  p.gen_fjp_svg(121, "./svg_out/test.svg")

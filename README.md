@@ -52,3 +52,12 @@ yarn start
 
 # load on http://127.0.0.1:3000 so cors is happy
 ```
+
+## TODO
+
+ - Rebuild viewer using jupyter notebook & meshpy viewer.
+
+ - Calculate offsets for dihedrals < 90 & > 180
+
+ - Generate 3D printed Jigs
+
